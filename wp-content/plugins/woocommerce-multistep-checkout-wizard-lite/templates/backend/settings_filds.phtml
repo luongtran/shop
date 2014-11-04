@@ -1,0 +1,84 @@
+<table cellpadding="0" cellspacing="0"  class="festi-checkout-steps-wizard-form-table">
+    <tbody>
+        <?php
+        foreach ($filds as $ident => $item) {
+            $selectorClass = '';
+                         
+            if (isset($item['eventClasses'])) {
+                $class = $item['eventClasses'];
+                
+                $classes = explode(",", $class);
+                
+                foreach ($classes as $value) {
+                   $selectorClass.= ' '.$this->getSelectorClassForDisplayEvent($value); 
+                }
+            }
+            
+            if (isset($item['conditionForDisplay'])) {
+                $methodName = $item['conditionForDisplay'];
+                
+                $method = array(&$this, $methodName);
+        
+                if (!is_callable($method)) {
+                    throw new Exception("Undefined method name: ".$methodName);
+                }
+                
+                $result = call_user_func_array($method, array());
+                
+                if (!$result) {
+                    $selectorClass = 'festi-checkout-steps-wizard-hidden';   
+                }
+            }
+            
+            if ($item['type'] == 'divider') {
+            ?>
+                <tr class="festi-checkout-steps-wizard-divider">
+                    <th colspan="2">
+                        <?php echo $item['caption']; ?>
+                    </th>
+                </tr>
+            <?php
+                continue;
+            }
+            
+            $backlight = (isset($item['backlight'])) ? 'festi-checkout-steps-wizard-'.$item['backlight'] : '';
+            
+            $classes = (isset($item['classes'])) ? $item['classes'] : '';
+            
+        ?>
+            <tr class = "<?php echo $selectorClass; ?> <?php echo $backlight; ?> <?php echo $classes; ?>" >
+                <th>
+                    <?php echo $item['caption']; ?>
+                    <?php if(isset($item['hint'])) {
+                    ?>
+                        <img
+                            class="festi-checkout-steps-wizard-help-tip" 
+                            title="<?php echo $item['hint']; ?> "
+                            src="<?php echo $this->getPluginImagesUrl('help.png'); ?>"
+                            height="16"
+                            width="16"
+                        >
+                    <?php       
+                    } 
+                    ?>
+                </th>
+                <td valign="middle">
+                    <?php
+
+                    $vars = array (
+                        'ident' => $ident,
+                        'item' => $item
+                    );
+
+                    if (isset($currentValues[$ident])) {
+                       $vars['currentValue'] = $currentValues[$ident];
+                    }
+                    echo $this->fetch('form/'.$item['type'].'.phtml', $vars);
+                    ?>
+                </td>
+            </tr>
+        <?php
+        }
+        ?>
+    </tbody>
+</table>

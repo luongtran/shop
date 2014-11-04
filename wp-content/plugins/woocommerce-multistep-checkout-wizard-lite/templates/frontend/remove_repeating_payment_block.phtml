@@ -1,0 +1,13 @@
+<script type="text/javascript">
+jQuery( document ).ready(function() {
+    jQuery("#order_review #payment").remove();
+
+    jQuery('div.festi-wizard-step-payment #payment input[id^="payment_method"]').each(function(i,element) {
+        var selector =  jQuery(element).attr('id');
+        if (jQuery("div.payment_box." + selector).css("display") == "block") {
+            jQuery("#"+selector).attr("checked", "checked");    
+        }
+        
+    });
+})  
+</script>

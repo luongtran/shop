@@ -1,0 +1,24 @@
+/*   
+Theme Name: SignTurn
+Theme URI: http://sfr-creative.com
+Description: A Signturn Thematic child theme.
+Author: TRONG
+Author URI: http://sfr-creative.com
+Template: thematic
+Version: 1.0
+Tags: Thematic, SignTurn, sfr
+.
+Thematic is © Ian Stewart http://themeshaper.com/
+.
+*/
+@import url(http://fonts.googleapis.com/css?family=Tangerine);
+@import url("css/bootstrap.min.css");
+@import url("css/bootstrap.min.css");
+@import url("css/wow-slider.css");
+@import url("css/site.css");
+@import url("css/font-awesome.min.css");
+@import url("css/myriadpro.css");
+@import url("css/trajan.css");
+@import url("css/checkstyle/stylesheet-image-based.css");
+@import url("css/checkboxstyle/style.css");
+@import url("js/wow/animate.css");

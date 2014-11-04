@@ -1,0 +1,35 @@
+<div class="festi-checkout-steps-wizard" style="margin-top: -25px;">
+    <?php
+        $params = array(
+            'refresh_completed' => '',
+            'refresh_plugin' => ''
+        );
+        $url = $this->getUrl($params);
+    ?>
+    <form action="<?php echo $url; ?>"  method="post" class="festi-checkout-steps-wizard-form">
+        <input type="hidden" name="__action" value="save" /> 
+        <?php
+        foreach ($fieldset as $key => $item) {
+            if (array_key_exists('legend', $item)) {
+            ?>
+                <h2><?php echo $item['legend']; ?></h2>
+            <?php
+            }
+            ?>
+            <fieldset class="festi-checkout-steps-wizard-options">
+                <?php
+                $vars = array (
+                    'filds' => $item['filds'],
+                    'currentValues' => $currentValues
+                ); 
+    
+                echo $this->fetch('settings_filds.phtml', $vars);     
+
+                ?>        
+                </fieldset>
+        <?php
+        }
+        ?>
+            <input type="submit"  value="<?php echo __('Save Changes', $this->_languageDomain); ?>"  class="festi-checkout-steps-wizard-save-button button-primary">
+    </form>
+</div>

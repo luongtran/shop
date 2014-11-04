@@ -1,0 +1,39 @@
+<ul class="festi-disabled" id="sortable">
+    <?php
+    $sortSteps = array();
+  
+    if ($this->isWoocommerceCheckoutFieldEditorPluginActive() && !in_array(5, $currentValue)) {
+        $currentValue[] = 5;
+    }
+
+    if (isset($currentValue) && !empty($currentValue)) {
+        foreach ($currentValue as $value) {
+            if (!array_key_exists($value, $item['values'])) {
+                continue;
+            }
+            
+            $sortSteps[$value] = $item['values'][$value];
+        }
+    } else {
+        $sortSteps = $item['values'];
+    }
+    
+    foreach ($sortSteps as $key => $value) {
+        if ($value['step'] == 'custom' && !$this->isWoocommerceCheckoutFieldEditorPluginActive()) {
+            continue;
+        }
+        
+    ?>
+        <li class="ui-state-default">
+            <input name="<?php echo $ident; ?>[<?php echo $value['step']; ?>]" type="hidden" value="<?php echo $key; ?>" /> <?php echo $value['caption']; ?>
+        </li>
+    <?php
+    }
+    ?>
+</ul>
+
+<script>
+jQuery(document).ready(function() {
+    jQuery( "#sortable" ).sortable();
+});
+</script>

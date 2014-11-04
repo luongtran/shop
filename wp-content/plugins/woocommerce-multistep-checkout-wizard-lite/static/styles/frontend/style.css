@@ -1,0 +1,27 @@
+﻿#festi-checkout-steps-wizard.festi-wizard {
+}
+
+#festi-checkout-steps-wizard.festi-wizard .form-row.place-order {
+    display: none;
+}
+
+#festi-checkout-steps-wizard.festi-wizard #order_review #payment
+{
+    display: none;
+}
+
+form.checkout #customer_details
+{
+    display: none;
+}
+
+
+body form[name=checkout]
+{
+    visibility: hidden;
+}
+
+.white_content
+{
+    height: 300px;
+}

@@ -1,0 +1,412 @@
+#festi-checkout-steps-wizard.festi-wizard
+{
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+
+#festi-checkout-steps-wizard.festi-wizard a
+{
+    outline: 0;
+}
+
+#festi-checkout-steps-wizard.festi-wizard  .steps  ul
+{
+    list-style: none !important;
+    margin-left: 10px;
+    overflow: hidden;
+}
+
+#festi-checkout-steps-wizard.festi-wizard  .steps  ul > li
+{
+    display: block;
+}
+
+/* Accessibility */
+#festi-checkout-steps-wizard.festi-wizard > .steps .current-info
+{
+    position: absolute;
+    left: -999em;
+}
+
+#festi-checkout-steps-wizard.festi-wizard > .content > .title
+{
+    position: absolute;
+    left: -999em;
+}
+
+/*
+    Wizard
+*/
+#festi-checkout-steps-wizard.festi-wizard > .steps.clearfix:before,
+#festi-checkout-steps-wizard.festi-wizard > .steps.clearfix:after
+{
+    display:block;
+}
+
+#festi-checkout-steps-wizard.festi-wizard > .steps.clearfix:after
+{
+    display:block;
+    margin-bottom: 10px;
+}
+
+#festi-checkout-steps-wizard.festi-wizard > .steps
+{
+    position: relative;
+    clear:both;
+    font-family:"Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-weight: bold;
+}
+
+#festi-checkout-steps-wizard.festi-wizard > .steps > ul > li
+{
+    position:relative;
+    
+}
+
+#festi-checkout-steps-wizard.festi-wizard > .steps > ul > li,
+#festi-checkout-steps-wizard.festi-wizard > .actions > ul > li
+{
+    float: left;
+    list-style: none !important;
+    padding: 0;
+    margin: 0;
+}
+
+#festi-checkout-steps-wizard.festi-wizard > .steps a {
+    width: 100%;
+    text-align: center;
+    position:relative;
+    display:block;
+    height:40px;
+    margin-right:30px;
+    padding:5px;
+    float: left;
+    font-size:16px;
+    line-height:40px;
+    text-decoration:none;
+    transition: 0.1s;
+}
+
+
+#festi-checkout-steps-wizard.festi-wizard > .steps li span
+{
+    display: block;
+    float: left;
+    font-size: 14px;
+    text-align:center;
+    width:26px;
+    margin: 5px 5px 5px 0;
+    line-height:26px;
+    border: 2px solid;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    border-radius:20px;
+}
+
+/* = COMPLETED STEPS
+----------------------------*/
+
+#festi-checkout-steps-wizard.festi-wizard > .steps li.done span {
+    text-shadow:none;
+    border: 2px solid;
+    text-shadow:none;
+}
+
+/* = ACTIVE STEPS
+----------------------------*/
+#festi-checkout-steps-wizard.festi-wizard > .steps li.current span {
+    text-shadow:none;
+    border: 2px solid;
+}
+
+/* = HOVER STATES
+----------------------------*/
+
+
+/* = ERROR STATES
+----------------------------*/
+#festi-checkout-steps-wizard.festi-wizard > .steps li.current.error span {
+    text-shadow:none;
+    border: 2px solid;
+}
+
+#festi-checkout-steps-wizard.festi-wizard > .actions > ul > li
+{
+    float: left;
+}
+
+/* = FIRST STEP
+----------------------------*/
+#festi-checkout-steps-wizard.festi-wizard > .steps li.first a:before {
+
+}
+
+
+#festi-checkout-steps-wizard.festi-wizard > .content  ul  li
+{
+    list-style: none !important;
+}
+
+#festi-checkout-steps-wizard.festi-wizard > .content
+{
+    display: block;
+    margin: 0.5em;
+    position: relative; 
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+#festi-checkout-steps-wizard.festi-wizard.vertical > .content
+{
+    margin: 0 2.5% 0.5em 2.5%;
+}
+
+#festi-checkout-steps-wizard.festi-wizard > .content > .body
+{
+    float: left;
+    position: relative;
+    width: 95%;
+    padding: 2.5%;
+}
+
+#festi-checkout-steps-wizard.festi-wizard > .actions
+{
+    margin-top: 10px;
+    position: relative;
+    display: inline-block;
+    text-align: right;
+    width: 100%;
+}
+
+#festi-checkout-steps-wizard.festi-wizard.vertical > .actions
+{
+    display: inline;
+    float: right;
+    margin: 0 2.5%;
+    width: 95%;
+}
+
+#festi-checkout-steps-wizard.festi-wizard > .actions > ul
+{
+    display: inline-block;
+    text-align: right;
+}
+
+#festi-checkout-steps-wizard.festi-wizard > .actions > ul > li
+{
+    margin: 0 0.5em;
+}
+
+#festi-checkout-steps-wizard.festi-wizard.vertical > .actions > ul > li
+{
+    margin: 0 0 0 1em;
+}
+
+#festi-checkout-steps-wizard.festi-wizard > .actions a,
+#festi-checkout-steps-wizard.festi-wizard > .actions a:hover,
+#festi-checkout-steps-wizard.festi-wizard > .actions a:active
+{
+    display: block;
+    padding: 0.5em 1em;
+    text-decoration: none;
+
+    -webkit-border-radius: 0px;
+    -moz-border-radius: 0px;
+    border-radius: 0px;
+}
+
+#festi-checkout-steps-wizard.festi-wizard > .actions .disabled a,
+#festi-checkout-steps-wizard.festi-wizard > .actions .disabled a:hover,
+#festi-checkout-steps-wizard.festi-wizard > .actions .disabled a:active
+{
+    cursor: default;
+}
+
+#festi-checkout-steps-wizard.festi-wizard > .loading
+{
+}
+
+#festi-checkout-steps-wizard.festi-wizard > .loading .spinner
+{
+}
+
+/*terms*/
+div#festi-checkout-steps-wizard.festi-wizard p.terms.festi-error
+{
+    display: inline-block;
+    border: 1px dotted red;
+}
+div#festi-checkout-steps-wizard.festi-wizard p.terms
+{
+    margin-top:10px;
+}
+
+    body #festi-checkout-steps-wizard.festi-wizard > .content
+    {
+        background-color:   #ffffff;
+    }
+    
+    /* Completed Steps */
+    /*------- Tabs------*/
+    body #festi-checkout-steps-wizard.festi-wizard > .steps li.done a {
+        color: #ffffff;
+        background-color: #9dc8e2;
+    }
+    body #festi-checkout-steps-wizard.festi-wizard > .steps li.done a:before {
+        border-top: 20px solid #9dc8e2;
+        border-bottom: 20px solid #9dc8e2;
+    }
+    body #festi-checkout-steps-wizard.festi-wizard > .steps li.done a:after {
+        border-left: 20px solid #9dc8e2;
+    }
+    
+    body #festi-checkout-steps-wizard.festi-wizard > .steps li.done span {
+        color: #999999;
+        background-color: #FFF;
+        border-color: #999999;
+    }
+    
+    /* Disabled Steps */
+    body #festi-checkout-steps-wizard.festi-wizard > .steps a {
+        color: #000000;
+        background-color: #eeeeee;
+    }
+    body #festi-checkout-steps-wizard.festi-wizard > .steps a:before {
+
+        border-top: 20px solid #eeeeee;
+        border-bottom: 20px solid #eeeeee;
+        border-left:20px solid transparent;
+    }
+    body #festi-checkout-steps-wizard.festi-wizard > .steps a:after {
+
+        border-top: 20px solid transparent;
+        border-bottom: 20px solid transparent;
+        border-left:20px solid #eeeeee;
+    }
+    
+    body #festi-checkout-steps-wizard.festi-wizard > .steps li span
+    {
+        color: #999999;
+        background-color: #FFF;
+        border-color: #999999;
+    }
+    
+    /* = ACTIVE STEPS
+----------------------------*/
+    body #festi-checkout-steps-wizard.festi-wizard > .steps li.current a {
+        color: #ffffff;
+        background-color: #2184be;
+    }
+    body #festi-checkout-steps-wizard.festi-wizard > .steps li.current a:before {
+        border-top: 20px solid #2184be;
+        border-bottom: 20px solid #2184be;
+    }
+    body #festi-checkout-steps-wizard.festi-wizard > .steps li.current a:after {
+        border-left: 20px solid #2184be;
+    }
+    
+    body #festi-checkout-steps-wizard.festi-wizard > .steps li.current span {
+        color: #000000;
+        background-color: #FFF;
+        border-color: #000000;
+    }
+    
+    /* = HOVER STATES
+----------------------------*/
+    body #festi-checkout-steps-wizard.festi-wizard > .steps li.done:hover a,
+    body #festi-checkout-steps-wizard.festi-wizard > .steps li.current:hover a
+    {
+        color: #fff;
+        background-color: #2184be;
+    }
+    body #festi-checkout-steps-wizard.festi-wizard > .steps li.done:hover a:before,
+    body #festi-checkout-steps-wizard.festi-wizard > .steps li.current:hover a:before
+    {
+        border-top: 20px solid #2184be;
+        border-bottom: 20px solid #2184be;
+    }
+    body #festi-checkout-steps-wizard.festi-wizard > .steps li.done:hover a:after,
+    body #festi-checkout-steps-wizard.festi-wizard > .steps li.current:hover a:after
+    {
+        border-left: 20px solid #2184be;
+    }
+    
+    body #festi-checkout-steps-wizard.festi-wizard > .steps li.done:hover span,
+    body #festi-checkout-steps-wizard.festi-wizard > .steps li.current:hover span
+    {
+        color: #8F061E;
+        background-color: #FFF;
+        border-color: #A3C1C9;
+    }
+    
+    /* = ERROR STATES
+    ----------------------------*/
+    body #festi-checkout-steps-wizard.festi-wizard > .steps li.current.error a {
+        color: #ffffff;
+        background-color: #b81c24;
+    }
+    body #festi-checkout-steps-wizard.festi-wizard > .steps li.current.error a:before {
+        border-top: 20px solid #b81c24;
+        border-bottom: 20px solid #b81c24;
+    }
+    body #festi-checkout-steps-wizard.festi-wizard > .steps li.current.error a:after {
+        border-left: 20px solid #b81c24;
+    }
+    
+    body #festi-checkout-steps-wizard.festi-wizard > .steps li.current.error span {
+        color: #8f040b;
+        background-color: #ffffff;
+        border-color: #8f040b;
+    }
+    
+    body #festi-checkout-steps-wizard.festi-wizard > .actions a
+    {
+        background-color: #2184be;
+        color: #ffffff;
+    }
+    
+    body #festi-checkout-steps-wizard.festi-wizard > .actions a:hover
+    {
+        background-color: #2184be;
+        color: #fff;;
+    }
+    
+    #festi-checkout-steps-wizard.festi-wizard > .actions .disabled a,
+    #festi-checkout-steps-wizard.festi-wizard > .actions .disabled a:hover
+    {
+        background-color: #c7c7c7;
+        color: #919191;
+    }
+    
+    div#festi-checkout-steps-wizard.festi-wizard p.terms
+    {
+        float: right;
+    }
+    
+div#festi-checkout-steps-wizard.festi-wizard[data-steps-count="1"]  > div.steps ul li
+{
+    width: 100%;
+}
+div#festi-checkout-steps-wizard.festi-wizard[data-steps-count="2"] > div.steps ul li
+{
+    width: 50%;
+}
+div#festi-checkout-steps-wizard.festi-wizard[data-steps-count="3"] > div.steps ul li
+{
+    width: 33.33%;
+}
+div#festi-checkout-steps-wizard.festi-wizard[data-steps-count="4"] > div.steps ul li
+{
+    width: 25%;
+}
+div#festi-checkout-steps-wizard.festi-wizard[data-steps-count="5"] > div.steps ul li
+{
+    width: 20%;
+}
+div#festi-checkout-steps-wizard.festi-wizard[data-steps-count="6"] > div.steps ul li
+{
+    width: 16.66%;
+}

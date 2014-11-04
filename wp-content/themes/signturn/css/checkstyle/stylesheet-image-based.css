@@ -1,0 +1,32 @@
+#checkout-delivery-builling input[type=checkbox]:not(old),
+#checkout-delivery-builling input[type=radio   ]:not(old),
+#checkout-account input[type=radio   ]:not(old){
+  width   : 28px;
+  margin  : 0;
+  padding : 0;
+  opacity : 0;
+}
+
+#checkout-delivery-builling input[type=checkbox]:not(old) + label,
+#checkout-delivery-builling input[type=radio   ]:not(old) + label,
+#checkout-account input[type=radio   ]:not(old) + label {
+  display      : inline-block;
+  margin-left  : -28px;
+  padding-left : 28px;
+  background   : url('checks.png') no-repeat 0 0;
+  line-height  : 24px;
+}
+
+#checkout-delivery-builling input[type=checkbox]:not(old):checked + label,
+#checkout-account input[type=checkbox]:not(old):checked + label{
+  background-position : 0 -24px;
+}
+
+#checkout-delivery-builling input[type=radio]:not(old):checked + label,
+#checkout-account input[type=radio]:not(old):checked + label{
+  background-position : 0 -48px;
+}
+#shipping_method li label {
+    display: inline-block;
+    padding-left: 48px !important;
+}

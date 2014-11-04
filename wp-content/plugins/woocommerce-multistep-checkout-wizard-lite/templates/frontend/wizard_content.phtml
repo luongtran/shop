@@ -1,0 +1,10 @@
+<div data-steps-count="<?php echo $count; ?>" style="display: none;" id="festi-checkout-steps-wizard">
+    <?php
+    foreach ($steps as $step) {
+    ?>
+        <h1><?php echo $step['name']; ?></h1>
+        <div class="<?php echo $step['class']; ?>"></div>
+    <?php    
+    }
+    ?>
+</div>
