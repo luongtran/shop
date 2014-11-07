@@ -680,7 +680,7 @@ form label.error {
 #checkout-delivery input[type="email"],
 #checkout-delivery input[type="password"],
 #checkout-delivery select,
-#checkout-delivery textarea 
+#checkout-delivery textarea ,#checkout-login textarea 
 {
     border:1px solid #A89340;
     border-radius: 0;
@@ -1575,6 +1575,9 @@ body #header-cart  .site-btn{
 }
 .toggle-lightbox {
     cursor: pointer
+}
+.wpcf7-validation-errors {
+    display:none
 }
 /** FOR SLIDER **/
 @media(max-width:767px){
