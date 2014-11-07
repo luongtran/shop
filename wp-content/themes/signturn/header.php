@@ -38,7 +38,6 @@
 		// Create comments RSS links
 		thematic_show_commentsrss();
 	}
-	
 	// Create pingback adress
 	thematic_show_pingback();
 	
@@ -66,10 +65,25 @@
                         <a href="<?=  bloginfo('home')?>"><img class="img-responsive" src="<?php echo TEMPLATE_URL?>/images/logo.png" alt="" /></a>
                     </div>
                 </div>
-                <div class="col-sm-8 header-right">
+                <div class="col-sm-8 header-right relative">
                     <div class="top-menu text-right">
                         <ul class="list-unstyled list-inline">
-                            <li><a href="">With Love</a></li>
+                            <li id="withlove-toggle"><a href="">With Love</a>
+                                <div id="widthlove" class="arrowbox col-xs-12 col-sm-6 col-md-6">
+                                    <div class="widthlove-row">
+                                        <h4>Samples</h4>
+                                        <p>Choose a complementary same with each order</p>
+                                    </div>
+                                    <div class="widthlove-row">
+                                        <h4>Gift Wrap</h4>
+                                        <p>Present your gift with our Iconic matt black box </p>
+                                    </div>
+                                    <div class="widthlove-row">
+                                        <h4>Bottles</h4>
+                                        <p>Enjoy your stylish bottle with complement</p>
+                                    </div>
+                                </div>
+                            </li>
                             <?php if ( is_user_logged_in() ): ?>
                             <li>
                                 <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" >My Account</a>
@@ -79,7 +93,7 @@
                                 <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" >My Account</a>
                             </li>
                             <?php endif;?>
-                            <li>
+                            <li id="cart-toggle">
                                 <?php global $woocommerce; ?> 
                                 <a class="cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="View your shopping cart">
                                     <span id="bag-count">
@@ -87,8 +101,10 @@
                                     </span>
                                      <i class="fa fa-shopping-cart"></i>
                                 </a>
+                                <?php include_once STYLESHEETPATH.DIRECTORY_SEPARATOR.'woocommerce'.DIRECTORY_SEPARATOR.'global'.DIRECTORY_SEPARATOR.'cart_header.php'; ?>
                             </li>
                         </ul>
+                        
                     </div>
                     <div class="menu" style="display: none;">
                         <nav class="navbar navbar-default" role="navigation">
@@ -125,18 +141,32 @@
     <div id="primary-menu">
         <div class="container relative">
             <ul class="list-inline list-unstyled toggle-list">
-                <li data-toggle=".collections"><a href="#">The Collection</a></li>
-                <li data-toggle=".world-of-signature"><a href="#">Signature World</a></li>
-                <li data-toggle=".news"><a href="#">News</a></li>
-                <li><a href="<?= get_permalink(get_page_by_path('about-us'))?>">About us</a></li>
-                <li><a href="<?= get_permalink(get_page_by_path('contact-us'))?>">Contact Us</a></li>
+                <li <?php if(is_product()|| is_product_category()) echo 'class="actived"' ?> data-toggle=".collections"><a href="#">The Collection</a></li>
+                <li <?php 
+                        if(is_page('ethical-sourcing') ||is_page('packaging') || is_page('reviews')|| is_page('refill-politique') || is_page('our-bottles') ) echo 'class="actived"'
+                    ?>  data-toggle=".world-of-signature"><a href="#">Signature World</a></li>
+                <li <?php 
+                    $singleNews = false;
+                    if(is_single()){
+                        $cats = get_the_category();
+                        foreach ($cats as $cat) {
+                            if($cat->slug==='news'){
+                                $singleNews = true;
+                                break;
+                            }
+                        }
+                    }
+                    if(is_category('news') || ($singleNews)) echo 'class="actived"' 
+                    ?> data-toggle=".news"><a href="#">News</a></li>
+                <li <?php if(is_page('about-us')) echo 'class="actived"' ?>><a href="<?= get_permalink(get_page_by_path('about-us'))?>">About us</a></li>
+                <li <?php if(is_page('contact-us')) echo 'class="actived"' ?>><a href="<?= get_permalink(get_page_by_path('contact-us'))?>">Contact Us</a></li>
             </ul>
         </div>
     </div>
 <div id="primary-menu-items" style="display: none">
     <div class="container ">
         <ul class="list-unstyled desktop-menu">
-            <li class="collections row">
+            <li class="collections row ">
                 <div class="col-sm-5">
                     <h4>Collections</h4>
                     <?php 
@@ -150,7 +180,7 @@
                         
                     ?>
                     <ul class="list-unstyled clearfix" id="collection-list" >
-                        <li <?php if(is_product()|| is_category()) echo 'class="actived"' ?> data-toggle=".for-men"><a href="<?php echo $forHimLink?>">For him</a></li>
+                        <li data-toggle=".for-men"><a href="<?php echo $forHimLink?>">For him</a></li>
                         <li data-toggle=".women"><a href="<?=$forHerLink?>">For her</a></li>
                         <li data-toggle=".floral"><a href="<?=$floralLink?>">Floral</a></li>
                         <li data-toggle=".fresh"><a href="<?=$freshLink?>">Fresh</a></li>
@@ -240,7 +270,7 @@
                 </div>
             </li>
             <li class="world-of-signature">
-                <h4>World Of Signature </h4>
+                <h4>Signature World</h4>
                 <ul class="list-unstyled list-inline">
                     <li><a href="<?= get_permalink(get_page_by_path('ethical-sourcing'))?>">Ethical Sourcing</a></li>
                     <li><a href="<?= get_permalink(get_page_by_path('packaging'))?>">Our Packaging</a></li>

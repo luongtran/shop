@@ -19,7 +19,7 @@
 
 #checkout-delivery-builling input[type=checkbox]:not(old):checked + label,
 #checkout-account input[type=checkbox]:not(old):checked + label{
-  background-position : 0 -24px;
+  background-position : 0 -15px;
 }
 
 #checkout-delivery-builling input[type=radio]:not(old):checked + label,

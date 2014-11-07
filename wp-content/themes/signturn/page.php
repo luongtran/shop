@@ -8,6 +8,8 @@
                 <?php
                     if(is_page('checkout')){
                         $classPage="page-cart";
+                    }elseif(is_page('home')){
+                        $classPage = 'home';
                     }else{
                         $classPage = '';
                     }

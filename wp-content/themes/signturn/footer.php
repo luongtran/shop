@@ -10,34 +10,43 @@
                                 <div class="col-sm-4 ">
                                     <h3>SHOP</h3>
                                     <ul class="list-unstyled">
-                                        <li><a href="#" > For Him</a></li>
-                                        <li><a href="#" >For her</a></li>
-                                        <li><a href="#" >Floral</a></li>
-                                        <li><a href="#" >Sweet</a></li>
-                                        <li><a href="#" >Fresh</a></li>
-                                        <li><a href="#" >Oriental</a></li>
+                                         <?php 
+                                            $forHimLink = get_term_link('for-men','product_cat'); //get_category_link(get_cat_ID('for-men'));
+                                            //die($forHimLink);
+                                            $forHerLink =  get_term_link('women','product_cat'); //get_category_link(get_cat_ID('women'));
+                                            $floralLink =  get_term_link('floral','product_cat'); //get_category_link(get_cat_ID('floral'));
+                                            $freshLink =  get_term_link('fresh','product_cat'); // get_category_link(get_cat_ID('fresh'));
+                                            $orientalWoodsLink = get_term_link('oriental-woods','product_cat'); // get_category_link(get_cat_ID('oriental-woods'));
+                                            $sweetLink = get_term_link('sweet','product_cat'); // get_category_link(get_cat_ID('sweet'));
+
+                                        ?>
+                                        <li><a href="<?php echo $forHimLink?>">For him</a></li>
+                                        <li><a href="<?=$forHerLink?>">For her</a></li>
+                                        <li><a href="<?=$floralLink?>">Floral</a></li>
+                                        <li><a href="<?=$freshLink?>">Fresh</a></li>
+                                        <li><a href="<?=$orientalWoodsLink?>">Oriental woods</a></li>
+                                        <li><a href="<?=$sweetLink?>">Sweet</a></li>
                                     </ul>
                                 </div>
                                 <div class="col-sm-4">
                                     <h3>CUSTOMER CARE</h3>
                                     <ul class="list-unstyled">
-                                        <li><a href="about-us" >About Us</a></li>
+                                        <li><a href="<?= get_permalink(get_page_by_path('about-us'))?>" >About Us</a></li>
                                         <li><a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" >Account Info</a></li>
-                                        <li><a href="privacy-policy" >Privacy Policy</a></li>
-                                        <li><a href="delivery-returns" >Delivery & Returns</a></li>
-                                        <li><a href="terms-conditions" >Terms & Conditions</a></li>
-                                        <li><a href="faqs" >FAQ's</a></li>
+                                        <li><a href="<?= get_permalink(get_page_by_path('privacy-policy'))?>" >Privacy Policy</a></li>
+                                        <li><a href="<?= get_permalink(get_page_by_path('delivery-returns'))?>" >Delivery & Returns</a></li>
+                                        <li><a href="<?= get_permalink(get_page_by_path('terms-conditions'))?>" >Terms & Conditions</a></li>
+                                        <li><a href="<?= get_permalink(get_page_by_path('faqs'))?>" >FAQ's</a></li>
                                     </ul>
                                 </div>
                                 
                                 <div class="col-sm-4">
                                     <h3>COMMUNITY</h3>
                                     <ul class="list-unstyled">
-                                        <li><a href="#" ><i class="fa fa-phone" ></i> Contact Us</a></li>
-                                        <li><a href="#" ><i class="fa fa-facebook"></i> Facebook</a></li>
-                                        <li><a href="#" ><i class="fa fa-twitter"></i> Twitter</a></li>
-                                        <li><a href="#" ><i class="fa fa-google-plus"></i> Google+</a></li>
-                                        <li><a href="#" ><i class="fa fa-instagram"></i> Instagram</a></li>
+                                        <li><a target="_blank" href="<?php echo get_option('facebook_account') ?>" ><i class="fa fa-facebook"></i> Facebook</a></li>
+                                        <li><a target="_blank" href="<?php echo get_option('twitter_account') ?>" ><i class="fa fa-twitter"></i> Twitter</a></li>
+                                        <li><a target="_blank" href="<?php echo get_option('google_account') ?>" ><i class="fa fa-google-plus"></i> Google+</a></li>
+                                        <li><a target="_blank" href="<?php echo get_option('instagram_account') ?>" ><i class="fa fa-instagram"></i> Instagram</a></li>
                                     </ul>
                                 </div>
                           </div>
@@ -58,18 +67,19 @@
         </div>
         <?php thematic_belowfooter();?>
         <?php wp_footer(); ?>
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-        <script src="<?=TEMPLATE_URL?>/js/bootstrap-hover-dropdown.js"></script>
-        <script src="<?=TEMPLATE_URL?>/js/jquery-2.0.3.min.js"></script>
-        <script src="<?=TEMPLATE_URL?>/js/bootstrap.min.js"></script>
-        <script src="<?=TEMPLATE_URL?>/js/bootstrap-hover-dropdown.js"></script>
-        <script src="<?=TEMPLATE_URL?>/js/iCheck/icheck.min.js"></script>
-        <script src="<?=TEMPLATE_URL?>/js/jquery.tinycarousel.min.js"></script>
-        <script src="<?=TEMPLATE_URL?>/js/jquery.raty.js"></script>
-        <script src="<?=TEMPLATE_URL?>/js/jquery.pajinate.min.js"></script>
-        <script src="<?=TEMPLATE_URL?>/js/jquery.validate.js"></script>
-        <script src="<?=TEMPLATE_URL?>/js/wow/wow.min.js"></script>
-        <script type="text/javascript">
+        <script type="text/javascript" src="<?=TEMPLATE_URL?>/js/jquery-2.0.3.min.js"></script>
+        <script type="text/javascript" src="<?=TEMPLATE_URL?>/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="<?=TEMPLATE_URL?>/js/bootstrap-hover-dropdown.js"></script>
+        <script type="text/javascript" src="<?=TEMPLATE_URL?>/js/bootstrap-hover-dropdown.js"></script>
+        <script type="text/javascript" src="<?=TEMPLATE_URL?>/js/iCheck/icheck.min.js"></script>
+        <script type="text/javascript" src="<?=TEMPLATE_URL?>/js/jquery.tinycarousel.min.js"></script>
+        <script type="text/javascript" src="<?=TEMPLATE_URL?>/js/jquery.raty.js"></script>
+        <script type="text/javascript" src="<?=TEMPLATE_URL?>/js/jquery.pajinate.min.js"></script>
+        <script type="text/javascript" src="<?=TEMPLATE_URL?>/js/jquery.validate.js"></script>
+        <script type="text/javascript" src="<?=TEMPLATE_URL?>/js/wow/wow.min.js"></script>
+        <script src="<?=TEMPLATE_URL?>/js/lightbox/prettify.js"></script>
+        <script type="text/javascript" src="<?=TEMPLATE_URL?>/js/lightbox/bootstrap-lightbox.min.js"></script>
+        <script  type="text/javascript">
             function activeToggle(dom){
                 $('#primary-menu .toggle-list li').removeClass('active');
                 $(dom).addClass('active');
@@ -132,25 +142,40 @@
              });
             $("#customer-reviews-close").on('click',function(){
                 $('#customer-reviews').hide();
+                $('.product > .summary.entry-summary').fadeIn();
             });
             $("#shipping-data-close").on('click',function(){
                 $('#shipping-data').hide();
             });
             $("#customer-service-data-close").on('click',function(){
-               $('#customer-service').toggle();
+               $('#customer-service').toggle(600);
             });
             $('#shipping-popover').on('click',function(){
-                $('#shipping-data').toggle();
+                if($('#shipping-data').is(':visible')){
+                     $('#shipping-data').fadeOut();
+                }else{
+                    $('#shipping-data').fadeIn();
+                }
                 $('#customer-reviews').hide();
                 $('#customer-service').hide();
             });
             $('#review-popover').on('click',function(){
-                $('#customer-reviews').toggle();
+                 if($('#customer-reviews').is(':visible')){
+                     $('#customer-reviews').slideUp(400);
+                     $('.product > .summary.entry-summary').fadeIn();
+                }else{
+                    $('#customer-reviews').slideDown(400);
+                    $('.product > .summary.entry-summary').fadeOut();
+                }
                 $('#shipping-data').hide();
                 $('#customer-service').hide();
             });
             $('#customer-service-popver').on('click',function(){
-                $('#customer-service').toggle();
+                if($('#customer-service').is(':visible')){
+                    $('#customer-service').slideUp(400);
+                }else{
+                    $('#customer-service').slideDown(400);
+                }
                 $('#customer-reviews').hide();
                 $('#shipping-data').hide();
             });
@@ -163,7 +188,50 @@
                 }
                  
             });
-            
+            $( "#withlove-toggle" ).hover(
+                function() {
+                    $('#widthlove').fadeIn();
+                    console.log('show');
+                }
+//                , 
+//                function() {
+//                    $('#widthlove').slideUp(100);
+//                }
+            );
+        
+         $.wait = function( callback, seconds){
+            return window.setTimeout( callback, seconds * 1000 );
+         };
+         $( "#withlove-toggle" ).mouseleave(function(){
+             // $('#widthlove').slideUp(100);
+             $.wait( function(){
+                 if (!$('#widthlove').is(':hover')) {
+                    $('#widthlove').fadeOut(100); 
+                 }
+             },1);
+         });
+         $.wait(function(){
+             $('.woocommerce-message').fadeOut();
+         },5);
+         $( "#cart-toggle" ).hover(
+                function() {
+                    $('#header-cart').fadeIn();
+                }
+            );
+         $( "#cart-toggle" ).mouseleave(function(){
+             // $('#widthlove').slideUp(100);
+             $.wait( function(){
+                 if (!$('#header-cart').is(':hover')) {
+                    $('#header-cart').fadeOut()();
+                 }
+             },1);
+         });
+         $('.toggle-lightbox').on('click',function(){
+             $('#zoom-image-modal img').attr('src',$(this).data('url'));
+             $('#zoom-image-modal').modal('show');
+         });
+         $('a[title]').tooltip();
+        // $('#archive-lightbox').lightbox({backdrop:false});
         </script>
         <script type="text/javascript">
             $(window).load(function() {

@@ -22,6 +22,10 @@
                         <?php 
                          $customer_id = get_current_user_id();
                         ?>
+                    <p>
+                        This is where we will deliver your receipt <br/>
+                        <small><span>(*)</span> denotes required fields </small>
+                    </p>
                         <div class="row form-group">
                             <div class="col-sm-4">
                                 <label>Title: <span>(*)</span></label>

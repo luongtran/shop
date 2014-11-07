@@ -44,13 +44,15 @@ if ( $products->have_posts() ) : ?>
                  <div class="viewport">
 
                     <?php woocommerce_product_loop_start_for_related(); ?>
-
-                            <?php while ( $products->have_posts() ) : $products->the_post(); ?>
-
-                                    <?php// wc_get_template_part( 'content', 'product' ); ?>
+                            <?php 
+                            $productIds = array();
+                            while ( $products->have_posts() ) : $products->the_post(); ?>
                                     <?php wc_get_template( 'related-product.php' ); ?>
 
-                            <?php endwhile; // end of the loop. ?>
+                            <?php
+                            endwhile; // end of the loop.
+                           // print_r($productIds);
+                            ?>
                     <?php woocommerce_product_loop_end(); ?>
                  </div>
                 <?php if($totalRelateProduct>=4):?>
@@ -73,5 +75,6 @@ wp_reset_postdata();
             $('#related-products').tinycarousel({axis   : "x"});
         </script>
     <?php }
+    if($totalRelateProduct>=4)
     add_action('thematic_after','ext_product_slider');
     ?>

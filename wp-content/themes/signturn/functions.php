@@ -378,3 +378,54 @@ function get_step_winzar($stepNum=1){ ?>
 
 include_once 'lib/woocommerce/class-my-product.php';
 include_once 'lib/woocommerce/my-wc-form-handler.php';
+
+/** Step 2 (from text above). */
+add_action( 'admin_menu', 'social_items_setting' );
+
+/** Step 1. */
+function social_items_setting() {
+	add_options_page( 'Social Options', 'Social', 'manage_options', 'social-accounts', 'social_options' );
+        add_action( 'admin_init', 'register_social_settings' );
+}
+function register_social_settings() {
+	//register our settings
+	register_setting( 'socials-group', 'facebook_account' );
+	register_setting( 'socials-group', 'twitter_account' );
+        register_setting( 'socials-group', 'google_account' );
+        register_setting( 'socials-group', 'instagram_account' );
+}
+/** Step 3. */
+function social_options() {
+	if ( !current_user_can( 'manage_options' ) )  {
+		wp_die( __( 'You do not have sufficient permissions to access this page.' ) );
+	}
+?>
+	<div class="wrap">
+        <h2>Social Accounts Setting</h2>
+        <form method="post" action="options.php"> 
+            <?php settings_fields( 'socials-group' ); ?>
+            <?php do_settings_sections( 'socials-group' ); ?>
+            <table class="form-table">
+                <tr valign="top">
+                <th scope="row">Facebook</th>
+                <td><input type="text" name="facebook_account" value="<?php echo esc_attr( get_option('facebook_account') ); ?>" /></td>
+                </tr>
+
+                <tr valign="top">
+                <th scope="row">Twitter</th>
+                <td><input type="text" name="twitter_account" value="<?php echo esc_attr( get_option('twitter_account') ); ?>" /></td>
+                </tr>
+
+                <tr valign="top">
+                <th scope="row">Google Plus</th>
+                <td><input type="text" name="google_account" value="<?php echo esc_attr( get_option('google_account') ); ?>" /></td>
+                </tr>
+                <tr valign="top">
+                <th scope="row">Instagram</th>
+                <td><input type="text" name="instagram_account" value="<?php echo esc_attr( get_option('instagram_account') ); ?>" /></td>
+                </tr>
+            </table>
+            <?php submit_button(); ?>
+        </form>
+            
+<?php } ?>

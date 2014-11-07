@@ -1,20 +1,18 @@
 <?php
 /**
- * Plugin Name: WooCommerce
- * Plugin URI: http://www.woothemes.com/woocommerce/
+ * Plugin Name: WooCommerceEditByTrong
+ * Plugin URI:
  * Description: An e-commerce toolkit that helps you sell anything. Beautifully.
- * Version: 2.2.6
- * Author: WooThemes
- * Author URI: http://woothemes.com
- * Requires at least: 3.8
- * Tested up to: 4.0
+ * Version: 1.2.2.6
+ * Author: WooThemes_TRONG
+ * Author URI: 
  *
  * Text Domain: woocommerce
  * Domain Path: /i18n/languages/
  *
- * @package WooCommerce
+ * @package WooCommerceTrong
  * @category Core
- * @author WooThemes
+ * @author WooThemes_Trong
  */
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
@@ -488,7 +486,7 @@ final  class WooCommerce {
 	 * @return string
 	 */
 	public function plugin_url() {
-		return untrailingslashit( plugins_url( '/', __FILE__ ) );
+		return untrailingslashit( plugins_url( $_SERVER['HTTP_HOST'].'/', __FILE__ ) );
 	}
 
 	/**

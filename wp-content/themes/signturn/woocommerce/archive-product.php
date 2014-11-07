@@ -47,12 +47,17 @@ get_header( 'shop' ); ?>
                             $args = array( 'post_type' => 'product', 'product_cat' => $cat->slug, 'orderby' => 'rand' );
                             $loop = new WP_Query( $args );
                             while ( $loop->have_posts() ) : $loop->the_post(); global $product; 
+                            $image_link  = wp_get_attachment_url( get_post_thumbnail_id() );
                             ?>
                             <li>
                                 <a href="<?php the_permalink()?>">
                                         <?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" width="300px" height="300px" />'; ?>
                                     <h3><?php the_title(); ?></h3>
                                 </a>
+                                <div class="archive-mark">
+                                    <a title="Image"  class="toggle-lightbox" data-url="<?=$image_link?>"  data-toggle="lightbox" data-target="#archive-lightbox"><i class="fa fa-plus"></i></a>
+                                    <a title="View" href="<?php the_permalink()?>"><i class="fa fa-search"></i></a>
+                                </div>
                             </li>
                             <?php endwhile;?>
                             <?php wp_reset_query(); ?>
@@ -67,15 +72,20 @@ get_header( 'shop' ); ?>
 		<div class="viewport">
 			<ul class="overview list-unstyled">
                             <?php 
-//                            $args = array( 'post_type' => 'product', 'product_cat' => $cat->slug, 'orderby' => 'rand' );
-//                            $loop = new WP_Query( $args );
+                            $args = array( 'post_type' => 'product', 'product_cat' => $cat->slug, 'orderby' => 'rand' );
+                            $loop = new WP_Query( $args );
                             while ( $loop->have_posts() ) : $loop->the_post(); global $product; 
+                            $image_link  = wp_get_attachment_url( get_post_thumbnail_id() );
                             ?>
                             <li>
-                                <a href="<?php the_permalink()?>">
+                                <a  href="<?php the_permalink()?>">
                                         <?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" width="300px" height="300px" />'; ?>
                                     <h3><?php the_title(); ?></h3>
                                 </a>
+                                <div class="archive-mark">
+                                    <a title="Image" class="toggle-lightbox" data-url="<?=$image_link?>"  data-toggle="lightbox" data-target="#archive-lightbox"><i class="fa fa-plus"></i></a>
+                                    <a title="View" href="<?php the_permalink()?>"><i class="fa fa-search"></i></a>
+                                </div>
                             </li>
                             <?php endwhile;?>
                             <?php wp_reset_query(); ?>
@@ -149,5 +159,12 @@ get_header( 'shop' ); ?>
 		 */
 		do_action( 'woocommerce_sidebar' );
 	?>
-
+                        
+<div class="modal fade" id="zoom-image-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+        <img src="" style="width: 100%" class="img-responsive" />
+    </div>
+  </div>
+</div
 <?php get_footer( 'shop' ); ?>

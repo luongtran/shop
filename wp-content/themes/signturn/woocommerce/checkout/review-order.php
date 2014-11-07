@@ -103,9 +103,9 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
                     </div>
                 </div>
             </div>
-             <div class="col-sm-12" id="personalised">
+             <div class="col-sm-6 col-sm-offset-6" id="personalised" >
                  <h3>Send with a personalised message ?</h3>
-                 <textarea name="order_comments" class="form-control"></textarea>
+                 <textarea name="order_comments" class="form-control" style="border: 1px solid #a89340; border-radius: 0;"></textarea>
              </div>
              <div class="col-sm-12 aligncenter">
                  <div class="form-row place-order" style="text-align: center">
