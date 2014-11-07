@@ -183,14 +183,19 @@ body,h1,h2,h3,h4,h5,html {
         left: -588px;
     }
 }
-body {
-    background-color:#000;
+body.home #site-content {
+    background-color:#000 !important;
+    background-image:none;
+}
+
+body #site-content {
+    background-color:#000 !important;
     background-image: url("../images/bg.jpg");
     background-repeat: repeat-x, repeat;
     background-size: cover;
     width: 100%;
-    overflow-x: hidden;
 }
+
 body.loading {
     background-image:none;
     background-color: rgba(255, 255, 255, 0.85) !important;
@@ -881,7 +886,7 @@ form label.error {
 #product-cat-description h1 {
  font-family: "TrajanPro-Regular";
  font-size: 26px;
- color: #A5933F;
+ color: #a7923e;
 }
 #product-cat-description p {
  color: #DDD;
@@ -942,7 +947,7 @@ form label.error {
 
 body.term-floral #product-cat-description {
  position: absolute;
- top: 500px;
+ bottom: 170px !important;
  right: 350px;
  width: 450px;
 }
@@ -967,10 +972,10 @@ body.term-floral #product-cat-description {
     position: absolute;
     width: 80px;
     height: 80px;
-    border: 8px solid #000;
+    border: 4px solid #A7923F;
     border-right-color: transparent;
     border-radius: 50%;
-    box-shadow: 0 0 25px 2px #eee;
+    box-shadow: 0 0 15px 2px #eee;
     z-index: 9998;
     left: 0;
     top:0;
@@ -1269,7 +1274,7 @@ body.term-floral #product-cat-description {
 }
 #primary-menu-items h4 {
     font-size: 26px;
-    color:#a38c3c;
+    color:#A7923F;
 }
 #primary-menu-items h5 {
     font-family: "TrajanPro-Regular";
@@ -1301,6 +1306,9 @@ body.term-floral #product-cat-description {
     color:#636262;
     text-transform: uppercase;
     padding: 10px 15px
+}
+.world-of-signature li a:hover, #collection-list li a:hover {
+    color:#A7923F;
 }
 #primary-menu-items {
 background: #fff;
@@ -1339,19 +1347,20 @@ padding-top: 5px;
 #primary-menu .toggle-list {
     position: absolute;
     right:0;
-    top:-30px;
+    top:-25px;
 }
 #primary-menu .toggle-list li{
-    border-bottom: 5px solid transparent;
-    padding-bottom:5px;
+    border-bottom: 3px solid transparent;
+    padding:0 0 2px;
+    margin: 0 5px;
 }
 #primary-menu .toggle-list li.active,#primary-menu .toggle-list li.actived{
-    border-color:#928036
+    border-color:#a7923e;
 }
 #primary-menu .toggle-list li a {
     font-size: 14px;
-    color:#fff;
-    padding: 0px 10px;
+    color:#CFCFCF;
+    padding: 0px;
     text-transform: uppercase
 }
 .collection-des {
@@ -1444,9 +1453,9 @@ html * .ls-container img, body * .ls-container img, #ls-global * .ls-container i
     border: 1px solid rgb(217, 207, 172);
     color: rgb(97, 97, 97);
     position:absolute;
-    right: 55px;
+    right: 60px;
     top: 35px;
-    z-index: 99999;
+    z-index: 9999999;
     padding:15px;
     text-align: center;
     display: none;
@@ -1634,9 +1643,37 @@ body #header-cart  .site-btn{
 li.world-of-signature ,li.news{
     padding-bottom: 25px !important;
 }
+
+@media(max-width:2200px){
+    body.term-women #product-cat-description{
+        bottom: 105px !important;
+    }
+    body.term-oriental-woods #product-cat-description{
+        top: 105px !important;
+    }
+    body.term-fresh #product-cat-description{
+        top: 90px !important;
+    }
+    #slideshow-content-4 h2 {
+        font-size: 24px;    
+    }
+    #slideshow-content-4 h1 {
+        font-size: 28px;
+    }
+}
+
 @media(max-width:1400px){
     #product-cat-description {
         right:250px !important;
+    }
+    body.term-women #product-cat-description{
+        bottom: 115px !important;
+    }
+    body.term-floral #product-cat-description {
+         bottom: 115px !important;
+    }
+    body.term-fresh #product-cat-description{
+        top: 75px !important;
     }
 }
 @media(max-width:1355px){
@@ -1650,6 +1687,19 @@ li.world-of-signature ,li.news{
     #list-product-of-cat {
         height: 450px;
     } 
+    body.term-women #product-cat-description{
+        bottom: 75px !important;
+    }
+    body.term-floral #product-cat-description {
+         bottom: 80px !important;
+    }
+    body.term-oriental-woods #product-cat-description{
+        top: 55px !important;
+        margin-right: 15px !important;
+    }
+    body.term-fresh #product-cat-description{
+        top: 65px !important;
+    }
     
 }
 @media(max-width:1160px){
@@ -1663,13 +1713,38 @@ li.world-of-signature ,li.news{
         width:400px !important;
         bottom:150px !important;
     }
+    body.term-women #product-cat-description {
+        bottom: 40px !important;
+    }
+     body.term-women #product-cat-description h1{
+        font-size: 22px;
+    }
+    body.term-fresh #product-cat-description{
+        top: 60px !important;
+    }
 }
 @media(max-width:991px){
     html * .ls-container img, body * .ls-container img, #ls-global * .ls-container img {
         width:auto !important;
-        
+
     }
-    
+    body.term-women #product-cat-description {
+        bottom: 175px !important;
+    }
+    body.term-women #product-cat-description h1, body.term-floral #product-cat-description h1, body.term-oriental-woods #product-cat-description h1{
+        font-size: 20px;
+    }
+    body.term-floral #product-cat-description {
+         bottom: 183px !important;
+         width: 391px !important;
+    }
+    body.term-oriental-woods #product-cat-description{
+        top: 35px !important;
+        width: 362px !important;
+    }
+    body.term-fresh #product-cat-description{
+        top: 55px !important;
+    }
     #related-products {
         width: 100%;
     }
@@ -1724,10 +1799,8 @@ li.world-of-signature ,li.news{
     #page-loader {
         left:47%;
     }
-    
     #product-cat-description {
-        right: 50px !important;
-       
+        right: 40px !important;
         width:365px !important;
     }
     #shipping-data:before {
@@ -1752,6 +1825,9 @@ li.world-of-signature ,li.news{
 @media (max-width: 980px) and (min-width: 768px){
     .ls-v5 .ls-nav-prev, .ls-v5 .ls-nav-next{
         top:33%;
+    }
+    #footer h3 {
+    font-size: 10px;
     }
 }
 @media (max-width: 837px) {
@@ -1811,7 +1887,11 @@ li.world-of-signature ,li.news{
         margin-bottom:6px;
     }
     #primary-menu .toggle-list {
-        text-align: center
+        text-align: center;
+        width: 100%;
+    }
+    body.term-oriental-woods #product-cat-description p {
+        display: none;
     }
 }
 @media (max-width:769px) and (min-width:520px){
@@ -1819,28 +1899,62 @@ li.world-of-signature ,li.news{
         width:33.3333%;
         float:left
     }
+    
+
 }
 @media (max-width:767px) and (min-width:610px){
     #header .header-right {
         min-height: 60px;
     }
     #primary-menu .toggle-list {
-        top: -30px;
+        top: -24px;
+        text-align: center;
+        width: 100%;
       }
       .ls-v5 .ls-nav-prev, .ls-v5 .ls-nav-next{
         top:25%;
     }
+    
 }
 @media (max-width:750px) and (min-width:641px){
     #product-cat-description {
-        right:10px !important;
-        width:350px !important;
+        right:15px !important;
+        width:330px !important;
     }
+    #product-cat-description h1 {
+        font-size: 20px;
+    }
+    body.term-floral #product-cat-description {
+        bottom: 170px !important;
+        right: 10px !important;
+        width: 340px !important;
+    }
+    body.term-oriental-woods #product-cat-description{
+        top: 55px !important;
+    }
+    body.term-fresh #product-cat-description{
+        top: 55px !important;
+    }
+    #slideshow-content-4  {
+        text-align: center;
+        position: absolute;
+        bottom: 46px !important;
+    }
+    #slideshow-content-4 h2 {
+        font-size: 20px;
+    }
+    #slideshow-content-4 h1 {
+        font-size: 18px;
+    }
+    
    
 }
 @media(max-width:680px){
     .woocommerce-breadcrumb {
         margin-top:15px !important;
+    }
+    #widthlove {
+        right: 0px;
     }
 }
 @media(max-width:640px){
@@ -1865,6 +1979,13 @@ li.world-of-signature ,li.news{
         font-size: 17px;
         background:#000;
     }
+    body.term-women #product-cat-description h1, body.term-floral #product-cat-description h1, body.term-oriental-woods #product-cat-description h1 , body.term-fresh #product-cat-description h1  {
+        font-size: 14px;
+    }
+
+    body.term-oriental-woods #product-cat-description h1 {
+        color: #a7923e !important;
+    }
     #product-cat-description p {
         display: none
     }
@@ -1874,7 +1995,7 @@ li.world-of-signature ,li.news{
     }
     #product-cat-description h1 {
         margin: 0;
-        font-size: 12px;
+        font-size: 14px;
     }
     #product-cat-description {
         top:10px;
@@ -1887,6 +2008,21 @@ li.world-of-signature ,li.news{
 @media (max-width:609px) and (min-width:481px) {
     .ls-v5 .ls-nav-prev, .ls-v5 .ls-nav-next{
         top:130px;
+    }
+    #slideshow-content-4  {
+        text-align: center;
+        position: absolute;
+        bottom: 46px !important;
+        right: 0px !important;
+    }
+    #slideshow-content-4 h1 {
+        font-size: 16px;
+    }
+    #slideshow-content-4 h2 {
+        font-size: 18px;
+    }
+    #header-cart {
+        width: 100%;
     }
 }
 @media(max-width:480px){
@@ -1940,10 +2076,85 @@ li.world-of-signature ,li.news{
     #collection-list-img li {
         width:50%;
     }
+
+    #slideshow-content-4  {
+        width: 200px;
+        text-align: center;
+        position: absolute;
+        bottom: 26px !important;
+    }
+    #slideshow-content-4 h1 {
+        font-size: 14px;
+    }
+    #slideshow-content-4 h2 {
+        font-size: 16px;
+    }
+    #header-cart {
+        width: 100%;
+    }
+    
 }
 @media (max-width: 430px) and (min-width: 300px){
     #slider2 {
         width:300px;
         margin:auto;
     }
+    #slideshow-content-4  {
+        width: 200px;
+        text-align: center;
+        position: absolute;
+        bottom: 26px !important;
+        right: 10px !important;
+    }
+    #slideshow-content-4 h1 {
+        font-size: 14px;
+    }
+    #slideshow-content-4 h2 {
+        font-size: 15px;
+    }
+    #header-cart {
+        width: 100%;
+    }
+
+
 }
+
+/************  ADD BY MUHAMMAD **************/
+
+
+.woocommerce-error {
+    background: none;
+    color: #666;
+    border: 2px solid #A7923F;
+    border-radius: 0px;
+    margin-bottom: 20px;
+    padding: 15px;
+    list-style: none;
+    font-size: 15px;
+}
+
+
+.site-content-contact-us p {
+    line-height: 22px;
+}
+
+/******  Categories *******/
+
+body.term-women #product-cat-description h1 {
+    color: #f7cd9b;
+}
+body.term-floral #product-cat-description h1 {
+    color: #a08148;
+}
+body.term-oriental-woods #product-cat-description h1 {
+    color: #2a160d;
+}
+
+
+
+/******  Homepage *******/
+
+div.slideshow-content #slideshow-content-4  {
+    width: 400px !important; 
+}
+
