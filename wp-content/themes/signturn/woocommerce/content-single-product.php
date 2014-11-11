@@ -146,10 +146,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
             <div id="customer-service-tab" class='single-meta'>
                 <p><label>Customer service</label> <a id="" href="javascript::void(0)"><i class="fa fa-minus"></i></a></p>
                 <div class='content'>
-                    <p>Need some help with your order ?</p>
-                    <p>Contact us today</p>
-                    <p>Email: sales@signaturefragrances.co.uk</p>
-                    <p>Contact : 0207 127 9592</p>
+                    <p>Need some help with your order ?<br>
+                    Contact us today<br>
+                    Email: sales@signaturefragrances.co.uk<br>
+                    Contact : 0207 127 9592</p>
                 </div>
             </div>
           </div><!-- .summary -->

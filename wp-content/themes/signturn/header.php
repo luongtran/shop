@@ -284,7 +284,7 @@
                         </form>
                     </div>
                     <?php endif?>
-                <div class="col-sm-4">
+                <div class="col-sm-4 news-postings">
                     <h4>Our News</h4>
                     <ul class="" style="padding-left: 0;">
                     <?php  query_posts( array ( 'category_name' => 'news', 'posts_per_page' => 3 ) ); ?>
@@ -299,7 +299,7 @@
                         wp_reset_query();
                     ?>
                     </ul>
-                    <p style="font-weight: bold"><a href="<?=get_category_link(get_cat_ID('news'))?>">See all story</a></p>
+                    <p style="font-weight: bold"><a href="<?=get_category_link(get_cat_ID('news'))?>">All news items</a></p>
                 </div>
                 <?php  query_posts( array ( 'category_name' => 'news', 'posts_per_page' => 1 ) );
                     while(have_posts()) :the_post();

@@ -35,7 +35,7 @@ thematic_abovecontent();
         </form>
     </div>
     <?php endif?>
-    <p style="font-size:18px;margin-bottom: 25px;">Click to discover what's new this month</p>
+    <p class="discover_text">Click to discover what's new this month</p>
     <div class="row news-items">
         <div class="col-md-3  news-item month" id="news-item-month">
             <div id="news-item-month-content">
