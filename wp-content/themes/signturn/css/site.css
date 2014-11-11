@@ -48,6 +48,9 @@ a:focus {
     margin-top: 20px;
     margin-bottom: 20px
 }
+.floatleft {
+    float:left;
+}
 body,h1,h2,h3,h4,h5,html {
     font-family: "MyriadPro", sans-serif;
     color: #4c4c4c;
@@ -230,7 +233,7 @@ body.single-product {
     top:10px;
     left: 30px;
 }
-.page-cart h1 {
+.page-cart h1,.page-id-16 h1 {
     font-size: 1.1em;
     background: #000;
     padding:11px 25px;
@@ -435,7 +438,6 @@ body #main-content div.product h1.product_title {
     font-family: "TrajanPro-Regular";
     color: #a7933e;
     font-size: 18.72px;
-    margin-top:40px
 }
 div[id*="product"] a.woocommerce-main-image img{
     border: 3px solid #aaa;
@@ -448,7 +450,7 @@ div[id*="product"] a.woocommerce-main-image img{
     font-size: 1.1em;
     color: #4c4c4c
 }
-body #main-content div[id*="product"] .single_add_to_cart_button,.site-btn {
+body #main-content div[id*="product"] .single_add_to_cart_button,.site-btn,.site-btn-2 {
     background: #a7923e !important;
     border-radius: 0 !important;
     padding: 6px 10px !important;
@@ -457,6 +459,10 @@ body #main-content div[id*="product"] .single_add_to_cart_button,.site-btn {
     border-color: #928036 !important;
     text-shadow: none !important;
     font-weight: normal !important;
+}
+.site-btn-2 {
+    background:#444 !important;
+    border-color: #333 !important;
 }
 .site-btn.small {
      padding: 5px 10px 4px 10px !important;
@@ -520,6 +526,7 @@ body #main-content div[id*="product"] .single_add_to_cart_button,.site-btn {
 }
 #related-products .related-product img {
     width: auto !important;
+    height: 85px !important;
 }
 #related-products .related-product {
     width: 85px !important;
@@ -533,6 +540,7 @@ form label.error {
 }
 #related-products .related-product{
     margin-right: 10px !important;
+    margin: 5px 0 0;
 }
 #related-products .related-product h3 {
     min-height: 30px;
@@ -642,7 +650,7 @@ form label.error {
     padding-top: 30px;
     text-align: center
 }
-#checkout-account,#checkout-delivery{
+#checkout-account,#checkout-delivery,.page-id-16 .page.type-page{
     border-top: 21px solid #525252;
     border-bottom: 21px solid #525252;
     margin-bottom: 30px;
@@ -671,13 +679,14 @@ form label.error {
 #checkout-account,#checkout-delivery {
     font-size: 13px
 }
-#checkout-account h2,#checkout-delivery h2 {
+#checkout-account h2,#checkout-delivery h2,.page-id-16 h2 {
     font-family: "TrajanPro-Regular";
     font-size: 16px;
     color: #A89340;
     margin-top: 0px;
     margin-bottom: 35px;
 }
+
 #checkout-account input[type="text"],
 #checkout-account input[type="email"],
 #checkout-account input[type="password"],
@@ -685,7 +694,8 @@ form label.error {
 #checkout-delivery input[type="email"],
 #checkout-delivery input[type="password"],
 #checkout-delivery select,
-#checkout-delivery textarea ,#checkout-login textarea 
+#checkout-delivery textarea ,#checkout-login textarea,
+.site-input
 {
     border:1px solid #A89340;
     border-radius: 0;
@@ -699,15 +709,15 @@ form label.error {
 }
 #checkout-create-account,#checkout-login,
 #checkout-delivery-builling,#checkout-delivery-delivery,
-#checkout-shipping,#checkout-payment{
+#checkout-shipping,#checkout-payment,#my-account-register,#my-account-login{
     padding: 0px 30px 30px 30px;
     margin: 15px;
 }
-#checkout-create-account,#checkout-delivery-builling,#checkout-shipping {
+#checkout-create-account,#checkout-delivery-builling,#checkout-shipping,#my-account-register {
     border-right: 1px solid #d5d5d5;
     margin-right: 0;
 }
-#checkout-login,#checkout-delivery-delivery,#checkout-payment {
+#checkout-login,#checkout-delivery-delivery,#checkout-payment,#my-account-login{
     border-left: 1px solid #d5d5d5;
     margin-left: 0;
 }
@@ -906,6 +916,7 @@ form label.error {
 #list-product-of-cat ul li img {
     width: 110px !important;
     border:1px solid #808082;
+    height: auto !important;
 }
 #list-product-of-cat ul li h3 {
     margin: 0;
@@ -1587,6 +1598,45 @@ body #header-cart  .site-btn{
 }
 .wpcf7-validation-errors {
     display:none
+}
+/* FORGET ACCOUNT PAGE*/
+.page-id-16  .page.type-page{
+    padding:35px 0px !important;
+}
+.page-id-16 h2 {
+    margin-bottom: 15px;
+}
+#product-image img {
+    max-width: 100%;
+    height: auto !important;
+}
+#single-product-quantity-wrapper {
+    display: inline-block;
+    margin-right:10px;
+}
+#single-product-quantity-wrapper {
+    height: 30px;
+    border-radius: 0;
+}
+#my-account-register,#my-account-login {
+    position: relative;
+    min-height: 330px;
+}
+#customer_login .wp-social-login-widget {
+    position: absolute;
+    bottom: 0;
+}
+#my-account-register .wp-social-login-connect-with:before{
+    content:"Register using your social account:"
+}
+#my-account-login .wp-social-login-connect-with:before{
+    content:"Sign in using your social account:"
+}
+#customer_login form label {
+    font-weight: normal
+}
+.lost_password a {
+    color:#a89340
 }
 /** FOR SLIDER **/
 @media(max-width:767px){

@@ -13,8 +13,10 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <?php wc_print_notices(); ?>
-
-<form method="post" class="lost_reset_password">
+<h2>Forgotten Password</h2>
+<div class="row">
+    <div class="col-sm-6">
+        <form method="post" class="lost_reset_password ">
 
 	<?php if( 'lost_password' == $args['form'] ) : ?>
 
@@ -46,3 +48,5 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<?php wp_nonce_field( $args['form'] ); ?>
 
 </form>
+    </div>
+</div>

@@ -126,12 +126,22 @@ function setLeftCarWinzar(){
         $('#booking-winzar').parent().find('h1').removeAttr('style');
     }
 }
+function setLeftForgotPassH1(){
+    var w = $(window).width();
+    if(w<=480){
+       var h1Width = $('.page-id-16 h1').width()+60;
+       $('.page-id-16 h1').css('left',((w-h1Width)/2)+"px");
+    }else{
+        $('.page-id-16 h1').removeAttr('style');
+    }
+}
 $(document).ready(function(){
     bindTinyCarouselY();
     bindTinyCarouselX();
     setSliderSize();
     bindPositionSlider();
     setLeftCarWinzar();
+    setLeftForgotPassH1();
 });
 var resizeId;
 $( window ).resize(function() {
@@ -139,6 +149,7 @@ $( window ).resize(function() {
      bindTinyCarouselY();
      bindTinyCarouselX();
      setLeftCarWinzar();
+     setLeftForgotPassH1();
      clearTimeout(resizeId);
      resizeId = setTimeout(doneResizing, 500);
 });
@@ -153,5 +164,6 @@ $( window ).on( "orientationchange", function( event ) {
      bindTinyCarouselY();
      bindTinyCarouselX();
      setLeftCarWinzar();
+     setLeftForgotPassH1();
 });
 

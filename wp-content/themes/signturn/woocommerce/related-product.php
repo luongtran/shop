@@ -11,7 +11,7 @@
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
-global $product, $woocommerce_loop;
+global $product, $woocommerce_loop,$post;
 
 // Store loop count we're currently on
 if ( empty( $woocommerce_loop['loop'] ) )
@@ -48,7 +48,8 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 			 * @hooked woocommerce_show_product_loop_sale_flash - 10
 			 * @hooked woocommerce_template_loop_product_thumbnail - 10
 			 */
-			do_action( 'woocommerce_before_shop_loop_item_title' );
+			//do_action( 'woocommerce_before_shop_loop_item_title' );
+                 echo get_the_post_thumbnail( $post->ID, 'shop_catalog' );
 		?>
 
 		<h3><?php the_title(); ?></h3>

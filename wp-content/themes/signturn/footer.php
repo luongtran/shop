@@ -54,7 +54,7 @@
                     
                       <div class="col-sm-6 col-xs-12">
                           <h3>HOW IT ALL BEGAN</h3>
-                          <p>Signature Fragrances™ was founded by two friends from London. Having an passion for all things perfumed, the pair decided to actualize their strong passion for perfumery by introducing a diverse range of fragrances that everybody would enjoy. </p>
+                          <p>Signature Fragrances provides a contemporary approach to perfume with a variety of fragrances suited to passionate and enthusiastic Signateers. With tenaciously pure, pungent and purposeful scents, Signature Fragrances aims to restore individuality and personal identity through the sense of smell.</p>
                       </div>
                   </div>
               </div>

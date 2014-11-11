@@ -55,6 +55,12 @@
     <span>Be Unique</span>
     <div class="loader"></div>
 </div>
+<div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
 <?php thematic_before();?>
 <?php thematic_aboveheader(); ?>
 <header id="header" >

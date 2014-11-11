@@ -90,8 +90,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
     <li id="customer-service-popver">Customer Service</li>
 </ul>
   
-<div itemscope itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
-
+<div itemscope  itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <div class="row">
 	<?php
 		/**
 		 * woocommerce_before_single_product_summary hook
@@ -101,8 +101,8 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		 */
 		do_action( 'woocommerce_before_single_product_summary' );
 	?>
-
-	<div class="summary entry-summary">
+        
+	<div class="summary entry-summary col-sm-6">
 
 		<?php
 			/**
@@ -133,7 +133,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	?>
 
 	<meta itemprop="url" content="<?php the_permalink(); ?>" />
-
+    </div>
 </div><!-- #product-<?php the_ID(); ?> -->
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>
