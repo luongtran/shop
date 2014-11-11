@@ -35,7 +35,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
        </ul>
     </div>
     <div class="row">
-        <?php comments_template() ?>
+        <?php //comments_template() ?>
     </div>
     <div class="row" >
         <div id="new-reviews" data-toggle="collapse" data-target="#data-new-reviews">
@@ -84,11 +84,6 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
     <p>Email: sales@signaturefragrances.co.uk</p>
     <p>Contact : 0207 127 9592</p>
 </div>
-<ul class="list-unstyled list-inline" id="product-addon-infor" >
-    <li id="shipping-popover">Shipping</li>
-    <li id="review-popover">Reviews</li>
-    <li id="customer-service-popver">Customer Service</li>
-</ul>
   
 <div itemscope  itemtype="<?php echo woocommerce_get_product_schema(); ?>" id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="row">
@@ -99,9 +94,27 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		 * @hooked woocommerce_show_product_sale_flash - 10
 		 * @hooked woocommerce_show_product_images - 20
 		 */
-		do_action( 'woocommerce_before_single_product_summary' );
+		//do_action( 'woocommerce_before_single_product_summary' );
 	?>
-        
+        <div class='col-sm-6'>
+            <?php
+                 wc_get_template( 'single-product/sale-flash.php' );
+                 wc_get_template( 'single-product/product-image.php' );
+            ?>
+            <div class='clearfix'>
+                <?php 
+                    
+                 $args = array(
+			'posts_per_page' => 2,
+			'columns' => 2,
+			'orderby' => 'rand'
+		);
+
+	 	echo woocommerce_related_products( apply_filters( 'woocommerce_output_related_products_args', $args ) );
+            
+                ?>
+            </div>
+        </div>
 	<div class="summary entry-summary col-sm-6">
 
 		<?php
@@ -118,8 +131,28 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 			 */
 			do_action( 'woocommerce_single_product_summary' );
 		?>
-
-	</div><!-- .summary -->
+            <div id='shipping-data-tab' class='single-meta'>
+                <p><label>Shipping info</label> <a href="javascript::void(0)"><i class="fa fa-minus"></i></a></p>
+                <div class='content'>
+                    UK – Next working Day £7.50 – For orders placed before 1:00pm.<br>
+                    UK Standard £4.95 – 2-5 Working Days<br>
+                    Europe £20 – 5 -6 Working Days<br>
+                    USA £20 – 6 -10 Working Days<br>
+                    Rest of the world £30 – 10 -12 Working Days<br>
+                    (FREE on UK standard orders over £50)<br>
+                    Orders are processed for delivery on Working days only (Monday - Friday)<br>
+                </div>
+            </div>
+            <div id="customer-service-tab" class='single-meta'>
+                <p><label>Customer service</label> <a id="" href="javascript::void(0)"><i class="fa fa-minus"></i></a></p>
+                <div class='content'>
+                    <p>Need some help with your order ?</p>
+                    <p>Contact us today</p>
+                    <p>Email: sales@signaturefragrances.co.uk</p>
+                    <p>Contact : 0207 127 9592</p>
+                </div>
+            </div>
+          </div><!-- .summary -->
 
 	<?php
 		/**
@@ -129,10 +162,49 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 		 * @hooked woocommerce_upsell_display - 15
 		 * @hooked woocommerce_output_related_products - 20
 		 */
-		do_action( 'woocommerce_after_single_product_summary' );
+		//do_action( 'woocommerce_after_single_product_summary' );
 	?>
 
 	<meta itemprop="url" content="<?php the_permalink(); ?>" />
+    </div>
+    <div class='clearfix'>
+        <div class='single-meta' id="customer-reviews-tab" >
+            <p><label>Reviews</label>  <a id="" href="javascript::void(0)"><i class="fa fa-minus"></i></a></p>
+            <div class="row content">
+                <div class='col-sm-4'>
+                    <div class="row" >
+                        <div id="data-new-reviews">
+                            <form class="jqueryvalidate" novalidate method="POST" action="<?php echo get_home_url() ?>/wp-comments-post.php"  role="form">
+                                <input id="comment_post_ID" type="hidden" value="<?php echo $product->id;  ?>" name="comment_post_ID">
+                                <input id="comment_parent" type="hidden" value="0" name="comment_parent">
+                                <?php if(!is_user_logged_in()): ?>
+                                <div class="form-group row">
+                                    <span class="col-xs-12 no-padding-left">Name(*):</span>
+                                    <input class="form-control" type="text" required="required" size="30" value="" name="author" id="comment-author">               
+                                </div>
+                                <div class="form-group row">
+                                    <span class="col-xs-12 no-padding-left">Email(*):</span>
+                                    <input class="form-control" type="email" required="required" size="30" value="" name="email" id="comment-email">
+                                </div>
+                                <?php endif;?>
+                                <div class="form-group row" style="margin-bottom: 0;padding-bottom: 0">
+                                  <div class="col-xs-2 no-padding-left">Rating:</div>  <div class=" col-xs-6 reviews-item-raty"></div>
+                                </div>
+                                <div class="form-group row">
+                                    <span class="col-xs-12 no-padding-left">Comments(*):</span>
+                                    <textarea required="required" style="border-radius: 0" name="comment" id="" class="form-control" cols="30" rows="5"></textarea>
+                                </div>
+                                <button name="submit" type="submit" style="border-radius: 0" class="btn">Submit review</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-sm-8'>
+                    <?php comments_template() ?>
+                </div>
+            </div>
+           
+        </div>
     </div>
 </div><!-- #product-<?php the_ID(); ?> -->
 

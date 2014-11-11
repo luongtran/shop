@@ -44,7 +44,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                             <label for="reg_email"><?php _e( 'Email address', 'woocommerce' ); ?> <span class="required">*</span></label>
                         </div>
                         <div class="col-sm-8">
-                            <input type="email" class="input-text site-input form-control" name="email" id="reg_email" value="<?php if ( ! empty( $_POST['email'] ) ) echo esc_attr( $_POST['email'] ); ?>" />
+                            <input type="email" class="input-text site-input form-control" name="email" id="reg_email" value="<?php if ( ! empty( $_POST['email'] ) ) echo esc_attr( $_POST['email'] );if(!empty($_GET['email'])) echo esc_attr($_GET['email']) ?>" />
                         </div>
                     </div>
                     <?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>

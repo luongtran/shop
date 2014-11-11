@@ -66,7 +66,8 @@ class WC_Frontend_Scripts {
 		$lightbox_en          = get_option( 'woocommerce_enable_lightbox' ) == 'yes' ? true : false;
 		$ajax_cart_en         = get_option( 'woocommerce_enable_ajax_add_to_cart' ) == 'yes' ? true : false;
 		$assets_path          = str_replace( array( 'http:', 'https:' ), '', WC()->plugin_url() ) . '/assets/';
-		$frontend_script_path = $assets_path . 'js/frontend/';
+		//die($assets_path);
+                $frontend_script_path = $assets_path . 'js/frontend/';
 
 		// Register any scripts for later use, or used as dependencies
 		wp_register_script( 'chosen', $assets_path . 'js/chosen/chosen.jquery' . $suffix . '.js', array( 'jquery' ), '1.0.0', true );

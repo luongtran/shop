@@ -428,4 +428,29 @@ function social_options() {
             <?php submit_button(); ?>
         </form>
             
-<?php } ?>
+<?php }
+
+function can_show_newsletter_form(){
+    if(is_user_logged_in()){
+        global $wpdb;
+        $table_name = $wpdb->prefix."newsletter";
+        if($wpdb->get_var("SHOW TABLES LIKE '$table_name'") != $table_name) {
+            return false;
+        }else{
+            $email = get_current_user()->user_email;
+            $check = $wpdb->get_var("SELECT COUNT(*) FROM $table_name WHERE email = '$email' AND status='C' ");
+            return $check ? false : true;
+        }
+    }
+    return true;
+}
+function pagination_comment_script() { ?>
+<script>
+    $('#comments').pajinate({
+            show_first_last:false,
+            nav_label_prev : '<',
+            nav_label_next : '>',
+            items_per_page: 2
+    });
+</script>
+<?php };

@@ -253,11 +253,44 @@
                 </div>
             </li>
             <li class="news row">
+                <?php if(can_show_newsletter_form()): ?>
+                        <script type="text/javascript">
+                        //<![CDATA[
+                        if (typeof newsletter_check !== "function") {
+                        window.newsletter_check = function (f) {
+                            var re = /^([a-zA-Z0-9_\.\-\+])+\@(([a-zA-Z0-9\-]{1,})+\.)+([a-zA-Z0-9]{2,})+$/;
+                            if (!re.test(f.elements["ne"].value)) {
+                                alert("The email is not correct");
+                                return false;
+                            }
+                            if (f.elements["ny"] && !f.elements["ny"].checked) {
+                                alert("You must accept the privacy statement");
+                                return false;
+                            }
+                            return true;
+                        }
+                        }
+                        //]]>
+                        </script>
+                    <div id="what-new">
+                        <form class="row" method="post" action="<?php echo site_url()?>/wp-content/plugins/newsletter/do/subscribe.php" onsubmit="return newsletter_check(this)">
+                            <div class="col-sm-5 label-what-new" style="line-height: 35px">What New Is Signature Word</div>
+                            <div class="col-sm-5">
+                                <input  name="ne" size="30" required type="email" placeholder="enter your email address" class="site-input form-control" />
+                            </div>
+                            <div class="col-sm-2 no-padding">
+                                <input style="line-height: 35px" class="newsletter-submit btn-text no-padding" type="submit" value="Sign Up Now"/>
+                            </div>
+                        </form>
+                    </div>
+                    <?php endif?>
                 <div class="col-sm-4">
                     <h4>Our News</h4>
                     <ul class="" style="padding-left: 0;">
                     <?php  query_posts( array ( 'category_name' => 'news', 'posts_per_page' => 3 ) ); ?>
-                    <?php while (have_posts()) : the_post(); ?>
+                    <?php 
+                        while (have_posts()) : the_post(); 
+                    ?>
                         <li>
                             <a href="<?php the_permalink() ?>"><?php the_title() ?></a>
                             <p><?php the_time('F j, Y'); ?></p>
@@ -266,14 +299,20 @@
                         wp_reset_query();
                     ?>
                     </ul>
-                    <p><a href="<?=get_category_link(get_cat_ID('news'))?>">See all story</a></p>
+                    <p style="font-weight: bold"><a href="<?=get_category_link(get_cat_ID('news'))?>">See all story</a></p>
+                </div>
+                <?php  query_posts( array ( 'category_name' => 'news', 'posts_per_page' => 1 ) );
+                    while(have_posts()) :the_post();
+                ?>
+                <div class="col-sm-4">
+                    <?php echo get_the_post_thumbnail(get_the_ID(), 'full',['class'=>'img-responsive news-img']);   ?>
                 </div>
                 <div class="col-sm-4">
-                    <img class="img-responsive" src="<?php echo TEMPLATE_URL?>/images/menu/news-menu.jpg" alt="News" />
+                    <?php the_content();?>
                 </div>
-                <div class="col-sm-4">
-                    The men’s collection Communicates the example of the modern man; clean, ambitious, and outgoing who knows that smelling good is part of feeling good. Popular combinations, which yield strong parts of the human sensory experience, can be found in these ‘very’ masculine fragrances
-                </div>
+                <?php endwhile; 
+                    wp_reset_query();
+                ?>
             </li>
             <li class="world-of-signature">
                 <h4>Signature World</h4>

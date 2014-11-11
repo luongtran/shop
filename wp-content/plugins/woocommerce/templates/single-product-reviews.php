@@ -17,7 +17,7 @@ if ( ! comments_open() )
 <div id="reviews">
 	<div id="comments">
 		<?php if ( have_comments() ) : ?>
-			<ul class="commentlist content list-unstyled">
+			<ul class="commentlist content list-unstyled row">
 				<?php wp_list_comments( apply_filters( 'woocommerce_product_review_list_args', array( 'callback' => 'woocommerce_comments' ) ) ); ?>
 			</ul>
             <?php if($product->get_rating_count()>=5):?>
@@ -84,16 +84,6 @@ if ( ! comments_open() )
 </div>
 <?php 
 if ( have_comments() ) :
-function pagination_comment_script() { ?>
-<script>
-    $('#comments').pajinate({
-            show_first_last:false,
-            nav_label_prev : '<',
-            nav_label_next : '>',
-            items_per_page: 5
-    });
-</script>
-<?php };
 add_action('thematic_after','pagination_comment_script');
 endif;
 ?>

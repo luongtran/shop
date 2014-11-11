@@ -484,7 +484,7 @@ body #main-content div[id*="product"] .single_add_to_cart_button,.site-btn,.site
     padding: 20px 40px 0px 37px;
     background: #ededed;
     position: relative;
-    width: 48%;
+    width: 100%;
     
     margin-bottom: 30px;
     overflow: hidden
@@ -527,6 +527,7 @@ body #main-content div[id*="product"] .single_add_to_cart_button,.site-btn,.site
 #related-products .related-product img {
     width: auto !important;
     height: 85px !important;
+    margin-bottom:0px !important;
 }
 #related-products .related-product {
     width: 85px !important;
@@ -1429,9 +1430,34 @@ html * .ls-container img, body * .ls-container img, #ls-global * .ls-container i
     border:none;
     box-shadow: none;
     top:3px;
-    left:3px;
+    left:18px;
     border-radius: 0;
     text-indent: -9999px;
+}
+.woocommerce #content div.product #reviews .comment img, .woocommerce div.product #reviews .comment img, .woocommerce-page #content div.product #reviews .comment img, .woocommerce-page div.product #reviews .comment img {
+    float:none
+}
+.single-meta label {
+    font-weight:normal
+}
+.single-meta p a  {
+    font-size:.8em;
+    color:#A7923E
+}
+.single-meta {
+    padding: 10px 25px;
+    border-top: 1px solid #CCB872;
+    border-bottom: 1px solid #CCB872;
+    margin-bottom:30px;
+}
+.single-meta .content {
+    display:none
+}
+.single-meta p:first-child  {
+    margin-bottom:0
+}
+.single-meta p:first-child  a {
+    float:right
 }
 .slideshow-content {
     width: 300px;
@@ -1586,12 +1612,21 @@ body #header-cart  .site-btn{
     background:rgba(255,255,255,.5);
 }
 .archive-mark a {
-    display:inline-block;
-    margin:0px 5px;
-    padding:5px;
-    background:#000;
-    color:#fff;
-    font-size:.9em;
+    display:inline-block !important;
+    margin:0px !important;
+    padding:5px !important;
+    background:#000 !important;
+    color:#fff !important;
+    font-size:.9em !important;
+}
+.tooltip.in {
+    z-index: 99999 !important;
+    padding:2px !important;;
+    
+}
+.tooltip-inner {
+    padding:0 2px !important;;
+    font-size:11px  !important;
 }
 .toggle-lightbox {
     cursor: pointer
@@ -1614,8 +1649,9 @@ body #header-cart  .site-btn{
     display: inline-block;
     margin-right:10px;
 }
-#single-product-quantity-wrapper {
+#single-product-quantity-wrapper input {
     height: 30px;
+    border:1px solid #A89340;
     border-radius: 0;
 }
 #my-account-register,#my-account-login {
@@ -1637,6 +1673,49 @@ body #header-cart  .site-btn{
 }
 .lost_password a {
     color:#a89340
+}
+/** NEWS **/
+.news-item {
+    padding-bottom: 30px;
+    cursor: pointer;
+}
+
+.news-detail {
+    padding-top:0px;
+    padding-bottom:70px
+}
+.news-detail-content h2 {
+    font-size: 22px;
+    margin-top:50px
+}
+#news-item-month-content {
+    background:#E51937
+}
+.btn-text {
+    border:none;
+    background:none;
+    color:#fff;
+    font-family: "TrajanPro-Regular" !important;
+    font-size: 16px;
+}
+.label-what-new {
+    color:#fff;
+    font-family: "TrajanPro-Regular" !important;
+    font-size: 16px;
+}
+#what-new {
+    background:#a7923f;
+    padding:10px 20px;
+    margin-bottom:25px;
+}
+.archive-mark .added_to_cart.wc-forward {
+    bottom: 4px;
+    left: 15px;
+    line-height: 100%;
+    position: absolute;
+}
+.woocommerce a.button.added:before, .woocommerce button.button.added:before, .woocommerce input.button.added:before, .woocommerce #respond input#submit.added:before, .woocommerce #content input.button.added:before, .woocommerce-page a.button.added:before, .woocommerce-page button.button.added:before, .woocommerce-page input.button.added:before, .woocommerce-page #respond input#submit.added:before, .woocommerce-page #content input.button.added:before {
+    content:"";
 }
 /** FOR SLIDER **/
 @media(max-width:767px){
@@ -1774,6 +1853,9 @@ li.world-of-signature ,li.news{
     }
 }
 @media(max-width:991px){
+    .news-detail-content h2 {
+        margin-top:0px;
+    }
     html * .ls-container img, body * .ls-container img, #ls-global * .ls-container img {
         width:auto !important;
 
@@ -1893,6 +1975,9 @@ li.world-of-signature ,li.news{
     }
 }
 @media (max-width: 767px) {
+    .toggle-news-detail {
+        top:0 !important;
+    }
     #primary-menu .toggle-list {
         top:-63px;
     }

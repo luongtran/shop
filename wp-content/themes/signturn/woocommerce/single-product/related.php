@@ -34,7 +34,6 @@ $totalRelateProduct = $products->post_count;
 $woocommerce_loop['columns'] = $columns;
 
 if ( $products->have_posts() ) : ?>
-<div style="clear: both"></div>
 	<div class="related products" >
             <h2><?php _e( 'Why Not Try...', 'woocommerce' ); ?></h2>
             <div id="related-products">

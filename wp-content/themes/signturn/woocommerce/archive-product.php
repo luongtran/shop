@@ -43,7 +43,8 @@ get_header( 'shop' ); ?>
 		<a class="buttons prev" href="#"><i class="fa fa-angle-down fa-2x"></i></a>
 		<div class="viewport">
 			<ul class="overview">
-                            <?php 
+                            <?php
+                            $catLink = get_term_link($cat->slug,'product_cat');
                             $args = array( 'post_type' => 'product', 'product_cat' => $cat->slug, 'orderby' => 'rand' );
                             $loop = new WP_Query( $args );
                             while ( $loop->have_posts() ) : $loop->the_post(); global $product; 
@@ -52,10 +53,13 @@ get_header( 'shop' ); ?>
                             <li>
                                 <a href="<?php the_permalink()?>">
                                         <?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" width="300px" height="300px" />'; ?>
-                                    <h3><?php the_title(); ?></h3>
+                                    <h3><?php the_title();
+                                    ?>
+                                   
+                                    </h3>
                                 </a>
                                 <div class="archive-mark">
-                                    <a title="Image"  class="toggle-lightbox" data-url="<?=$image_link?>"  data-toggle="lightbox" data-target="#archive-lightbox"><i class="fa fa-plus"></i></a>
+                                    <a title="Add to Bag (<?php echo strip_tags($product->get_price_html()) ?>)" data-quantity="1" data-product_sku="" data-product_id="<?php echo $loop->post->ID ?>" rel="nofollow" href="<?php echo $catLink?>/?add-to-cart=<?php echo $loop->post->ID ?>"  class="button add_to_cart_button product_type_simple" ><i class="fa fa-plus"></i></a>
                                     <a title="View" href="<?php the_permalink()?>"><i class="fa fa-search"></i></a>
                                 </div>
                             </li>
@@ -82,8 +86,9 @@ get_header( 'shop' ); ?>
                                         <?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" width="300px" height="300px" />'; ?>
                                     <h3><?php the_title(); ?></h3>
                                 </a>
+                                
                                 <div class="archive-mark">
-                                    <a title="Image" class="toggle-lightbox" data-url="<?=$image_link?>"  data-toggle="lightbox" data-target="#archive-lightbox"><i class="fa fa-plus"></i></a>
+                                    <a title="Add to Bag (<?php echo strip_tags($product->get_price_html()) ?>)" data-quantity="1" data-product_sku="" data-product_id="<?php echo $loop->post->ID ?>" rel="nofollow" href="<?php echo $catLink?>/?add-to-cart=<?php echo $loop->post->ID ?>"  class="button add_to_cart_button product_type_simple" ><i class="fa fa-plus"></i></a>
                                     <a title="View" href="<?php the_permalink()?>"><i class="fa fa-search"></i></a>
                                 </div>
                             </li>

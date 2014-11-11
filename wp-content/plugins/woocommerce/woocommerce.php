@@ -486,7 +486,7 @@ final  class WooCommerce {
 	 * @return string
 	 */
 	public function plugin_url() {
-		return untrailingslashit( plugins_url( $_SERVER['HTTP_HOST'].'/', __FILE__ ) );
+		return site_url().'/wp-content/plugins/woocommerce/';
 	}
 
 	/**
