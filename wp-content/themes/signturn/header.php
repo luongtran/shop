@@ -75,7 +75,8 @@
                     <div class="top-menu text-right">
                         <ul class="list-unstyled list-inline">
                             <li id="withlove-toggle"><a href="">With Love</a>
-                                <div id="widthlove" class="arrowbox col-xs-12 col-sm-6 col-md-6">
+                                <div id="widthlove" class=" header-box arrowbox col-xs-12 col-sm-6 col-md-6">
+                                    <a class="header-box-close" href="javascript:void(0)">&Chi;</a>
                                     <div class="widthlove-row">
                                         <h4>Samples</h4>
                                         <p>Choose a complementary same with each order</p>
@@ -284,7 +285,7 @@
                         </form>
                     </div>
                     <?php endif?>
-                <div class="col-sm-4">
+                <div class="col-sm-4 news-postings">
                     <h4>Our News</h4>
                     <ul class="" style="padding-left: 0;">
                     <?php  query_posts( array ( 'category_name' => 'news', 'posts_per_page' => 3 ) ); ?>
@@ -299,7 +300,7 @@
                         wp_reset_query();
                     ?>
                     </ul>
-                    <p style="font-weight: bold"><a href="<?=get_category_link(get_cat_ID('news'))?>">See all story</a></p>
+                    <p style="font-weight: bold"><a href="<?=get_category_link(get_cat_ID('news'))?>">All news items</a></p>
                 </div>
                 <?php  query_posts( array ( 'category_name' => 'news', 'posts_per_page' => 1 ) );
                     while(have_posts()) :the_post();

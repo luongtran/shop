@@ -29,7 +29,7 @@ jQuery( function( $ ) {
 
 			// Ajax action
 			$.post( wc_add_to_cart_params.ajax_url, data, function( response ) {
-
+                                alert('fefef');
 				if ( ! response )
 					return;
 
@@ -101,6 +101,7 @@ jQuery( function( $ ) {
 					// Trigger event so themes can refresh other areas
 					$( 'body' ).trigger( 'added_to_cart', [ fragments, cart_hash ] );
 				}
+                                window.location = response.product_url;
 			});
 
 			return false;

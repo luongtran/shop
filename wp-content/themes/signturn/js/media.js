@@ -24,8 +24,8 @@ function showTinyButtons(){
 }
 function bindTinyCarouselY(){
      var w = $(window).width();
-     console.log($("#slider1 .overview li").size());
-     console.log(w);
+     //console.log($("#slider1 .overview li").size());
+     //console.log(w);
      if(w>1200){
          if($("#slider1 .overview li").size()>4){
              showTinyButtons();
@@ -44,6 +44,8 @@ function bindTinyCarouselY(){
 }
 function bindTinyCarouselX(){
     var w = $(window).width();
+    console.clear();
+    console.log(w);
     var limit = -1;
     if(w<=430){
         limit = 2;
@@ -59,12 +61,16 @@ function bindTinyCarouselX(){
         limit = 7;
     }else if(w<=991){
         limit = 7;
+    }else{
+        limit = 7;
     }
+    console.log('limit is ' + limit + " size is "+ $("#slider2 .overview li").not('.mirrored').size());
     if($("#slider2 .overview li").not('.mirrored').size()>limit){
+        showTinyButtons();
         $('#slider2').tinycarousel({axis   : "x"});
     }else{
         hideTinyButtons(); 
-        console.log("phai lon hon "+limit+ " - moi co "+$("#slider2 .overview li").size());
+        //console.log("phai lon hon "+limit+ " - moi co "+$("#slider2 .overview li").size());
     }
 }
 function bindPositionSlider(){
@@ -99,7 +105,7 @@ function setSliderSize(){
     
     var w = $(window).width();
     var h = (w*824/1600)+'px';
-     console.log('height image '+h);
+     //console.log('height image '+h);
     $('img.ls-l').css('width',w+'px');
 
     $('img.ls-l').css('height',h);
@@ -120,7 +126,7 @@ function setLeftCarWinzar(){
     var w = $(window).width();
     if(w<=480){
        var winzarWidth = $('#booking-winzar').parent().find('h1').width()+60;
-       console.log("window :" + w + "size "+winzarWidth);
+       //console.log("window :" + w + "size "+winzarWidth);
        $('#booking-winzar').parent().find('h1').css('left',((w-winzarWidth)/2)+"px");
     }else{
         $('#booking-winzar').parent().find('h1').removeAttr('style');
@@ -139,6 +145,7 @@ function setNewsMonthHeight(){
     var h = $('.news-item').not('#news-item-month').height()-1;
     $('#news-item-month-content').height(h);
 }
+setNewsMonthHeight();
 $(document).ready(function(){
     bindTinyCarouselY();
     bindTinyCarouselX();
@@ -185,4 +192,7 @@ $('.single-meta p').on('click',function(){
             $(this).parents('.single-meta').find('p a i').removeClass('fa-plus');
         }
     });
+});
+$('.header-box-close').on('click',function(){
+    $(this).parents('.header-box').fadeOut();
 });

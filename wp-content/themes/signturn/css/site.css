@@ -925,7 +925,7 @@ form label.error {
     font-family: "TrajanPro-Regular";
     color: #fff;
     text-align: center;
-    padding-top: 8px;
+    padding-top: 5px;
 }
 #slider1 {   overflow:hidden; position: relative;   padding-top: 25px; }
 #slider1 .viewport {height: 534px;overflow: hidden; position: relative;width: 110px }
@@ -1257,7 +1257,7 @@ body.term-floral #product-cat-description {
     padding-bottom: 0
 }
 #site-content.site-content-packaging {
-    background: url('../images/bottle-image.jpg') bottom right no-repeat;
+    background: url('../images/bag.jpg') bottom right no-repeat;
     background-color: #000
 }
 #package-page-content {
@@ -1717,6 +1717,20 @@ body #header-cart  .site-btn{
 .woocommerce a.button.added:before, .woocommerce button.button.added:before, .woocommerce input.button.added:before, .woocommerce #respond input#submit.added:before, .woocommerce #content input.button.added:before, .woocommerce-page a.button.added:before, .woocommerce-page button.button.added:before, .woocommerce-page input.button.added:before, .woocommerce-page #respond input#submit.added:before, .woocommerce-page #content input.button.added:before {
     content:"";
 }
+#product-category-container .tooltip.in,#product-category-container .tooltip-inner {
+    z-index:9999 !important;
+}
+.header-box-close {
+    position:absolute;
+    right:0px;
+    top:5px;
+    color:#444 !important;
+    border:none !important;
+    text-decoration: none;
+}
+#header-cart .header-box-close {
+    right:5px;
+}
 /** FOR SLIDER **/
 @media(max-width:767px){
     .slideshow-content h1 {
@@ -1954,6 +1968,12 @@ li.world-of-signature ,li.news{
          margin-left:8px;
     }
 }
+@media (max-width: 991px) and (min-width: 768px){
+    .news-items .news-item {
+        width:50%;
+        float:left
+    }
+}
 @media (max-width: 980px) and (min-width: 768px){
     .ls-v5 .ls-nav-prev, .ls-v5 .ls-nav-next{
         top:33%;
@@ -1961,6 +1981,7 @@ li.world-of-signature ,li.news{
     #footer h3 {
     font-size: 10px;
     }
+    
 }
 @media (max-width: 837px) {
     #checkout-delivery-builling,

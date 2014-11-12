@@ -5,7 +5,8 @@
         return $term['name'];
     }
 ?>
-<div id="header-cart">
+<div id="header-cart" class="header-box">
+    <a class="header-box-close" href="javascript:void(0)">&Chi;</a>
     <h3>Your Bag</h3>
     <?php 
         if(count($cart)):
