@@ -330,7 +330,7 @@ body.single-product {
     font-size: 13px !important;
     font-family: "TrajanPro-Regular";
     color: #fff;
-    padding: 8px 12px 6px 12px;
+    padding:6px 12px 3px 12px;
     background: #525252;
 }
 #main-content .shop_table.cart .cart_item .product-name a {
@@ -597,10 +597,10 @@ form label.error {
     line-height: 150%;
 }
 #td-cart-sub-total {
-    border-top:22px solid #555; 
-    border-bottom:22px solid #555; 
-    line-height: 40px;
-    text-align: right
+    border-top: 2px solid #555;
+    border-bottom: 2px solid #555;
+    line-height: 15px;
+    text-align: right;
 }
 #cart-btn-actions {
     display: inline-block;
@@ -618,7 +618,7 @@ form label.error {
 }
 #complementary-gift {
     font-size: 18px;
-    font-style: italic;
+  
     color: #444;
     display: inline-block;
     margin-right: 25px;
@@ -661,7 +661,7 @@ form label.error {
     margin-bottom: 30px;
     margin-top: 38px;
     padding-bottom: 20px;
-    padding-top: 30px;
+    padding-top: 15px;
 }
 #checkout-delivery {
     padding-bottom: 30px;
@@ -689,7 +689,7 @@ form label.error {
     font-size: 16px;
     color: #A89340;
     margin-top: 0px;
-    margin-bottom: 35px;
+    margin-bottom: 15px;
 }
 
 #checkout-account input[type="text"],
@@ -754,7 +754,7 @@ form label.error {
     line-height: 120%
 }
 #checkout-delivery-builling ,#checkout-delivery-delivery {
-    height: 700px
+    height: 670px
 }
 #checkout-shipping,#checkout-payment {
     height: 415px;
@@ -855,7 +855,7 @@ form label.error {
     background-position: -68px 2px;
 }
 #checkout-delivery-builling select[name="billing_title"],#checkout-delivery-delivery select[name="shipping_title"] {
-    width: 70px
+    width: 55px
 }
 #header .menu {
     width: 100%;;
@@ -1272,7 +1272,7 @@ body.term-floral #product-cat-description {
 #site-content.site-content-our-bottles {
     background: url('../images/bottle-image-bg.jpg') top right no-repeat;
     background-color: #000;
-    background-size:cover;
+    background-size:initial !important;
 }
 #site-content.site-content-our-bottles #main-content {
     background-color: transparent;
@@ -1288,10 +1288,17 @@ body.term-floral #product-cat-description {
     font-family: "TrajanPro-Regular";
     font-size: 22px;
     color: #A5933F;
+    margin-bottom: 15px;
 }
 .site-content-our-bottles h2 {
     font-size: 22px;
 }
+/*
+h1.entry-title {
+    font-size: 29px;
+    margin-top: 0px;
+}
+*/
 #package-page-content div img {
     border : 1px solid #ccc;
     margin-bottom: 25px;
@@ -1554,11 +1561,11 @@ html * .ls-container img, body * .ls-container img, #ls-global * .ls-container i
 .widthlove-row h4 {
     color: #a7933e;
     font-family: "TrajanPro-Regular";
-    font-size: 18.72px;
+    font-size: 14px;
     margin-bottom:0;
 }
 .form-control[type="text"],.form-control[type="email"],.form-control[type="password"],select.form-control {
-    height:30px;
+    height:27px;
 }
 p.discover_text  {
     font-size:18px;
@@ -1571,11 +1578,9 @@ p.discover_text  {
     z-index: 999999;
     top: 35px;
     right: 0px;
-    width: 375px;
+    width: 358px;
     border: 2px solid rgb(217, 207, 172);
     display: none;
-    
-    
 }
 #header-cart  img {
     width: 100%;
@@ -1607,11 +1612,12 @@ body #header-cart  .site-btn{
 #header-cart h3{
     text-align: center;
     margin-top:0;
+    font-size: 16px;
 }
 #header-cart h4 a,#header-cart .amount {
     color: #000 !important;
     font-family: "TrajanPro-Regular";
-    font-size: 14px;
+    font-size: 12px;
     margin-bottom:0;
 }
 #header-cart .amount {
@@ -1621,6 +1627,9 @@ body #header-cart  .site-btn{
 #header-cart a {
     color:#444
 }
+#header-cart .table {
+    margin-bottom: 0px;
+}
 .woocommerce .woocommerce-message:before, .woocommerce-page .woocommerce-message:before {
     background:none;
     content:"";
@@ -1628,10 +1637,11 @@ body #header-cart  .site-btn{
 .woocommerce .woocommerce-message {
     border-radius: 0 !important;
     box-shadow:0;
-    border:3px solid #a7933d !important;
-    padding:15px 25px !important;
+    border:1px solid #a7933d !important;
+    padding:5px 25px 5px 10px!important;
     color:#444 !important;
-    font-size:14px  !important;
+    font-size:16px  !important;
+    line-height: 20px;
 }
 .button.wc-forward {
     background: none repeat scroll 0 0 #a7923e !important;
@@ -1640,8 +1650,9 @@ body #header-cart  .site-btn{
     color: #fff !important;
     font-family: "TrajanPro-Regular" !important;
     font-weight: normal !important;
-    padding: 5px 10px  4px 10px !important;
+    padding: 4px 5px  3px 5px !important;
     text-shadow: none !important;
+    font-size: 12px !important;
 }
 #slider1 .overview li,#slider2 .overview li {
     position:relative
@@ -1762,16 +1773,16 @@ margin-bottom: 30px;
 .label-what-new {
     color:#fff;
     font-family: "TrajanPro-Regular" !important;
-    font-size: 14px;
+    font-size: 13px;
 }
 #what-new .newsletter-submit  {
     font-family: "TrajanPro-Regular" !important;
-    font-size: 14px;
+    font-size: 13px;
 }
 #what-new {
     background:#a7923f;
-    padding:9px 20px 6px;
-    margin-bottom:25px;
+    padding:7px 20px 0;
+    margin-bottom:20px;
 }
 .archive-mark .added_to_cart.wc-forward {
     bottom: 4px;
@@ -1808,7 +1819,7 @@ margin-bottom: 30px;
         font-size:14px;
     }
     #what-new {
-        width: 95%;
+        width: 100%;
         margin: 0 auto;
     }
 
@@ -1887,6 +1898,13 @@ li.world-of-signature ,li.news{
     #slideshow-content-4 h1 {
         font-size: 28px;
     }
+    body.term-oud #product-cat-description{
+        bottom: 250px !important;
+        right: 190px;
+    }
+    body.page-id-137 # {
+
+    }
 }
 
 @media(max-width:1400px){
@@ -1902,6 +1920,12 @@ li.world-of-signature ,li.news{
     body.term-fresh #product-cat-description{
         top: 75px !important;
     }
+    body.term-oud #product-cat-description{
+        bottom: 250px !important;
+        right: 200px !important;
+        width: 390px;
+    }
+
 }
 @media(max-width:1355px){
     #product-cat-description {
@@ -1927,6 +1951,11 @@ li.world-of-signature ,li.news{
     body.term-fresh #product-cat-description{
         top: 65px !important;
     }
+    body.term-oud #product-cat-description{
+        bottom: 230px !important;
+        right: 205px !important;
+        width: 340px;
+    }
     
 }
 @media(max-width:1160px){
@@ -1948,6 +1977,15 @@ li.world-of-signature ,li.news{
     }
     body.term-fresh #product-cat-description{
         top: 60px !important;
+    }
+    body.term-oud #product-cat-description{
+        bottom: 200px !important;
+        right: 205px !important;
+        width: 295px !important;
+    }
+    body.term-oud #product-cat-description h1{
+        font-size: 22px;
+        color: #a7923e;
     }
 }
 @media(max-width:991px){
@@ -1981,20 +2019,28 @@ li.world-of-signature ,li.news{
     body.single-product #main-content {
     padding: 40px 77px;
     }
+    body.term-oud #product-cat-description{
+        bottom: 100px !important;
+    }
     body #main-content div.product h1.product_title {
     font-size: 17px;
     margin-bottom: 0px;
     }
-
+    body.term-oud #product-cat-description{
+        bottom: 300px !important;
+        right: 80px !important;
+        width: 350px !important;
+    }
+    body.term-oud #product-cat-description h1{
+        font-size: 22px;
+        color: #a7923e;
+    }
     #primary-menu-items h5 {
         font-size: 16px;
     }
-
     #primary-menu-items .collection-des {
         font-size: 12px;
     }
-
-
     #related-products {
         width: 100%;
     }
@@ -2072,12 +2118,12 @@ li.world-of-signature ,li.news{
          margin-left:8px;
     }
     #reviews ul li {
-    margin-bottom: 20px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    min-height: 120px;
-    width: 100%;
-    margin-left: 0px
+        margin-bottom: 20px;
+        padding: 15px;
+        border: 1px solid #ddd;
+        min-height: 120px;
+        width: 100%;
+        margin-left: 0px
     }
 }
 @media (max-width: 991px) and (min-width: 768px){
@@ -2087,6 +2133,15 @@ li.world-of-signature ,li.news{
     }
     .news-items .news-item img {
         width:100%
+    }
+    body.term-oud #product-cat-description{
+        bottom: 300px !important;
+        right: 40px !important;
+        width: 340px !important;
+    }
+    body.term-oud #product-cat-description h1{
+        font-size: 22px;
+        color: #a7923e;
     }
 }
 @media (max-width: 980px) and (min-width: 768px){
@@ -2167,7 +2222,7 @@ li.world-of-signature ,li.news{
         min-height: 300px;
     }
     #primary-menu .toggle-list li {
-        border-bottom-width:1px;
+        border-bottom-width:2px;
         margin-bottom:6px;
     }
     #primary-menu .toggle-list {
@@ -2179,6 +2234,18 @@ li.world-of-signature ,li.news{
     }
     .collection-des {
         min-height: 80px;
+    }
+    body.term-oud #product-cat-description{
+        bottom: 250px !important;
+        right: 40px !important;
+        width: 285px !important;
+    }
+    body.term-oud #product-cat-description h1{
+        font-size: 18px !important;
+        color: #a7923e;
+    }
+    #site-content.site-content-packaging {
+        background: none;
     }
     
 }
@@ -2242,8 +2309,6 @@ li.world-of-signature ,li.news{
     #slideshow-content-4 h1 {
         font-size: 18px;
     }
-    
-   
 }
 @media(max-width:680px){
     .woocommerce-breadcrumb {
@@ -2253,7 +2318,7 @@ li.world-of-signature ,li.news{
         right: 0px;
         width: 100%;
     }
-    #package-page-content h1 {
+    #package-page-content h1, #package-page-content h1, .site-content-our-bottles h1 {
     margin-top: 0;
     font-family: "TrajanPro-Regular";
     font-size: 16px;
@@ -2285,7 +2350,7 @@ li.world-of-signature ,li.news{
         font-size: 17px;
         background:#000;
     }
-    body.term-women #product-cat-description h1, body.term-floral #product-cat-description h1, body.term-oriental-woods #product-cat-description h1 , body.term-fresh #product-cat-description h1  {
+    body.term-women #product-cat-description h1, body.term-floral #product-cat-description h1, body.term-oriental-woods #product-cat-description h1 , body.term-fresh #product-cat-description h1, body.term-oud #product-cat-description h1  {
         font-size: 14px;
     }
 
@@ -2424,10 +2489,11 @@ li.world-of-signature ,li.news{
         font-size:14px;
         margin-top: 10px;
     }
+    
 }
 @media (max-width: 450px) {
    
-    #main-content .cart_item .product-thumbnail,th.product-thumbnail {
+        #main-content .cart_item .product-thumbnail,th.product-thumbnail {
             display:none !important
         }
         #main-content .shop_table.cart .cart_item .product-name a {
@@ -2471,7 +2537,11 @@ li.world-of-signature ,li.news{
     body.single-product #main-content {
     padding: 40px 45px;
     }
-
+    #what-new {
+    background: #a7923f;
+    padding: 0px 20px 0;
+    margin-bottom: 20px;
+    }
 
 }
 @media(max-width:390px){
@@ -2548,3 +2618,16 @@ li.comment .byuser {
 padding: 40px 50px;
 }
 
+body.woocommerce-account  table.order_details {
+    border: none;
+    margin: 0px -1px 24px 0px;
+    text-align: left;
+    width: 100%;
+    border-collapse: separate;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+}
+mark, .mark {
+    padding: .2em;
+    background-color: #DDD;
+}
