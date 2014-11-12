@@ -1,4 +1,3 @@
-
 <?php
     get_header();
 
@@ -17,7 +16,7 @@
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?> > 
 	                
 					<div class="entry-content row">
-                                            <div class="col-sm-4" id="package-page-content">
+                                            <div class="col-sm-6 col-md-4" id="package-page-content">
                                                 <h1><?php the_title() ?></h1>
                                                 <div>
                                                     <?php

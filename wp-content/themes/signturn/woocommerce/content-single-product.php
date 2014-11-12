@@ -170,6 +170,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
     <div class='clearfix'>
         <div class='single-meta' id="customer-reviews-tab" >
             <p><label>Reviews (<?php echo  wp_count_comments( $product->id)->approved; ?>)</label>  <a id="" href="javascript::void(0)"><i class="fa fa-minus"></i></a></p>
+
             <div class="row content">
                 <div class='col-sm-4'>
                     <div class="row" >

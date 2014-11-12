@@ -85,6 +85,9 @@ thematic_abovecontent();
         var index = $(this).index()+1;
         var nextIndex = 0;
         if($(window).width()<992){
+            nextIndex = (index%2)+1;
+        }
+        if($(window).width()<768){
             nextIndex = index;
         }else if(index>(total-(total%4))){
              nextIndex = total;
