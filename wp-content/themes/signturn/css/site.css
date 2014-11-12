@@ -1276,7 +1276,7 @@ body.term-floral #product-cat-description {
 #package-page-content h1 {
     margin-top:0;
     font-family: "TrajanPro-Regular";
-    font-size: 26px;
+    font-size: 22px;
     color: #A5933F;
 }
 #package-page-content div img {
@@ -2237,6 +2237,12 @@ li.world-of-signature ,li.news{
         right: 0px;
         width: 100%;
     }
+    #package-page-content h1 {
+    margin-top: 0;
+    font-family: "TrajanPro-Regular";
+    font-size: 16px;
+    color: #A5933F;
+    }
 }
 @media(max-width:640px){
    
@@ -2311,6 +2317,7 @@ li.world-of-signature ,li.news{
     .news-detail-img {
         margin-bottom: 15px;
     }
+    
 }
 @media(max-width:480px){
     .ls-v5 .ls-nav-prev, .ls-v5 .ls-nav-next{
@@ -2459,7 +2466,7 @@ body.term-oriental-woods #product-cat-description h1 {
     color: #2a160d;
 }
 
-body.category-news  {
+body.category-news #site-content {
     background-image: none;
     background-color: #fff !important;
 }
