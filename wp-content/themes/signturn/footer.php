@@ -9,24 +9,12 @@
                             <div class="row" id="footer-column-1">
                                 <div class="col-sm-4 ">
                                     <h3>SHOP</h3>
-                                    <ul class="list-unstyled">
-                                         <?php 
-                                            $forHimLink = get_term_link('for-men','product_cat'); //get_category_link(get_cat_ID('for-men'));
-                                            //die($forHimLink);
-                                            $forHerLink =  get_term_link('women','product_cat'); //get_category_link(get_cat_ID('women'));
-                                            $floralLink =  get_term_link('floral','product_cat'); //get_category_link(get_cat_ID('floral'));
-                                            $freshLink =  get_term_link('fresh','product_cat'); // get_category_link(get_cat_ID('fresh'));
-                                            $orientalWoodsLink = get_term_link('oriental-woods','product_cat'); // get_category_link(get_cat_ID('oriental-woods'));
-                                            $sweetLink = get_term_link('sweet','product_cat'); // get_category_link(get_cat_ID('sweet'));
-
+                                     <ul class="list-unstyled" >
+                                        <?php  foreach ($GLOBALS[ 'all_categories' ] as $key => $cat): 
                                         ?>
-                                        <li><a href="<?php echo $forHimLink?>">For him</a></li>
-                                        <li><a href="<?=$forHerLink?>">For her</a></li>
-                                        <li><a href="<?=$floralLink?>">Floral</a></li>
-                                        <li><a href="<?=$freshLink?>">Fresh</a></li>
-                                        <li><a href="<?=$orientalWoodsLink?>">Oriental woods</a></li>
-                                        <li><a href="<?=$sweetLink?>">Sweet</a></li>
-                                    </ul>
+                                          <li><a href="<?php echo get_term_link($cat->slug,'product_cat')?>"><?php echo $cat->name ?></a></li>
+                                        <?php endforeach;?>
+                                      </ul>
                                 </div>
                                 <div class="col-sm-4">
                                     <h3>CUSTOMER CARE</h3>
@@ -78,6 +66,7 @@
         <script type="text/javascript" src="<?=TEMPLATE_URL?>/js/jquery.validate.js"></script>
         <script type="text/javascript" src="<?=TEMPLATE_URL?>/js/wow/wow.min.js"></script>
         <script src="<?=TEMPLATE_URL?>/js/lightbox/prettify.js"></script>
+        <script src="<?=TEMPLATE_URL?>/js/responsive-tables.js"></script>
         <script type="text/javascript" src="<?=TEMPLATE_URL?>/js/lightbox/bootstrap-lightbox.min.js"></script>
         <script  type="text/javascript">
             function activeToggle(dom){
@@ -188,44 +177,37 @@
                 }
                  
             });
-            $( "#withlove-toggle" ).hover(
-                function() {
-                    $('#widthlove').fadeIn();
-                    console.log('show');
-                }
-//                , 
-//                function() {
-//                    $('#widthlove').slideUp(100);
-//                }
-            );
+            $( "#withlove-toggle > a" ).hover(function(){
+                 $('#widthlove').fadeIn();
+            });
         
          $.wait = function( callback, seconds){
             return window.setTimeout( callback, seconds * 1000 );
          };
-         $( "#withlove-toggle" ).mouseleave(function(){
-             // $('#widthlove').slideUp(100);
-             $.wait( function(){
-                 if (!$('#widthlove').is(':hover')) {
-                    $('#widthlove').fadeOut(100); 
-                 }
-             },1);
-         });
+//         $( "#withlove-toggle" ).mouseleave(function(){
+//             // $('#widthlove').slideUp(100);
+//             $.wait( function(){
+//                 if (!$('#widthlove').is(':hover')) {
+//                    $('#widthlove').fadeOut(100); 
+//                 }
+//             },1);
+//         });
          $.wait(function(){
              $('.woocommerce-message').fadeOut();
          },5);
-         $( "#cart-toggle" ).hover(
-                function() {
+         $( "#cart-toggle > a" ).hover(
+               function(){
                     $('#header-cart').fadeIn();
-                }
+               }
             );
-         $( "#cart-toggle" ).mouseleave(function(){
-             // $('#widthlove').slideUp(100);
-             $.wait( function(){
-                 if (!$('#header-cart').is(':hover')) {
-                    $('#header-cart').fadeOut()();
-                 }
-             },1);
-         });
+//         $( "#cart-toggle" ).mouseleave(function(){
+//             // $('#widthlove').slideUp(100);
+//             $.wait( function(){
+//                 if (!$('#header-cart').is(':hover')) {
+//                    $('#header-cart').fadeOut()();
+//                 }
+//             },1);
+//         });
          $('.toggle-lightbox').on('click',function(){
              $('#zoom-image-modal img').attr('src',$(this).data('url'));
              $('#zoom-image-modal').modal('show');

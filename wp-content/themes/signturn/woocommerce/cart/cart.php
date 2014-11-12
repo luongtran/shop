@@ -107,11 +107,9 @@ do_action( 'woocommerce_before_cart' ); ?>
                 </tr>
 		<tr>
                     <td colspan="4" class="actions " style="padding-right: 0">
-                        <div id="cart-btn-actions">
-                            <a href="<?php echo get_permalink( woocommerce_get_page_id( 'shop' ) ) ?>">Continue Shopping</a>
-                                  |   
-                            <input type="submit" id="cart-checkout-btn"  name="checkout_goto_gift" value="<?php _e( 'Proceed to Checkout', 'woocommerce' ); ?>" />
-                        </div>
+                        <a style="margin-right:10px;" class="site-btn btn small" href="<?php echo get_permalink( woocommerce_get_page_id( 'shop' ) ) ?>">Continue Shopping</a>
+                        <input class="btn site-btn small" type="submit" id="cart-checkout-btn"  name="checkout_goto_gift" value="<?php _e( 'Proceed to Checkout', 'woocommerce' ); ?>" />
+                        
                         <?php do_action( 'woocommerce_proceed_to_checkout' ); ?>
                         <?php wp_nonce_field( 'woocommerce-cart' ); ?>
                     </td>

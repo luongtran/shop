@@ -74,7 +74,8 @@
                 <div class="col-sm-8 header-right relative">
                     <div class="top-menu text-right">
                         <ul class="list-unstyled list-inline">
-                            <li id="withlove-toggle"><a href="">With Love</a>
+                            <li id="withlove-toggle">
+                                <a href="javascript:void(0)">With Love</a>
                                 <div id="widthlove" class=" header-box arrowbox col-xs-12 col-sm-6 col-md-6">
                                     <a class="header-box-close" href="javascript:void(0)">&Chi;</a>
                                     <div class="widthlove-row">
@@ -212,7 +213,9 @@
                             }
                       ?>
                         <li data-toggle=".<?php echo $cat->slug ?>"><a href="<?php echo get_term_link($cat->slug,'product_cat')?>"><?php echo $cat->name ?></a></li>
-                      <?php endforeach; ?>
+                      <?php endforeach;
+                        $GLOBALS[ 'all_categories' ] = $all_categories;
+                      ?>
                     </ul>
                     <?php
                             foreach ($all_categories  as  $term): 
@@ -238,9 +241,10 @@
                                     <?php 
                                         $thumbnail_id = get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true );
                                         $image = wp_get_attachment_url( $thumbnail_id );
-                                        if ( $image ):
+                                        $thumb = aq_resize( $image, 150,100, true );
+                                        if ( $thumb ):
                                     ?>
-                                    <img class="img-responsive" src="<?php echo $image?>" alt="<?php echo $term->name ?>" />
+                                    <img class="img-responsive" src="<?php echo $thumb?>" alt="<?php echo $term->name ?>" />
                                     <?php endif?>
                                     <p><?php echo $term->name ?> </p>
                                 </a>

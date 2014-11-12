@@ -17,7 +17,7 @@ exit;
 ?><?php
 include_once 'lib/const.php';
 include_once 'lib/vender/wp_bootstrap_navwalker.php';
-
+include_once 'lib/vender/aq_resizer.php';
 /**
  * Custom Child Theme Functions
  *

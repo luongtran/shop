@@ -305,6 +305,9 @@ body.single-product {
     width: 0;
     padding: 0;
 }
+#main-content .cart_item .product-thumbnail  {
+    display:table-cell !important;
+}
 #main-content .cart_item .product-thumbnail img {
     width: 90px;
     border:3px solid #aeaeae
@@ -611,9 +614,7 @@ form label.error {
     padding-right: 3px;
 }
 #cart-checkout-btn {
-    background: transparent;
-    border:none;
-    color: #fff
+   line-height:140%
 }
 #complementary-gift {
     font-size: 18px;
@@ -1268,16 +1269,28 @@ body.term-floral #product-cat-description {
     background: url('../images/bag.jpg') bottom right no-repeat;
     background-color: #000
 }
-#package-page-content {
+#site-content.site-content-our-bottles {
+    background: url('../images/bottle-image-bg.jpg') top right no-repeat;
+    background-color: #000;
+    background-size:cover;
+}
+#site-content.site-content-our-bottles #main-content {
+    background-color: transparent;
+    padding-bottom: 0
+}
+#package-page-content,#our-bottles-content{
     background:#fff;
     padding:25px;
     line-height: 150%
 }
-#package-page-content h1 {
+#package-page-content h1,.site-content-our-bottles h1 {
     margin-top:0;
     font-family: "TrajanPro-Regular";
     font-size: 22px;
     color: #A5933F;
+}
+.site-content-our-bottles h2 {
+    font-size: 22px;
 }
 #package-page-content div img {
     border : 1px solid #ccc;
@@ -2102,6 +2115,11 @@ li.world-of-signature ,li.news{
         margin-bottom: 15px;
     }
 }
+@media (max-width: 768px){
+    #main-content .cart_item .product-thumbnail,th.product-thumbnail {
+        display:table-cell !important
+    }
+} 
 @media (max-width: 767px) {
     .news-items .news-item img {
         width:100%
@@ -2169,8 +2187,6 @@ li.world-of-signature ,li.news{
         width:33.3333%;
         float:left
     }
-    
-
 }
 
 @media (max-width:769px) and (min-width:480px){
@@ -2242,6 +2258,9 @@ li.world-of-signature ,li.news{
     font-family: "TrajanPro-Regular";
     font-size: 16px;
     color: #A5933F;
+    }
+    .product-name p {
+        display:none;
     }
 }
 @media(max-width:640px){
@@ -2318,6 +2337,12 @@ li.world-of-signature ,li.news{
         margin-bottom: 15px;
     }
     
+}
+@media(max-width:555px) {
+    .site-content-cart #main-content {
+        padding-left:5px;
+        padding-right:5px
+    }
 }
 @media(max-width:480px){
     .ls-v5 .ls-nav-prev, .ls-v5 .ls-nav-next{
@@ -2400,7 +2425,23 @@ li.world-of-signature ,li.news{
         margin-top: 10px;
     }
 }
+@media (max-width: 450px) {
+   
+    #main-content .cart_item .product-thumbnail,th.product-thumbnail {
+            display:none !important
+        }
+        #main-content .shop_table.cart .cart_item .product-name a {
+            font-size:10px !important;
+        }
+        #main-content .shop_table.cart .cart_item .product-subtotal .amount, #main-content .shop_table.cart .cart_item .product-subtotal a.remove {
+            font-size:12px !important;
+        }
+        .shop_table.cart td,  .shop_table.cart th {
+            padding:10px 5px !important
+        }
+}
 @media (max-width: 430px) and (min-width: 300px){
+     
     #slider2 {
         width:300px;
         margin:auto;
@@ -2433,7 +2474,12 @@ li.world-of-signature ,li.news{
 
 
 }
-
+@media(max-width:390px){
+    #cart-checkout-btn {
+        width:auto !important;
+        margin-top:10px;
+    }
+}
 /************  ADD BY MUHAMMAD **************/
 
 
