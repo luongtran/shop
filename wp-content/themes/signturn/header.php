@@ -176,6 +176,24 @@
             <li class="collections row ">
                 <div class="col-sm-5">
                     <h4>Collections</h4>
+                    <?php
+                        $taxonomy     = 'product_cat';
+                        $show_count   = 0;      // 1 for yes, 0 for no
+                        $pad_counts   = 0;      // 1 for yes, 0 for no
+                        $hierarchical = 1;      // 1 for yes, 0 for no  
+                        $title        = '';  
+                        $empty        = true;
+                        $args = array(
+                          'taxonomy'     => $taxonomy,
+                          'orderby'      => $orderby,
+                          'show_count'   => $show_count,
+                          'pad_counts'   => $pad_counts,
+                          'hierarchical' => $hierarchical,
+                          'title_li'     => $title,
+                          'hide_empty'   => $empty
+                        );
+                      ?>
+                      <?php $all_categories = get_categories( $args ); ?>
                     <?php 
                         $forHimLink = get_term_link('for-men','product_cat'); //get_category_link(get_cat_ID('for-men'));
                         //die($forHimLink);
@@ -187,17 +205,17 @@
                         
                     ?>
                     <ul class="list-unstyled clearfix" id="collection-list" >
-                        <li data-toggle=".for-men"><a href="<?php echo $forHimLink?>">For him</a></li>
-                        <li data-toggle=".women"><a href="<?=$forHerLink?>">For her</a></li>
-                        <li data-toggle=".floral"><a href="<?=$floralLink?>">Floral</a></li>
-                        <li data-toggle=".fresh"><a href="<?=$freshLink?>">Fresh</a></li>
-                        <li data-toggle=".oriental-woods"><a href="<?=$orientalWoodsLink?>">Oriental woods</a></li>
-                        <li data-toggle=".sweet"><a href="<?=$sweetLink?>">Sweet</a></li>
+                      <?php  foreach ($all_categories as $key => $cat): 
+                           if($cat->slug==='gift'){
+                                unset($all_categories[$key]);
+                                continue;
+                            }
+                      ?>
+                        <li data-toggle=".<?php echo $cat->slug ?>"><a href="<?php echo get_term_link($cat->slug,'product_cat')?>"><?php echo $cat->name ?></a></li>
+                      <?php endforeach; ?>
                     </ul>
                     <?php
-                        $args = array( 'taxonomy' => 'product_cat' );
-                        $terms = get_terms('product_cat', $args);
-                            foreach ($terms as $term): 
+                            foreach ($all_categories  as  $term): 
                             $description = $term->description;
                             $tmpArr = explode(PHP_EOL,$description);
                             $title = '';
@@ -214,42 +232,20 @@
                 </div>
                 <div class="col-sm-7">
                     <ul class="list-unstyled clearfix" id="collection-list-img">
-                        <li  data-toggle=".for-men">
-                            <a href="<?=$forHimLink?>">
-                                <img class="img-responsive" src="<?php echo TEMPLATE_URL?>/images/menu/for_him.jpg" alt="For Him"/>
-                                <p>For Him</p>
-                            </a>
-                        </li>
-                        <li data-toggle=".women">
-                            <a href="<?=$forHerLink?>">
-                                <img class="img-responsive" src="<?php echo TEMPLATE_URL?>/images/menu/for_her.jpg" alt="For Her"/>
-                                <p>For Her</p>
-                            </a>
-                        </li>
-                        <li data-toggle=".floral">
-                            <a href="<?=$floralLink?>">
-                                <img class="img-responsive" src="<?php echo TEMPLATE_URL?>/images/menu/floral.jpg" alt="Floral"/>
-                                <p>Floral</p>
-                            </a>
-                        </li>
-                        <li data-toggle=".sweet">
-                            <a href="<?=$sweetLink?>">
-                                <img class="img-responsive" src="<?php echo TEMPLATE_URL?>/images/menu/sweet.jpg" alt="Sweet"/>
-                                <p>Sweet</p>
-                            </a>
-                        </li>
-                        <li data-toggle=".fresh">
-                            <a href="<?=$freshLink?>">
-                                <img class="img-responsive" src="<?php echo TEMPLATE_URL?>/images/menu/fresh.jpg" alt="Fresh"/>
-                                <p>Fresh</p>
-                            </a>
-                        </li>
-                        <li  data-toggle=".oriental-woods">
-                            <a href="<?=$orientalWoodsLink?>">
-                                <img class="img-responsive" src="<?php echo TEMPLATE_URL?>/images/menu/oriental_wood.jpg" alt="oriental wood"/>
-                                <p>Oriental Wood</p>
-                            </a>
-                        </li>
+                        <?php  foreach ($all_categories as $term): ?>
+                            <li  data-toggle=".<?php echo $term->slug ?>">
+                                <a href="<?php echo get_term_link($term->slug,'product_cat');?>">
+                                    <?php 
+                                        $thumbnail_id = get_woocommerce_term_meta( $term->term_id, 'thumbnail_id', true );
+                                        $image = wp_get_attachment_url( $thumbnail_id );
+                                        if ( $image ):
+                                    ?>
+                                    <img class="img-responsive" src="<?php echo $image?>" alt="<?php echo $term->name ?>" />
+                                    <?php endif?>
+                                    <p><?php echo $term->name ?> </p>
+                                </a>
+                            </li>
+                        <?php  endforeach;?>
                     </ul>
                 </div>
             </li>
