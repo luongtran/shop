@@ -173,7 +173,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
             <div class="row content">
                 <div class='col-sm-4'>
-                    <div class="row" >
+                    <div class="clearfix" >
                         <div id="data-new-reviews">
                             <form class="jqueryvalidate" novalidate method="POST" action="<?php echo get_home_url() ?>/wp-comments-post.php"  role="form">
                                 <input id="comment_post_ID" type="hidden" value="<?php echo $product->id;  ?>" name="comment_post_ID">
