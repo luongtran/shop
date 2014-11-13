@@ -490,4 +490,4 @@ function facebookLoginScript(){ ?>
    }(document, 'script', 'facebook-jssdk'));
 </script>
 <?php }
- add_action('thematic_aboveheader','facebookLoginScript');
+ //add_action('thematic_aboveheader','facebookLoginScript');
