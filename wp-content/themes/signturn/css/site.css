@@ -1730,6 +1730,16 @@ body #header-cart  .site-btn{
     position: absolute;
     bottom: 0;
 }
+#customer_login form {
+    border:none;
+    padding:0
+}
+#customer_login form .col-sm-4 {
+    padding-right:0;
+}
+#my-account-login .wp-social-login-widget {
+    bottom:-5px
+}
 #my-account-register .wp-social-login-connect-with:before{
     content:"Register using your social account:"
 }
@@ -2183,7 +2193,25 @@ li.world-of-signature ,li.news{
         display:table-cell !important
     }
 } 
+@media (min-width: 768px){
+    #customer_login > div {
+        width:50% !important;
+        
+    }
+    #customer_login > div > {
+        min-height: 400px
+    }
+}
 @media (max-width: 767px) {
+    #customer_login > div {
+       margin-bottom:60px
+    }
+    #my-account-login {
+        height:auto !important;
+    }
+    #customer_login > div >div {
+        border:none
+    }
     .news-items .news-item img {
         width:100%
     }
@@ -2418,6 +2446,18 @@ li.world-of-signature ,li.news{
     }
 }
 @media(max-width:480px){
+    #customer_login .wp-social-login-widget {
+        bottom:-20px
+    }
+    
+    .site-content-my-account #main-content {
+        padding-left:0px;
+        padding-right:0px
+    }
+    #my-account-login,#my-account-register {
+         padding-left:5px;
+        padding-right:5px
+    }
     .ls-v5 .ls-nav-prev, .ls-v5 .ls-nav-next{
         top:30%;
     }

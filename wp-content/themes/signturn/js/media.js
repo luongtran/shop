@@ -165,6 +165,13 @@ function setNewsMonthHeight(){
     $('#news-item-month-content').height(h);
 }
 setNewsMonthHeight();
+function setHeightLogin(){
+    var loginH = $('#my-account-login').height();
+    var registerH = $('#my-account-register').height();
+    var maxH = loginH > registerH ? loginH : registerH ;
+    $('#my-account-login').height(maxH);
+    $('#my-account-login').height(maxH);
+}
 $(document).ready(function(){
     bindTinyCarouselY();
     bindTinyCarouselX();
@@ -173,6 +180,7 @@ $(document).ready(function(){
     setLeftCarWinzar();
     setLeftForgotPassH1();
     setNewsMonthHeight();
+    setHeightLogin();
 });
 var resizeId;
 $( window ).resize(function() {
@@ -182,8 +190,10 @@ $( window ).resize(function() {
      setLeftCarWinzar();
      setLeftForgotPassH1();
      setNewsMonthHeight();
+     setHeightLogin();
      clearTimeout(resizeId);
      resizeId = setTimeout(doneResizing, 500);
+     
 });
 function doneResizing(){
      setSliderSize();
@@ -198,6 +208,7 @@ $( window ).on( "orientationchange", function( event ) {
      setLeftCarWinzar();
      setNewsMonthHeight();
      setLeftForgotPassH1();
+     setHeightLogin();
 });
 
 

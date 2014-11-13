@@ -194,7 +194,7 @@
 //         });
          $.wait(function(){
              $('.woocommerce-message').fadeOut();
-         },5);
+         },8);
          $( "#cart-toggle > a" ).hover(
                function(){
                     $('#header-cart').fadeIn();
