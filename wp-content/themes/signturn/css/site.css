@@ -1752,6 +1752,9 @@ body #header-cart  .site-btn{
 .lost_password a {
     color:#a89340
 }
+.ls-loading-container {
+    display:none !important;
+}
 /** NEWS **/
 .news-item {
     padding-bottom: 30px;
