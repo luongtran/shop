@@ -1548,8 +1548,8 @@ html * .ls-container img, body * .ls-container img, #ls-global * .ls-container i
     border: 1px solid rgb(217, 207, 172);
     color: rgb(97, 97, 97);
     position: absolute;
-    right: 60px;
-    top: 35px;
+    right: 75px;
+    top: 30px;
     z-index: 9999999;
     padding: 5px 11px;
     text-align: center;
@@ -2285,6 +2285,9 @@ li.world-of-signature ,li.news{
     #site-content.site-content-packaging {
         background: none;
     }
+    body.page-id-75 #checkout-login {
+        padding: 0px 30px 30px 15px;
+    }
     
 }
 @media (max-width:769px) and (min-width:520px){
@@ -2451,10 +2454,15 @@ li.world-of-signature ,li.news{
     #customer_login .wp-social-login-widget {
         bottom:-20px
     }
-    
+    body.page-id-16 .post-16 {
+        padding: 12px 0px !important;
+    }
+    #customer_login form {
+        margin-top: 0;
+    }
     .site-content-my-account #main-content {
-        padding-left:0px;
-        padding-right:0px
+        padding-left: 25px;
+        padding-right: 25px;
     }
     #my-account-login,#my-account-register {
          padding-left:5px;
@@ -2637,7 +2645,7 @@ body.category-news #site-content {
     background-color: #fff !important;
 }
 
-body.page-id-87 #site-content, body.page-id-87 #site-content, body.page-id-94 #site-content, body.woocommerce-checkout #site-content {
+body.page-id-87 #site-content, body.page-id-87 #site-content, body.page-id-94 #site-content, body.woocommerce-checkout #site-content, body.woocommerce-cart #site-content {
     background-color: #000 !important;
     background-image: url("../images/bg3.jpg");
     background-repeat: repeat-x, repeat;
@@ -2662,6 +2670,19 @@ li.comment .byuser {
 
  body.category-news #main-content {
     margin-top: 0px !important;
+}
+
+body.page-id-75  #checkout-account {
+    border-top: 21px solid #525252;
+    border-bottom: 21px solid #525252;
+    margin-bottom: 0px; 
+    margin-top: 0px; 
+    padding-bottom: 20px;
+    padding-top: 15px;
+}
+
+body.page-id-75 #checkout-login {
+
 }
 
 #main-content {
