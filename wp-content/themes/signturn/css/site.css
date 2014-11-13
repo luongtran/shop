@@ -942,7 +942,6 @@ form label.error {
     font-weight: bold;
     text-align: center;
     text-decoration: none;
-    left: 45px;
     z-index: 9999;
 }
 #slider1 .next {
