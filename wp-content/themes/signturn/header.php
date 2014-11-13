@@ -306,7 +306,7 @@
                     while(have_posts()) :the_post();
                 ?>
                 <div class="col-sm-4">
-                    <?php echo get_the_post_thumbnail(get_the_ID(), 'full',['class'=>'img-responsive news-img']);   ?>
+                    <?php echo get_the_post_thumbnail(get_the_ID(), 'full',array('class'=>'img-responsive news-img'));   ?>
                 </div>
                 <div class="col-sm-4">
                     <?php the_content();?>
