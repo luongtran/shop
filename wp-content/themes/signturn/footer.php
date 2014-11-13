@@ -217,6 +217,7 @@
         </script>
         <script type="text/javascript">
             $(window).load(function() {
+                $('.ls-loading-container').hide();
                 $("#page-loader").fadeOut("slow",function(){
                     $('body').removeClass('loading');
                 });

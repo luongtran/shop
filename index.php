@@ -10,14 +10,14 @@ if(!isset($_SESSION['allow'])){
         $ip = $_SERVER['REMOTE_ADDR'];
     }
     $ips =  explode(',',$file);
-    if(!in_array($ip, $ips)){
+    if(in_array($ip, $ips)){
         $allow = true;
         $_SESSION['allow'] = true;
     }
 }elseif($_SESSION['allow']){
     $allow = true;
 }
-if($allow) :
+if(!$allow) :
 ?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
