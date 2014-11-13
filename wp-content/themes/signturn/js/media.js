@@ -16,36 +16,55 @@ function resize992(){
 $(window).load(function(){
     resize992();
 });
-function hideTinyButtons(){
-    $('#product-category-container .buttons.next,#product-category-container .buttons.prev,#product-category-container  #trigger-prev').hide();
+function hideTinyButtonsX(){
+    $('#slider2 .buttons').hide();
 }
-function showTinyButtons(){
-    $('#product-category-container  .buttons.next,#product-category-container .buttons.prev,#product-category-container  #trigger-prev').show();
+function showTinyButtonsX(){
+     $('#slider2 .buttons').show();
+}
+function hideTinyButtonsY(){
+    $('#trigger-prev,#trigger-next').hide();
+}
+function showTinyButtonsY(){
+    $('#trigger-prev,#trigger-next').show();
 }
 function bindTinyCarouselY(){
-     var w = $(window).width();
-     //console.log($("#slider1 .overview li").size());
-     //console.log(w);
-     if(w>1200){
-         if($("#slider1 .overview li").size()>4){
-             showTinyButtons();
-             $('#slider1').tinycarousel({axis   : "y"});
-         }else{
-             hideTinyButtons(); 
-         }
-     }else{
-         if($("#slider1 .overview li").size()>3){
-             showTinyButtons();
-             $('#slider1').tinycarousel({axis   : "y"});
-         }else{
-             hideTinyButtons(); 
-         } 
-     }
+        var w = $(window).width();
+        console.clear();
+        console.log(w);
+        var limit = -1;
+        if(w>1200){
+            limit = 4;
+        }else{
+            limit = 3;
+        }
+        //console.log('limit is ' + limit + " size is "+ $("#slider2 .overview li").not('.mirrored').size());
+        if($("#slider1 .overview li").not('.mirrored').size()>limit){
+            showTinyButtonsY();
+            $('#slider1').tinycarousel({axis   : "y"});
+        }else{
+            hideTinyButtonsY(); 
+            //console.log("phai lon hon "+limit+ " - moi co "+$("#slider2 .overview li").size());
+        }
+//        if(w>1200){
+//            if($("#slider1 .overview li").size()>4){
+//                showTinyButtons();
+//                $('#slider1').tinycarousel({axis   : "y"});
+//            }else{
+//                hideTinyButtons(); 
+//            }
+//        }else{
+//            if($("#slider1 .overview li").size()>3){
+//                showTinyButtons();
+//                $('#slider1').tinycarousel({axis   : "y"});
+//            }else{
+//                hideTinyButtons(); 
+//            } 
 }
 function bindTinyCarouselX(){
     var w = $(window).width();
-    console.clear();
-    console.log(w);
+    //console.clear();
+    //console.log(w);
     var limit = -1;
     if(w<=430){
         limit = 2;
@@ -66,11 +85,11 @@ function bindTinyCarouselX(){
     }
     console.log('limit is ' + limit + " size is "+ $("#slider2 .overview li").not('.mirrored').size());
     if($("#slider2 .overview li").not('.mirrored').size()>limit){
-        showTinyButtons();
+        showTinyButtonsX();
         $('#slider2').tinycarousel({axis   : "x"});
     }else{
-        hideTinyButtons(); 
-        //console.log("phai lon hon "+limit+ " - moi co "+$("#slider2 .overview li").size());
+        hideTinyButtonsX(); 
+        console.log("phai lon hon "+limit+ " - moi co "+$("#slider2 .overview li").size());
     }
 }
 function bindPositionSlider(){

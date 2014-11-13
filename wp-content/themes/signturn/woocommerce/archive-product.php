@@ -38,8 +38,9 @@ get_header( 'shop' ); ?>
                 <p><?php echo $description ?></p>
             </div>
         <div id="list-product-of-cat" class="wow slideInRight"  data-wow-iteration="1" >
-            <a id="trigger-prev" href="javascript:void(0)"><i class="fa fa-angle-down fa-2x"></i></a>
-            <div id="slider1">
+            <div class="relative">
+                <a id="trigger-prev" href="javascript:void(0)"><i class="fa fa-angle-up fa-2x"></i></a>
+                    <div id="slider1">
 		<a class="buttons prev" href="#"><i class="fa fa-angle-down fa-2x"></i></a>
 		<div class="viewport">
 			<ul class="overview">
@@ -69,6 +70,10 @@ get_header( 'shop' ); ?>
                     </div>
                     <a class="buttons next" href="#"><i class="fa fa-angle-up fa-2x"></i></a>
             </div>
+                 <a id="trigger-next" href="javascript:void(0)"><i class="fa fa-angle-down fa-2x"></i></a>
+            </div>
+            
+            
         </div>
 <div id="list-product-of-cat2" >
             <div id="slider2">

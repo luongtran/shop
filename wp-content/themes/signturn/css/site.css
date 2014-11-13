@@ -931,10 +931,10 @@ form label.error {
     text-align: center;
     padding-top: 5px;
 }
-#slider1 {   overflow:hidden; position: relative;   padding-top: 25px; }
+#slider1 {   overflow:hidden; position: relative;   padding-top: 30px; }
 #slider1 .viewport {height: 534px;overflow: hidden; position: relative;width: 110px }
 #slider1 .buttons {
-    display: block;
+    left:-9999px;
     position: absolute;
     width: 20px;
     height: 20px;
@@ -952,10 +952,18 @@ form label.error {
     bottom: -10px;
 }
 #trigger-prev {
-    bottom: 0px;
-    left: 64px;
+    top: 0px;
+    left: 45px;
     position: absolute;
     color: #fff;
+    z-index:9999;
+}
+#trigger-next {
+    bottom: -17px;
+    left: 45px;
+    position: absolute;
+    color: #fff;
+    z-index:9999;
 }
 #slider1 .disable { visibility: hidden; }
 #slider1 .overview { list-style: none; position: absolute; padding: 0; margin: 0; width: 110px; left: 0; top: 0; }

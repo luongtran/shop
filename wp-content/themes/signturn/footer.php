@@ -224,6 +224,9 @@
                 $('#trigger-prev').on('click',function(){
                     $('#slider1 .prev').trigger('click');
                 });
+                 $('#trigger-next').on('click',function(){
+                    $('#slider1 .next').trigger('click');
+                });
 	</script>
         <?php thematic_after();  ?>
         <script>
