@@ -721,6 +721,7 @@ form label.error {
 #checkout-create-account,#checkout-delivery-builling,#checkout-shipping,#my-account-register {
     border-right: 1px solid #d5d5d5;
     margin-right: 0;
+    margin-left: 0;
 }
 #checkout-login,#checkout-delivery-delivery,#checkout-payment,#my-account-login{
     border-left: 1px solid #d5d5d5;
@@ -1527,9 +1528,6 @@ html * .ls-container img, body * .ls-container img, #ls-global * .ls-container i
     margin-top:0;
     margin-bottom:5px;
 }
-#slideshow-content-2 {
-    width:410px;
-}
 #layerslider_2 {
     background: #45484d; /* Old browsers */
     background: -moz-linear-gradient(top, #45484d 0%, #000000 100%); /* FF3.6+ */
@@ -1641,7 +1639,7 @@ body #header-cart  .site-btn{
     background:none;
     content:"";
 }
-.woocommerce .woocommerce-message {
+.woocommerce .woocommerce-message,.woocommerce .woocommerce-info, .woocommerce-page .woocommerce-info  {
     border-radius: 0 !important;
     box-shadow:0;
     border:1px solid #a7933d !important;
@@ -1650,6 +1648,7 @@ body #header-cart  .site-btn{
     font-size:16px  !important;
     line-height: 20px;
 }
+
 .button.wc-forward {
     background: none repeat scroll 0 0 #a7923e !important;
     border-color: #928036 !important;
@@ -1922,8 +1921,16 @@ li.world-of-signature ,li.news{
         bottom: 250px !important;
         right: 190px;
     }
-    body.page-id-137 # {
-
+    #slideshow-content-2 {
+        width: 400px;
+        right: 470px !important;
+    }
+    #slideshow-content-2 h1 a {
+        font-size: 27px;
+        color: #A5933F;
+    }
+    #slideshow-content-2 h2 {
+        font-size: 22px;
     }
 }
 
@@ -1945,6 +1952,17 @@ li.world-of-signature ,li.news{
         right: 200px !important;
         width: 390px;
     }
+    #slideshow-content-2 {
+        width: 400px !important;
+        right: 385px !important;
+    }
+    #slideshow-content-2 h1 a {
+        font-size: 26px;
+        color: #A5933F;
+    }
+    #slideshow-content-2 h2 {
+        font-size: 22px;
+    }
 
 }
 @media(max-width:1355px){
@@ -1952,12 +1970,27 @@ li.world-of-signature ,li.news{
         bottom:180px !important;
         right:200px !important;
     }
+     #slideshow-content-2 {
+        width: 400px !important;
+        right: 350px !important;
+    }
 }
 @media(max-width:1200px){
     #slider1 .viewport {height: 400px;}
     #list-product-of-cat {
         height: 450px;
     } 
+    #slideshow-content-2 {
+        width: 400px !important;
+        right: 350px !important;
+    }
+    #slideshow-content-2 h1 a {
+        font-size: 26px !important;
+        color: #A5933F;
+    }
+    #slideshow-content-2 h2 {
+        font-size: 22px !important;
+    }
     body.term-women #product-cat-description{
         bottom: 75px !important;
     }
@@ -2006,6 +2039,17 @@ li.world-of-signature ,li.news{
     body.term-oud #product-cat-description h1{
         font-size: 22px;
         color: #a7923e;
+    }
+    #slideshow-content-2 {
+        width: 318px !important;
+        right: 290px !important;
+    }
+    #slideshow-content-2 h1 a {
+        font-size: 22px !important;
+        color: #A5933F;
+    }
+    #slideshow-content-2 h2 {
+        font-size: 18px !important;
     }
 }
 @media(max-width:991px){
@@ -2145,6 +2189,7 @@ li.world-of-signature ,li.news{
         width: 100%;
         margin-left: 0px
     }
+
 }
 @media (max-width: 991px) and (min-width: 768px){
     .news-items .news-item {
@@ -2162,6 +2207,17 @@ li.world-of-signature ,li.news{
     body.term-oud #product-cat-description h1{
         font-size: 22px;
         color: #a7923e;
+    }
+    #slideshow-content-2 {
+        width: 318px !important;
+        right: 165px !important;
+    }
+    #slideshow-content-2 h1 a {
+        font-size: 18px !important;
+        color: #A5933F;
+    }
+    #slideshow-content-2 h2 {
+        font-size: 14px !important;
     }
 }
 @media (max-width: 980px) and (min-width: 768px){
@@ -2318,6 +2374,17 @@ li.world-of-signature ,li.news{
       .ls-v5 .ls-nav-prev, .ls-v5 .ls-nav-next{
         top:25%;
     }
+    #slideshow-content-2 {
+        width: 318px !important;
+        right: 100px !important;
+    }
+    #slideshow-content-2 h1 a {
+        font-size: 18px !important;
+        color: #A5933F;
+    }
+    #slideshow-content-2 h2 {
+        font-size: 14px !important;
+    }
     
 }
 @media (max-width:750px) and (min-width:641px){
@@ -2442,6 +2509,19 @@ li.world-of-signature ,li.news{
     .news-detail-img {
         margin-bottom: 15px;
     }
+     #slideshow-content-2 {
+        width: 235px !important;
+        right: 15px !important;
+        top: 10px !important;
+    }
+    #slideshow-content-2 h1 a {
+        font-size: 14px !important;
+        color: #A5933F;
+    }
+    #slideshow-content-2 h2 {
+        font-size: 12px !important;
+    }
+     
     
 }
 @media(max-width:555px) {
@@ -2454,7 +2534,7 @@ li.world-of-signature ,li.news{
     #customer_login .wp-social-login-widget {
         bottom:-20px
     }
-    body.page-id-16 .post-16 {
+    body.page-id-16 .page.post-16 {
         padding: 12px 0px !important;
     }
     #customer_login form {
@@ -2466,7 +2546,8 @@ li.world-of-signature ,li.news{
     }
     #my-account-login,#my-account-register {
          padding-left:5px;
-        padding-right:5px
+         padding-right:5px;
+         margin-left: 0px;
     }
     .ls-v5 .ls-nav-prev, .ls-v5 .ls-nav-next{
         top:30%;
@@ -2547,6 +2628,18 @@ li.world-of-signature ,li.news{
         font-size:14px;
         margin-top: 10px;
     }
+    #slideshow-content-2 {
+        width: 235px !important;
+        right: 15px !important;
+        top: 10px !important;
+    }
+    #slideshow-content-2 h1 a {
+        font-size: 14px !important;
+        color: #A5933F;
+    }
+    #slideshow-content-2 h2 {
+        font-size: 12px !important;
+    }
     
 }
 @media (max-width: 450px) {
@@ -2596,9 +2689,13 @@ li.world-of-signature ,li.news{
     padding: 40px 45px;
     }
     #what-new {
-    background: #a7923f;
-    padding: 0px 20px 0;
-    margin-bottom: 20px;
+        background: #a7923f;
+        padding: 0px 20px 0;
+        margin-bottom: 20px;
+    }
+    div.slideshow-content #slideshow-content-2 {
+    width: 260px !important;
+    right: 0px !important;
     }
 
 }
