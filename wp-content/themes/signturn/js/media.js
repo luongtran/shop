@@ -182,6 +182,10 @@ $(document).ready(function(){
     setNewsMonthHeight();
     setHeightLogin();
 });
+$(window).load(function(){
+    bindTinyCarouselY();
+    bindTinyCarouselX();
+});
 var resizeId;
 $( window ).resize(function() {
      resize992();
