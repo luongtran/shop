@@ -60,7 +60,7 @@ get_header( 'shop' ); ?>
                                     </h3>
                                 </a>
                                 <div class="archive-mark">
-                                    <a title="Add to Bag (<?php echo strip_tags($product->get_price_html()) ?>)" data-quantity="1" data-product_sku="" data-product_id="<?php echo $loop->post->ID ?>" rel="nofollow" href="<?php echo $catLink?>/?add-to-cart=<?php echo $loop->post->ID ?>"  class="button add_to_cart_button product_type_simple" ><i class="fa fa-plus"></i></a>
+                                    <a title="Add to Bag (<?php echo get_woocommerce_currency_symbol().$product->price ?>)" data-quantity="1" data-product_sku="" data-product_id="<?php echo $loop->post->ID ?>" rel="nofollow" href="<?php echo $catLink?>/?add-to-cart=<?php echo $loop->post->ID ?>"  class="button add_to_cart_button product_type_simple" ><i class="fa fa-plus"></i></a>
                                     <a title="View" href="<?php the_permalink()?>"><i class="fa fa-search"></i></a>
                                 </div>
                             </li>
