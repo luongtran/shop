@@ -3045,3 +3045,7 @@ ul.order_details {
     border-right: 1px dashed #dfdbdf;
     padding-right: 2em;
 }
+
+body.login {
+    background-color: #000;
+}
