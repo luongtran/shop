@@ -503,3 +503,14 @@ function remove_decimals_if_interger( $price, $product ){
    }
    return  str_replace($remove, '', $price);
 }
+function my_login_logo() { ?>
+    <style type="text/css">
+        body.login div#login h1 a {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/images/site-login-logo.png);
+            padding-bottom: 30px;
+            width:100% !important;
+            background-size:305px auto !important
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );

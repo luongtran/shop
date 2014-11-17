@@ -1815,6 +1815,7 @@ margin-bottom: 30px;
     left: 15px;
     line-height: 100%;
     position: absolute;
+    display:none !important;
 }
 .woocommerce a.button.added:before, .woocommerce button.button.added:before, .woocommerce input.button.added:before, .woocommerce #respond input#submit.added:before, .woocommerce #content input.button.added:before, .woocommerce-page a.button.added:before, .woocommerce-page button.button.added:before, .woocommerce-page input.button.added:before, .woocommerce-page #respond input#submit.added:before, .woocommerce-page #content input.button.added:before {
     content:"";
@@ -1951,6 +1952,9 @@ margin-bottom: 30px;
     font-size: 13px;
     padding: 6px 10px 3px;
     text-shadow: none
+}
+.added_to_cart {
+    display:none !important;
 }
 /** FOR SLIDER **/
 @media(max-width:767px){

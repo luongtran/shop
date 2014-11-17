@@ -101,6 +101,9 @@
                             <li>
                                 <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" >My Account</a>
                             </li>
+                            <li>
+                                <a href="<?php echo wp_logout_url( $redirect ); ?>">Sign Out</a>
+                            </li>
                             <?php else :?>
                             <li>
                                 <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" >My Account</a>

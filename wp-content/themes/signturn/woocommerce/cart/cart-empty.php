@@ -14,7 +14,7 @@ wc_print_notices();
 ?>
 <div id="checkout-account" style="width:100%;height: 300px;display: table;" class="aligncenter">
     <div style="display: table-cell;vertical-align: middle">
-        <p class="cart-empty"><?php _e( 'Your cart is currently empty.', 'woocommerce' ) ?></p>
+        <p class="cart-empty"><?php _e( 'Your bag is currently empty.', 'woocommerce' ) ?></p>
         <p class="return-to-shop"><a class="button wc-backward site-btn small" href="<?php echo get_permalink( get_page_by_path( 'home' ) ); ?>"><?php _e( 'Return To Shop', 'woocommerce' ) ?></a></p>
     </div>
 </div>
