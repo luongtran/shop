@@ -491,3 +491,15 @@ function facebookLoginScript(){ ?>
 </script>
 <?php }
  //add_action('thematic_aboveheader','facebookLoginScript');
+add_filter( 'woocommerce_get_price_html', 'remove_decimals_if_interger', 100, 2 );
+function remove_decimals_if_interger( $price, $product ){
+   $decimals =  get_option('woocommerce_price_num_decimals');
+   if($decimals == 0){
+       return $price;
+   }
+   $remove = '.';
+   for($i=1;$i<=$decimals;$i++){
+       $remove .= '0';
+   }
+   return  str_replace($remove, '', $price);
+}
