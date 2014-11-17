@@ -1862,7 +1862,96 @@ margin-bottom: 30px;
     padding-bottom: 20px;
 }
 
-
+#post-15 .entry-content {
+    margin-top:20px;
+}
+.order_details  li {
+    line-height:100% !important;
+    font-weight:normal;
+}
+.order_details  li strong {
+    font-weight:normal !important;
+    font-size:16px !important;
+}
+.customer_details > p > label {
+    display:inline-block;
+    padding-right:10px;
+}
+#edit-account-text ,#edit-account-password {
+    margin:10px 0px;
+    padding:0px 25px;
+    min-height:230px;
+    
+}
+#edit-account-wrapper legend {
+    color: #a89340;
+    font-family: "TrajanPro-Regular";
+    font-size: 16px;
+}
+#edit-account-wrapper label {
+    font-weight: normal !important;
+    font-size:.95em;
+}
+#edit-account-wrapper input[type="text"],#edit-account-wrapper input[type="password"],#edit-account-wrapper input[type="email"] {
+    border: 1px solid #a89340;
+    border-radius: 0;
+    font-size:.9em;
+}
+#edit-account-text {
+    border-right: 1px solid #d5d5d5;
+}
+#edit-account-password {
+    border-left: 1px solid #d5d5d5;
+}
+/**SHIING ADDRESS SETTING **/
+#my-address-setting-wrapper  .form-row {
+    width:100% !important;
+}
+#my-address-setting-wrapper  .form-row > label {
+    width:25% !important;
+    float:left;
+    font-weight:normal !important;
+}
+#my-address-setting-wrapper  .form-row > input ,#billing_country_chosen,#shipping_country_chosen {
+    width:75% !important;
+    float:left;
+    height: 27px;
+}
+#my-address-setting-wrapper  .form-row > input {
+    border: 1px solid #a89340;
+    border-radius: 0;
+    padding-left:10px;
+}
+#billing_country_chosen .chosen-single,#shipping_country_chosen .chosen-single{
+    border: 1px solid #a89340;
+    border-radius: 0; 
+    padding-left:10px;
+}
+#billing_address_2_field,#shipping_address_2 {
+    margin-left:25%;
+}
+#my-address-setting-wrapper h3{
+  color: #a89340;
+  font-family: "TrajanPro-Regular";
+  font-size: 16px;
+  margin-bottom: 15px;
+  margin-top: 0;
+  border-bottom : 1px solid #ccc
+}
+#my-address-setting-wrapper form p:last-child {
+    text-align: center;
+    margin-top:20px;
+}
+#my-address-setting-wrapper form p:last-child [type="submit"] {
+    background: none repeat scroll 0 0 #a5933f;
+    border: medium none;
+    border-radius: 0;
+    color: #fff;
+    font-family: "TrajanPro-Regular";
+    font-size: 13px;
+    padding: 6px 10px 3px;
+    text-shadow: none
+}
 /** FOR SLIDER **/
 @media(max-width:767px){
     .slideshow-content h1 {

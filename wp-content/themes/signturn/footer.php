@@ -213,7 +213,11 @@
              $('#zoom-image-modal').modal('show');
          });
          $('a[title]').tooltip();
-        // $('#archive-lightbox').lightbox({backdrop:false});
+         $(document).on('click', function (e) {
+                if ($(e.target).closest("#primary-menu-items").length === 0 && $(e.target).closest("#primary-menu").length === 0) {
+                    $("#primary-menu-items").slideUp(500);
+                }
+          });
         </script>
         <script type="text/javascript">
             $(window).load(function() {
