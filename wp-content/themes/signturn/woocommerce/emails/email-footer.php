@@ -56,18 +56,12 @@ $credit = "
                             </tr>
                             <tr>
                                     <td style="text-align: center">
-                                            <a href="http://signaturefragrances.co.uk" style="font-size:18px;color:#777" >www.signaturefragrances.co.uk</a>
+                                            <a href="http://signaturefragrances.co.uk" style="font-size:18px;color:#777" >www.signaturefragrances.co.uk</a><br>
+                                            <div id="credit" style="<?php echo $credit; ?>">
+                                                <?php echo wpautop( wp_kses_post( wptexturize( apply_filters( 'woocommerce_email_footer_text', get_option( 'woocommerce_email_footer_text' ) ) ) ) ); ?>
+                                            </div>
+                                            
                                     </td>
-                            </tr>
-                            <tr>
-                                <td valign="top">
-                                    <table border="0" cellpadding="10" cellspacing="0" width="100%">
-                                            <td colspan="2" valign="middle" id="credit" style="<?php echo $credit; ?>">
-                                                    <?php echo wpautop( wp_kses_post( wptexturize( apply_filters( 'woocommerce_email_footer_text', get_option( 'woocommerce_email_footer_text' ) ) ) ) ); ?>
-                                            </td>
-                                        </tr>
-                                    </table>
-                                </td>
                             </tr>
                         </table>
                     </td>

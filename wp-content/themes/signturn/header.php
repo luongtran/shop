@@ -85,7 +85,7 @@
                                     <a class="header-box-close" href="javascript:void(0)">&Chi;</a>
                                     <div class="widthlove-row">
                                         <h4>Samples</h4>
-                                        <p>Choose a complementary same with each order</p>
+                                        <p>Choose a complementary sample with each order</p>
                                     </div>
                                     <div class="widthlove-row">
                                         <h4>Gift Wrap</h4>
@@ -93,7 +93,7 @@
                                     </div>
                                     <div class="widthlove-row">
                                         <h4>Bottles</h4>
-                                        <p>Enjoy your stylish bottle with complement</p>
+                                        <p>Enjoy your perfume with our stylish bottles</p>
                                     </div>
                                 </div>
                             </li>
