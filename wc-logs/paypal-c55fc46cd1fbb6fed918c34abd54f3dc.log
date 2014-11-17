@@ -412,3 +412,5 @@
 11-17-2014 @ 03:33:33 - Found order #341
 11-17-2014 @ 03:33:33 - Payment status: completed
 11-17-2014 @ 03:33:48 - Payment complete.
+11-17-2014 @ 09:50:03 - Generating payment form for order #343. Notify URL: http://117.3.103.72:8080/wc-api/WC_Gateway_Paypal/
+11-17-2014 @ 09:53:19 - Generating payment form for order #343. Notify URL: http://117.3.103.72:8080/wc-api/WC_Gateway_Paypal/

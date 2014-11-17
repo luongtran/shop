@@ -7,8 +7,8 @@
  * @version 2.0.0
  */
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
-
-<?php do_action( 'woocommerce_email_header', $email_heading ); ?>
+<?php// include 'layout/header.php'; ?>
+<?php  do_action( 'woocommerce_email_header', $email_heading ); ?>
 
 <p><?php printf( __( 'You have received an order from %s. Their order is as follows:', 'woocommerce' ), $order->billing_first_name . ' ' . $order->billing_last_name ); ?></p>
 
@@ -59,3 +59,4 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly ?>
 <?php wc_get_template( 'emails/email-addresses.php', array( 'order' => $order ) ); ?>
 
 <?php do_action( 'woocommerce_email_footer' ); ?>
+<?php // include 'layout/footer.php'; ?>

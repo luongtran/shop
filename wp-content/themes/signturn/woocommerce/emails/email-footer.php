@@ -40,23 +40,33 @@ $credit = "
                                     <!-- End Body -->
                                 </td>
                             </tr>
-                        	<tr>
-                            	<td align="center" valign="top">
-                                    <!-- Footer -->
-                                	<table border="0" cellpadding="10" cellspacing="0" width="600" id="template_footer" style="<?php echo $template_footer; ?>">
-                                    	<tr>
-                                        	<td valign="top">
-                                                <table border="0" cellpadding="10" cellspacing="0" width="100%">
-                                                    <tr>
-                                                        <td colspan="2" valign="middle" id="credit" style="<?php echo $credit; ?>">
-                                                        	<?php echo wpautop( wp_kses_post( wptexturize( apply_filters( 'woocommerce_email_footer_text', get_option( 'woocommerce_email_footer_text' ) ) ) ) ); ?>
-                                                        </td>
-                                                    </tr>
-                                                </table>
+                        </table>
+                    </td>
+                </tr>
+            </table>
+            <table border="0" cellpadding="0" cellspacing="0" height="100%" width="100%">
+            	<tr>
+                	<td align="center" valign="top">
+                        <table border="0" cellpadding="10" cellspacing="0" width="800" id="template_footer" style="<?php echo $template_footer; ?>">
+                            <tr>
+                                <td style="text-align: center">
+                                        <a style="margin-right:10px" href=""><img src="http://www.mmvta.com/wp-content/uploads/2014/07/facebook-icon-small.png" width="30px" /></a>
+                                        <a href=""><img src="http://www.mmvta.com/wp-content/uploads/2014/07/facebook-icon-small.png" width="30px" /></a>
+                                </td>
+                            </tr>
+                            <tr>
+                                    <td style="text-align: center">
+                                            <a href="http://signaturefragrances.co.uk" style="font-size:18px;color:#777" >www.signaturefragrances.co.uk</a>
+                                    </td>
+                            </tr>
+                            <tr>
+                                <td valign="top">
+                                    <table border="0" cellpadding="10" cellspacing="0" width="100%">
+                                            <td colspan="2" valign="middle" id="credit" style="<?php echo $credit; ?>">
+                                                    <?php echo wpautop( wp_kses_post( wptexturize( apply_filters( 'woocommerce_email_footer_text', get_option( 'woocommerce_email_footer_text' ) ) ) ) ); ?>
                                             </td>
                                         </tr>
                                     </table>
-                                    <!-- End Footer -->
                                 </td>
                             </tr>
                         </table>
