@@ -111,7 +111,7 @@
                             <?php endif;?>
                             <li id="cart-toggle">
                                 <?php global $woocommerce; ?> 
-                                <a class="cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>" title="View your shopping cart">
+                                <a class="cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>">
                                     <span id="bag-count">
                                      <?php echo sprintf(_n('bag (%d)', 'bag (%d)', $woocommerce->cart->cart_contents_count, 'esell'), $woocommerce->cart->cart_contents_count);?> -  
                                     </span>

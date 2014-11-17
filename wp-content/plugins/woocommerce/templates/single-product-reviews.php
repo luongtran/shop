@@ -20,7 +20,7 @@ if ( ! comments_open() )
 			<ul class="commentlist content list-unstyled row">
 				<?php wp_list_comments( apply_filters( 'woocommerce_product_review_list_args', array( 'callback' => 'woocommerce_comments' ) ) ); ?>
 			</ul>
-            <?php if($product->get_rating_count()>=2):?>
+            <?php if($product->get_rating_count()>2):?>
             <div id="review-pagination-wrapper" class="pull-right">
                 Reviews
                 <div class="page_navigation"> </div>
