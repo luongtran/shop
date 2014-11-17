@@ -325,8 +325,8 @@
                 <ul class="list-unstyled list-inline">
                     <li><a href="<?= get_permalink(get_page_by_path('ethical-sourcing'))?>">Ethical Sourcing</a></li>
                     <li><a href="<?= get_permalink(get_page_by_path('packaging'))?>">Our Packaging</a></li>
-                    <li><a href="<?= get_permalink(get_page_by_path('reviews'))?>">Reviews</a></li>
-                    <li><a href="<?= get_permalink(get_page_by_path('refill-politique'))?>">Refill Politique</a></li>
+                    <!--li><a href="<?= get_permalink(get_page_by_path('reviews'))?>">Reviews</a></li-->
+                    <!--li><a href="<?= get_permalink(get_page_by_path('refill-politique'))?>">Refill Politique</a></li-->
                     <li><a href="<?= get_permalink(get_page_by_path('our-bottles'))?>">Our Bottles</a></li>
                 </ul>
             </li>
