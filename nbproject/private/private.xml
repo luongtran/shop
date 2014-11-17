@@ -2,39 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group name="Sites">
-            <file>file:/D:/projects/signaturn/source/wp-content/themes/twentyfourteen/index.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/includes/class-wc-frontend-scripts.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/single.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/cart/cart.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/woocommerce.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/archive-product.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/page.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-includes/post-thumbnail-template.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/templates/single-product-reviews.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/footer.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/category-news.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/single-product/review.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/header.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/templates/loop/add-to-cart.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/functions.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/index.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/content-single-product.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/templates/single-product/product-image.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/page-gift.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/includes/wc-template-functions.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/single-product/description.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/single-product/product-image.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js</file>
-            <file>file:/D:/projects/signaturn/source/wp-includes/functions.wp-scripts.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-includes/media.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-config.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/single-product/related.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-includes/comment-template.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/page-packaging.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/css/site.css</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/myaccount/form-login.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/templates/single-product.php</file>
-        </group>
+        <group name="Sites"/>
     </open-files>
 </project-private>

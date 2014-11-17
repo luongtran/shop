@@ -49,6 +49,11 @@
 ?>
 <meta name="viewport" content="width=device-width">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<?php if(is_product()): ?>
+<meta name="title" content="<?php the_title() ?>" />
+<?php $image_link  = wp_get_attachment_url( get_post_thumbnail_id() );?>
+<link rel="image_src" href="<?php echo $image_link ?>"  >
+<?php endif;?>
 </head>
 <?php thematic_body();?>
 <div id="page-loader">
