@@ -64,6 +64,9 @@ body,h1,h2,h3,h4,h5,html {
 #header a {
     color: #c2c2c2;
 }
+#header a:hover {
+    color: #a7923e;
+}
 #header .nav>li>a {
     padding-top: 0px;
     padding-bottom: 0px;
