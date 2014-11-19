@@ -182,6 +182,11 @@
             });
             $( "#withlove-toggle > a" ).hover(function(){
                  $('#widthlove').fadeIn();
+                 $('.arrowbox:not(#widthlove)').fadeOut();
+            });
+             $( "#subscribe-header-toggle > a" ).hover(function(){
+                 $('#subscribe-header').fadeIn();
+                 $('.arrowbox:not(#subscribe-header)').fadeOut();
             });
         
          $.wait = function( callback, seconds){

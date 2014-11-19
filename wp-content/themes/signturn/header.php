@@ -97,6 +97,28 @@
                                     </div>
                                 </div>
                             </li>
+                            <li id="subscribe-header-toggle">
+                                <a href="javascript:void(0)">News Letter</a>
+                                <div id="subscribe-header" class="header-box arrowbox col-xs-12 col-sm-6 col-md-6">
+                                    <a class="header-box-close" href="javascript:void(0)">&Chi;</a>
+                                    <div class="widthlove-row">
+                                        <h4>BE THE FIRST TO KNOW</h4>
+                                        <p style="font-size: 12px">
+                                            Be part of our community by signing up to our newsletter,
+                                            where you'll be the first to hear about our fantastic product.
+                                        </p>
+                                        <form class="row" method="post" action="<?php echo site_url()?>/wp-content/plugins/newsletter/do/subscribe.php" onsubmit="return newsletter_check(this)">
+                                           
+                                            <div class="col-sm-9 no-padding-right">
+                                                <input  name="ne" size="30" required type="email" placeholder="enter your email address" class="site-input form-control" />
+                                            </div>
+                                            <div class="col-sm-3 no-padding">
+                                                <input  class="newsletter-submit site-btn btn small  no-padding" type="submit" value="Sign Up"/>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </li>
                             <?php if ( is_user_logged_in() ): ?>
                             <li>
                                 <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" >My Account</a>

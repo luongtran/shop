@@ -40,12 +40,12 @@ if (is_file(WP_CONTENT_DIR . '/extensions/newsletter/subscription/email.php')) {
                         <table border="0" cellspacing="0" cellpadding="0" width="100%">
                             <tbody>
                                 <tr>
-                                    <td valign="top" style="color: #f4f4f4; font-size: 12px; padding: 7px;text-align: center">
+                                    <td valign="top" align="center" style="color: #f4f4f4; font-size: 12px; padding: 7px;text-align: center">
                                         To ensure you receive you Signature Fragrances™ emails, please add <a href="mailto:info@signaturefragrances.co.uk">info@signaturefragrances.co.uk</a> to your address book
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td style="text-align: center">                                            
+                                    <td align="center" style="text-align: center">                                            
                                         Signature Fragrances <br/>
                                         London  <img width="100" src="<?php echo home_url() ?>/wp-content/themes/signturn/images/logo.png" />
                                     </td>
@@ -79,7 +79,7 @@ if (is_file(WP_CONTENT_DIR . '/extensions/newsletter/subscription/email.php')) {
                                 <tr>
                                     <td align="center" style="font-size: 14px; font-family: Arial;margin-bottom:20px">
                                         <?php
-                                            $social_icon_url = plugins_url().'/emails/themes/default/images';
+                                            $social_icon_url = plugins_url().'/newsletter/emails/themes/default/images';
                                         ?>
                                         <a href="http://facebook.com/signaturefragran"><img src="<?php echo $social_icon_url ?>/facebook.png">Facebook</a>
                                         <a href="http://twitter.com/signaturefragran"><img src="<?php echo $social_icon_url ?>/twitter.png">Twitter</a>
