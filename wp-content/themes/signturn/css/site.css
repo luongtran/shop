@@ -48,6 +48,11 @@ a:focus {
     margin-top: 20px;
     margin-bottom: 20px
 }
+a[disabled] {
+   pointer-events: none;
+   cursor: default;
+   opacity: .5;
+}
 .floatleft {
     float:left;
 }

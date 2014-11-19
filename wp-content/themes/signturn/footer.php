@@ -69,6 +69,9 @@
         <script src="<?=TEMPLATE_URL?>/js/responsive-tables.js"></script>
         <script type="text/javascript" src="<?=TEMPLATE_URL?>/js/lightbox/bootstrap-lightbox.min.js"></script>
         <script  type="text/javascript">
+            $(document).ready(function(){
+                $('.add_to_cart_button').removeAttr('disabled');
+            });
             function activeToggle(dom){
                 $('#primary-menu .toggle-list li').removeClass('active');
                 $(dom).addClass('active');
