@@ -1862,7 +1862,7 @@ margin-bottom: 30px;
     font-size: 26px;
 }
 #slideshow-content-3 .large_and {
-    font-size: 50px !important;
+    font-size: 40px !important;
 }
 
 
@@ -2603,7 +2603,7 @@ li.world-of-signature ,li.news{
         font-size: 24px;
     }
     #slideshow-content-3 .large_and {
-        font-size: 42px !important;
+        font-size: 36px !important;
     }
 }
 @media(max-width:680px){
@@ -2698,7 +2698,7 @@ li.world-of-signature ,li.news{
         font-size: 20px;
     }
     #slideshow-content-3 .large_and {
-        font-size: 36px !important;
+        font-size: 26px !important;
     }
 }
 @media (max-width:609px) and (min-width:481px) {
@@ -2750,7 +2750,7 @@ li.world-of-signature ,li.news{
         font-size: 14px;
     }
     #slideshow-content-3 .large_and {
-        font-size: 24px !important;
+        font-size: 20px !important;
     }
 }
 @media(max-width:480px){
