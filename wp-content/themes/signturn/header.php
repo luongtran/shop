@@ -80,6 +80,11 @@
                 <div class="col-sm-8 header-right relative">
                     <div class="top-menu text-right">
                         <ul class="list-unstyled list-inline">
+                            <?php if ( is_user_logged_in() ): ?>
+                            <li>
+                                <a href="<?php echo wp_logout_url( $redirect ); ?>">Sign Out</a>
+                            </li>
+                            <?php endif; ?>
                             <li id="withlove-toggle">
                                 <a href="javascript:void(0)">With Love</a>
                                 <div id="widthlove" class=" header-box arrowbox col-xs-12 col-sm-6 col-md-6">
@@ -120,18 +125,9 @@
                                     </div>
                                 </div>
                             </li>
-                            <?php if ( is_user_logged_in() ): ?>
                             <li>
                                 <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" >My Account</a>
                             </li>
-                            <li>
-                                <a href="<?php echo wp_logout_url( $redirect ); ?>">Sign Out</a>
-                            </li>
-                            <?php else :?>
-                            <li>
-                                <a href="<?php echo get_permalink( get_option('woocommerce_myaccount_page_id') ); ?>" >My Account</a>
-                            </li>
-                            <?php endif;?>
                             <li id="cart-toggle">
                                 <?php global $woocommerce; ?> 
                                 <a class="cart-contents" href="<?php echo $woocommerce->cart->get_cart_url(); ?>">
