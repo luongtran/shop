@@ -514,3 +514,10 @@ function my_login_logo() { ?>
     </style>
 <?php }
 add_action( 'login_enqueue_scripts', 'my_login_logo' );
+add_action('wp_logout','go_home');
+function go_home(){
+  if(!is_user_admin()){
+      wp_redirect( home_url() );
+      exit();
+  }
+}
