@@ -1,7 +1,7 @@
 <?php 
  if(!is_user_logged_in()){
-     wp_redirect(get_permalink( get_page_by_path( 'checkout-account' ) ) );
-    exit();
+//     wp_redirect(get_permalink( get_page_by_path( 'checkout-account' ) ) );
+//    exit();
  }
 ?>
 <?php

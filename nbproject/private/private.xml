@@ -3,13 +3,14 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="Sites">
-            <file>file:/D:/projects/signaturn/source/wp-content/plugins/newsletter/subscription/subscription.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/plugins/newsletter/emails/themes/default/social-options.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/plugins/newsletter/emails/themes/signaturn/theme.php</file>
             <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/footer.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/css/site.css</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/newsletter/emails/themes/signaturn/theme.php</file>
             <file>file:/D:/projects/signaturn/source/wp-content/plugins/newsletter/emails/themes/signaturn/theme-options.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/newsletter/emails/themes/default/social-options.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/css/site.css</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/newsletter/subscription/subscription.php</file>
             <file>file:/D:/projects/signaturn/source/wp-content/plugins/newsletter/subscription/page.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/header.php</file>
         </group>
     </open-files>
 </project-private>

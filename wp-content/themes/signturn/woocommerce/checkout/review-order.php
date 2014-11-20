@@ -17,23 +17,37 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
                 <div id="checkout-shipping">
                     <?php
                         $customer_id = get_current_user_id();
+                        try {
+                            $billing_address_1 = $_SESSION['billing_address_1'] ;
+                            $billing_address_2 = $_SESSION['billing_address_2'] ;
+                            $billing_city = $_SESSION['billing_city'] ;
+                            $billing_country = $_SESSION['billing_country'] ;
+                            $shipping_address_1 = $_SESSION['shipping_address_1'] ;
+                            $shipping_address_2 = $_SESSION['shipping_address_2'] ;
+                            $shipping_city = $_SESSION['shipping_city'] ;
+                            $shipping_country = $_SESSION['shipping_country'] ;
+                        }
+                        catch (Exception $ex){
+                             wp_redirect(get_permalink( get_page_by_path( 'checkout-delivery' ) ) );
+                             exit();
+                        }
                     ?>
                     <h2>Shipping</h2>
                     <div class="shipping-group">
                         <h3>Billing Address</h3>
-                        <p><?php echo  get_user_meta( $customer_id, 'billing_address_1', true )?></p>
-                        <?php if (get_user_meta( $customer_id, 'billing_address_2', true )): ?>
-                        <p><?php echo get_user_meta( $customer_id, 'billing_address_1', true ) ?></p>
+                        <p><?php  echo  $billing_address_1?></p>
+                        <?php if (isset($billing_address_2)): ?>
+                        <p><?php echo $billing_address_1 ?></p>
                         <?php endif;?>
-                        <p><?php echo get_user_meta( $customer_id, 'billing_city', true ) ?>, <?php echo WC()->countries->countries[get_user_meta( $customer_id, 'billing_country', true ) ] ?></p>
+                        <p><?php echo $billing_city . ', '.$billing_country ?></p>
                     </div>
                     <div class="shipping-group">
                         <h3>Shipping Address</h3>
-                        <p><?php echo  get_user_meta( $customer_id, 'shipping_address_1', true )?></p>
-                        <?php if (get_user_meta( $customer_id, 'shipping_address_2', true )): ?>
-                        <p><?php echo get_user_meta( $customer_id, 'shipping_address_1', true ) ?></p>
+                        <p><?php echo $shipping_address_1 ?></p>
+                        <?php if (isset($shipping_address_2)): ?>
+                        <p><?php echo $shipping_address_2 ?></p>
                         <?php endif;?>
-                        <p><?php echo get_user_meta( $customer_id, 'shipping_city', true ) ?>, <?php echo WC()->countries->countries[get_user_meta( $customer_id, 'shipping_country', true ) ] ?></p>
+                        <p><?php echo $shipping_city .', '.$shipping_country ?>
                     </div>
                     <div class="shipping-group">
                         <h3>Choose Shipping method</h3>

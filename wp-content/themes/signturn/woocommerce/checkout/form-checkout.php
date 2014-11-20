@@ -27,23 +27,78 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
 <form name="checkout" method="post" class="checkout" action="<?php echo esc_url( $get_checkout_url ); ?>" enctype="multipart/form-data">
 
 	<?php if ( sizeof( $checkout->checkout_fields ) > 0 ) : ?>
-
 		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
-
+                
             <div class="col2-set" id="customer_details" style="display: none">
 
 			<div class="col-sm-6 no-padding">
                 <div id="checkout-delivery-builling">
                     <h2>Billing Address</h2>
                         <?php 
-                         $customer_id = get_current_user_id();
+                         if(is_user_logged_in()){
+                            $customer_id = get_current_user_id();
+                            $billing_title = get_user_meta( $customer_id, 'billing_title', true );
+                            $billing_first_name = get_user_meta( $customer_id, 'billing_first_name', true );
+                            $billing_last_name = get_user_meta( $customer_id, 'billing_last_name', true );
+                            $billing_phone = get_user_meta( $customer_id, 'billing_phone', true );
+                            $billing_address_1 = get_user_meta( $customer_id, 'billing_address_1', true );
+                            $billing_address_2 = get_user_meta( $customer_id, 'billing_address_2', true );
+                            $billing_city = get_user_meta( $customer_id, 'billing_city', true );
+                            $billing_country = get_user_meta( $customer_id, 'billing_country', true );
+                            $billing_postcode = get_user_meta( $customer_id, 'billing_postcode', true );
+                            
+                            $shipping_title = get_user_meta( $customer_id, 'shipping_title', true );
+                            $shipping_first_name = get_user_meta( $customer_id, 'shipping_first_name', true );
+                            $shipping_last_name = get_user_meta( $customer_id, 'shipping_last_name', true );
+                            $shipping_phone = get_user_meta( $customer_id, 'shipping_phone', true );
+                            $shipping_address_1 = get_user_meta( $customer_id, 'shipping_address_1', true );
+                            $shipping_address_2 = get_user_meta( $customer_id, 'shipping_address_2', true );
+                            $shipping_city = get_user_meta( $customer_id, 'shipping_city', true );
+                            $shipping_country = get_user_meta( $customer_id, 'shipping_country', true );
+                            $shipping_postcode = get_user_meta( $customer_id, 'shipping_postcode', true );
+                         }elseif(isset($_SESSION['guest_delivery'])) {
+                            $guest_delivery =   $_SESSION['guest_delivery'];
+                            $billing_title =  $guest_delivery['billing_title'];
+                            $billing_first_name =  $guest_delivery['billing_first_name'];
+                            $billing_last_name =  $guest_delivery['billing_last_name'];
+                            $billing_phone =  $guest_delivery['billing_phone'];
+                            $billing_address_1 =  $guest_delivery['billing_address_1'];
+                            $billing_address_2 =  $guest_delivery['billing_address_2'];
+                            $billing_city =  $guest_delivery['billing_city'];
+                            $billing_country =  $guest_delivery['billing_country'];
+                            $billing_postcode =  $guest_delivery['billing_postcode'];
+                            if(isset($guest_delivery['ship_to_different_address']) && $guest_delivery['ship_to_different_address']){
+                                $shipping_title =  $guest_delivery['shipping_title'];
+                                $shipping_first_name =  $guest_delivery['shipping_first_name'];
+                                $shipping_last_name =  $guest_delivery['shipping_last_name'];
+                                $shipping_phone =  $guest_delivery['shipping_phone'];
+                                $shipping_address_1 =  $guest_delivery['shipping_address_1'];
+                                $shipping_address_2 =  $guest_delivery['shipping_address_2'];
+                                $shipping_city =  $guest_delivery['shipping_city'];
+                                $shipping_country =  $guest_delivery['shipping_country'];
+                                $shipping_postcode =  $guest_delivery['shipping_postcode'];
+                            }else{
+                                $shipping_title =  $billing_title;
+                                $shipping_first_name =  $billing_first_name;
+                                $shipping_last_name =  $billing_last_name;
+                                $shipping_phone =  $billing_phone;
+                                $shipping_address_1 =  $billing_address_1;
+                                $shipping_address_2 =   $billing_address_2;
+                                $shipping_city =  $billing_city;
+                                $shipping_country =  $billing_country;
+                                $shipping_postcode =  $billing_postcode;
+                            }
+                         }else{
+                             wp_redirect(get_permalink( get_page_by_path( 'checkout-delivery' ) ) );
+                             exit();
+                         }
                         ?>
                         <div class="row form-group">
                             <div class="col-sm-4">
                                 <label>Title: <span>(*)</span></label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" name="billing_title" value="<?php echo  get_user_meta( $customer_id, 'billing_title', true ) ?>"  placeholder="Mr/Mrs"  class="form-control" />
+                                <input type="text" name="billing_title" value="<?php echo $billing_title   ?>"  placeholder="Mr/Mrs"  class="form-control" />
                             </div>
                         </div>
                         <div class="row form-group">
@@ -51,7 +106,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
                                 <label>First Name:<span>(*)</span></label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" name="billing_first_name" value="<?php echo  get_user_meta( $customer_id, 'billing_first_name', true ) ?>" class="form-control" />
+                                <input type="text" name="billing_first_name" value="<?php echo $billing_first_name ?>" class="form-control" />
                             </div>
                         </div>
                         <div class="row form-group">
@@ -59,7 +114,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
                                 <label>Last Name:<span>(*)</span></label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" name="billing_last_name" value="<?php echo  get_user_meta( $customer_id, 'billing_last_name', true ) ?>" class="form-control" />
+                                <input type="text" name="billing_last_name" value="<?php echo $billing_last_name ?>" class="form-control" />
                             </div>
                         </div>
                         <div class="row form-group">
@@ -67,7 +122,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
                                 <label>Contact Number:<span>(*)</span></label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" name="billing_phone" value="<?php echo  get_user_meta( $customer_id, 'billing_phone', true ) ?>"  class="form-control" />
+                                <input type="text" name="billing_phone" value="<?php echo $billing_phone ?>"  class="form-control" />
                             </div>
                         </div>
                        
@@ -76,12 +131,12 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
                                 <label>Address<span>(*)</span></label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" name="billing_address_1"  value="<?php echo  get_user_meta( $customer_id, 'billing_address_1', true ) ?>"  class="form-control" />
+                                <input type="text" name="billing_address_1"  value="<?php echo  $billing_address_1 ?>"  class="form-control" />
                             </div>
                         </div>
                         <div class="row form-group">
                             <div class="col-sm-8 col-sm-offset-4">
-                                <input type="text" name="billing_address_2"  value="<?php echo  get_user_meta( $customer_id, 'billing_address_2', true ) ?>"  class="form-control" />
+                                <input type="text" name="billing_address_2"  value="<?php echo  $billing_address_2 ?>"  class="form-control" />
                             </div>
                         </div>
                         <div class="row form-group">
@@ -89,7 +144,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
                                 <label>City:<span>(*)</span></label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" name="billing_city" value="<?php echo  get_user_meta( $customer_id, 'billing_city', true ) ?>"  class="form-control" />
+                                <input type="text" name="billing_city" value="<?php echo  $billing_city ?>"  class="form-control" />
                             </div>
                         </div>
                         <div class="row form-group">
@@ -97,7 +152,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
                                 <label>Postcode:<span>(*)</span></label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" name="billing_postcode" value="<?php echo  get_user_meta( $customer_id, 'billing_postcode', true ) ?>"  class="form-control" />
+                                <input type="text" name="billing_postcode" value="<?php echo $billing_postcode ?>"  class="form-control" />
                             </div>
                         </div>
                         <div class="row form-group">
@@ -109,7 +164,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
 
 				foreach ( $countries as $ckey => $cvalue ){
                                     //echo "current $ckey vs ".get_user_meta( $customer_id, 'billing_country', true );
-                                    $selected = esc_attr( $ckey ) == get_user_meta( $customer_id, 'billing_country', true ) ?  'selected="selected"' : '';
+                                    $selected = esc_attr( $ckey ) == $billing_country ?  'selected="selected"' : '';
                                     $field .= '<option '.$selected.'  value="' . esc_attr( $ckey ) . '" '.selected( $value, $ckey, false ) .'>'.__( $cvalue, 'woocommerce' ) .'</option>';
                                 }
 				$field .= '</select>';
@@ -126,7 +181,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
                                 <label class="delivery-instructions">Delivery Instructions:<span>(*)</span></label>
                             </div>
                             <div class="col-sm-8">
-                                <textarea class="form-control"  name="order_comments"><?php echo  get_user_meta( $customer_id, 'billing_first_name', true ) ?></textarea>
+                                <textarea class="form-control"  name="order_comments"><?php echo  get_user_meta( $customer_id, 'order_comments', true ) ?></textarea>
                             </div>
                         </div>
                         <p class="radio-wrapper">
@@ -152,7 +207,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
                                 <label>Title: <span>(*)</span></label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" name="shipping_title" value="<?php echo  get_user_meta( $customer_id, 'shipping_title', true ) ?>"  placeholder="Mr/Mrs"  class="form-control" />
+                                <input type="text" name="shipping_title" value="<?php echo $shipping_title ?>"  placeholder="Mr/Mrs"  class="form-control" />
                             </div>
                         </div>
                         <div class="row form-group">
@@ -160,7 +215,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
                                 <label>First Name:<span>(*)</span></label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" name="shipping_first_name" value="<?php echo  get_user_meta( $customer_id, 'shipping_first_name', true ) ?>" class="form-control" />
+                                <input type="text" name="shipping_first_name" value="<?php echo $shipping_first_name ?>" class="form-control" />
                             </div>
                         </div>
                         <div class="row form-group">
@@ -168,7 +223,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
                                 <label>Last Name:<span>(*)</span></label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" name="shipping_last_name" value="<?php echo  get_user_meta( $customer_id, 'shipping_last_name', true ) ?>" class="form-control" />
+                                <input type="text" name="shipping_last_name" value="<?php echo $shipping_last_name ?>" class="form-control" />
                             </div>
                         </div>
                         <div class="row form-group">
@@ -176,12 +231,12 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
                                 <label>Address<span>(*)</span></label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" name="shipping_address_1"  value="<?php echo  get_user_meta( $customer_id, 'shipping_address_1', true ) ?>"  class="form-control" />
+                                <input type="text" name="shipping_address_1"  value="<?php echo $shipping_address_1 ?>"  class="form-control" />
                             </div>
                         </div>
                         <div class="row form-group">
                             <div class="col-sm-8 col-sm-offset-4">
-                                <input type="text" name="shipping_address_2"  value="<?php echo  get_user_meta( $customer_id, 'shipping_address_2', true ) ?>"  class="form-control" />
+                                <input type="text" name="shipping_address_2"  value="<?php echo $shipping_address_2 ?>"  class="form-control" />
                             </div>
                         </div>
                         <div class="row form-group">
@@ -189,7 +244,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
                                 <label>City:<span>(*)</span></label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" name="shipping_city" value="<?php echo  get_user_meta( $customer_id, 'shipping_city', true ) ?>"  class="form-control" />
+                                <input type="text" name="shipping_city" value="<?php echo $shipping_city ?>"  class="form-control" />
                             </div>
                         </div>
                         <div class="row form-group">
@@ -197,7 +252,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
                                 <label>Postcode:<span>(*)</span></label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" name="shipping_postcode" value="<?php echo  get_user_meta( $customer_id, 'shipping_postcode', true ) ?>"  class="form-control" />
+                                <input type="text" name="shipping_postcode" value="<?php echo $shipping_postcode ?>"  class="form-control" />
                             </div>
                         </div>
                         <div class="row form-group">
@@ -208,7 +263,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
 						. '<option value="">'.__( 'Select a country&hellip;', 'woocommerce' ) .'</option>';
 
 				foreach ( $countries as $ckey => $cvalue ){
-                                        $selected = esc_attr( $ckey ) == get_user_meta( $customer_id, 'shipping_country', true ) ?  'selected="selected"' : '';
+                                        $selected = esc_attr( $ckey ) == $shipping_country ?  'selected="selected"' : '';
                                        //echo "current $ckey vs ".get_user_meta( $customer_id, 'shipping_country', true );
 					$field .= '<option '.$selected.'  value="' . esc_attr( $ckey ) . '" '.selected( $value, $ckey, false ) .'>'.__( $cvalue, 'woocommerce' ) .'</option>';
                                  }
@@ -235,7 +290,18 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
 
 	<?php endif; ?>
 
-	<?php do_action( 'woocommerce_checkout_order_review' ); ?>
+	<?php 
+            $_SESSION['billing_address_1'] = $billing_address_1;
+            $_SESSION['billing_address_2'] = $billing_address_2;
+            $_SESSION['billing_city'] = $billing_city;
+            $_SESSION['billing_country'] = $billing_country;
+            $_SESSION['shipping_address_1'] = $shipping_address_1;
+            $_SESSION['shipping_address_2'] = $shipping_address_2;
+            $_SESSION['shipping_city'] = $shipping_city;
+            $_SESSION['shipping_country'] = $shipping_country;
+            do_action( 'woocommerce_checkout_order_review');
+            
+         ?>
 
 </form>
 

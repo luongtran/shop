@@ -36,6 +36,17 @@ class WC_Form_Handler {
 	}
         public static function process_checkout_delivery(){
             if(isset($_POST['checkout_delivery'])){
+                if(!is_user_logged_in()){
+                   $delivery_data = $_POST;
+                   foreach ($delivery_data as $key => $value) {
+                       if(strlen($value)<2047){
+                           $delivery_data[$key] = htmlspecialchars($value);
+                       }else{
+                           return;
+                       }
+                   }
+                   $_SESSION['guest_delivery'] = $delivery_data;
+                }
                 if ( ! defined( 'WOOCOMMERCE_CHECKOUT' ) ) {
                         define( 'WOOCOMMERCE_CHECKOUT', true );
                 }
@@ -713,7 +724,7 @@ class WC_Form_Handler {
 			}
 
 		}
-
+               
 		// If we added the product to the cart we can now optionally do a redirect.
 		if ( $was_added_to_cart && wc_notice_count( 'error' ) == 0 ) {
 

@@ -712,6 +712,7 @@ form label.error {
 {
     border:1px solid #A89340;
     border-radius: 0;
+    padding:4px 5px;
 }
 #checkout-account label,#checkout-delivery label {
     font-weight: normal;
