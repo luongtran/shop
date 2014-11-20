@@ -33,21 +33,21 @@ if (is_file(WP_CONTENT_DIR . '/extensions/newsletter/subscription/email.php')) {
     <body style="background-color: #ddd; font-family: Helvetica Neue, Helvetica, Arial, sans-serif; font-size: 14px; color: #666; margin: 0 auto; padding: 0;">
         <br>
         
-         <table border="0" cellspacing="0" cellpadding="1" width="550" align="center">
+         <table border="1" cellspacing="0" cellpadding="0" width="550" align="center">
             <tbody>
                 <tr>
                     <td style="background-color: #fff;" width="550" valign="top">
                         <table border="0" cellspacing="0" cellpadding="0" width="100%">
                             <tbody>
                                 <tr>
-                                    <td valign="top" align="center" style="color: #f4f4f4; font-size: 12px; padding: 7px;text-align: center">
-                                        To ensure you receive you Signature Fragrances™ emails, please add <a href="mailto:info@signaturefragrances.co.uk">info@signaturefragrances.co.uk</a> to your address book
+                                    <td valign="top" align="center" style="color: #f4f4f4;background: #000; font-size: 12px; padding: 7px;text-align: center">
+                                        <br/>To ensure you receive you Signature Fragrances™ emails, please add <a href="mailto:info@signaturefragrances.co.uk">info@signaturefragrances.co.uk</a> to your address book
                                     </td>
                                 </tr>
                                 <tr>
-                                    <td align="center" style="text-align: center">                                            
+                                    <td align="center" style="text-align: center;background: #000;">                                            
                                         Signature Fragrances <br/>
-                                        London  <img width="100" src="<?php echo home_url() ?>/wp-content/themes/signturn/images/logo.png" />
+                                        London  <img width="100" src="<?php echo home_url() ?>/wp-content/themes/signturn/images/logo.png" /> <br/><br/>
                                     </td>
                                 </tr>
                                 <!-- main content here --> 
