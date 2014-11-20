@@ -2009,6 +2009,36 @@ margin-bottom: 30px;
     }
     
 }
+.page-cart .woocommerce-error {
+    border-color: #BB533B !important;
+}
+.page-cart .woocommerce-error strong {
+    color:#BB533B
+}
+#guest-checkout {
+    text-align :center;
+    font-size:18px;
+    color:#444;
+    margin:15px 0 0 0px;
+    padding:20px 0px 0px 20px;
+    border-top:3px solid #666
+}
+#guest-checkout label {
+    font-family: "TrajanPro-Regular";
+    font-size: 16px;
+    color: #A5933F;
+    display:inline-block;
+    padding-right:20px;
+}
+#guest-checkout a {
+    background: none repeat scroll 0 0 #525252;
+    color: #fff;
+    display: inline-block;
+    font-family: "TrajanPro-Regular";
+    font-size: 12px;
+    padding: 4px 10px 2px ;
+    margin-left:20px;
+}
 /** FOR SLIDER2 PRODUCT CAT CONTENT ***/
 @media(max-width:815px) and (min-width:690px){
     #slider2 {

@@ -29,7 +29,7 @@
                                 <label>Username:</label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" name="username" class="form-control" />
+                                <input type="text" value="<?php if(isset($_POST['username'])) echo  htmlspecialchars($_POST['username']); ?>" name="username" class="form-control" />
                             </div>
                         </div>
                         <div class="row form-group">
@@ -37,7 +37,7 @@
                                 <label>Email:</label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="email" name="email" class="form-control" />
+                                <input value="<?php if(isset($_POST['email'])) echo  htmlspecialchars($_POST['email']); ?>" type="email" name="email" class="form-control" />
                             </div>
                         </div>
                         <div class="row form-group">
@@ -45,7 +45,7 @@
                                 <label>Confirm Email:</label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="email" name="confirm_email" class="form-control" />
+                                <input value="<?php if(isset($_POST['confirm_email'])) echo htmlspecialchars($_POST['confirm_email']); ?>" type="email" name="confirm_email" class="form-control" />
                             </div>
                         </div>
                         <div class="row form-group">
@@ -128,8 +128,14 @@
                     </form>
                 </div>
             </div>
+            <div class="col-sm-12">
+                 <div id="guest-checkout">
+            <label>Guest Checkout: </label> Checkout without create an account 
+            <a href="<?php echo get_permalink( get_page_by_path( 'checkout-delivery' )) ?>">Process To Checkout </a>
         </div>
-       
+            </div>
+     
+        </div>
     </div><!-- #content -->
     <?php 
         // action hook for placing content below #content
