@@ -54,6 +54,7 @@
 <?php $image_link  = wp_get_attachment_url( get_post_thumbnail_id() );?>
 <link rel="image_src" href="<?php echo $image_link ?>"  >
 <?php endif;?>
+<link rel="icon" type="image/png"  href="<?php echo TEMPLATE_URL?>/images/favicon.ico">
 </head>
 <?php thematic_body();?>
 <div id="page-loader">
