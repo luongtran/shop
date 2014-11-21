@@ -356,13 +356,13 @@ body.single-product {
     font-weight: bold;
 }
 #main-content .shop_table.cart .cart_item .product-subtotal .amount,#main-content .shop_table.cart .cart_item .product-subtotal a.remove{
-    font-size: 22px ;
+    font-size: 15px ;
     font-family: "TrajanPro-Regular";
     color: #525252;
     font-weight: normal;
 }
 #main-content .shop_table.cart .cart_item .product-subtotal a.remove {
-    font-size: 14px;
+    font-size: 12px;
 }
 .woocommerce table.cart a.remove:hover, .woocommerce #content table.cart a.remove:hover, .woocommerce-page table.cart a.remove:hover, .woocommerce-page #content table.cart a.remove:hover {
     background: transparent
@@ -480,7 +480,7 @@ body #main-content div[id*="product"] .single_add_to_cart_button,.site-btn,.site
 }
 .site-btn.small {
      padding: 5px 10px 4px 10px !important;
-     font-size:12px !important;
+     font-size:10px !important;
 }
 .product-social-share {
     margin-bottom: 10px;
@@ -712,7 +712,6 @@ form label.error {
 {
     border:1px solid #A89340;
     border-radius: 0;
-    padding:4px 5px;
 }
 #checkout-account label,#checkout-delivery label {
     font-weight: normal;
@@ -1021,13 +1020,13 @@ body.term-floral #product-cat-description {
     color:#a7923e;
     position: absolute;
     left:12px;
-    top:33px;
+    top:28px;
     z-index: 9999;
 }
 .loader {
     position: absolute;
-    width: 70px;
-    height: 70px;
+    width: 64px;
+    height: 64px;
     border: 3px solid #A7923F;
     border-right-color: transparent;
     border-radius: 50%;
@@ -1517,7 +1516,7 @@ html * .ls-container img, body * .ls-container img, #ls-global * .ls-container i
     color:#A7923E
 }
 .single-meta {
-    padding: 8px 0px 5px;
+    padding: 6px 0px 3px;
     border-top: 1px solid #CCB872;
     border-bottom: 1px solid #CCB872;
     margin-bottom:0px;
@@ -1578,7 +1577,7 @@ html * .ls-container img, body * .ls-container img, #ls-global * .ls-container i
     border: 1px solid rgb(217, 207, 172);
     color: rgb(97, 97, 97);
     position: absolute;
-    right: 90px;
+    right: 70px;
     top: 30px;
     z-index: 9999999;
     padding: 5px 11px;
@@ -1586,6 +1585,11 @@ html * .ls-container img, body * .ls-container img, #ls-global * .ls-container i
     display: none;
     width: 320px;
 }
+
+#subscribe-header {
+    width: 350px;
+}
+
 #subscribe-header:before {
     margin-left:-2px;
 }
@@ -1593,7 +1597,7 @@ html * .ls-container img, body * .ls-container img, #ls-global * .ls-container i
     margin-left:0px;
 }
 #widthlove {
-    right: 175px;
+    right: 172px;
 }
 #widthlove:before {
     margin-left:0;
@@ -1622,7 +1626,7 @@ p.discover_text  {
     padding: 10px 15px 5px;
     position: absolute;
     z-index: 999999;
-    top: 35px;
+    top: 30px;
     right: 0px;
     width: 358px;
     border: 2px solid rgb(217, 207, 172);
@@ -1841,7 +1845,7 @@ margin-bottom: 30px;
 }
 #what-new {
     background:#a7923f;
-    padding:7px 20px 0;
+    padding:3px 20px 0px;
     margin-bottom:20px;
 }
 .archive-mark .added_to_cart.wc-forward {
@@ -1894,7 +1898,7 @@ margin-bottom: 30px;
     color: #fff;
     font-weight: 200;
     font-size: 18px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 #post-15 .entry-content {
@@ -2037,7 +2041,7 @@ margin-bottom: 30px;
     color:#444;
     margin:15px 0 0 0px;
     padding:20px 0px 0px 20px;
-    border-top:3px solid #666
+    border-top:1px solid #666
 }
 #guest-checkout label {
     font-family: "TrajanPro-Regular";
@@ -2055,6 +2059,7 @@ margin-bottom: 30px;
     padding: 4px 10px 2px ;
     margin-left:20px;
 }
+
 /** FOR SLIDER2 PRODUCT CAT CONTENT ***/
 @media(max-width:815px) and (min-width:690px){
     #slider2 {
@@ -2977,14 +2982,14 @@ li.world-of-signature ,li.news{
 }
 /************  ADD BY MUHAMMAD **************/
 
-
+.page-cart .woocommerce-error,
 .woocommerce-error {
     background: none;
     color: #666;
     border: 1px solid #A7923F !important;;
     border-radius: 0px;
     margin-bottom: 20px;
-    padding: 15px;
+    padding: 7px 9px 3px;
     list-style: none;
     font-size: 15px;
 }
@@ -3112,13 +3117,32 @@ body.login {
 }
 
 .woocommerce .woocommerce-error:before, 
-.woocommerce-page .woocommerce-error:before {
+.woocommerce-page .woocommerce-error:before,
+.woocommerce .woocommerce-info:before, 
+.woocommerce-page .woocommerce-info:before {
 display: none;
 }
 
 
 .woocommerce .woocommerce-error, 
 .woocommerce-page .woocommerce-error {
-padding: 10px 20px !important; 
+padding: 7px 9px 3px !important; 
 }
 
+
+.page-cart .woocommerce-error strong {
+color: #A89340;
+font-weight: 200;
+}
+
+a {
+    color: #A89340;
+    text-decoration: none;
+}
+
+div.wpcf7-validation-errors, div.wpcf7-mail-sent-ng, div.wpcf7-mail-sent-ok {
+border: 1px solid #A89340;
+}
+#main-content .page.type-page h1 {
+margin-top: 0;
+}
