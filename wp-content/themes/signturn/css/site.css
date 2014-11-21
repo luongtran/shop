@@ -862,6 +862,7 @@ input[disabled]{
         background-size:9px 9px !important;
         bottom:3px !important;
 }
+
 #checkout-delivery-builling .iradio_minimal {
   background-position: -68px 2px;
 }
@@ -3140,8 +3141,8 @@ a {
     text-decoration: none;
 }
 
-div.wpcf7-validation-errors, div.wpcf7-mail-sent-ng, div.wpcf7-mail-sent-ok {
-border: 1px solid #A89340;
+div.wpcf7-validation-errors, div.wpcf7-mail-sent-ng, div.wpcf7-mail-sent-ok,input.wpcf7-not-valid,textarea.wpcf7-not-valid{
+border: 1px solid red !important;
 }
 #main-content .page.type-page h1 {
 margin-top: 0;
