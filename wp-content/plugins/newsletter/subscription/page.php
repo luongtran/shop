@@ -34,16 +34,15 @@ if (is_file(WP_CONTENT_DIR . '/extensions/newsletter/subscription/page.php')) {
         <style type="text/css">
             body {
                 font-family: verdana;
-                background-color: #ddd;
+                background-color: #000;
                 font-size: 12px;
+                color: #dddddd;
             }
             #container {
-                border: 1px solid #aaa;
-                border-radius: 5px;
-                background-color: #fff;
-                margin: 40px auto;
+                margin: 70px auto 0px;
                 width: 600px;
-                padding: 20px
+                padding: 0px;
+                text-align: center;
             }
             h1 {
                 font-size: 24px;
@@ -194,13 +193,14 @@ opacity:0.1}
         </script>
         <?php } ?>
         <div id="container">
-            <h1><?php echo get_option('blogname'); ?></h1>
+            <?php
+                if ( $img = get_option( 'woocommerce_email_header_image' ) ) {
+                    echo '<p style="margin-top:0; text-align: center;"><img src="' . esc_url( $img ) . '" alt="' . get_bloginfo( 'name' ) . '" /></p>';
+                }
+            ?>
             <?php echo $message; ?>
-        </div>
-        <?php if(isset($_GET['nm']) && $_GET['nm'] === 'confirmation') :?>
-        <p style="text-align: center">You will be redirected to home page in a moment</p>
-        <div style="width: 100%;text-align: center">
-            <div id="facebookG" style="width: 32px;margin:auto">
+
+             <div id="facebookG" style="width: 32px;margin:auto">
                 <div id="blockG_1" class="facebook_blockG">
                 </div>
                 <div id="blockG_2" class="facebook_blockG">
@@ -208,17 +208,16 @@ opacity:0.1}
                 <div id="blockG_3" class="facebook_blockG">
                 </div>
              </div>
+
             <script type="text/javascript">
                  $.wait = function( callback, seconds){
                     return window.setTimeout( callback, seconds * 1000 );
                  };
                  $.wait(function(){
-                    //window.location = "<?php echo home_url() ?>";
+                    window.location = "<?php echo home_url() ?>";
                 },3);
             </script>
-         
         </div>
-        <?php endif;?>
-        
+       
     </body>
 </html>

@@ -302,12 +302,12 @@
                         </script>
                     <div id="what-new">
                         <form class="row" method="post" action="<?php echo site_url()?>/wp-content/plugins/newsletter/do/subscribe.php" onsubmit="return newsletter_check(this)">
-                            <div class="col-sm-5 label-what-new" style="line-height: 35px">What New Is Signature Word</div>
+                            <div class="col-sm-5 label-what-new" style="line-height: 30px">What's New In Signature Word</div>
                             <div class="col-sm-5">
                                 <input  name="ne" size="30" required type="email" placeholder="enter your email address" class="site-input form-control" />
                             </div>
                             <div class="col-sm-2 no-padding">
-                                <input style="line-height: 35px" class="newsletter-submit btn-text no-padding" type="submit" value="Sign Up Now"/>
+                                <input style="line-height: 30px" class="newsletter-submit btn-text no-padding" type="submit" value="Sign Up Now"/>
                             </div>
                         </form>
                     </div>
