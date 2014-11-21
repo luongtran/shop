@@ -5,12 +5,21 @@
         <group name="Sites">
             <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/footer.php</file>
             <file>file:/D:/projects/signaturn/source/wp-content/plugins/newsletter/emails/themes/signaturn/theme.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/plugins/newsletter/emails/themes/signaturn/theme-options.php</file>
             <file>file:/D:/projects/signaturn/source/wp-content/plugins/newsletter/emails/themes/default/social-options.php</file>
             <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/css/site.css</file>
             <file>file:/D:/projects/signaturn/source/wp-content/plugins/newsletter/subscription/subscription.php</file>
             <file>file:/D:/projects/signaturn/source/wp-content/plugins/newsletter/subscription/page.php</file>
             <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/header.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/page-checkout-delivery.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/checkout/form-checkout.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/templates/checkout/form-checkout.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/includes/class-wc-checkout.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/checkout/review-order.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/includes/wc-template-hooks.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/page-checkout-account.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/newsletter/subscription/email.php</file>
         </group>
     </open-files>
 </project-private>

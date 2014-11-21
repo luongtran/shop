@@ -825,6 +825,8 @@ class WC_Checkout {
 		// Note if we skip shipping
 		$skipped_shipping = false;
 		// Get posted checkout_fields and do validation
+                
+                $errorFields = array();
 		foreach ( $this->checkout_fields as $fieldset_key => $fieldset ) {
 
 			// Skip shipping if not needed
@@ -871,12 +873,14 @@ class WC_Checkout {
                                 //print_r($this->posted);
 				// Validation: Required fields
 				if ( isset( $field['required'] ) && $field['required'] && empty( $this->posted[ $key ] ) ) {
-                                        //die($key);
 					wc_add_notice( '<strong>' . $field['label'] . '</strong> ' . __( 'is a required field.', 'woocommerce' ), 'error' );
+                                        $errorFields[] = $key;
 				}
 
 				if ( ! empty( $this->posted[ $key ] ) ) {
-
+                                        if(!isset($errorFields[$key])){
+                                            $errorFields[] = $key;
+                                        }
 					// Validation rules
 					if ( ! empty( $field['validate'] ) && is_array( $field['validate'] ) ) {
 						foreach ( $field['validate'] as $rule ) {
@@ -926,10 +930,11 @@ class WC_Checkout {
 						}
 					}
 				}
+                              
 			}
                         //die();
 		}
-
+                $_SESSION['checkout_errors'] = $errorFields;
 		// Update customer location to posted location so we can correctly check available shipping methods
 		if ( isset( $this->posted['billing_country'] ) ) {
 			WC()->customer->set_country( $this->posted['billing_country'] );

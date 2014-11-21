@@ -12,7 +12,12 @@
 ?>
     <div id="main-content" class="page-gift page-cart">
         <?php get_step_winzar(4);?>
+         <?php 
+           $checkout_error = $_SESSION['checkout_errors'];
+          // print_r($checkout_error);
+        ?>
         <?php wc_print_notices(); ?>
+       
         <h1>Your Shopping Bag</h1>
         <form method="POST">
         <div id="checkout-delivery" class="clearfix">
@@ -31,7 +36,7 @@
                                 <label>Title: <span>(*)</span></label>
                             </div>
                             <div class="col-sm-8">
-                                <select name="billing_title" class="form-control">
+                                <select  name="billing_title" class="form-control">
                                     <?php $billing_title = isset($_POST['billing_title']) ? $_POST['billing_title'] :  get_user_meta( $customer_id, 'billing_title', true )  ?>
                                     <option value="Mr"  <?php if($billing_title==='Mr') echo 'selected="selected"'; ?>>Mr</option>
                                     <option value="Mrs"  <?php if($billing_title==='Mrs') echo 'selected="selected"'; ?>>Mrs</option>
@@ -46,7 +51,7 @@
                                 <label>First Name:<span>(*)</span></label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" name="billing_first_name" value="<?php if(isset($_POST['billing_first_name']))echo $_POST['billing_first_name'];else  echo  get_user_meta( $customer_id, 'billing_first_name', true ) ?>" class="form-control" />
+                                <input type="text" name="billing_first_name" value="<?php if(isset($_POST['billing_first_name']))echo $_POST['billing_first_name'];else  echo  get_user_meta( $customer_id, 'billing_first_name', true ) ?>" class="form-control <?php if(in_array('billing_first_name', $checkout_error)) echo "error" ?>" />
                             </div>
                         </div>
                         <div class="row form-group">
@@ -54,15 +59,15 @@
                                 <label>Last Name:<span>(*)</span></label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" name="billing_last_name" value="<?php if(isset($_POST['billing_last_name']))echo $_POST['billing_last_name'];else   echo  get_user_meta( $customer_id, 'billing_last_name', true ) ?>" class="form-control" />
+                                <input type="text" name="billing_last_name" value="<?php if(isset($_POST['billing_last_name']))echo $_POST['billing_last_name'];else   echo  get_user_meta( $customer_id, 'billing_last_name', true ) ?>" class="form-control <?php if(in_array('billing_last_name', $checkout_error)) echo "error" ?>" />
                             </div>
                         </div>
                         <div class="row form-group">
                             <div class="col-sm-4">
-                                <label>Contact Number:<span>(*)</span></label>
+                                <label>Contact Number:</label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" name="billing_phone" value="<?php if(isset($_POST['billing_phone']))echo $_POST['billing_phone'];else    echo  get_user_meta( $customer_id, 'billing_phone', true ) ?>"  class="form-control" />
+                                <input type="text" name="billing_phone" value="<?php if(isset($_POST['billing_phone']))echo $_POST['billing_phone'];else    echo  get_user_meta( $customer_id, 'billing_phone', true ) ?>"  class="form-control <?php if(in_array('billing_phone', $checkout_error)) echo "error" ?>" />
                             </div>
                         </div>
                        
@@ -71,12 +76,12 @@
                                 <label>Address<span>(*)</span></label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" name="billing_address_1"  value="<?php if(isset($_POST['billing_address_1']))echo $_POST['billing_address_1'];else    echo  get_user_meta( $customer_id, 'billing_address_1', true ) ?>"  class="form-control" />
+                                <input type="text" name="billing_address_1"  value="<?php if(isset($_POST['billing_address_1']))echo $_POST['billing_address_1'];else    echo  get_user_meta( $customer_id, 'billing_address_1', true ) ?>"  class="form-control <?php if(in_array('billing_address_1', $checkout_error)) echo "error" ?>" />
                             </div>
                         </div>
                         <div class="row form-group">
                             <div class="col-sm-8 col-sm-offset-4">
-                                <input type="text" name="billing_address_2"  value="<?php if(isset($_POST['billing_address_2']))echo $_POST['billing_address_2'];else    echo  get_user_meta( $customer_id, 'billing_address_2', true ) ?>"  class="form-control" />
+                                <input type="text" name="billing_address_2"  value="<?php if(isset($_POST['billing_address_2']))echo $_POST['billing_address_2'];else    echo  get_user_meta( $customer_id, 'billing_address_2', true ) ?>"  class="form-control <?php if(in_array('billing_address_2', $checkout_error)) echo "error" ?>" />
                             </div>
                         </div>
                         <div class="row form-group">
@@ -84,7 +89,7 @@
                                 <label>City:<span>(*)</span></label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" name="billing_city" value="<?php if(isset($_POST['billing_city']))echo $_POST['billing_city'];else    echo  get_user_meta( $customer_id, 'billing_city', true ) ?>"  class="form-control" />
+                                <input type="text" name="billing_city" value="<?php if(isset($_POST['billing_city']))echo $_POST['billing_city'];else    echo  get_user_meta( $customer_id, 'billing_city', true ) ?>"  class="form-control <?php if(in_array('billing_city', $checkout_error)) echo "error" ?>" />
                             </div>
                         </div>
                         <div class="row form-group">
@@ -92,13 +97,16 @@
                                 <label>Postcode:<span>(*)</span></label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" name="billing_postcode" value="<?php if(isset($_POST['billing_postcode']))echo $_POST['billing_postcode'];else    echo  get_user_meta( $customer_id, 'billing_postcode', true ) ?>"  class="form-control" />
+                                <input type="text" name="billing_postcode" value="<?php if(isset($_POST['billing_postcode']))echo $_POST['billing_postcode'];else    echo  get_user_meta( $customer_id, 'billing_postcode', true ) ?>"  class="form-control <?php if(in_array('billing_postcode', $checkout_error)) echo "error" ?>" />
                             </div>
                         </div>
                         <div class="row form-group">
                             <?php 
                                 $countries = WC()->countries->get_shipping_countries();
                                 $args = ['class'=>' ','id'=>' ','label_class'=>'','label'=>' Country'];
+                                if(isset($checkout_error['billing_country'])){
+                                    $args['class'] = ' error ';
+                                }
                                 $field =  '<select class="country_to_state country_select form-control" name="billing_country" >'
 						. '<option value="">'.__( 'Select a country&hellip;', 'woocommerce' ) .'</option>';
                                 $billing_country = isset($_POST['billing_country']) ? $_POST['billing_country'] : get_user_meta( $customer_id, 'billing_country', true );
@@ -158,7 +166,7 @@
                                 <label>First Name:<span>(*)</span></label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" name="shipping_first_name" value="<?php if(isset($_POST['shipping_first_name']))echo $_POST['shipping_first_name'];else  echo  get_user_meta( $customer_id, 'shipping_first_name', true ) ?>" class="form-control" />
+                                <input type="text" name="shipping_first_name" value="<?php if(isset($_POST['shipping_first_name']))echo $_POST['shipping_first_name'];else  echo  get_user_meta( $customer_id, 'shipping_first_name', true ) ?>" class="form-control <?php if(in_array('shipping_first_name', $checkout_error)) echo "error" ?>" />
                             </div>
                         </div>
                         <div class="row form-group">
@@ -166,7 +174,7 @@
                                 <label>Last Name:<span>(*)</span></label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" name="shipping_last_name" value="<?php if(isset($_POST['shipping_last_name']))echo $_POST['shipping_last_name'];else  echo  get_user_meta( $customer_id, 'shipping_last_name', true ) ?>" class="form-control" />
+                                <input type="text" name="shipping_last_name" value="<?php if(isset($_POST['shipping_last_name']))echo $_POST['shipping_last_name'];else  echo  get_user_meta( $customer_id, 'shipping_last_name', true ) ?>" class="form-control <?php if(in_array('shipping_last_name', $checkout_error)) echo "error" ?>" />
                             </div>
                         </div>
                         <div class="row form-group">
@@ -174,12 +182,12 @@
                                 <label>Address<span>(*)</span></label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" name="shipping_address_1"  value="<?php if(isset($_POST['shipping_address_1']))echo $_POST['shipping_address_1'];else  echo  get_user_meta( $customer_id, 'shipping_address_1', true ) ?>"  class="form-control" />
+                                <input type="text" name="shipping_address_1"  value="<?php if(isset($_POST['shipping_address_1']))echo $_POST['shipping_address_1'];else  echo  get_user_meta( $customer_id, 'shipping_address_1', true ) ?>"  class="form-control <?php if(in_array('shipping_address_1', $checkout_error)) echo "error" ?>" />
                             </div>
                         </div>
                         <div class="row form-group">
                             <div class="col-sm-8 col-sm-offset-4">
-                                <input type="text" name="shipping_address_2"  value="<?php if(isset($_POST['shipping_address_2']))echo $_POST['shipping_address_2'];else  echo  get_user_meta( $customer_id, 'shipping_address_2', true ) ?>"  class="form-control" />
+                                <input type="text" name="shipping_address_2"  value="<?php if(isset($_POST['shipping_address_2']))echo $_POST['shipping_address_2'];else  echo  get_user_meta( $customer_id, 'shipping_address_2', true ) ?>"  class="form-control <?php if(in_array('shipping_address_2', $checkout_error)) echo "error" ?>" />
                             </div>
                         </div>
                         <div class="row form-group">
@@ -187,7 +195,7 @@
                                 <label>City:<span>(*)</span></label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" name="shipping_city" value="<?php  if(isset($_POST['shipping_city']))echo $_POST['shipping_city'];else echo  get_user_meta( $customer_id, 'shipping_city', true ) ?>"  class="form-control" />
+                                <input type="text" name="shipping_city" value="<?php  if(isset($_POST['shipping_city']))echo $_POST['shipping_city'];else echo  get_user_meta( $customer_id, 'shipping_city', true ) ?>"  class="form-control <?php if(in_array('shipping_city', $checkout_error)) echo "error" ?>" />
                             </div>
                         </div>
                         <div class="row form-group">
@@ -195,13 +203,16 @@
                                 <label>Postcode:<span>(*)</span></label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" name="shipping_postcode" value="<?php if(isset($_POST['shipping_postcode']))echo $_POST['shipping_postcode'];else  echo  get_user_meta( $customer_id, 'shipping_postcode', true ) ?>"  class="form-control" />
+                                <input type="text" name="shipping_postcode" value="<?php if(isset($_POST['shipping_postcode']))echo $_POST['shipping_postcode'];else  echo  get_user_meta( $customer_id, 'shipping_postcode', true ) ?>"  class="form-control <?php if(in_array('shipping_postcode', $checkout_error)) echo "error" ?>" />
                             </div>
                         </div>
                         <div class="row form-group">
                             <?php 
                                 $countries = WC()->countries->get_shipping_countries();
                                 $args = ['class'=>' ','id'=>' ','label_class'=>'','label'=>' Country'];
+                                 if(isset($checkout_error['shipping_country'])){
+                                    $args['class'] = ' error ';
+                                }
                                 $field =  '<select class="country_to_state country_select form-control" name="shipping_country" >'
 						. '<option value="">'.__( 'Select a country&hellip;', 'woocommerce' ) .'</option>';
                                 $shipping_country = isset($_POST['shipping_country']) ? $_POST['shipping_country'] : get_user_meta( $customer_id, 'shipping_country', true );

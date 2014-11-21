@@ -256,6 +256,12 @@ function custom_override_checkout_fields( $fields ) {
      );
      //Delivery Instructions
      //$fields['shipping']['shipping_city']['lavel'] = __('City', 'woocommerce');
+     if(isset($fields['billing']['billing_phone'])){
+         $fields['billing']['billing_phone']['required']= false;
+     }
+     if(isset($fields['shipping']['shipping_phone'])){
+         $fields['shipping']['shipping_phone']['required']= false;
+     }
      unset($fields['shipping']['shipping_company']);
      unset($fields['shipping']['shipping_state']);
      unset($fields['shipping']['shipping_email']);

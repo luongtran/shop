@@ -182,11 +182,12 @@
             });
             $( "#withlove-toggle > a" ).hover(function(){
                  $('#widthlove').fadeIn();
-                 $('.arrowbox:not(#widthlove)').fadeOut();
+                 $('.arrowbox:not(#widthlove),#header-cart').fadeOut();
+                 
             });
              $( "#subscribe-header-toggle > a" ).hover(function(){
                  $('#subscribe-header').fadeIn();
-                 $('.arrowbox:not(#subscribe-header)').fadeOut();
+                 $('.arrowbox:not(#subscribe-header),#header-cart').fadeOut();
             });
         
          $.wait = function( callback, seconds){
@@ -206,6 +207,7 @@
          $( "#cart-toggle > a" ).hover(
                function(){
                     $('#header-cart').fadeIn();
+                    $('.arrowbox').fadeOut();
                }
             );
 //         $( "#cart-toggle" ).mouseleave(function(){

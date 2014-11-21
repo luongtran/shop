@@ -211,6 +211,7 @@
                         $hierarchical = 1;      // 1 for yes, 0 for no  
                         $title        = '';  
                         $empty        = true;
+                        $orderby = 'slug';
                         $args = array(
                           'taxonomy'     => $taxonomy,
                           'orderby'      => $orderby,

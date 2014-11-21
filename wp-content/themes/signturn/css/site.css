@@ -807,6 +807,15 @@ form label.error {
     padding: 15px;
     list-style: none
 }
+.woocommerce-error strong:not(:first-child){
+    font-weight: normal !important;
+}
+input[disabled]{
+    pointer-events:none;
+}
+#checkout-delivery .error {
+    border-color:#bb533b !important;
+}
 #checkout-shipping h3 {
     font-size: 14px;
     font-weight: 400
@@ -840,13 +849,19 @@ form label.error {
     background: transparent !important;
     border:none  !important;
     text-indent: -99999px;
-    box-shadow: none !important
+    box-shadow: none !important;
+    
 }
 .buttons_added .plus{
-    background: url('../images/add_up.png') center center no-repeat !important
+    background: url('../images/add_up.png') center center no-repeat !important;
+        background-size:9px 9px !important;
+        height:10px !important;
+        top:3px !important;
 }
 .buttons_added .minus{
-    background: url('../images/add_down.png') center center no-repeat !important
+    background: url('../images/add_down.png') center center no-repeat !important;
+        background-size:9px 9px !important;
+        bottom:3px !important;
 }
 #checkout-delivery-builling .iradio_minimal {
   background-position: -68px 2px;
@@ -902,8 +917,9 @@ form label.error {
     position: relative;
 }
 .woocommerce .quantity input.qty, .woocommerce #content .quantity input.qty, .woocommerce-page .quantity input.qty, .woocommerce-page #content .quantity input.qty{
-    font-size: 20px;
-    font-weight: lighter
+    font-size: 16px;
+    font-weight: lighter;
+    height:27px;
 }
 .cat-image {
     width: 100%;
