@@ -35,11 +35,11 @@ get_currentuserinfo();
                     $type = $load_address === 'billing' ? 'billing' : 'shipping';
                     $address2 = array();
                     foreach ($address as $key => $ad) {
-                        if($key!==$type.'_country' && $key!==$type.'_city'){
+                        if($key!==$type.'_country' && $key!==$type.'_email'){
                             $address2[$key] = $ad;
-                        }elseif($key===$type.'_city' && isset($address[$type.'_country'])){
+                        }elseif($key===$type.'_email' && isset($address[$type.'_country'])){
                             $address2[$type.'_country'] = $address[$type.'_country'];
-                            $address2[$type.'_city'] = $ad;
+                            $address2[$type.'_email'] = $ad;
                         }
                     }
                     $address = $address2;
