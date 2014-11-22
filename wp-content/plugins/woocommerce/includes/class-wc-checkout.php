@@ -878,9 +878,7 @@ class WC_Checkout {
 				}
 
 				if ( ! empty( $this->posted[ $key ] ) ) {
-                                        if(!isset($errorFields[$key])){
-                                            $errorFields[] = $key;
-                                        }
+                                        
 					// Validation rules
 					if ( ! empty( $field['validate'] ) && is_array( $field['validate'] ) ) {
 						foreach ( $field['validate'] as $rule ) {
@@ -888,24 +886,35 @@ class WC_Checkout {
 								case 'postcode' :
 									$this->posted[ $key ] = strtoupper( str_replace( ' ', '', $this->posted[ $key ] ) );
 
-									if ( ! WC_Validation::is_postcode( $this->posted[ $key ], $_POST[ $fieldset_key . '_country' ] ) ) :
+									if ( ! WC_Validation::is_postcode( $this->posted[ $key ], $_POST[ $fieldset_key . '_country' ] ) ) {
 										wc_add_notice( __( 'Please enter a valid postcode/ZIP.', 'woocommerce' ), 'error' );
-									else :
+                                                                                if(!isset($errorFields[$key])){
+                                                                                    $errorFields[] = $key;
+                                                                                }
+                                                                        }else {
 										$this->posted[ $key ] = wc_format_postcode( $this->posted[ $key ], $_POST[ $fieldset_key . '_country' ] );
-									endif;
+                                                                        }
 								break;
 								case 'phone' :
 									$this->posted[ $key ] = wc_format_phone_number( $this->posted[ $key ] );
 
-									if ( ! WC_Validation::is_phone( $this->posted[ $key ] ) )
+									if ( ! WC_Validation::is_phone( $this->posted[ $key ] ) ){
 										wc_add_notice( '<strong>' . $field['label'] . '</strong> ' . __( 'is not a valid phone number.', 'woocommerce' ), 'error' );
+                                                                                if(!isset($errorFields[$key])){
+                                                                                    $errorFields[] = $key;
+                                                                                }
+                                                                        }   
 								break;
 								case 'email' :
 									$this->posted[ $key ] = strtolower( $this->posted[ $key ] );
 
-									if ( ! is_email( $this->posted[ $key ] ) )
+									if ( ! is_email( $this->posted[ $key ] ) ){
 										wc_add_notice( '<strong>' . $field['label'] . '</strong> ' . __( 'is not a valid email address.', 'woocommerce' ), 'error' );
-								break;
+                                                                            if(!isset($errorFields[$key])){
+                                                                                    $errorFields[] = $key;
+                                                                                }
+                                                                        }
+                                                                break;
 								case 'state' :
 									// Get valid states
 									$valid_states = WC()->countries->get_states( isset( $_POST[ $fieldset_key . '_country' ] ) ? $_POST[ $fieldset_key . '_country' ] : ( 'billing' === $fieldset_key ? WC()->customer->get_country() : WC()->customer->get_shipping_country() ) );
@@ -923,7 +932,10 @@ class WC_Checkout {
 									if ( ! empty( $valid_states ) && is_array( $valid_states ) && sizeof( $valid_states ) > 0 ) {
 										if ( ! in_array( $this->posted[ $key ], array_keys( $valid_states ) ) ) {
 											wc_add_notice( '<strong>' . $field['label'] . '</strong> ' . __( 'is not valid. Please enter one of the following:', 'woocommerce' ) . ' ' . implode( ', ', $valid_states ), 'error' );
-										}
+                                                                                        if(!isset($errorFields[$key])){
+                                                                                            $errorFields[] = $key;
+                                                                                        }
+                                                                                }
 									}
 								break;
 							}
