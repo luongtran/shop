@@ -31,7 +31,19 @@ get_currentuserinfo();
 
                     <h3><?php echo apply_filters( 'woocommerce_my_account_edit_address_title', $page_title ); ?></h3>
 
-                    <?php do_action( "woocommerce_before_edit_address_form_{$load_address}" ); ?>
+                    <?php do_action( "woocommerce_before_edit_address_form_{$load_address}" ); 
+                    $type = $load_address === 'billing' ? 'billing' : 'shipping';
+                    $address2 = array();
+                    foreach ($address as $key => $ad) {
+                        if($key!==$type.'_country' && $key!==$type.'_city'){
+                            $address2[$key] = $ad;
+                        }elseif($key===$type.'_city' && isset($address[$type.'_country'])){
+                            $address2[$type.'_country'] = $address[$type.'_country'];
+                            $address2[$type.'_city'] = $ad;
+                        }
+                    }
+                    $address = $address2;
+                    ?>
 
                     <?php foreach ( $address as $key => $field ) : ?>
 
