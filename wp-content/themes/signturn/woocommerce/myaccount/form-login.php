@@ -32,7 +32,15 @@ if ( ! defined( 'ABSPATH' ) ) {
                                 <label for="username"><?php _e( 'Username/email', 'woocommerce' ); ?> <span class="required">*</span></label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" class="input-text site-input  form-control" name="username" id="username" value="<?php if ( ! empty( $_POST['username'] ) ) echo esc_attr( $_POST['username'] ); ?>" />
+                                <?php 
+                                    $old_value = '';
+                                    if(isset($_POST['username']) && isset($_POST['login'])){
+                                        $old_value = $_POST['username'];
+                                    }elseif(isset($_POST['email']) && isset($_POST['login'])){
+                                        $old_value = $_POST['email'];
+                                    }
+                                ?>
+                                <input type="text" class="input-text site-input  form-control" name="username" id="username" value="<?php echo $old_value; ?>" />
                             </div>
                         </div>
                         <div class="row form-group">
@@ -71,12 +79,21 @@ if ( ! defined( 'ABSPATH' ) ) {
 		<form method="post" class="register">
 			<?php do_action( 'woocommerce_register_form_start' ); ?>
 			<?php if ( 'no' === get_option( 'woocommerce_registration_generate_username' ) ) : ?>
+                    <?php 
+                        $old_username = '';$old_email = '';
+                        if(isset($_POST['username']) && isset($_POST['register'])){
+                            $old_username = $_POST['username'];
+                        }
+                        if(isset($_POST['email']) && isset($_POST['register'])){
+                            $old_email = $_POST['email'];
+                        }
+                    ?>
                     <div class="row form-group">
                         <div class="col-sm-4">
                             <label for="reg_username"><?php _e( 'Username', 'woocommerce' ); ?> <span class="required">*</span></label>
                         </div>
                         <div class="col-sm-8">
-                            <input type="text" class="input-text site-input form-control" name="username" id="reg_username" value="<?php if ( ! empty( $_POST['username'] ) ) echo esc_attr( $_POST['username'] ); ?>" />
+                            <input type="text" class="input-text site-input form-control" name="username" id="reg_username" value="<?php echo $old_username ?>" />
                         </div>
                     </div>
 			<?php endif; ?>
@@ -85,7 +102,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                             <label for="reg_email"><?php _e( 'Email address', 'woocommerce' ); ?> <span class="required">*</span></label>
                         </div>
                         <div class="col-sm-8">
-                            <input type="email" class="input-text site-input form-control" name="email" id="reg_email" value="<?php if ( ! empty( $_POST['email'] ) ) echo esc_attr( $_POST['email'] );if(!empty($_GET['email'])) echo esc_attr($_GET['email']) ?>" />
+                            <input type="email" class="input-text site-input form-control" name="email" id="reg_email" value="<?php if($old_email){echo $old_email;}elseif(!empty($_GET['email'])) echo esc_attr($_GET['email']) ?>" />
                         </div>
                     </div>
                     <?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>

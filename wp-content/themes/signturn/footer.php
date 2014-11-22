@@ -263,6 +263,9 @@
         <?php if(isset($_GET['show_cart_header'])): ?>
         <script type="text/javascript">
              $('#header-cart').fadeIn();
+              $.wait(function(){
+                $('#header-cart').fadeOut();
+            },5);
         </script>
         <?php  endif; ?>
         <script src="<?=TEMPLATE_URL?>/js/media.js"></script>

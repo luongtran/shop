@@ -13,8 +13,11 @@
     <div id="main-content" class="page-gift page-cart">
         <?php get_step_winzar(4);?>
          <?php 
-           $checkout_error = $_SESSION['checkout_errors'];
-          // print_r($checkout_error);
+           $checkout_error = array(); 
+           if(isset($_SESSION['checkout_errors'])){
+               $checkout_error = $_SESSION['checkout_errors'];
+               unset($_SESSION['checkout_errors']);
+           }
         ?>
         <?php wc_print_notices(); ?>
        
