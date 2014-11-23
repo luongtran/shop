@@ -111,7 +111,7 @@
                                         <h4>BE THE FIRST TO KNOW</h4>
                                         <p style="font-size: 12px">
                                             Be part of our community by signing up to our newsletter,
-                                            where you'll be the first to hear about our fantastic product.
+                                            where you'll be the first to hear about our fantastic products.
                                         </p>
                                         <form class="row" method="post" action="<?php echo site_url()?>/wp-content/plugins/newsletter/do/subscribe.php" onsubmit="return newsletter_check(this)">
                                            
