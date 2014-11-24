@@ -2809,6 +2809,9 @@ li.world-of-signature ,li.news{
     #subscribe-header .form-control {
         width: 98% !important;
     }
+    #site-content.site-content-our-bottles {
+    background-image: none !important;
+    }
      
     
 }
