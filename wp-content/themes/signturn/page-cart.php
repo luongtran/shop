@@ -1,3 +1,14 @@
+<?php 
+global $woocommerce;
+$items = $woocommerce->cart->get_cart();
+if(count($items)==1){
+    foreach ($items as $item) {
+        if(MyProduct::is_gift($item['product_id'])){
+            $woocommerce->cart->empty_cart(); 
+        }
+    }
+}
+?>
 <?php
     get_header();
 

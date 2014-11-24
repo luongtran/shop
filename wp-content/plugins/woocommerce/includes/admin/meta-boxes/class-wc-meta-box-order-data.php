@@ -357,6 +357,17 @@ class WC_Meta_Box_Order_Data {
 						?>
 					</div>
 				</div>
+                                <p>
+                                    <?php
+                                        $gif_meta = get_post_meta($post->ID,'_gif_wrap');
+                                        $gif = @$gif_meta[0];
+                                    ?>
+                                    <strong>Gif Wrap :</strong>
+                                    <select name="gif_wrap">
+                                        <option value="No" <?php if($gif !== 'Yes') echo 'selected="selected"'; ?>>No</option>
+                                        <option value="Yes"  <?php if($gif === 'Yes') echo 'selected="selected"'; ?>>Yes</option>
+                                    </select>
+                                </p>
 				<div class="clear"></div>
 			</div>
 		</div>

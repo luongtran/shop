@@ -145,6 +145,11 @@ do_action( 'woocommerce_before_cart' ); ?>
                 var quality = $(this).parent().find('.qty').val();
                 var name = $(this).parent().find('.qty').attr('name');
                 var type = $(this).attr('class');
+                console.log($(this).parent().find('.qty').val());
+                //return false;
+                if($(this).hasClass('minus') && parseInt($(this).parent().find('.qty').val()) ===1){
+                    return false;
+                }
                 $.ajax({
                     type:"POST",
                     dataType: 'json',

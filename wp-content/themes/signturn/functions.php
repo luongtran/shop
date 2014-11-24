@@ -527,3 +527,14 @@ function go_home(){
       exit();
   }
 }
+ 
+add_action('woocommerce_checkout_order_processed', 'save_gif_wrap_option');
+
+function save_gif_wrap_option($order_id) {
+   if(isset($_POST['_gif_wrap'])){
+        $gif_wrap = sanitize_text_field($_POST['_gif_wrap']);
+        if(!add_post_meta($order_id, '_gif_wrap', $gif_wrap)) {
+            update_post_meta($post_id, '_gif_wrap', $gif_wrap);
+        }
+    }
+}

@@ -258,7 +258,7 @@ class WC_Form_Handler {
 	 */
 	public static function checkout_action() {
 		if ( isset( $_POST['woocommerce_checkout_place_order'] ) || isset( $_POST['woocommerce_checkout_update_totals'] ) ) {
-
+                    
 			if ( sizeof( WC()->cart->get_cart() ) == 0 ) {
 				wp_redirect( get_permalink( wc_get_page_id( 'cart' ) ) );
 				exit;
@@ -267,7 +267,7 @@ class WC_Form_Handler {
 			if ( ! defined( 'WOOCOMMERCE_CHECKOUT' ) ) {
 				define( 'WOOCOMMERCE_CHECKOUT', true );
 			}
-
+                       
 			WC()->checkout()->process_checkout();
 		}
 	}

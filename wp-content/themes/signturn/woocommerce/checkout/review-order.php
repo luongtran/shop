@@ -37,7 +37,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
                         <h3>Billing Address</h3>
                         <p><?php  echo  $billing_address_1?></p>
                         <?php if (isset($billing_address_2)): ?>
-                        <p><?php echo $billing_address_1 ?></p>
+                        <p><?php echo $billing_address_2 ?></p>
                         <?php endif;?>
                         <p><?php echo $billing_city . ', '.$billing_country ?></p>
                     </div>
@@ -120,6 +120,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
              <div class="col-sm-6 col-sm-offset-6" id="personalised" >
                  <h3>Send with a personalised message ?</h3>
                  <textarea name="order_comments" class="form-control" style="border: 1px solid #a89340; border-radius: 0;"></textarea>
+                 <p style="padding-top: 10px;text-align: right">
+                     <input type="checkbox" class="css-checkbox" id="gif-wrap-cb" value="Yes" name="_gif_wrap" /> 
+                     <label for="gif-wrap-cb" class="css-label lite-orange-check"> 
+                       Gif wrap
+                    </label>
+                 </p>
              </div>
              <div class="col-sm-12 aligncenter">
                  <div class="form-row place-order" style="text-align: center">

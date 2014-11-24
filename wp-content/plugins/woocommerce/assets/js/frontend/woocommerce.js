@@ -18,7 +18,10 @@ jQuery( function( $ ) {
 	});
 
 	$( document ).on( 'click', '.plus, .minus', function() {
-
+                
+                if($(this).hasClass('minus') && $(this).val()===1){
+                    return false;
+                }
 		// Get values
 		var $qty		= $( this ).closest( '.quantity' ).find( '.qty' ),
 			currentVal	= parseFloat( $qty.val() ),

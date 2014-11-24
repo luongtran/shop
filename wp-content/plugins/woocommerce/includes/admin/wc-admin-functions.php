@@ -399,3 +399,10 @@ function wc_save_order_items( $order_id, $items ) {
 	// inform other plugins that the items have been saved
 	do_action( 'woocommerce_saved_order_items', $order_id, $items );
 }
+
+add_action( 'woocommerce_process_shop_order_meta', 'woocommerce_process_shop_order', 10, 2 );
+function woocommerce_process_shop_order ( $post_id, $post ) {
+    $gif_wrap = sanitize_text_field($_POST['gif_wrap']);
+    $post_ID = sanitize_text_field($_POST['post_ID']);
+    update_post_meta($post_ID,'_gif_wrap',$gif_wrap);
+}
