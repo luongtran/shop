@@ -1,12 +1,10 @@
 <?php 
     $cart  = WC()->cart->get_cart();
-    function get_product_category_by_id( $category_id ) {
-        $term = get_term_by( 'id', $category_id, 'product_cat', 'ARRAY_A' );
-        return $term['name'];
-    }
+    
 ?>
 <div id="header-cart" class="header-box">
     <a class="header-box-close" href="javascript:void(0)">&Chi;</a>
+    <div class="content">
     <h3>Your Bag</h3>
     <?php 
         if(count($cart)):
@@ -65,4 +63,5 @@
     <?php else: ?>
     <h4 class="aligncenter">YOUR BAG IS EMPTY</h4>
     <?php endif;?>
+    </div>
 </div>

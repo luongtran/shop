@@ -540,3 +540,9 @@ function save_gif_wrap_option($order_id) {
         }
     }
 }
+if(!function_exists('get_product_category_by_id')){
+    function get_product_category_by_id( $category_id ) {
+        $term = get_term_by( 'id', $category_id, 'product_cat', 'ARRAY_A' );
+        return $term['name'];
+    } 
+}

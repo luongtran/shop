@@ -7923,7 +7923,7 @@ msgid "&quot; and &quot;"
 msgstr ""
 
 #: includes/wc-cart-functions.php:86
-msgid "&quot;%s&quot; was successfully added to your cart."
+msgid "&quot;%s&quot; was successfully added to your cart ."
 msgstr ""
 
 #: includes/wc-cart-functions.php:94
