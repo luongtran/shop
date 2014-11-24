@@ -342,7 +342,6 @@ class WC_AJAX {
 			if ( get_option( 'woocommerce_cart_redirect_after_add' ) == 'yes' ) {
 				wc_add_to_cart_message( $product_id );
 			}
-
 			// Return fragments
 			//self::get_refreshed_fragments();
                         $cart_html = self::cart_header_html();
