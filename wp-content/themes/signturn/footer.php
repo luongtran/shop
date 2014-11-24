@@ -42,7 +42,7 @@
                     
                       <div class="col-sm-6 col-xs-12">
                           <h3>HOW IT ALL BEGAN</h3>
-                          <p>Signature Fragrances provides a contemporary approach to perfume with a variety of fragrances suited to passionate and enthusiastic Signateers. With tenaciously pure, pungent and purposeful scents, Signature Fragrances aims to restore individuality and personal identity through the sense of smell.</p>
+                          <p>Signature fragrance London is a contemporary fragrance house that is inspired by perfumery's beguiling past: when fragrances were crafted to leave long lasting impacts. We provide a selection of exquisite fragrance oils suited to passionate perfume lovers. With an array of unique scents, we aim to restore your personal identity through the sense of smell.</p>
                       </div>
                   </div>
               </div>

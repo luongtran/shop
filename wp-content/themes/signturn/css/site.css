@@ -922,7 +922,7 @@ input[disabled]{
 .woocommerce .quantity input.qty, .woocommerce #content .quantity input.qty, .woocommerce-page .quantity input.qty, .woocommerce-page #content .quantity input.qty{
     font-size: 16px;
     font-weight: lighter;
-    height:27px;
+    height:25px;
 }
 .cat-image {
     width: 100%;
@@ -2100,7 +2100,7 @@ margin-bottom: 30px;
         font-size:12px;
     }
     #main-content.page-cart {
-        padding:40px 5px !important;
+        padding:40px 15px !important;
     }
     #booking-winzar > div {
         width: 20%;
@@ -2254,6 +2254,10 @@ li.world-of-signature ,li.news{
     #product-cat-description {
         bottom:180px !important;
         right:160px !important;
+    }
+    #site-content.site-content-packaging {
+    background: url('../images/bag.jpg') bottom center no-repeat;
+    background-color: #000;
     }
 }
 @media (max-width: 1160px) and (min-width: 992px) { 
@@ -2428,6 +2432,7 @@ li.world-of-signature ,li.news{
         width: 100%;
         margin-left: 0px
     }
+
 
 }
 @media (max-width: 991px) and (min-width: 768px){
@@ -2796,13 +2801,21 @@ li.world-of-signature ,li.news{
     #slideshow-content-2 h2 {
         font-size: 12px !important;
     }
+    #subscribe-header {
+    right: 0px;
+    width: 100%;
+    }
+
+    #subscribe-header .form-control {
+        width: 98% !important;
+    }
      
     
 }
 @media(max-width:555px) {
     .site-content-cart #main-content {
-        padding-left:5px;
-        padding-right:5px
+        padding-left:15px;
+        padding-right:15px
     }
     #slideshow-content-3 h1 {
     font-size: 14px;
@@ -2923,6 +2936,14 @@ li.world-of-signature ,li.news{
     }
     #slideshow-content-2 h2 {
         font-size: 12px !important;
+    }
+    #subscribe-header {
+    right: 0px;
+    width: 100%;
+    }
+
+    #subscribe-header .form-control {
+        width: 98% !important;
     }
     
 }
@@ -3158,4 +3179,18 @@ margin-top: 0;
 
 .woocommerce .woocommerce-message:before, .woocommerce .woocommerce-error:before, .woocommerce .woocommerce-info:before, .woocommerce-page .woocommerce-message:before, .woocommerce-page .woocommerce-error:before, .woocommerce-page .woocommerce-info:before {
 display: none;
+}
+
+
+.woocommerce .quantity .plus, 
+.woocommerce .quantity .minus, 
+.woocommerce #content .quantity .plus, 
+.woocommerce #content .quantity .minus, 
+.woocommerce-page .quantity .plus, 
+.woocommerce-page .quantity .minus, 
+.woocommerce-page #content .quantity .plus, 
+.woocommerce-page #content .quantity .minus {
+
+height: 10px;
+width: 30px;
 }

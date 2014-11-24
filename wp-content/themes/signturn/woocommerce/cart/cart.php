@@ -100,7 +100,6 @@ do_action( 'woocommerce_before_cart' ); ?>
 		?>
                 <tr>
                     <td colspan="4" id="td-cart-sub-total">
-                        <span id="complementary-gift">Choose Complementary Gift</span>
                         <span id="lb-cart-sub-total">Sub Total:</span>
                         <span id="cart-sub-total"><?php wc_cart_totals_subtotal_html(); ?></span>
                     </td>
