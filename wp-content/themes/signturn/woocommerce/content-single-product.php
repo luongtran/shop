@@ -69,11 +69,10 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 </aside>
 <div id="shipping-data" style="display: none"  class="arrowbox col-xs-12 col-sm-6 col-md-6">
     <a id="shipping-data-close" href="javascript::void(0)"><i class="fa fa-times"></i></a>
-    UK – Next working Day £7.50 – For orders placed before 1:00pm.<br/>
-    UK Standard £4.95 – 2-5 Working Days<br/>
-    Europe £20 – 5 -6 Working Days<br/>
-    USA £20 – 6 -10 Working Days<br/>
-    Rest of the world £30 – 10 -12 Working Days<br/>
+    UK – Next working Day £7.50 (For orders placed before 1:00pm.)<br/>
+    UK Standard £4.95 (2-5 Working Days)<br/>
+    Europe / USA £19.95 (3 - 5 Working Days)<br/>
+    Rest of the world £29.95 (5 -7 Working Days)<br/>
     (FREE on UK standard orders over £50)<br/>
     Orders are processed for delivery on Working days only (Monday - Friday)<br/>
 </div>
@@ -134,13 +133,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
             <div id='shipping-data-tab' class='single-meta'>
                 <p><label>Shipping info</label> <a href="javascript::void(0)"><i class="fa fa-minus"></i></a></p>
                 <div class='content'>
-                    UK – Next working Day £7.50 – For orders placed before 1:00pm.<br>
-                    UK Standard £4.95 – 2-5 Working Days<br>
-                    Europe £20 – 5 -6 Working Days<br>
-                    USA £20 – 6 -10 Working Days<br>
-                    Rest of the world £30 – 10 -12 Working Days<br>
-                    (FREE on UK standard orders over £50)<br>
-                    Orders are processed for delivery on Working days only (Monday - Friday)<br>
+    UK – Next working Day £7.50 (For orders placed before 1:00pm.)<br/>
+    UK Standard £4.95 (2-5 Working Days)<br/>
+    Europe / USA £19.95 (3 - 5 Working Days)<br/>
+    Rest of the world £29.95 (5 -7 Working Days)<br/>
+    (FREE on UK standard orders over £50)<br/>
+    Orders are processed for delivery on Working days only (Monday - Friday)<br/>
                 </div>
             </div>
             <div id="customer-service-tab" class='single-meta'>

@@ -41,7 +41,7 @@
                       </div>
                     
                       <div class="col-sm-6 col-xs-12">
-                          <h3>HOW IT ALL BEGAN</h3>
+                          <h3>Who We Are</h3>
                           <p>Signature fragrance London is a contemporary fragrance house that is inspired by perfumery's beguiling past: when fragrances were crafted to leave long lasting impacts. We provide a selection of exquisite fragrance oils suited to passionate perfume lovers. With an array of unique scents, we aim to restore your personal identity through the sense of smell.</p>
                       </div>
                   </div>
