@@ -470,7 +470,7 @@ div[id*="product"] a.woocommerce-main-image img{
 body #main-content div[id*="product"] .single_add_to_cart_button,.site-btn,.site-btn-2 {
     background: #a7923e !important;
     border-radius: 0 !important;
-    padding: 6px 10px !important;
+    padding: 4px 5px !important;
     color: #fff !important;
     font-family: "TrajanPro-Regular" !important;
     border-color: #928036 !important;
@@ -1638,7 +1638,7 @@ p.discover_text  {
     top: 30px;
     right: 0px;
     width: 358px;
-    border: 2px solid rgb(217, 207, 172);
+    border: 2px solid #A7923E;
     display: none;
 }
 #header-cart  img {
@@ -1892,7 +1892,7 @@ margin-bottom: 30px;
     font-size: 26px;
 }
 #slideshow-content-3 .large_and {
-    font-size: 40px !important;
+    font-size: 32px !important;
 }
 
 
@@ -2669,7 +2669,7 @@ li.world-of-signature ,li.news{
         font-size: 24px;
     }
     #slideshow-content-3 .large_and {
-        font-size: 36px !important;
+        font-size: 30px !important;
     }
 }
 @media(max-width:680px){
@@ -2824,7 +2824,7 @@ li.world-of-signature ,li.news{
         font-size: 14px;
     }
     #slideshow-content-3 .large_and {
-        font-size: 20px !important;
+        font-size: 17px !important;
     }
 }
 @media(max-width:480px){
@@ -3192,5 +3192,5 @@ display: none;
 .woocommerce-page #content .quantity .minus {
 
 height: 10px;
-width: 30px;
+width: 18px;
 }
