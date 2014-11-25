@@ -123,7 +123,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
                  <p style="padding-top: 10px;text-align: right">
                      <input type="checkbox" class="css-checkbox" id="gif-wrap-cb" value="Yes" name="_gif_wrap" /> 
                      <label for="gif-wrap-cb" class="css-label lite-orange-check"> 
-                       Gif wrap
+                       Gift wrap
                     </label>
                  </p>
              </div>

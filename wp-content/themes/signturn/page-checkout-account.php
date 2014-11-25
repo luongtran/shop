@@ -37,7 +37,7 @@
                                 <label>Email:</label>
                             </div>
                             <div class="col-sm-8">
-                                <input value="<?php if(isset($_POST['email'])) echo  htmlspecialchars($_POST['email']); ?>" type="email" name="email" class="form-control" />
+                                <input value="<?php if(isset($_POST['email'])) echo  htmlspecialchars($_POST['email']); ?>" type="email" name="email" class="form-control" autocomplete="off" />
                             </div>
                         </div>
                         <div class="row form-group">
@@ -45,7 +45,7 @@
                                 <label>Confirm Email:</label>
                             </div>
                             <div class="col-sm-8">
-                                <input value="<?php if(isset($_POST['confirm_email'])) echo htmlspecialchars($_POST['confirm_email']); ?>" type="email" name="confirm_email" class="form-control" />
+                                <input value="<?php if(isset($_POST['confirm_email'])) echo htmlspecialchars($_POST['confirm_email']); ?>" type="email" name="confirm_email" class="form-control" autocomplete="off"/>
                             </div>
                         </div>
                         <div class="row form-group">
@@ -98,7 +98,7 @@
                             <label>Email:</label>
                         </div>
                         <div class="col-sm-8">
-                            <input type="text" name="username" class="form-control" />
+                            <input type="text" name="username" class="form-control" autocomplete="off"/>
                         </div>
                     </div>
                     <div class="row form-group">

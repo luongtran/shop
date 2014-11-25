@@ -404,7 +404,7 @@ class WC_Form_Handler {
 
 			WC()->cart->set_quantity( $_GET['remove_item'], 0 );
 
-			wc_add_notice( __( 'Cart updated.', 'woocommerce' ) );
+			wc_add_notice( __( 'The items in your bag were successfully updated.', 'woocommerce' ) );
 
 			$referer = wp_get_referer() ? remove_query_arg( array( 'add-to-cart', 'remove_item' ), wp_get_referer() ) : WC()->cart->get_cart_url();
 			wp_safe_redirect( $referer );

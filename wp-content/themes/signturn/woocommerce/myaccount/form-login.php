@@ -40,7 +40,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                                         $old_value = $_POST['email'];
                                     }
                                 ?>
-                                <input type="text" class="input-text site-input  form-control" name="username" id="username" value="<?php echo $old_value; ?>" />
+                                <input type="text" class="input-text site-input  form-control" name="username" id="username" value="<?php echo $old_value; ?>" autocomplete="off"/>
                             </div>
                         </div>
                         <div class="row form-group">
@@ -102,7 +102,7 @@ if ( ! defined( 'ABSPATH' ) ) {
                             <label for="reg_email"><?php _e( 'Email address', 'woocommerce' ); ?> <span class="required">*</span></label>
                         </div>
                         <div class="col-sm-8">
-                            <input type="email" class="input-text site-input form-control" name="email" id="reg_email" value="<?php if($old_email){echo $old_email;}elseif(!empty($_GET['email'])) echo esc_attr($_GET['email']) ?>" />
+                            <input type="email" class="input-text site-input form-control" name="email" id="reg_email" value="<?php if($old_email){echo $old_email;}elseif(!empty($_GET['email'])) echo esc_attr($_GET['email']) ?>" autocomplete="off"/>
                         </div>
                     </div>
                     <?php if ( 'no' === get_option( 'woocommerce_registration_generate_password' ) ) : ?>
