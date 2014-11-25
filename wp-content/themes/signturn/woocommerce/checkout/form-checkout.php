@@ -46,6 +46,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
                             $billing_city = get_user_meta( $customer_id, 'billing_city', true );
                             $billing_country = get_user_meta( $customer_id, 'billing_country', true );
                             $billing_postcode = get_user_meta( $customer_id, 'billing_postcode', true );
+                            $billing_email = get_user_meta( $customer_id, 'billing_email', true );
                             
                             $shipping_title = get_user_meta( $customer_id, 'shipping_title', true );
                             $shipping_first_name = get_user_meta( $customer_id, 'shipping_first_name', true );
@@ -67,6 +68,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
                             $billing_city =  $guest_delivery['billing_city'];
                             $billing_country =  $guest_delivery['billing_country'];
                             $billing_postcode =  $guest_delivery['billing_postcode'];
+                            $billing_email = $guest_delivery['billing_email'];
                             if(isset($guest_delivery['ship_to_different_address']) && $guest_delivery['ship_to_different_address']){
                                 $shipping_title =  $guest_delivery['shipping_title'];
                                 $shipping_first_name =  $guest_delivery['shipping_first_name'];
@@ -132,6 +134,14 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
                             </div>
                             <div class="col-sm-8">
                                 <input type="text" name="billing_address_1"  value="<?php echo  $billing_address_1 ?>"  class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-sm-4">
+                                <label>Email<span>(*)</span></label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="text" name="billing_email"  value="<?php echo  $billing_email ?>"  class="form-control" />
                             </div>
                         </div>
                         <div class="row form-group">

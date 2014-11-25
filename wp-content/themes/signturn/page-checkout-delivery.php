@@ -73,7 +73,14 @@
                                 <input type="text" name="billing_phone" value="<?php if(isset($_POST['billing_phone']))echo $_POST['billing_phone'];else    echo  get_user_meta( $customer_id, 'billing_phone', true ) ?>"  class="form-control <?php if(in_array('billing_phone', $checkout_error)) echo "error" ?>" />
                             </div>
                         </div>
-                       
+                        <div class="row form-group">
+                            <div class="col-sm-4">
+                                <label>Email: <span>(*)</span></label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="text" name="billing_email" value="<?php if(isset($_POST['billing_email']))echo $_POST['billing_email'];else    echo  get_user_meta( $customer_id, 'billing_email', true ) ?>"  class="form-control <?php if(in_array('billing_email', $checkout_error)) echo "error" ?>" />
+                            </div>
+                        </div>
                         <div class="row form-group">
                             <div class="col-sm-4">
                                 <label>Address<span>(*)</span></label>
@@ -178,6 +185,14 @@
                             </div>
                             <div class="col-sm-8">
                                 <input type="text" name="shipping_last_name" value="<?php if(isset($_POST['shipping_last_name']))echo $_POST['shipping_last_name'];else  echo  get_user_meta( $customer_id, 'shipping_last_name', true ) ?>" class="form-control <?php if(in_array('shipping_last_name', $checkout_error)) echo "error" ?>" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-sm-4">
+                                <label>Contact Number:</label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="text" name="shipping_phone" value="<?php if(isset($_POST['shipping_phone']))echo $_POST['shipping_phone'];else    echo  get_user_meta( $customer_id, 'shipping_phone', true ) ?>"  class="form-control <?php if(in_array('shipping_phone', $checkout_error)) echo "error" ?>" />
                             </div>
                         </div>
                         <div class="row form-group">

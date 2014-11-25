@@ -9,10 +9,8 @@
             <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/css/site.css</file>
             <file>file:/D:/projects/signaturn/source/wp-content/plugins/newsletter/subscription/subscription.php</file>
             <file>file:/D:/projects/signaturn/source/wp-content/plugins/newsletter/subscription/page.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/header.php</file>
             <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/checkout/form-checkout.php</file>
             <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/templates/checkout/form-checkout.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php</file>
             <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/includes/class-wc-checkout.php</file>
             <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/checkout/review-order.php</file>
             <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/includes/wc-template-hooks.php</file>
@@ -20,10 +18,17 @@
             <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/page-checkout-account.php</file>
             <file>file:/D:/projects/signaturn/source/wp-content/plugins/newsletter/subscription/email.php</file>
             <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/myaccount/form-login.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/page-checkout-delivery.php</file>
             <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/myaccount/form-edit-address.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/myaccount/my-account.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/myaccount/my-address.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/assets/js/frontend/woocommerce.min.js</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/cart/cart.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/functions.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/includes/admin/class-wc-admin-dashboard.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/includes/wc-cart-functions.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/includes/wc-deprecated-functions.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/includes/class-wc-cart.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/includes/class-wc-ajax.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/header.php</file>
         </group>
     </open-files>
 </project-private>

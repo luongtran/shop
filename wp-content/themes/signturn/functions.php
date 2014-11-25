@@ -245,7 +245,7 @@ function custom_override_checkout_fields( $fields ) {
      $fields['billing']['billing_city']['lavel'] = __('City', 'woocommerce');
      unset($fields['billing']['billing_company']);
      unset($fields['billing']['billing_state']);
-     unset($fields['billing']['billing_email']);
+     //unset($fields['billing']['billing_email']);
      
      $fields['shipping']['shipping_title'] = array(
             'label'     => __('Title', 'woocommerce'),
@@ -264,7 +264,7 @@ function custom_override_checkout_fields( $fields ) {
      }
      unset($fields['shipping']['shipping_company']);
      unset($fields['shipping']['shipping_state']);
-     unset($fields['shipping']['shipping_email']);
+     //unset($fields['shipping']['shipping_email']);
      return $fields;
 }
 
