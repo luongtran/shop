@@ -21,6 +21,7 @@
 		<div id="container" >
 
 		<?php 
+			W
 			// action hook for placing content above #content
 			thematic_abovecontent();
 

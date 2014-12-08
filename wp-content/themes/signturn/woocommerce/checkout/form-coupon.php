@@ -17,13 +17,23 @@ $info_message = apply_filters( 'woocommerce_checkout_coupon_message', __( 'Have 
 wc_print_notice( $info_message, 'notice' );
 ?>
 
-<form class="checkout_coupon" method="post" style="display:none">
+<form id="checkout-coupon" class="checkout_coupon" method="post" style="display:none">
+    <div class="row">
+        <div class="col-sm-9">
+        	<input type="text" name="coupon_code" class="input-text form-control"
+        	 placeholder="<?php _e( 'Coupon code', 'woocommerce' ); ?>" id="coupon_code" value="" />
+        </div>
+        <div class="col-sm-3">
+        	<input type="submit" class="button site-btn" name="apply_coupon" value="<?php _e( 'Apply Coupon', 'woocommerce' ); ?>" />
+        </div>    
+    </div>
+        
 	<p class="form-row form-row-first">
-		<input type="text" name="coupon_code" class="input-text" placeholder="<?php _e( 'Coupon code', 'woocommerce' ); ?>" id="coupon_code" value="" />
+		x
 	</p>
 
 	<p class="form-row form-row-last">
-		<input type="submit" class="button" name="apply_coupon" value="<?php _e( 'Apply Coupon', 'woocommerce' ); ?>" />
+		
 	</p>
 
 	<div class="clear"></div>
