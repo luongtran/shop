@@ -25,16 +25,10 @@ wc_print_notice( $info_message, 'notice' );
         </div>
         <div class="col-sm-3">
         	<input type="submit" class="button site-btn" name="apply_coupon" value="<?php _e( 'Apply Coupon', 'woocommerce' ); ?>" />
-        </div>    
+        </div>
     </div>
-        
-	<p class="form-row form-row-first">
-		x
-	</p>
-
-	<p class="form-row form-row-last">
-		
-	</p>
-
+    <a id="close-coupon" href="javascript:void(0)">
+        <i class="fa fa-times"></i>
+    </a>
 	<div class="clear"></div>
 </form>

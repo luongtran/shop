@@ -28,13 +28,13 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
 
 	<?php if ( sizeof( $checkout->checkout_fields ) > 0 ) : ?>
 		<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
-                
+
             <div class="col2-set" id="customer_details" style="display: none">
 
 			<div class="col-sm-6 no-padding">
                 <div id="checkout-delivery-builling">
                     <h2>Billing Address</h2>
-                        <?php 
+                        <?php
                          if(is_user_logged_in()){
                             $customer_id = get_current_user_id();
                             $billing_title = get_user_meta( $customer_id, 'billing_title', true );
@@ -47,7 +47,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
                             $billing_country = get_user_meta( $customer_id, 'billing_country', true );
                             $billing_postcode = get_user_meta( $customer_id, 'billing_postcode', true );
                             $billing_email = get_user_meta( $customer_id, 'billing_email', true );
-                            
+
                             $shipping_title = get_user_meta( $customer_id, 'shipping_title', true );
                             $shipping_first_name = get_user_meta( $customer_id, 'shipping_first_name', true );
                             $shipping_last_name = get_user_meta( $customer_id, 'shipping_last_name', true );
@@ -127,7 +127,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
                                 <input type="text" name="billing_phone" value="<?php echo $billing_phone ?>"  class="form-control" />
                             </div>
                         </div>
-                       
+
                         <div class="row form-group">
                             <div class="col-sm-4">
                                 <label>Address<span>(*)</span></label>
@@ -166,7 +166,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
                             </div>
                         </div>
                         <div class="row form-group">
-                            <?php 
+                            <?php
                                 $countries = WC()->countries->get_shipping_countries();
                                 $args = ['class'=>' ','id'=>' ','label_class'=>'','label'=>' Country'];
                                 $field =  '<select class="country_to_state country_select form-control" name="billing_country" >'
@@ -196,13 +196,13 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
                         </div>
                         <p class="radio-wrapper">
                             <label class="inline">
-                                <input name="ship_to_different_address" checked="checked" value="0" type="radio" /> 
+                                <input name="ship_to_different_address" checked="checked" value="0" type="radio" />
                                 Use my billing address as my delivery address
                             </label>
                         </p>
                         <p class="radio-wrapper">
                             <label class="inline">
-                                <input name="ship_to_different_address"  type="radio" value="1" /> 
+                                <input name="ship_to_different_address"  type="radio" value="1" />
                                 Enter a different delivery address
                             </label>
                         </p>
@@ -266,7 +266,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
                             </div>
                         </div>
                         <div class="row form-group">
-                            <?php 
+                            <?php
                                 $countries = WC()->countries->get_shipping_countries();
                                 $args = ['class'=>' ','id'=>' ','label_class'=>'','label'=>' Country'];
                                 $field =  '<select class="country_to_state country_select form-control" name="shipping_country" >'
@@ -300,7 +300,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
 
 	<?php endif; ?>
 
-	<?php 
+	<?php
             $_SESSION['billing_address_1'] = $billing_address_1;
             $_SESSION['billing_address_2'] = $billing_address_2;
             $_SESSION['billing_city'] = $billing_city;
@@ -310,9 +310,20 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
             $_SESSION['shipping_city'] = $shipping_city;
             $_SESSION['shipping_country'] = $shipping_country;
             do_action( 'woocommerce_checkout_order_review');
-            
+
          ?>
 
 </form>
 
 <?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
+<?php function coupon_section_action_hanlder(){ ?>
+<script  type="text/javascript" >
+    $('body').on('click','#close-coupon',function(){
+        $('#checkout-coupon').fadeOut('fast', function() {
+
+        });
+    });
+</script>
+<?php }
+     add_action('thematic_after','coupon_section_action_hanlder');
+?>
