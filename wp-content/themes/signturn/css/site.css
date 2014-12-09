@@ -3215,3 +3215,28 @@ width: 18px;
 #coupon_code {
     border-radius: 0px;
 }
+.site-select {
+    border: 1px solid #a89340;
+    border-radius: 0;
+    padding-top: 4px;
+    padding-bottom: 4px;
+}
+.variations {
+    margin-bottom: 0 !important;
+}
+.variations td.td-label {
+    display: table-cell !important;
+    color:#484848;
+}
+.variations td.td-label label {
+    font-weight: normal !important;
+    color: #454445
+}
+.single_variation {
+    margin-bottom: 15px;
+}
+.single_variation .price .amount{
+    color: #a7933e;
+    font-family: "TrajanPro-Regular";
+    font-size: 18.72px;
+}
