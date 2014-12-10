@@ -1,7 +1,7 @@
 
 <?php
     get_header();
-
+    
     // action hook for placing content above #container
     thematic_abovecontainer();
 ?>

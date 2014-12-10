@@ -83,6 +83,17 @@ function update_cart_quality_ajax(){
         exit();
     }
 }
+function remove_cart_ajax(){
+    $result = array('error'=>true);
+    if ( ! empty( $_GET['remove_item_ajax'] ) && isset( $_GET['_wpnonce'] )
+            && wp_verify_nonce( $_GET['_wpnonce'], 'woocommerce-cart' ) ) {
+        WC()->cart->set_quantity( $_GET['remove_item_ajax'], 0 );
+        $result['error'] = true;
+        $result['html'] = cart_header_html();
+        echo json_encode($result);
+        exit;
+    }
+}
 //add_filter( 'the_content', 'hide_h1_checkout_page');
 //
 //function hide_h1_checkout_page( $title_content ) {
@@ -95,3 +106,4 @@ function update_cart_quality_ajax(){
 add_action('init', 'choose_gift_product');
 add_action('init', 'update_cart_quality');
 add_action('init', 'update_cart_quality_ajax');
+add_action('init', 'remove_cart_ajax');
