@@ -88,9 +88,19 @@ function remove_cart_ajax(){
     if ( ! empty( $_GET['remove_item_ajax'] ) && isset( $_GET['_wpnonce'] )
             && wp_verify_nonce( $_GET['_wpnonce'], 'woocommerce-cart' ) ) {
         WC()->cart->set_quantity( $_GET['remove_item_ajax'], 0 );
-        $result['error'] = true;
+        $result['error'] = true; 
         $result['html'] = cart_header_html();
         echo json_encode($result);
+        exit;
+    }
+}
+function check_coupon_applied(){
+    if(!empty($_GET['action']) && trim($_GET['action']==='check_coupon')){
+        $res = array('applied'=>false);
+        if(MyProduct::appliedCoupon()){
+            $res['applied'] = true;
+        }
+        echo json_encode($res);
         exit;
     }
 }
@@ -107,3 +117,4 @@ add_action('init', 'choose_gift_product');
 add_action('init', 'update_cart_quality');
 add_action('init', 'update_cart_quality_ajax');
 add_action('init', 'remove_cart_ajax');
+add_action('init', 'check_coupon_applied');

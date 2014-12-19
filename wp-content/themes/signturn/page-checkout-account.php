@@ -129,10 +129,10 @@
                 </div>
             </div>
             <div class="col-sm-12">
-                 <div id="guest-checkout">
-            <label>Guest Checkout: </label> Checkout without creating an account 
-            <a href="<?php echo get_permalink( get_page_by_path( 'checkout-delivery' )) ?>">Proceed To Checkout </a>
-        </div>
+                <div id="guest-checkout">
+                    <label>Guest Checkout: </label> Checkout without creating an account 
+                    <a href="<?php echo get_permalink( get_page_by_path( 'checkout-delivery' )) ?>">Proceed To Checkout </a>
+                </div>
             </div>
      
         </div>

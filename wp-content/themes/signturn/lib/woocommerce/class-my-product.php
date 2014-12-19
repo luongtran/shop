@@ -52,4 +52,12 @@ class MyProduct extends WC_Product {
     public static function addToCart($productId){
        
     }
+    public static function appliedCoupon(){
+        if ( ! empty( WC()->cart->applied_coupons ) ) {
+            return true;
+        }else{
+            return false;
+        }
+    }
+    
 }

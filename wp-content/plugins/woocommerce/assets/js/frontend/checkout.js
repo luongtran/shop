@@ -366,9 +366,11 @@ jQuery( function( $ ) {
 				if ( code ) {
 					$form.before( code );
 					$form.slideUp();
-
 					$( 'body' ).trigger( 'update_checkout' );
 				}
+                                $.get('http://'+window.location.hostname+window.location.pathname+'/?action=check_coupon',[],function(res){
+                                    
+                                });
 			},
 			dataType: 'html'
 		});
