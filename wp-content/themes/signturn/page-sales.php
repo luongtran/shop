@@ -28,7 +28,7 @@
 
         $loop = new WP_Query( $args );
     ?>
-    <div class="row">
+    <div class="row sale-items">
         <?php 
             while ( $loop->have_posts() ) : $loop->the_post(); global $product; 
             $image_link  = wp_get_attachment_url( get_post_thumbnail_id() );
@@ -36,6 +36,8 @@
         <div class="col-sm-3 sale-item">
             <?php do_action( 'woocommerce_before_shop_loop_item' ); ?>
             <a href="<?php the_permalink(); ?>">
+                
+		<h3><?php the_title(); ?></h3>
 		<?php
 			/**
 			 * woocommerce_before_shop_loop_item_title hook
@@ -46,7 +48,6 @@
 			do_action( 'woocommerce_before_shop_loop_item_title' );
 		?>
 
-		<h3><?php the_title(); ?></h3>
 		<?php
 			/**
 			 * woocommerce_after_shop_loop_item_title hook

@@ -3241,29 +3241,43 @@ width: 18px;
     font-size: 18.72px;
 }
 .page-sales h1 {
-    margin-bottom:20px;
+    background: none repeat scroll 0 0 #000;
+    color: #fff;
+    font-family: "TrajanPro-Regular";
+    font-size: 12px;
+    left: 50px;
+    margin-top: 20px !important;
+    padding: 14px 25px 12px;
+    position: absolute;
+    top: -20px;
+}
+.page-sales .sale-items {
+    margin-top:30px
 }
 .page-sales .sale-item {
     position: relative;
     margin-bottom:30px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 .page-sales .sale-item img {
     max-width: 100%;
     height: auto !important;
     width:100% !important;
     border:1px solid #ccc;
+    margin-bottom:5px;
 }
 .page-sales .sale-item .onsale {
     display: none
 }
 .page-sales .sale-item h3 {
     font-size: 18px;
-    text-align: center;
+    text-align: left;
     margin-top:10px;
 }
 .page-sales .sale-item .actions {
     position: absolute;
-    right:15px;
+    right:20px;
     bottom: 0px;
 }
 .page-sales .sale-item ins {
