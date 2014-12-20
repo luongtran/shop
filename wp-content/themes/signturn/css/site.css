@@ -3240,3 +3240,33 @@ width: 18px;
     font-family: "TrajanPro-Regular";
     font-size: 18.72px;
 }
+.page-sales h1 {
+    margin-bottom:20px;
+}
+.page-sales .sale-item {
+    position: relative;
+    margin-bottom:30px;
+}
+.page-sales .sale-item img {
+    max-width: 100%;
+    height: auto !important;
+    width:100% !important;
+    border:1px solid #ccc;
+}
+.page-sales .sale-item .onsale {
+    display: none
+}
+.page-sales .sale-item h3 {
+    font-size: 18px;
+    text-align: center;
+    margin-top:10px;
+}
+.page-sales .sale-item .actions {
+    position: absolute;
+    right:15px;
+    bottom: 0px;
+}
+.page-sales .sale-item ins {
+    color:#1D1D1D;
+    font-weight: bold
+}

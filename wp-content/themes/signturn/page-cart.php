@@ -19,12 +19,12 @@ if(count($items)==1){
                     <div class="">
                         <?php get_step_winzar(1);?>
                     </div>
-		<?php	
-	            // start the loop
-	            while ( have_posts() ) : the_post();
-                    // action hook for placing content above #post
-	            thematic_abovepost();
-	        ?>
+                    <?php	
+                        // start the loop
+                        while ( have_posts() ) : the_post();
+                        // action hook for placing content above #post
+                        thematic_abovepost();
+                    ?>
     	     		
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?> > 
 

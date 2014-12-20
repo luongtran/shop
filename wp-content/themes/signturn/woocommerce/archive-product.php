@@ -22,7 +22,7 @@ get_header( 'shop' ); ?>
 		 */
 		do_action( 'woocommerce_before_main_content' );
 	?>
-        <?php if( is_product_category()):
+            <?php if( is_product_category()):
                   global $wp_query;
                 $cat = $wp_query->get_queried_object();
                 $description = $cat->description;
@@ -56,7 +56,6 @@ get_header( 'shop' ); ?>
                                         <?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" width="300px" height="300px" />'; ?>
                                     <h3><?php the_title();
                                     ?>
-                                   
                                     </h3>
                                 </a>
                                 <div class="archive-mark">
@@ -75,7 +74,7 @@ get_header( 'shop' ); ?>
             
             
         </div>
-<div id="list-product-of-cat2" >
+        <div id="list-product-of-cat2" >
             <div id="slider2">
 		<a class="buttons prev" href="#"><i class="fa fa-angle-left fa-2x"></i></a>
 		<div class="viewport">
@@ -101,7 +100,7 @@ get_header( 'shop' ); ?>
                             <?php wp_reset_query(); ?>
 			</ul>
                     </div>
-                    <a class="buttons next" href="#"><i class="fa fa-angle-right fa-2x"></i></a>
+                <a class="buttons next" href="#"><i class="fa fa-angle-right fa-2x"></i></a>
             </div>
         </div>
         <?php else: ?>
