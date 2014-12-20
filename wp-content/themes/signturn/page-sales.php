@@ -5,7 +5,7 @@
 ?>
 
 <div id="main-content" class="page-sales">
-    <h1 class="page-title">Sales Product</h1>
+    <h1 class="page-title">Sales Products</h1>
     <?php 
         $args = array(
             'post_type'      => 'product',

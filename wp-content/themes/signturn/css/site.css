@@ -3271,9 +3271,11 @@ width: 18px;
     display: none
 }
 .page-sales .sale-item h3 {
-    font-size: 18px;
+    font-size: 14px;
     text-align: left;
     margin-top:10px;
+    color: #2D2B2C;
+    font-family: "TrajanPro-Regular";
 }
 .page-sales .sale-item .actions {
     position: absolute;
