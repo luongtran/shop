@@ -122,6 +122,17 @@ function test_cart(){
        die();
      }
 }
+function check_remove_gift(){
+    if(!MyProduct::isAllowGift()){
+        $items = WC()->cart->get_cart();
+        foreach ($items as $key => $item) {
+            if(MyProduct::is_gift($item['product_id'])){
+               WC()->cart->set_quantity($key, 0 );
+            }
+        }
+    }
+}
+add_action('woocommerce_cart_updated','check_remove_gift');
 add_action('init', 'choose_gift_product');
 add_action('init', 'update_cart_quality');
 add_action('init', 'update_cart_quality_ajax');

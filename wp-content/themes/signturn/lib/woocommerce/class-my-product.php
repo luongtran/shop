@@ -48,7 +48,7 @@ class MyProduct extends WC_Product {
         }
         return false;
     }
-
+    
     public static function addToCart($productId){
        
     }
@@ -58,6 +58,9 @@ class MyProduct extends WC_Product {
         }else{
             return false;
         }
+    }
+    public function removeGift(){
+        
     }
     public static function isAllowGift(){
         $sampleString = MyProduct::SAMPLE_PRODUCT;
