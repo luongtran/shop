@@ -112,9 +112,19 @@ function check_coupon_applied(){
 //    }
 //    return $title_content;
 //}
-
+function test_cart(){
+    if(!empty($_GET['test_gift'])){
+       if(MyProduct::isAllowGift()){
+           echo "allow gift";
+       }else{
+           echo " dont allow gift";
+       }
+       die();
+     }
+}
 add_action('init', 'choose_gift_product');
 add_action('init', 'update_cart_quality');
 add_action('init', 'update_cart_quality_ajax');
 add_action('init', 'remove_cart_ajax');
 add_action('init', 'check_coupon_applied');
+add_action('init', 'test_cart');

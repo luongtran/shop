@@ -1,6 +1,9 @@
 <?php 
 global $woocommerce;
-
+if(!MyProduct::isAllowGift()){
+    wp_redirect(get_permalink( get_page_by_path( 'checkout-account' ) ) );
+    exit();
+}
 //Check have a gift ?
 $gift_exist = false;
 $items = $woocommerce->cart->get_cart();

@@ -342,8 +342,8 @@ function get_step_winzar($stepNum=1){ ?>
             <label class="bag">Bag</label>
             <?php endif;?>
         </div>
-        <div class="col-xs-2 actived">
-            <?php if($stepNum>2): ?>
+        <div class="col-xs-2 actived  <?php if(!MyProduct::isAllowGift()) echo "disabled" ?>">
+            <?php if($stepNum>2 && MyProduct::isAllowGift()): ?>
             <a href="<?php echo get_permalink( get_page_by_path( 'gift' ) ) ?>">
             <hr>
             <span>2</span>
@@ -546,3 +546,4 @@ if(!function_exists('get_product_category_by_id')){
         return $term['name'];
     } 
 }
+

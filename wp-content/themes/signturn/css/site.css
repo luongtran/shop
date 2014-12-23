@@ -3291,3 +3291,9 @@ width: 18px;
     color:#1D1D1D;
     font-weight: bold
 }
+#booking-winzar .disabled .gift {
+    color: #999;
+}
+#booking-winzar .disabled .gift,#booking-winzar .disabled span {
+    cursor: not-allowed
+}

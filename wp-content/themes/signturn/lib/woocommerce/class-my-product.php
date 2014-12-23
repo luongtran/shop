@@ -2,7 +2,7 @@
 
 class MyProduct extends WC_Product {
     const GIFT_CAT = 'gift';
-
+    const SAMPLE_PRODUCT = 'sample';
     public static  function getFromCategory($category_slug,$posts_per_page = 12) {
     // Default Woocommerce ordering args
         $ordering_args = WC()->query->get_catalog_ordering_args();
@@ -59,5 +59,20 @@ class MyProduct extends WC_Product {
             return false;
         }
     }
-    
+    public static function isAllowGift(){
+        $sample = MyProduct::SAMPLE_PRODUCT;
+        $cartProducts = WC()->cart->get_cart();
+        if(is_array($cartProducts)){
+            foreach ($cartProducts as $product) {
+                if(isset($product['variation']) && is_array($product['variation'])){
+                    foreach ($product['variation'] as $variation) {
+                        if($variation!==$sample){
+                            return true;
+                        }
+                    }
+                }
+            }
+        }
+        return false;
+    }
 }
