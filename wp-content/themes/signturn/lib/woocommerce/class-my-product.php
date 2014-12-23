@@ -69,13 +69,15 @@ class MyProduct extends WC_Product {
         $cartProducts = WC()->cart->get_cart();
         if(is_array($cartProducts)){
             foreach ($cartProducts as $product) {
-                if(isset($product['variation']) && is_array($product['variation'])){
+                if( isset($product['variation']) && 
+                    is_array($product['variation'])
+                   ){
                     foreach ($product['variation'] as $variation) {
                         if($variation!==$sampleString){
                             $perfume ++;
                         }
                     }
-                }else{
+                }elseif(!MyProduct::is_gift($product['product_id'])){
                     $nonAttr ++;
                 }
             }
