@@ -122,9 +122,9 @@ function test_cart(){
        die();
      }
      if(!empty($_GET['test'])){
-       $cart = WC()->cart;
-       print_r($cart);
-      //   check_free_sample_product();
+//       $cart = WC()->cart;
+//       print_r($cart);
+      print_r(check_free_sample_product());
        die();
      }
 }
@@ -147,13 +147,14 @@ function check_free_sample_product(){
                 $quantity = $item['quantity'];
                 for($i=1;$i<=$quantity;$i++){
                     $k = $key.'-'.$i;
-                    if(!MyProduct::isAtSaveFree($k) && !MyProduct::isAtSavedMadeFree($k)){
+                    if( (!MyProduct::isAtSaveFree($k) && !MyProduct::isAtSavedMadeFree($k))){
                         $samples[] = $k;
                     }
                 }
             }
             //$item['data']->set_price(400);
         }
+        return $samples;
         //print_r($samples);die();
         $coupon_amount = 0;
         for($i=0;$i<count($$samples);$i+=3){
@@ -202,4 +203,4 @@ add_action('init', 'update_cart_quality');
 add_action('init', 'update_cart_quality_ajax');
 add_action('init', 'remove_cart_ajax');
 add_action('init', 'check_coupon_applied');
-//add_action('init', 'test_cart');
+add_action('init', 'test_cart');
