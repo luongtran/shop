@@ -154,7 +154,6 @@ function check_free_sample_product(){
             }
             //$item['data']->set_price(400);
         }
-        //print_r($samples);die();
         $coupon_amount = 0;
         for($i=0;$i<count($$samples);$i+=3){
             if(isset($samples[$i]) && isset($samples[$i+1]) && isset($samples[$i+2])){
@@ -202,4 +201,4 @@ add_action('init', 'update_cart_quality');
 add_action('init', 'update_cart_quality_ajax');
 add_action('init', 'remove_cart_ajax');
 add_action('init', 'check_coupon_applied');
-//add_action('init', 'test_cart');
+add_action('init', 'test_cart');
