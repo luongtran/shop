@@ -124,6 +124,7 @@ function test_cart(){
      if(!empty($_GET['test'])){
        $cart = WC()->cart;
        print_r($cart);
+         check_free_sample_product();
        die();
      }
 }
@@ -153,6 +154,7 @@ function check_free_sample_product(){
             }
             //$item['data']->set_price(400);
         }
+        print_r($samples);die();
         $coupon_amount = 0;
         for($i=0;$i<count($$samples);$i+=3){
             if(isset($samples[$i]) && isset($samples[$i+1]) && isset($samples[$i+2])){

@@ -86,7 +86,7 @@ class MyProduct extends WC_Product {
             foreach ($cartProducts as $product) {
                 if( isset($product['variation']) && is_array($product['variation']) ){
                     foreach ($product['variation'] as $variation) {
-                        if($variation!==$sampleString && !MyProduct::is_gift($product['product_id'])){
+                        if(strpos($variation,$sampleString) && !MyProduct::is_gift($product['product_id'])){
                             $perfume ++;
                         }
                     }
