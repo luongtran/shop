@@ -3400,12 +3400,12 @@ width: 18px;
 .page-sales .sale-item .actions {
    bottom: -25px;
     position: absolute;
-    right: 72px;
+    left: 20px;
 }
 .page-sales .sale-item .price {
     position: absolute;
     right:20px;
-    top: 4px;
+    bottom: -25px;
 }
 .page-sales .sale-item ins {
     color:#1D1D1D;

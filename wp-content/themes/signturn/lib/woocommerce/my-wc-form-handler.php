@@ -124,8 +124,8 @@ function test_cart(){
      if(!empty($_GET['test'])){
 //       $cart = WC()->cart;
 //       print_r($cart);
-      //(check_free_sample_product());
-       //die();
+      (check_free_sample_product());
+       die();
      }
 }
 function check_remove_gift(){
@@ -149,19 +149,22 @@ function check_free_sample_product(){
                     $k = $key.'-'.$i;
                     if( (!MyProduct::isAtSaveFree($k) && !MyProduct::isAtSavedMadeFree($k))){
                         $samples[] = $k;
+                    }else{
+                       // MyProduct::
                     }
                 }
             }
             //$item['data']->set_price(400);
         }
         $coupon_amount = 0;
-        for($i=0;$i<count($$samples);$i+=3){
+        for($i=0;$i<count($samples);$i+=3){
             if(isset($samples[$i]) && isset($samples[$i+1]) && isset($samples[$i+2])){
                 $arr = explode('-', $samples[$i+2]);
                 $cartKey = $arr[0];
                 $coupon_amount += $items[$cartKey]['data']->get_price();
             }
         }
+        //print_r($samples);
         if($coupon_amount){
            $coupon_code = "Free samples products - ID:".md5(microtime().uniqid());
            MyProduct::createCoupon($coupon_code, $coupon_amount);
@@ -191,7 +194,7 @@ add_action('woocommerce_before_cart_header','update_real_cart');
 add_action('woocommerce_checkout_process','update_real_cart');
 add_action('woocommerce_before_cart_table','update_real_cart');
 add_action('woocommerce_before_checkout_form','update_real_cart');
-add_action('woocommerce_cart_updated','check_free_sample_product');
+//add_action('woocommerce_cart_updated','check_free_sample_product');
 
 
 add_filter('show_detail_product_html_price','show_highest_html_price');
@@ -201,4 +204,4 @@ add_action('init', 'update_cart_quality');
 add_action('init', 'update_cart_quality_ajax');
 add_action('init', 'remove_cart_ajax');
 add_action('init', 'check_coupon_applied');
-add_action('init', 'test_cart');
+//add_action('init', 'test_cart');
