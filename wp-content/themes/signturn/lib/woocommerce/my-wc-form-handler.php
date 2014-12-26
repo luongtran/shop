@@ -124,8 +124,8 @@ function test_cart(){
      if(!empty($_GET['test'])){
 //       $cart = WC()->cart;
 //       print_r($cart);
-      print_r(check_free_sample_product());
-       die();
+      //(check_free_sample_product());
+       //die();
      }
 }
 function check_remove_gift(){
@@ -154,7 +154,6 @@ function check_free_sample_product(){
             }
             //$item['data']->set_price(400);
         }
-        return $samples;
         //print_r($samples);die();
         $coupon_amount = 0;
         for($i=0;$i<count($$samples);$i+=3){
@@ -171,7 +170,7 @@ function check_free_sample_product(){
         }
         
     } catch (Exception $exc) {
-        print_r($exc);die();
+        //print_r($exc);die();
     }
 
 }
@@ -203,4 +202,4 @@ add_action('init', 'update_cart_quality');
 add_action('init', 'update_cart_quality_ajax');
 add_action('init', 'remove_cart_ajax');
 add_action('init', 'check_coupon_applied');
-add_action('init', 'test_cart');
+//add_action('init', 'test_cart');

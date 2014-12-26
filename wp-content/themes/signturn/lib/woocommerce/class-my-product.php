@@ -67,7 +67,8 @@ class MyProduct extends WC_Product {
         if(is_array($product)){
             if( isset($product['variation']) && is_array($product['variation']) ){
                 foreach ($product['variation'] as $variation) {
-                    if(strpos($variation,  MyProduct::SAMPLE_PRODUCT)||$variation===MyProduct::SAMPLE_PRODUCT){
+                    if(strpos(strtoupper($variation), strtoupper(MyProduct::SAMPLE_PRODUCT))
+                            ||  strtoupper($variation)===  strtoupper(MyProduct::SAMPLE_PRODUCT)){
                         return true;
                     }
                 }
@@ -84,12 +85,8 @@ class MyProduct extends WC_Product {
         $cartProducts = WC()->cart->get_cart();
         if(is_array($cartProducts)){
             foreach ($cartProducts as $product) {
-                if( isset($product['variation']) && is_array($product['variation']) ){
-                    foreach ($product['variation'] as $variation) {
-                        if(strpos($variation,$sampleString) && !MyProduct::is_gift($product['product_id'])){
-                            $perfume ++;
-                        }
-                    }
+                if(MyProduct::isSampleProduct($product) && !MyProduct::is_gift($product['product_id'])){
+                    $perfume ++;
                 }elseif(!MyProduct::is_gift($product['product_id'])){
                     $nonAttr ++;
                 }
