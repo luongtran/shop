@@ -67,7 +67,7 @@ class MyProduct extends WC_Product {
         if(is_array($product)){
             if( isset($product['variation']) && is_array($product['variation']) ){
                 foreach ($product['variation'] as $variation) {
-                    if(strpos($variation,  MyProduct::SAMPLE_PRODUCT)){
+                    if(strpos($variation,  MyProduct::SAMPLE_PRODUCT)||$variation===MyProduct::SAMPLE_PRODUCT){
                         return true;
                     }
                 }
