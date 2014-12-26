@@ -153,13 +153,18 @@ function check_free_sample_product(){
             }
             //$item['data']->set_price(400);
         }
-        $s = $samples;
-        for($i=0;$i<count($s);$i+=3){
-            if(isset($s[$i]) && isset($s[$i+1]) && isset($s[$i+2])){
-                $arr = explode('-', $s[$i+2]);
+        $coupon_amount = 0;
+        for($i=0;$i<count($$samples);$i+=3){
+            if(isset($samples[$i]) && isset($samples[$i+1]) && isset($samples[$i+2])){
+                $arr = explode('-', $samples[$i+2]);
                 $cartKey = $arr[0];
-                //$items[$]
+                $coupon_amount += $items[$cartKey]['data']->get_price();
             }
+        }
+        if($coupon_amount){
+           $coupon_code = "Free samples products - ID:".md5(microtime().uniqid());
+           MyProduct::createCoupon($coupon_code, $coupon_amount);
+           WC()->cart->add_discount($coupon_code);
         }
         
     } catch (Exception $exc) {
@@ -171,17 +176,21 @@ function update_real_cart(){
     WC()->cart->calculate_totals();
 }
 function show_highest_html_price($html_price){
-    $arr = explode('&ndash;', $html_price);
-    if(isset($arr[1])){
-        return trim($arr[1]);
+    try {
+        $price = strip_tags($html_price);
+        $price = str_replace(array('&ndash;'), '', $price);
+        $arr = explode(get_woocommerce_currency_symbol(), $price);
+        natsort($arr);
+        return get_woocommerce_currency_symbol().$arr[count($arr)-1];
+    } catch (Exception $exc) {
+        return $html_price;
     }
-    return $html_price;
 }
-//add_action('woocommerce_before_cart_header','update_real_cart');
-//add_action('woocommerce_checkout_process','update_real_cart');
-//add_action('woocommerce_before_cart_table','update_real_cart');
-//add_action('woocommerce_before_checkout_form','update_real_cart');
-//add_action('woocommerce_cart_updated','check_free_sample_product');
+add_action('woocommerce_before_cart_header','update_real_cart');
+add_action('woocommerce_checkout_process','update_real_cart');
+add_action('woocommerce_before_cart_table','update_real_cart');
+add_action('woocommerce_before_checkout_form','update_real_cart');
+add_action('woocommerce_cart_updated','check_free_sample_product');
 
 
 add_filter('show_detail_product_html_price','show_highest_html_price');
@@ -191,4 +200,4 @@ add_action('init', 'update_cart_quality');
 add_action('init', 'update_cart_quality_ajax');
 add_action('init', 'remove_cart_ajax');
 add_action('init', 'check_coupon_applied');
-//add_action('init', 'test_cart');
+add_action('init', 'test_cart');

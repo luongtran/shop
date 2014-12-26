@@ -3427,7 +3427,7 @@ display: none;
 }
 
 body.single-product td.label {
-font-weight: normal !important;
-color: #444;
-font-size: 13px;
+    font-weight: normal !important;
+    color: #444;
+    font-size: 13px;
 }

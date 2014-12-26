@@ -67,7 +67,7 @@ class MyProduct extends WC_Product {
         if(is_array($product)){
             if( isset($product['variation']) && is_array($product['variation']) ){
                 foreach ($product['variation'] as $variation) {
-                    if($variation!==$sampleString){
+                    if(strpos($variation,$sampleString)){
                         return true;
                     }
                 }
@@ -140,5 +140,26 @@ class MyProduct extends WC_Product {
                 return is_array($_key_mades) && in_array($key_made, $_key_mades) ? true : false;
             }
         }
+    }
+    public static function createCoupon($coupon_code,$amount){
+        $discount_type = 'fixed_cart'; // Type: fixed_cart, percent, fixed_product, percent_product
+        $coupon = array(
+            'post_title' => $coupon_code,
+            'post_content' => '',
+            'post_status' => 'publish',
+            'post_author' => 1,
+            'post_type' => 'shop_coupon'
+        );
+        $new_coupon_id = wp_insert_post( $coupon );
+        // Add meta
+        update_post_meta( $new_coupon_id, 'discount_type', $discount_type );
+        update_post_meta( $new_coupon_id, 'coupon_amount', $amount );
+        update_post_meta( $new_coupon_id, 'individual_use', 'no' );
+        update_post_meta( $new_coupon_id, 'product_ids', '' );
+        update_post_meta( $new_coupon_id, 'exclude_product_ids', '' );
+        update_post_meta( $new_coupon_id, 'usage_limit', '' );
+        update_post_meta( $new_coupon_id, 'expiry_date', '' );
+        update_post_meta( $new_coupon_id, 'apply_before_tax', 'yes' );
+        update_post_meta( $new_coupon_id, 'free_shipping', 'no' ); 
     }
 }

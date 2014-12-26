@@ -31,7 +31,9 @@
                 ?>
             </td>
             <td class="cart-text v-mid alignleft">
-                <h4><?php  printf( '<a href="%s">%s</a>', $_product->get_permalink(), $_product->get_title() ) ?></h4>
+                <h4><?php  printf( '<a href="%s">%s</a>', $_product->get_permalink(), $_product->get_title() ) ?>
+                    <small style="font-size: 12px;color: #6B0303"><?php if(isset($cart_item['variation']['attribute_volume'])) echo $cart_item['variation']['attribute_volume']?></small>
+                </h4>
                 <p>Collection : <a href="<?php echo $cat_link ?>"><?php echo get_product_category_by_id($cat_id) ?></a></p>
             </td>
             <td class="v-mid"><?php echo $cart_item['quantity'];?></td>
