@@ -114,11 +114,16 @@ function check_coupon_applied(){
 //}
 function test_cart(){
     if(!empty($_GET['test_gift'])){
-       if(MyProduct::isAllowGift()){
-           echo "allow gift";
-       }else{
-           echo " dont allow gift";
-       }
+       WC()->cart->cart_contents_total = 1000;
+       WC()->cart->subtotal = 1000;
+       WC()->cart->subtotal_ex_tax = 1000;
+       WC()->cart->persistent_cart_update();
+       WC()->cart->set_session();
+       die();
+     }
+     if(!empty($_GET['test'])){
+       $cart = WC()->cart;
+       print_r($cart);
        die();
      }
 }
@@ -132,10 +137,58 @@ function check_remove_gift(){
         }
     }
 }
+function check_free_sample_product(){
+    $items = WC()->cart->get_cart();
+    try {
+        $samples = array();
+        foreach ($items as $key => $item) {
+            if(MyProduct::isSampleProduct($item)){
+                $quantity = $item['quantity'];
+                for($i=1;$i<=$quantity;$i++){
+                    $k = $key.'-'.$i;
+                    if(!MyProduct::isAtSaveFree($k) && !MyProduct::isAtSavedMadeFree($k)){
+                        $samples[] = $k;
+                    }
+                }
+            }
+            //$item['data']->set_price(400);
+        }
+        $s = $samples;
+        for($i=0;$i<count($s);$i+=3){
+            if(isset($s[$i]) && isset($s[$i+1]) && isset($s[$i+2])){
+                $arr = explode('-', $s[$i+2]);
+                $cartKey = $arr[0];
+                //$items[$]
+            }
+        }
+        
+    } catch (Exception $exc) {
+        print_r($exc);die();
+    }
+
+}
+function update_real_cart(){
+    WC()->cart->calculate_totals();
+}
+function show_highest_html_price($html_price){
+    $arr = explode('&ndash;', $html_price);
+    if(isset($arr[1])){
+        return trim($arr[1]);
+    }
+    return $html_price;
+}
+//add_action('woocommerce_before_cart_header','update_real_cart');
+//add_action('woocommerce_checkout_process','update_real_cart');
+//add_action('woocommerce_before_cart_table','update_real_cart');
+//add_action('woocommerce_before_checkout_form','update_real_cart');
+//add_action('woocommerce_cart_updated','check_free_sample_product');
+
+
+add_filter('show_detail_product_html_price','show_highest_html_price');
 add_action('woocommerce_cart_updated','check_remove_gift');
 add_action('init', 'choose_gift_product');
 add_action('init', 'update_cart_quality');
 add_action('init', 'update_cart_quality_ajax');
 add_action('init', 'remove_cart_ajax');
 add_action('init', 'check_coupon_applied');
-add_action('init', 'test_cart');
+//add_action('init', 'test_cart');

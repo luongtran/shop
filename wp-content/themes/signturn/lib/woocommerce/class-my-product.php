@@ -62,6 +62,21 @@ class MyProduct extends WC_Product {
     public function removeGift(){
         
     }
+    
+    public static function isSampleProduct(Array $product){
+        if(is_array($product)){
+            if( isset($product['variation']) && is_array($product['variation']) ){
+                foreach ($product['variation'] as $variation) {
+                    if($variation!==$sampleString){
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+        return false;
+    }
+
     public static function isAllowGift(){
         $sampleString = MyProduct::SAMPLE_PRODUCT;
         $nonAttr = 0;
@@ -69,11 +84,9 @@ class MyProduct extends WC_Product {
         $cartProducts = WC()->cart->get_cart();
         if(is_array($cartProducts)){
             foreach ($cartProducts as $product) {
-                if( isset($product['variation']) && 
-                    is_array($product['variation'])
-                   ){
+                if( isset($product['variation']) && is_array($product['variation']) ){
                     foreach ($product['variation'] as $variation) {
-                        if($variation!==$sampleString){
+                        if($variation!==$sampleString && !MyProduct::is_gift($product['product_id'])){
                             $perfume ++;
                         }
                     }
@@ -88,5 +101,44 @@ class MyProduct extends WC_Product {
             }
         }
         return false;
+    }
+    
+
+    public static function multipleAttr($productId){
+        $product = new WC_Product_Variable($productId);
+        $variations = $product->get_available_variations();
+        if(is_array($variations) && count($variations)>1){
+            return true;
+        }
+        return false;
+    }
+    public static function getSavedMadeFree(){
+        $savedFree = $_SESSION['saved_sample_free'];
+        if(!$savedFree || (is_array($savedFree)&&empty($savedFree))){
+            return  array();
+        }
+        return $savedFree;
+    }
+    public function setSavedSampleFree($key_free,$key_made_free){
+        $savedFree = $_SESSION['saved_sample_free'];
+        $savedFree[$key_free][] = $key_made_free;
+        $_SESSION['saved_sample_free'] = $savedFree;
+    }
+    public function detroySaveSampleFree(){
+        unset($_SESSION['saved_sample_free']);
+    }
+    public static function isAtSaveFree($key){
+        $savedFree = MyProduct::getSavedMadeFree();
+        return isset($savedFree[$key]) ? true : false;
+    }
+    public static function isAtSavedMadeFree($key_made,$key_free=null){
+        $savedMadeFree = MyProduct::getSavedMadeFree();
+        if($key_free){
+            return isset($savedMadeFree[$key_free][$key_made]) ? true : false;
+        }else {
+            foreach ($savedMadeFree as $_key_free => $_key_mades) {
+                return is_array($_key_mades) && in_array($key_made, $_key_mades) ? true : false;
+            }
+        }
     }
 }

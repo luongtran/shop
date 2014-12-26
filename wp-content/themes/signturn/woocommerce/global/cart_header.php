@@ -1,6 +1,6 @@
 <?php 
     $cart  = WC()->cart->get_cart();
-    
+    do_action('woocommerce_before_cart_header')
 ?>
 <div id="header-cart" class="header-box">
     <a class="header-box-close" href="javascript:void(0)">&Chi;</a>

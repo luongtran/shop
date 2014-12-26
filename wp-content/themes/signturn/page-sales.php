@@ -63,8 +63,8 @@
             <div class="actions">
                 <a  data-quantity="1" data-product_sku="" 
                     data-product_id="<?php echo $loop->post->ID ?>" rel="nofollow" 
-                    href="<?php echo $catLink?>/?add-to-cart=<?php echo $loop->post->ID ?>" 
-                    class="button add_to_cart_button product_type_simple site-btn btn-sm" >Add To Bag
+                    href="<?php the_permalink(); ?>" 
+                    class="button add_to_cart_button product_type_simple site-btn btn-sm" >View Product
                 </a>
             </div>
         </div>

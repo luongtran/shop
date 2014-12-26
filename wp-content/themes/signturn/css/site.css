@@ -3297,3 +3297,8 @@ width: 18px;
 #booking-winzar .disabled .gift,#booking-winzar .disabled span {
     cursor: not-allowed
 }
+.archive-mark a.view-only {
+  left: 45px;
+  position: absolute;
+  top: 45px !important;
+}
