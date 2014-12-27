@@ -2,6 +2,29 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group name="Sites"/>
+        <group name="Sites">
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/includes/class-wc-checkout.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/functions.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/content-single-product.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/page-cart.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/cart/cart.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/includes/class-wc-product-simple.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/checkout/form-checkout.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/includes/class-wc-product-variable.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.js</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/woocommerce.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/includes/wc-template-hooks.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/archive-product.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/page-sales.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/assets/js/frontend/add-to-cart.min.js</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/global/cart_header.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/includes/wc-cart-functions.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/includes/class-wc-cart.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/css/site.css</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/single-product/title.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/lib/woocommerce/my-wc-form-handler.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/lib/woocommerce/class-my-product.php</file>
+        </group>
     </open-files>
 </project-private>

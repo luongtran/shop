@@ -53,7 +53,7 @@ get_header( 'shop' ); ?>
                             ?>
                             <li>
                                 <a href="<?php the_permalink()?>">
-                                        <?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="'.woocommerce_placeholder_img_src().'" alt="Placeholder" width="300px" height="300px" />'; ?>
+                                        <?php if (has_post_thumbnail( $loop->post->ID )) echo get_the_post_thumbnail($loop->post->ID, 'shop_catalog'); else echo '<img src="'.woocommerce_placeholder_img_src().'" alt="'.$loop->post->post_title.'" width="300px" height="300px" />'; ?>
                                     <h3><?php the_title();
                                     ?>
                                     </h3>

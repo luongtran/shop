@@ -149,8 +149,6 @@ function check_free_sample_product(){
                     $k = $key.'-'.$i;
                     if( (!MyProduct::isAtSaveFree($k) && !MyProduct::isAtSavedMadeFree($k))){
                         $samples[] = $k;
-                    }else{
-                       // MyProduct::
                     }
                 }
             }
@@ -162,6 +160,7 @@ function check_free_sample_product(){
                 $arr = explode('-', $samples[$i+2]);
                 $cartKey = $arr[0];
                 $coupon_amount += $items[$cartKey]['data']->get_price();
+               // MyProduct::setSavedSampleFree($key_free, $key_made_free)
             }
         }
         //print_r($samples);

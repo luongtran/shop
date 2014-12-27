@@ -116,7 +116,7 @@ class MyProduct extends WC_Product {
         }
         return $savedFree;
     }
-    public function setSavedSampleFree($key_free,$key_made_free){
+    public static function setSavedSampleFree($key_free,$key_made_free){
         $savedFree = $_SESSION['saved_sample_free'];
         $savedFree[$key_free][] = $key_made_free;
         $_SESSION['saved_sample_free'] = $savedFree;
@@ -158,5 +158,8 @@ class MyProduct extends WC_Product {
         update_post_meta( $new_coupon_id, 'expiry_date', '' );
         update_post_meta( $new_coupon_id, 'apply_before_tax', 'yes' );
         update_post_meta( $new_coupon_id, 'free_shipping', 'no' ); 
+    }
+    public static function priceWithSymbol($price){
+        return get_woocommerce_currency_symbol().$price;
     }
 }
