@@ -1495,7 +1495,7 @@ html * .ls-container img, body * .ls-container img, #ls-global * .ls-container i
     margin:0
 }
 .product_title ins {
-    display:block;
+    display:inline;
     text-decoration: none
 }
 .woocommerce span.onsale, .woocommerce-page span.onsale {

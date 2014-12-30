@@ -122,9 +122,20 @@ function test_cart(){
        die();
      }
      if(!empty($_GET['test'])){
-//       $cart = WC()->cart;
-//       print_r($cart);
-      (check_free_sample_product());
+         $id = get_the_ID();
+         $product = new WC_Product_Variable($id);
+         $variations = $product->get_available_variations();
+         //var_dump($product->regular_price);
+         global $wpdb;
+        $post_table = $wpdb->posts;
+        //var_dump($post_table);
+        $childProducts = $wpdb->get_col(
+                        $wpdb->prepare("SELECT id FROM $post_table WHERE post_parent = %d",220));
+        $post_meta_table = $wpdb->postmeta;
+            $inData = implode(',', $childProducts);
+             $query = "SELECT post_id,meta_key,meta_value FROM $post_meta_table WHERE meta_key IN ('_regular_price','_sale_price','_price') AND post_id IN ($inData)";
+            $prices = $wpdb->get_results($query,ARRAY_A);
+          var_dump($prices);
        die();
      }
 }
@@ -179,13 +190,58 @@ function update_real_cart(){
     WC()->cart->calculate_totals();
 }
 function show_highest_html_price($html_price){
-    try {
-        $price = strip_tags($html_price);
-        $price = str_replace(array('&ndash;'), '', $price);
-        $arr = explode(get_woocommerce_currency_symbol(), $price);
-        natsort($arr);
-        return get_woocommerce_currency_symbol().$arr[count($arr)-1];
-    } catch (Exception $exc) {
+//    try {
+//        $price = strip_tags($html_price);
+//        $price = str_replace(array('&ndash;'), '', $price);
+//        $arr = explode(get_woocommerce_currency_symbol(), $price);
+//        natsort($arr);
+//        return get_woocommerce_currency_symbol().$arr[count($arr)-1];
+//    } catch (Exception $exc) {
+//        return $html_price;
+//    }
+//    var_dump($productId);
+    global $product;
+    $productId = $product->id;
+    if($productId){
+        global $wpdb;
+        $post_table = $wpdb->posts;
+        $childProducts = $wpdb->get_col($wpdb->prepare("SELECT id FROM $post_table WHERE post_parent = %d",$productId));
+        if(empty($childProducts)){
+            return $html_price;
+        }else{
+            $post_meta_table = $wpdb->postmeta;
+            $inData = implode(',', $childProducts);
+            $query = "SELECT post_id,meta_key,meta_value FROM $post_meta_table WHERE meta_key IN ('_regular_price','_sale_price','_price') AND post_id IN ($inData)";
+            $prices = $wpdb->get_results($query,ARRAY_A);
+            if(empty($prices)){
+                return $html_price;
+            }
+            //var_dump($prices);
+            $prices_tmp = array();
+            foreach ($prices as $key => $price) {
+                $prices_tmp[$price['post_id']][$price['meta_key']] = $price['meta_value'];
+            }
+            $regular_price = array();$sale_price = array();
+            foreach ($prices_tmp  as $key => $price) {
+                if(MyProduct::isSaleExpired($key)){
+                   // $prices_tmp[$key]['_sale_price'] = $prices_tmp[$key]['_regular_price'];
+                }
+                $regular_price[] = $prices_tmp[$key]['_regular_price'];
+                $sale_price[] = $prices_tmp[$key]['_sale_price'];
+            }
+            $symbol = get_woocommerce_currency_symbol();
+            arsort($sale_price);
+            arsort($regular_price);
+            $sale = max($sale_price);
+            $regular = max($regular_price);
+            //var_dump($regular_price);
+            //var_dump($sale_price);
+            if($sale == $regular){
+                return $html_price;
+            }
+            return "<del><span class='amount'>{$symbol}{$regular}</span></del> <ins><span class='amount'>{$symbol}{$sale}</span></ins>";
+        }
+    }else{
         return $html_price;
     }
 }
@@ -203,4 +259,4 @@ add_action('init', 'update_cart_quality');
 add_action('init', 'update_cart_quality_ajax');
 add_action('init', 'remove_cart_ajax');
 add_action('init', 'check_coupon_applied');
-//add_action('init', 'test_cart');
+add_action('init', 'test_cart');
