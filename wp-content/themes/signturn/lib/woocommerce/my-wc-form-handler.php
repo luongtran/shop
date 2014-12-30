@@ -150,44 +150,12 @@ function check_remove_gift(){
     }
 }
 function check_free_sample_product(){
-    $items = WC()->cart->get_cart();
-    try {
-        $samples = array();
-        foreach ($items as $key => $item) {
-            if(MyProduct::isSampleProduct($item)){
-                $quantity = $item['quantity'];
-                for($i=1;$i<=$quantity;$i++){
-                    $k = $key.'-'.$i;
-                    if( (!MyProduct::isAtSaveFree($k) && !MyProduct::isAtSavedMadeFree($k))){
-                        $samples[] = $k;
-                    }
-                }
-            }
-            //$item['data']->set_price(400);
-        }
-        $coupon_amount = 0;
-        for($i=0;$i<count($samples);$i+=3){
-            if(isset($samples[$i]) && isset($samples[$i+1]) && isset($samples[$i+2])){
-                $arr = explode('-', $samples[$i+2]);
-                $cartKey = $arr[0];
-                $coupon_amount += $items[$cartKey]['data']->get_price();
-               // MyProduct::setSavedSampleFree($key_free, $key_made_free)
-            }
-        }
-        //print_r($samples);
-        if($coupon_amount){
-           $coupon_code = "Free samples products - ID:".md5(microtime().uniqid());
-           MyProduct::createCoupon($coupon_code, $coupon_amount);
-           WC()->cart->add_discount($coupon_code);
-        }
-        
-    } catch (Exception $exc) {
-        //print_r($exc);die();
-    }
+    MyProduct::removeSampleCoupon();
+    MyProduct::addSampleCoupon();
 
 }
 function update_real_cart(){
-    WC()->cart->calculate_totals();
+    //WC()->cart->calculate_totals();
 }
 function show_highest_html_price($html_price){
 //    try {
@@ -249,7 +217,7 @@ add_action('woocommerce_before_cart_header','update_real_cart');
 add_action('woocommerce_checkout_process','update_real_cart');
 add_action('woocommerce_before_cart_table','update_real_cart');
 add_action('woocommerce_before_checkout_form','update_real_cart');
-//add_action('woocommerce_cart_updated','check_free_sample_product');
+add_action('woocommerce_before_checkout_form','check_free_sample_product');
 
 
 add_filter('show_detail_product_html_price','show_highest_html_price');

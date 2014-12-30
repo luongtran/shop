@@ -3,6 +3,7 @@
 class MyProduct extends WC_Product {
     const GIFT_CAT = 'gift';
     const SAMPLE_PRODUCT = 'sample';
+    const FREE_SAMPLE_COUPON = 'free_sample';
     public static  function getFromCategory($category_slug,$posts_per_page = 12) {
     // Default Woocommerce ordering args
         $ordering_args = WC()->query->get_catalog_ordering_args();
@@ -176,6 +177,56 @@ class MyProduct extends WC_Product {
             return false;
         }else{
             return true;
+        }
+    }
+    
+    public static function removeSampleCoupon(){
+        $coupon = isset($_SESSION[self::FREE_SAMPLE_COUPON]) ? $_SESSION[self::FREE_SAMPLE_COUPON] : NULL;
+        if($coupon){
+            WC()->cart->remove_coupon($coupon);
+            global $wpdb;
+            $query = $wpdb->prepare("SELECT id FROM {$wpdb->posts} WHERE post_type like 'shop_coupon' AND post_title like %s",$coupon);
+            $results = $wpdb->get_results($query, OBJECT );
+            if(count($results)){
+                $id = $results[0]->id;
+                wp_delete_post($id,true);
+                $wpdb->query( 
+                    $wpdb->prepare( 
+                            "
+                             DELETE FROM $wpdb->postmeta
+                             WHERE post_id = %d
+                            ",$id
+                    )
+                );
+            }
+            
+        }
+    }
+    public static function addSampleCoupon(){
+        $items = WC()->cart->get_cart();
+        $samples = array();
+        foreach ($items as $key => $item) {
+            if(MyProduct::isSampleProduct($item)){
+                $quantity = $item['quantity'];
+                for($i=1;$i<=$quantity;$i++){
+                    $k = $key.'-'.$i;
+                    $samples[] = $k;
+                }
+            }
+        }
+        $coupon_amount = 0;
+        for($i=0;$i<count($samples);$i+=3){
+            if(isset($samples[$i]) && isset($samples[$i+1]) && isset($samples[$i+2])){
+                $arr = explode('-', $samples[$i+2]);
+                $cartKey = $arr[0];
+                $coupon_amount += $items[$cartKey]['data']->get_price();
+            }
+        }
+        if($coupon_amount){
+           $coupon_code = "Free samples products - ID:".md5(microtime().uniqid());
+           MyProduct::createCoupon($coupon_code, $coupon_amount);
+           WC()->cart->add_discount($coupon_code);
+           $_SESSION[self::FREE_SAMPLE_COUPON] = $coupon_code;
         }
     }
 }

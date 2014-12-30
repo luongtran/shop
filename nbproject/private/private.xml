@@ -5,6 +5,9 @@
         <group name="Sites">
             <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/lib/woocommerce/my-wc-form-handler.php</file>
             <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/lib/woocommerce/class-my-product.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/archive-product.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/single-product/title.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/css/site.css</file>
         </group>
     </open-files>
 </project-private>
