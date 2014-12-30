@@ -3408,7 +3408,7 @@ width: 18px;
     bottom: -25px;
 }
 .page-sales .sale-item ins {
-    color:#1D1D1D;
+    color:#D00000;
     font-weight: bold
 }
 #booking-winzar .disabled .gift {
@@ -3430,4 +3430,9 @@ body.single-product td.label {
     font-weight: normal !important;
     color: #444;
     font-size: 13px;
+}
+
+
+body.single-product ins {
+   color: #D00000;
 }
