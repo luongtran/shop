@@ -202,9 +202,7 @@ function show_highest_html_price($html_price){
             arsort($regular_price);
             $sale = max($sale_price);
             $regular = max($regular_price);
-            //var_dump($regular_price);
-            //var_dump($sale_price);
-            if($regular_price === $sale || !$sale){
+            if($regular == $sale || !$sale){
                 return "<ins><span class='amount only-regular'>{$symbol}{$regular}</span></ins>";
             }
             return "<del><span class='amount'>{$symbol}{$regular}</span></del> <ins><span class='amount'>{$symbol}{$sale}</span></ins>";
