@@ -192,6 +192,7 @@ function show_highest_html_price($html_price){
             $regular_price = array();$sale_price = array();
             foreach ($prices_tmp  as $key => $price) {
                 if(MyProduct::isSaleExpired($key)){
+                    var_dump($price);
                    $prices_tmp[$key]['_sale_price'] = $prices_tmp[$key]['_regular_price'];
                 }
                 $regular_price[] = $prices_tmp[$key]['_regular_price'];
@@ -202,6 +203,8 @@ function show_highest_html_price($html_price){
             arsort($regular_price);
             $sale = max($sale_price);
             $regular = max($regular_price);
+            //var_dump($sale_price);
+            //var_dump($regular);
             if($regular == $sale || !$sale){
                 return "<ins><span class='amount only-regular'>{$symbol}{$regular}</span></ins>";
             }

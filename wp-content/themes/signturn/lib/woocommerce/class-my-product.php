@@ -163,9 +163,13 @@ class MyProduct extends WC_Product {
         return get_woocommerce_currency_symbol().$price;
     }
     public static function isSaleExpired($varitionId){
-        $sale_price_dates_from 	= ( $date = get_post_meta( $varitionId, '_sale_price_dates_from', true ) ) ? date_i18n( 'Y-m-d',$date ) : '';
-        $sale_price_dates_to 	= ( $date = get_post_meta( $varitionId, '_sale_price_dates_to', true ) ) ? date_i18n( 'Y-m-d', $date ) : '';
+        $sale_price_dates_from 	=  get_post_meta( $varitionId, '_sale_price_dates_from', true );//( $date = get_post_meta( $varitionId, '_sale_price_dates_from', true ) ) ? date_i18n( 'Y-m-d',$date ) : '';
+        $sale_price_dates_to 	= get_post_meta( $varitionId, '_sale_price_dates_to', true ) ;//( $date = get_post_meta( $varitionId, '_sale_price_dates_to', true ) ) ? date_i18n( 'Y-m-d', $date ) : '';
+        
         $current = time();
+//        var_dump($current);
+//        var_dump($sale_price_dates_from);
+//        var_dump($sale_price_dates_to);
         if(!$sale_price_dates_from && !$sale_price_dates_to){
             return false;
         }elseif($sale_price_dates_from && !$sale_price_dates_to && $current >=$sale_price_dates_from){
