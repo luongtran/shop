@@ -100,7 +100,6 @@ class MyProduct extends WC_Product {
         }
         return false;
     }
-    
 
     public static function multipleAttr($productId){
         $product = new WC_Product_Variable($productId);

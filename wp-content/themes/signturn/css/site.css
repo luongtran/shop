@@ -3436,3 +3436,6 @@ body.single-product td.label {
 body.single-product ins {
    color: #D00000;
 }
+.amount.only-regular {
+    color:#a7933e !important
+}
