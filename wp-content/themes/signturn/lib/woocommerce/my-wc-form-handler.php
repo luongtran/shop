@@ -114,28 +114,30 @@ function check_coupon_applied(){
 //}
 function test_cart(){
     if(!empty($_GET['test_gift'])){
-       WC()->cart->cart_contents_total = 1000;
-       WC()->cart->subtotal = 1000;
-       WC()->cart->subtotal_ex_tax = 1000;
-       WC()->cart->persistent_cart_update();
-       WC()->cart->set_session();
+//       WC()->cart->cart_contents_total = 1000;
+//       WC()->cart->subtotal = 1000;
+//       WC()->cart->subtotal_ex_tax = 1000;
+//       WC()->cart->persistent_cart_update();
+//       WC()->cart->set_session();
        die();
      }
      if(!empty($_GET['test'])){
-         $id = get_the_ID();
-         $product = new WC_Product_Variable($id);
-         $variations = $product->get_available_variations();
-         //var_dump($product->regular_price);
-         global $wpdb;
-        $post_table = $wpdb->posts;
-        //var_dump($post_table);
-        $childProducts = $wpdb->get_col(
-                        $wpdb->prepare("SELECT id FROM $post_table WHERE post_parent = %d",220));
-        $post_meta_table = $wpdb->postmeta;
-            $inData = implode(',', $childProducts);
-             $query = "SELECT post_id,meta_key,meta_value FROM $post_meta_table WHERE meta_key IN ('_regular_price','_sale_price','_price') AND post_id IN ($inData)";
-            $prices = $wpdb->get_results($query,ARRAY_A);
-          var_dump($prices);
+//         $id = get_the_ID();
+//         $product = new WC_Product_Variable($id);
+//         $variations = $product->get_available_variations();
+//         //var_dump($product->regular_price);
+//         global $wpdb;
+//        $post_table = $wpdb->posts;
+//        //var_dump($post_table);
+//        $childProducts = $wpdb->get_col(
+//                        $wpdb->prepare("SELECT id FROM $post_table WHERE post_parent = %d",220));
+//        $post_meta_table = $wpdb->postmeta;
+//            $inData = implode(',', $childProducts);
+//             $query = "SELECT post_id,meta_key,meta_value FROM $post_meta_table WHERE meta_key IN ('_regular_price','_sale_price','_price') AND post_id IN ($inData)";
+//            $prices = $wpdb->get_results($query,ARRAY_A);
+//          var_dump($prices);
+         $states = WC()->countries->get_states();
+         print_r($states);
        die();
      }
 }

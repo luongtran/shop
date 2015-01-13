@@ -102,15 +102,27 @@
                                 <input type="text" name="billing_city" value="<?php if(isset($_POST['billing_city']))echo $_POST['billing_city'];else    echo  get_user_meta( $customer_id, 'billing_city', true ) ?>"  class="form-control <?php if(in_array('billing_city', $checkout_error)) echo "error" ?>" />
                             </div>
                         </div>
-                        <div class="row form-group">
+                        <?php 
+                            $us_status = WC()->countries->get_states('US');
+                            $choosen_state = isset($_POST['billing_state']) ? $_POST['billing_state'] : '';
+                            
+                            $billing_country = isset($_POST['billing_country']) ? 
+                                    $_POST['billing_country'] : get_user_meta( $customer_id, 'billing_country', true );
+                        ?>
+                        <div id="billing-country-wrapper" class="row form-group" <?php if($billing_country !=='US') echo 'style="display:none"'  ?>>
                             <div class="col-sm-4">
                                 <label>State: </label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" name="billing_state" 
-                                       value="<?php if(isset($_POST['billing_state']))echo $_POST['billing_state']; 
-                                       else    echo  get_user_meta( $customer_id, 'billing_state', true ) ?>" 
-                                       class="form-control <?php if(in_array('billing_state', $checkout_error)) echo "error" ?>" />
+                                <select id="select-billing-state" class="form-control" name="billing_state">
+                                    <option disabled="disabled" value="" selected="selected" >Choose your state</option>
+                                    <?php
+                                        foreach($us_status as $key => $name):
+                                    ?>
+                                    <option <?php if($choosen_state===$key) echo 'selected="selected"' ?> value="<?php echo $key?>">
+                                        <?php echo $name ?></option>
+                                    <?php endforeach;?>
+                                </select>
                             </div>
                         </div>
                         <div class="row form-group">
@@ -128,9 +140,8 @@
                                 if(isset($checkout_error['billing_country'])){
                                     $args['class'] = ' error ';
                                 }
-                                $field =  '<select class="country_to_state country_select form-control" name="billing_country" >'
+                                $field =  '<select id="select-billing-country" class="country_to_state country_select form-control" name="billing_country" >'
 						. '<option value="">'.__( 'Select a country&hellip;', 'woocommerce' ) .'</option>';
-                                $billing_country = isset($_POST['billing_country']) ? $_POST['billing_country'] : get_user_meta( $customer_id, 'billing_country', true );
 				foreach ( $countries as $ckey => $cvalue ){
                                     //echo "current $ckey vs ".get_user_meta( $customer_id, 'billing_country', true );
                                     $selected = esc_attr( $ckey ) == $billing_country ?  'selected="selected"' : '';
@@ -227,15 +238,26 @@
                                 <input type="text" name="shipping_city" value="<?php  if(isset($_POST['shipping_city']))echo $_POST['shipping_city'];else echo  get_user_meta( $customer_id, 'shipping_city', true ) ?>"  class="form-control <?php if(in_array('shipping_city', $checkout_error)) echo "error" ?>" />
                             </div>
                         </div>
-                        <div class="row form-group">
+                         <?php 
+                            $choosen_shipping_state = isset($_POST['shipping_state']) ? $_POST['shipping_state'] : '';
+                            
+                            $shipping_country = isset($_POST['shipping_country']) ? 
+                                    $_POST['shipping_country'] : get_user_meta( $customer_id, 'shipping_country', true );
+                        ?>
+                        <div id="shipping-country-wrapper" class="row form-group" <?php if($shipping_country !=='US') echo 'style="display:none"'  ?>>
                             <div class="col-sm-4">
                                 <label>State: </label>
                             </div>
                             <div class="col-sm-8">
-                                <input type="text" name="shipping_state" 
-                                       value="<?php if(isset($_POST['shipping_state']))echo $_POST['shipping_state']; 
-                                       else    echo  get_user_meta( $customer_id, 'shipping_state', true ) ?>" 
-                                       class="form-control <?php if(in_array('shipping_state', $checkout_error)) echo "error" ?>" />
+                                <select id="select-shipping-state" class="form-control" name="shipping_state">
+                                    <option disabled="disabled" value="" selected="selected" >Choose your state</option>
+                                    <?php
+                                        foreach($us_status as $key => $name):
+                                    ?>
+                                    <option <?php if($choosen_shipping_state===$key) echo 'selected="selected"' ?> value="<?php echo $key?>">
+                                        <?php echo $name ?></option>
+                                    <?php endforeach;?>
+                                </select>
                             </div>
                         </div>
                         <div class="row form-group">
@@ -253,9 +275,9 @@
                                  if(isset($checkout_error['shipping_country'])){
                                     $args['class'] = ' error ';
                                 }
-                                $field =  '<select class="country_to_state country_select form-control" name="shipping_country" >'
+                                $field =  '<select id="select-shipping-country" class="country_to_state country_select form-control" name="shipping_country" >'
 						. '<option value="">'.__( 'Select a country&hellip;', 'woocommerce' ) .'</option>';
-                                $shipping_country = isset($_POST['shipping_country']) ? $_POST['shipping_country'] : get_user_meta( $customer_id, 'shipping_country', true );
+                                
 				foreach ( $countries as $ckey => $cvalue ){
                                         $selected = esc_attr( $ckey ) == $shipping_country ?  'selected="selected"' : '';
                                        //echo "current $ckey vs ".get_user_meta( $customer_id, 'shipping_country', true );
@@ -297,6 +319,26 @@
             }else{
                 $('#custom-delivery-address').show();
                 $('#same-billing-adress').hide();
+            }
+        });
+        $('#select-billing-country').val('<?php echo $billing_country ?>');
+        $('#select-billing-country').change(function(){
+            var country   = $(this).val();
+            if(country==='US'){
+                $('#billing-country-wrapper').show();
+            }else{
+                $('#billing-country-wrapper').hide();
+                 $('#select-billing-state').val('');
+            }
+        });
+        $('#select-shipping-country').val('<?php echo $shipping_country ?>');
+        $('#select-shipping-country').change(function(){
+            var country   = $(this).val();
+            if(country==='US'){
+                $('#shipping-country-wrapper').show();
+            }else{
+                $('#shipping-country-wrapper').hide();
+                 $('#select-shipping-state').val('');
             }
         });
     </script>
