@@ -80,19 +80,19 @@ class MyProduct extends WC_Product {
     }
 
     public static function isAllowGift(){
-        $sampleString = MyProduct::SAMPLE_PRODUCT;
         $nonAttr = 0;
         $perfume = 0;
         $cartProducts = WC()->cart->get_cart();
         if(is_array($cartProducts)){
             foreach ($cartProducts as $product) {
-                if(MyProduct::isSampleProduct($product) && !MyProduct::is_gift($product['product_id'])){
+                if(!MyProduct::isSampleProduct($product) && !MyProduct::is_gift($product['product_id'])){
                     $perfume ++;
-                }elseif(!MyProduct::is_gift($product['product_id'])){
-                    $nonAttr ++;
                 }
+//                elseif(!MyProduct::is_gift($product['product_id'])){
+//                    $nonAttr ++;
+//                }
             }
-            if($nonAttr || $perfume){
+            if($perfume){
                 return true;
             }else{
                 return false;

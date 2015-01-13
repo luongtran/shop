@@ -929,14 +929,14 @@ class WC_Checkout {
 									}
 
 									// Only validate if the country has specific state options
-									if ( ! empty( $valid_states ) && is_array( $valid_states ) && sizeof( $valid_states ) > 0 ) {
-										if ( ! in_array( $this->posted[ $key ], array_keys( $valid_states ) ) ) {
-											wc_add_notice( '<strong>' . $field['label'] . '</strong> ' . __( 'is not valid. Please enter one of the following:', 'woocommerce' ) . ' ' . implode( ', ', $valid_states ), 'error' );
-                                                                                        if(!isset($errorFields[$key])){
-                                                                                            $errorFields[] = $key;
-                                                                                        }
-                                                                                }
-									}
+//									if ( ! empty( $valid_states ) && is_array( $valid_states ) && sizeof( $valid_states ) > 0 ) {
+//										if ( ! in_array( $this->posted[ $key ], array_keys( $valid_states ) ) ) {
+//											wc_add_notice( '<strong>' . $field['label'] . '</strong> ' . __( 'is not valid. Please enter one of the following:', 'woocommerce' ) . ' ' . implode( ', ', $valid_states ), 'error' );
+//                                                                                        if(!isset($errorFields[$key])){
+//                                                                                            $errorFields[] = $key;
+//                                                                                        }
+//                                                                                }
+//									}
 								break;
 							}
 						}

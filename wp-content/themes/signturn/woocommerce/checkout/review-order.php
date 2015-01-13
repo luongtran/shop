@@ -21,11 +21,13 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
                             $billing_address_1 = $_SESSION['billing_address_1'] ;
                             $billing_address_2 = $_SESSION['billing_address_2'] ;
                             $billing_city = $_SESSION['billing_city'] ;
-                            $billing_country = $_SESSION['billing_country'] ;
+                            $billing_country = WC()->countries->countries[$_SESSION['billing_country']] ;
+                            $billing_state = isset($_SESSION['billing_state']) ? $_SESSION['billing_state'] : null;
                             $shipping_address_1 = $_SESSION['shipping_address_1'] ;
                             $shipping_address_2 = $_SESSION['shipping_address_2'] ;
                             $shipping_city = $_SESSION['shipping_city'] ;
-                            $shipping_country = $_SESSION['shipping_country'] ;
+                            $shipping_country = WC()->countries->countries[$_SESSION['shipping_country']] ;
+                            $shipping_state = isset($_SESSION['shipping_state']) ? $_SESSION['shipping_state'] : null;
                         }
                         catch (Exception $ex){
                              wp_redirect(get_permalink( get_page_by_path( 'checkout-delivery' ) ) );
@@ -39,7 +41,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
                         <?php if (isset($billing_address_2)): ?>
                         <p><?php echo $billing_address_2 ?></p>
                         <?php endif;?>
-                        <p><?php echo $billing_city . ', '.$billing_country ?></p>
+                        <?php if($billing_state):?>
+                        <p><?php echo $billing_city . ', '.$billing_state.', '.$billing_country ?></p>
+                        <?php else:?>
+                         <p><?php echo $billing_city .', '.$billing_country ?></p>
+                        <?php endif;?>
                     </div>
                     <div class="shipping-group">
                         <h3>Shipping Address</h3>
@@ -47,7 +53,11 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
                         <?php if (isset($shipping_address_2)): ?>
                         <p><?php echo $shipping_address_2 ?></p>
                         <?php endif;?>
-                        <p><?php echo $shipping_city .', '.$shipping_country ?>
+                        <?php if($shipping_state):?>
+                        <p><?php echo $shipping_city . ', '.$shipping_state.', '.$billing_country ?></p>
+                        <?php else:?>
+                         <p><?php echo $shipping_city .', '.$billing_country ?></p>
+                        <?php endif;?>
                     </div>
                     <div class="shipping-group">
                         <h3>Choose Shipping method</h3>

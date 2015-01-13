@@ -104,6 +104,17 @@
                         </div>
                         <div class="row form-group">
                             <div class="col-sm-4">
+                                <label>State: </label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="text" name="billing_state" 
+                                       value="<?php if(isset($_POST['billing_state']))echo $_POST['billing_state']; 
+                                       else    echo  get_user_meta( $customer_id, 'billing_state', true ) ?>" 
+                                       class="form-control <?php if(in_array('billing_state', $checkout_error)) echo "error" ?>" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-sm-4">
                                 <label>Postcode:<span>(*)</span></label>
                             </div>
                             <div class="col-sm-8">
@@ -214,6 +225,17 @@
                             </div>
                             <div class="col-sm-8">
                                 <input type="text" name="shipping_city" value="<?php  if(isset($_POST['shipping_city']))echo $_POST['shipping_city'];else echo  get_user_meta( $customer_id, 'shipping_city', true ) ?>"  class="form-control <?php if(in_array('shipping_city', $checkout_error)) echo "error" ?>" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-sm-4">
+                                <label>State: </label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="text" name="shipping_state" 
+                                       value="<?php if(isset($_POST['shipping_state']))echo $_POST['shipping_state']; 
+                                       else    echo  get_user_meta( $customer_id, 'shipping_state', true ) ?>" 
+                                       class="form-control <?php if(in_array('shipping_state', $checkout_error)) echo "error" ?>" />
                             </div>
                         </div>
                         <div class="row form-group">

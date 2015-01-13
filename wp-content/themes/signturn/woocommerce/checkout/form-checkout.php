@@ -57,6 +57,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
                             $shipping_address_2  = get_user_meta( $customer_id, 'shipping_address_2', true );
                             $shipping_city       = get_user_meta( $customer_id, 'shipping_city', true );
                             $shipping_country    = get_user_meta( $customer_id, 'shipping_country', true );
+                            $shipping_state    = get_user_meta( $customer_id, 'shipping_state', true );
                             $shipping_postcode   = get_user_meta( $customer_id, 'shipping_postcode', true );
                          }elseif(isset($_SESSION['guest_delivery'])) {
                             $guest_delivery     =   $_SESSION['guest_delivery'];
@@ -68,6 +69,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
                             $billing_address_2  =  $guest_delivery['billing_address_2'];
                             $billing_city       =  $guest_delivery['billing_city'];
                             $billing_country    =  $guest_delivery['billing_country'];
+                            $billing_state      =  $guest_delivery['billing_state'];
                             $billing_postcode   =  $guest_delivery['billing_postcode'];
                             $billing_email      = $guest_delivery['billing_email'];
                             if(isset($guest_delivery['ship_to_different_address']) && $guest_delivery['ship_to_different_address']){
@@ -79,6 +81,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
                                 $shipping_address_2  =  $guest_delivery['shipping_address_2'];
                                 $shipping_city       =  $guest_delivery['shipping_city'];
                                 $shipping_country    =  $guest_delivery['shipping_country'];
+                                $shipping_state    =  @$guest_delivery['billing_state'];
                                 $shipping_postcode   =  $guest_delivery['shipping_postcode'];
                             }else{
                                 $shipping_title =  $billing_title;
@@ -89,6 +92,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
                                 $shipping_address_2 =   $billing_address_2;
                                 $shipping_city =  $billing_city;
                                 $shipping_country =  $billing_country;
+                                $shipping_state = $billing_state;
                                 $shipping_postcode =  $billing_postcode;
                             }
                          }else{
@@ -156,6 +160,14 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
                             </div>
                             <div class="col-sm-8">
                                 <input type="text" name="billing_city" value="<?php echo  $billing_city ?>"  class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-sm-4">
+                                <label>State: </label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="text" name="billing_state" value="<?php echo  $billing_state ?>"  class="form-control" />
                             </div>
                         </div>
                         <div class="row form-group">
@@ -260,6 +272,14 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
                         </div>
                         <div class="row form-group">
                             <div class="col-sm-4">
+                                <label>State: </label>
+                            </div>
+                            <div class="col-sm-8">
+                                <input type="text" name="shipping_state" value="<?php echo  $shipping_state ?>"  class="form-control" />
+                            </div>
+                        </div>
+                        <div class="row form-group">
+                            <div class="col-sm-4">
                                 <label>Postcode:<span>(*)</span></label>
                             </div>
                             <div class="col-sm-8">
@@ -306,10 +326,12 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
             $_SESSION['billing_address_2'] = $billing_address_2;
             $_SESSION['billing_city'] = $billing_city;
             $_SESSION['billing_country'] = $billing_country;
+            $_SESSION['billing_state'] = $billing_state;
             $_SESSION['shipping_address_1'] = $shipping_address_1;
             $_SESSION['shipping_address_2'] = $shipping_address_2;
             $_SESSION['shipping_city'] = $shipping_city;
             $_SESSION['shipping_country'] = $shipping_country;
+            $_SESSION['shipping_state'] = $shipping_state;
             do_action( 'woocommerce_checkout_order_review');
 
          ?>
