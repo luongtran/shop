@@ -28,6 +28,15 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
                             $shipping_city = $_SESSION['shipping_city'] ;
                             $shipping_country = WC()->countries->countries[$_SESSION['shipping_country']] ;
                             $shipping_state = isset($_SESSION['shipping_state']) ? $_SESSION['shipping_state'] : null;
+                            if($billing_state || $shipping_state){
+                                 $us_states = WC()->countries->get_states('US');
+                                 if($billing_state){
+                                     $billing_state = isset($us_states[$billing_state]) ?  $us_states[$billing_state] : null;
+                                 }
+                                 if($shipping_state){
+                                     $shipping_state = isset($us_states[$shipping_state]) ?  $us_states[$shipping_state] : null;
+                                 }
+                            }
                         }
                         catch (Exception $ex){
                              wp_redirect(get_permalink( get_page_by_path( 'checkout-delivery' ) ) );

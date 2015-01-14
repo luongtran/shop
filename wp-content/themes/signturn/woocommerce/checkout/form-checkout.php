@@ -46,6 +46,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
                             $billing_address_2   = get_user_meta( $customer_id, 'billing_address_2', true );
                             $billing_city        = get_user_meta( $customer_id, 'billing_city', true );
                             $billing_country     = get_user_meta( $customer_id, 'billing_country', true );
+                            $billing_state       = get_user_meta( $customer_id, 'billing_state', true );
                             $billing_postcode    = get_user_meta( $customer_id, 'billing_postcode', true );
                             $billing_email       = get_user_meta( $customer_id, 'billing_email', true );
 
@@ -81,7 +82,7 @@ $get_checkout_url = apply_filters( 'woocommerce_get_checkout_url', WC()->cart->g
                                 $shipping_address_2  =  $guest_delivery['shipping_address_2'];
                                 $shipping_city       =  $guest_delivery['shipping_city'];
                                 $shipping_country    =  $guest_delivery['shipping_country'];
-                                $shipping_state    =  @$guest_delivery['billing_state'];
+                                $shipping_state    =  @$guest_delivery['shipping_state'];
                                 $shipping_postcode   =  $guest_delivery['shipping_postcode'];
                             }else{
                                 $shipping_title =  $billing_title;

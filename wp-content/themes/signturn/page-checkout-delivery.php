@@ -108,6 +108,7 @@
                             
                             $billing_country = isset($_POST['billing_country']) ? 
                                     $_POST['billing_country'] : get_user_meta( $customer_id, 'billing_country', true );
+                            //die($billing_country);
                         ?>
                         <div id="billing-country-wrapper" class="row form-group" <?php if($billing_country !=='US') echo 'style="display:none"'  ?>>
                             <div class="col-sm-4">
@@ -115,7 +116,7 @@
                             </div>
                             <div class="col-sm-8">
                                 <select id="select-billing-state" class="form-control" name="billing_state">
-                                    <option disabled="disabled" value="" selected="selected" >Choose your state</option>
+                                    <option disabled="disabled" value="" <?php if(!$billing_country) echo 'selected="selected"'?> >Choose your state</option>
                                     <?php
                                         foreach($us_status as $key => $name):
                                     ?>
@@ -321,7 +322,7 @@
                 $('#same-billing-adress').hide();
             }
         });
-        $('#select-billing-country').val('<?php echo $billing_country ?>');
+        //$('#select-billing-country').val('<?php echo $billing_country ?>');
         $('#select-billing-country').change(function(){
             var country   = $(this).val();
             if(country==='US'){
@@ -331,7 +332,7 @@
                  $('#select-billing-state').val('');
             }
         });
-        $('#select-shipping-country').val('<?php echo $shipping_country ?>');
+        //$('#select-shipping-country').val('<?php echo $shipping_country ?>');
         $('#select-shipping-country').change(function(){
             var country   = $(this).val();
             if(country==='US'){
