@@ -3439,3 +3439,13 @@ body.single-product ins {
 .amount.only-regular {
     color:#a7933e !important
 }
+td.value {
+    padding: 0px !important;
+}
+
+.woocommerce ul.products li.product .onsale, .woocommerce-page ul.products li.product .onsale {
+top: 6px;
+left: 0;
+right: auto;
+margin: -6px -6px 0 0;
+}

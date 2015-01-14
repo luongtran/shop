@@ -102,33 +102,10 @@
                                 <input type="text" name="billing_city" value="<?php if(isset($_POST['billing_city']))echo $_POST['billing_city'];else    echo  get_user_meta( $customer_id, 'billing_city', true ) ?>"  class="form-control <?php if(in_array('billing_city', $checkout_error)) echo "error" ?>" />
                             </div>
                         </div>
-                        <?php 
-                            $us_status = WC()->countries->get_states('US');
-                            $choosen_state = isset($_POST['billing_state']) ? $_POST['billing_state'] : '';
-                            
-                            $billing_country = isset($_POST['billing_country']) ? 
-                                    $_POST['billing_country'] : get_user_meta( $customer_id, 'billing_country', true );
-                            //die($billing_country);
-                        ?>
-                        <div id="billing-country-wrapper" class="row form-group" <?php if($billing_country !=='US') echo 'style="display:none"'  ?>>
-                            <div class="col-sm-4">
-                                <label>State: </label>
-                            </div>
-                            <div class="col-sm-8">
-                                <select id="select-billing-state" class="form-control" name="billing_state">
-                                    <option disabled="disabled" value="" <?php if(!$billing_country) echo 'selected="selected"'?> >Choose your state</option>
-                                    <?php
-                                        foreach($us_status as $key => $name):
-                                    ?>
-                                    <option <?php if($choosen_state===$key) echo 'selected="selected"' ?> value="<?php echo $key?>">
-                                        <?php echo $name ?></option>
-                                    <?php endforeach;?>
-                                </select>
-                            </div>
-                        </div>
+                        
                         <div class="row form-group">
                             <div class="col-sm-4">
-                                <label>Postcode:<span>(*)</span></label>
+                                <label>Post / Zip code:<span>(*)</span></label>
                             </div>
                             <div class="col-sm-8">
                                 <input type="text" name="billing_postcode" value="<?php if(isset($_POST['billing_postcode']))echo $_POST['billing_postcode'];else    echo  get_user_meta( $customer_id, 'billing_postcode', true ) ?>"  class="form-control <?php if(in_array('billing_postcode', $checkout_error)) echo "error" ?>" />
@@ -155,6 +132,30 @@
                             </div>
                             <div class="col-sm-8">
                                 <?php echo $field;?>
+                            </div>
+                        </div>
+                        <?php 
+                            $us_status = WC()->countries->get_states('US');
+                            $choosen_state = isset($_POST['billing_state']) ? $_POST['billing_state'] : '';
+                            
+                            $billing_country = isset($_POST['billing_country']) ? 
+                                    $_POST['billing_country'] : get_user_meta( $customer_id, 'billing_country', true );
+                            //die($billing_country);
+                        ?>
+                        <div id="billing-country-wrapper" class="row form-group" <?php if($billing_country !=='US') echo 'style="display:none"'  ?>>
+                            <div class="col-sm-4">
+                                <label>State: </label>
+                            </div>
+                            <div class="col-sm-8">
+                                <select id="select-billing-state" class="form-control" name="billing_state">
+                                    <option disabled="disabled" value="" <?php if(!$billing_country) echo 'selected="selected"'?> >Choose your state</option>
+                                    <?php
+                                        foreach($us_status as $key => $name):
+                                    ?>
+                                    <option <?php if($choosen_state===$key) echo 'selected="selected"' ?> value="<?php echo $key?>">
+                                        <?php echo $name ?></option>
+                                    <?php endforeach;?>
+                                </select>
                             </div>
                         </div>
                         <div class="row form-group">
@@ -239,31 +240,10 @@
                                 <input type="text" name="shipping_city" value="<?php  if(isset($_POST['shipping_city']))echo $_POST['shipping_city'];else echo  get_user_meta( $customer_id, 'shipping_city', true ) ?>"  class="form-control <?php if(in_array('shipping_city', $checkout_error)) echo "error" ?>" />
                             </div>
                         </div>
-                         <?php 
-                            $choosen_shipping_state = isset($_POST['shipping_state']) ? $_POST['shipping_state'] : '';
-                            
-                            $shipping_country = isset($_POST['shipping_country']) ? 
-                                    $_POST['shipping_country'] : get_user_meta( $customer_id, 'shipping_country', true );
-                        ?>
-                        <div id="shipping-country-wrapper" class="row form-group" <?php if($shipping_country !=='US') echo 'style="display:none"'  ?>>
-                            <div class="col-sm-4">
-                                <label>State: </label>
-                            </div>
-                            <div class="col-sm-8">
-                                <select id="select-shipping-state" class="form-control" name="shipping_state">
-                                    <option disabled="disabled" value="" selected="selected" >Choose your state</option>
-                                    <?php
-                                        foreach($us_status as $key => $name):
-                                    ?>
-                                    <option <?php if($choosen_shipping_state===$key) echo 'selected="selected"' ?> value="<?php echo $key?>">
-                                        <?php echo $name ?></option>
-                                    <?php endforeach;?>
-                                </select>
-                            </div>
-                        </div>
+                      
                         <div class="row form-group">
                             <div class="col-sm-4">
-                                <label>Postcode:<span>(*)</span></label>
+                                <label>Post / Zip code:<span>(*)</span></label>
                             </div>
                             <div class="col-sm-8">
                                 <input type="text" name="shipping_postcode" value="<?php if(isset($_POST['shipping_postcode']))echo $_POST['shipping_postcode'];else  echo  get_user_meta( $customer_id, 'shipping_postcode', true ) ?>"  class="form-control <?php if(in_array('shipping_postcode', $checkout_error)) echo "error" ?>" />
@@ -291,6 +271,28 @@
                             </div>
                             <div class="col-sm-8">
                                 <?php echo $field;?>
+                            </div>
+                        </div>
+                           <?php 
+                            $choosen_shipping_state = isset($_POST['shipping_state']) ? $_POST['shipping_state'] : '';
+                            
+                            $shipping_country = isset($_POST['shipping_country']) ? 
+                                    $_POST['shipping_country'] : get_user_meta( $customer_id, 'shipping_country', true );
+                        ?>
+                        <div id="shipping-country-wrapper" class="row form-group" <?php if($shipping_country !=='US') echo 'style="display:none"'  ?>>
+                            <div class="col-sm-4">
+                                <label>State: </label>
+                            </div>
+                            <div class="col-sm-8">
+                                <select id="select-shipping-state" class="form-control" name="shipping_state">
+                                    <option disabled="disabled" value="" selected="selected" >Choose your state</option>
+                                    <?php
+                                        foreach($us_status as $key => $name):
+                                    ?>
+                                    <option <?php if($choosen_shipping_state===$key) echo 'selected="selected"' ?> value="<?php echo $key?>">
+                                        <?php echo $name ?></option>
+                                    <?php endforeach;?>
+                                </select>
                             </div>
                         </div>
                     </div>

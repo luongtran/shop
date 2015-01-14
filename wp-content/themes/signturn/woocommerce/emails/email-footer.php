@@ -50,8 +50,8 @@ $credit = "
                         <table border="0" cellpadding="10" cellspacing="0" width="800" id="template_footer" style="<?php echo $template_footer; ?>">
                             <tr>
                                 <td style="text-align: center">
-                                        <a style="margin-right:10px" href=""><img src="http://www.mmvta.com/wp-content/uploads/2014/07/facebook-icon-small.png" width="30px" /></a>
-                                        <a href=""><img src="http://www.mmvta.com/wp-content/uploads/2014/07/facebook-icon-small.png" width="30px" /></a>
+                                        <a style="margin-right:10px" href="http://facebook.com/signaturefragran"><img src="http://signaturefragrances.co.uk/wp-content/plugins/wordpress-social-login/assets/img/32x32/wpzoom/facebook.png" width="30px" /></a>
+                                        <a href="http://twitter.com/SFLondonsocial"><img src="http://signaturefragrances.co.uk/wp-content/plugins/wordpress-social-login/assets/img/32x32/wpzoom/twitter.png" width="30px" /></a>
                                 </td>
                             </tr>
                             <tr>
