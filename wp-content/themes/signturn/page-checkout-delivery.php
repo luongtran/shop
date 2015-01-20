@@ -115,6 +115,9 @@
                             <?php 
                                 $countries = WC()->countries->get_shipping_countries();
                                 $args = ['class'=>' ','id'=>' ','label_class'=>'','label'=>' Country'];
+                                
+                                $billing_country = isset($_POST['billing_country']) ? 
+                                    $_POST['billing_country'] : get_user_meta( $customer_id, 'billing_country', true );
                                 if(isset($checkout_error['billing_country'])){
                                     $args['class'] = ' error ';
                                 }
@@ -138,9 +141,7 @@
                             $us_status = WC()->countries->get_states('US');
                             $choosen_state = isset($_POST['billing_state']) ? $_POST['billing_state'] : '';
                             
-                            $billing_country = isset($_POST['billing_country']) ? 
-                                    $_POST['billing_country'] : get_user_meta( $customer_id, 'billing_country', true );
-                            //die($billing_country);
+                            //die('cccc '.$billing_country);
                         ?>
                         <div id="billing-country-wrapper" class="row form-group" <?php if($billing_country !=='US') echo 'style="display:none"'  ?>>
                             <div class="col-sm-4">
@@ -252,6 +253,9 @@
                         <div class="row form-group">
                             <?php 
                                 $countries = WC()->countries->get_shipping_countries();
+                                
+                                $shipping_country = isset($_POST['shipping_country']) ? 
+                                    $_POST['shipping_country'] : get_user_meta( $customer_id, 'shipping_country', true );
                                 $args = ['class'=>' ','id'=>' ','label_class'=>'','label'=>' Country'];
                                  if(isset($checkout_error['shipping_country'])){
                                     $args['class'] = ' error ';
@@ -276,8 +280,6 @@
                            <?php 
                             $choosen_shipping_state = isset($_POST['shipping_state']) ? $_POST['shipping_state'] : '';
                             
-                            $shipping_country = isset($_POST['shipping_country']) ? 
-                                    $_POST['shipping_country'] : get_user_meta( $customer_id, 'shipping_country', true );
                         ?>
                         <div id="shipping-country-wrapper" class="row form-group" <?php if($shipping_country !=='US') echo 'style="display:none"'  ?>>
                             <div class="col-sm-4">
