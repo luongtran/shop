@@ -69,7 +69,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
                         <?php endif;?>
                     </div>
                     <div class="shipping-group">
-                        <h3>Choose Shipping method</h3>
+                        <h3>Shipping method</h3>
                         <?php if ( WC()->cart->needs_shipping() && WC()->cart->show_shipping() ) : ?>
 
 				<?php do_action( 'woocommerce_review_order_before_shipping' ); ?>

@@ -3449,3 +3449,7 @@ left: 0;
 right: auto;
 margin: -6px -6px 0 0;
 }
+
+a.paypal-express-checkout-button,.paypal_checkout_button,.actions img {
+display: none;
+}
