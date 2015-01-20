@@ -100,7 +100,26 @@ class MyProduct extends WC_Product {
         }
         return false;
     }
-
+    public static function isAlwayFreeShip(){
+        if(!WC()->cart){
+            return false;
+        }
+        $perfume = 0;
+        $cartProducts = WC()->cart->get_cart();
+        if(is_array($cartProducts)){
+            foreach ($cartProducts as $product) {
+                if(!MyProduct::isSampleProduct($product) && !MyProduct::is_gift($product['product_id'])){
+                    $perfume ++;
+                }
+            }
+            if($perfume){
+                return false;
+            }else{
+                return true;
+            }
+        }
+        return false;
+    }
     public static function multipleAttr($productId){
         $product = new WC_Product_Variable($productId);
         $variations = $product->get_available_variations();

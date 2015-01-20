@@ -137,7 +137,8 @@ function test_cart(){
 //            $prices = $wpdb->get_results($query,ARRAY_A);
 //          var_dump($prices);
          $states = WC()->countries->get_states();
-         print_r($states);
+        $methods =    WC()->shipping->load_shipping_methods();
+         print_r($methods);
        die();
      }
 }
@@ -216,6 +217,8 @@ function show_highest_html_price($html_price){
         return $html_price;
     }
 }
+
+
 add_action('woocommerce_before_cart_header','update_real_cart');
 add_action('woocommerce_checkout_process','update_real_cart');
 add_action('woocommerce_before_cart_table','update_real_cart');

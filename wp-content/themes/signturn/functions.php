@@ -553,3 +553,18 @@ if(!function_exists('get_product_category_by_id')){
     } 
 }
 
+add_filter( 'woocommerce_shipping_methods', 'wpse90835_allway_free_shipping_when_sampe_only' );
+ 
+function wpse90835_allway_free_shipping_when_sampe_only( $available_methods ){
+    if(MyProduct::isAlwayFreeShip()){
+        $free_shipping = new WC_Shipping_Free_Shipping();
+        $free_shipping->init();
+        $free_shipping->enabled = 'yes';
+        if(isset($available_methods['free_shipping'])){
+            unset($available_methods['free_shipping']);
+        }
+        $free_shipping->min_amount = 1;
+        $available_methods['free_shipping'] = $free_shipping;
+    }
+    return $available_methods;
+}
