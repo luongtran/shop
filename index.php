@@ -1,22 +1,22 @@
 <?php
-$allow = false;
-if(!isset($_SESSION['allow'])){
-    $file = file_get_contents('../allow_ips.txt', FILE_USE_INCLUDE_PATH);
-    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-        $ip = $_SERVER['HTTP_CLIENT_IP'];
-    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
-    } else {
-        $ip = $_SERVER['REMOTE_ADDR'];
-    }
-    $ips =  explode(',',$file);
-    if(in_array($ip, $ips)){
-        $allow = true;
-        $_SESSION['allow'] = true;
-    }
-}elseif($_SESSION['allow']){
-    $allow = true;
-}
+//$allow = false;
+//if(!isset($_SESSION['allow'])){
+//    $file = file_get_contents('../allow_ips.txt', FILE_USE_INCLUDE_PATH);
+//    if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
+//        $ip = $_SERVER['HTTP_CLIENT_IP'];
+//    } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
+//        $ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
+//    } else {
+//        $ip = $_SERVER['REMOTE_ADDR'];
+//    }
+//    $ips =  explode(',',$file);
+//    if(in_array($ip, $ips)){
+//        $allow = true;
+//        $_SESSION['allow'] = true;
+//    }
+//}elseif($_SESSION['allow']){
+//    $allow = true;
+//}
 if(0) :
 ?>
 
@@ -74,6 +74,22 @@ p {
  *
  * @var bool
  */
+$clear_cookie_name = 'clear_shipping';
+if(!isset($_COOKIE['clear_shipping'])) {
+    if (isset($_SERVER['HTTP_COOKIE'])) {
+        $cookies = explode(';', $_SERVER['HTTP_COOKIE']);
+        foreach($cookies as $cookie) {
+            $parts = explode('=', $cookie);
+            $name = trim($parts[0]);
+            if($name !== $clear_cookie_name){
+                setcookie($name, '', time()-1000);
+                setcookie($name, '', time()-1000, '/');
+            }
+        }
+    }
+    setcookie($clear_cookie_name,1, time()+360000);
+}
+
 define('WP_USE_THEMES', true);
 
 /** Loads the WordPress Environment and Template */
