@@ -1,0 +1,1062 @@
+# Copyright (C) 2014 SkyVerge
+# This file is distributed under the GNU General Public License v3.0.
+msgid ""
+msgstr ""
+"Project-Id-Version: WooCommerce PayPal Express Gateway 3.2.1\n"
+"Report-Msgid-Bugs-To: https://support.woothemes.com/hc/\n"
+"POT-Creation-Date: 2014-09-07 20:32:11+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2014-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+
+#: includes/api/class-wc-paypal-express-api-payment-response.php:149
+msgid "expected clearing date %s"
+msgstr ""
+
+#: includes/api/class-wc-paypal-express-api-request.php:146
+#: includes/api/class-wc-paypal-express-api-request.php:342
+msgid "%s - Order"
+msgstr ""
+
+#: includes/api/class-wc-paypal-express-api-request.php:176
+#: includes/api/class-wc-paypal-express-api-request.php:315
+msgid "Cart Discount"
+msgstr ""
+
+#: includes/api/class-wc-paypal-express-api-request.php:186
+#: includes/api/class-wc-paypal-express-api-request.php:325
+msgid "Order Discount"
+msgstr ""
+
+#: includes/api/class-wc-paypal-express-api-request.php:525
+msgid "SKU: %s"
+msgstr ""
+
+#: includes/api/class-wc-paypal-express-api-response.php:132
+msgid "Error"
+msgstr ""
+
+#: includes/api/class-wc-paypal-express-api-response.php:133
+msgid "Unknown"
+msgstr ""
+
+#: includes/api/class-wc-paypal-express-api-response.php:134
+msgid "Unknown error"
+msgstr ""
+
+#: includes/api/class-wc-paypal-express-api-response.php:146
+msgid "N/A"
+msgstr ""
+
+#: includes/api/class-wc-paypal-express-api.php:198
+msgid "Code: %s, %s"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:115
+#: includes/class-wc-gateway-paypal-express.php:1228
+msgid "PayPal Express"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:116
+msgid ""
+"PayPal Express is <strong>purposely designed to skip WooCommerce's checkout "
+"process</strong> - customers will instead be taken directly to PayPal to "
+"authorize funds, and then return to your store to choose shipping and pay."
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:125
+msgid "Production"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:126
+msgid "Sandbox"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:176
+msgid "API Credentials"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:181
+msgid "API User Name"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:184
+msgid "This is the API User Name supplied by PayPal."
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:189
+msgid "API Password"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:192
+msgid "This is the API Password supplied by PayPal."
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:197
+msgid "API Signature"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:200
+msgid "This is the API Signature supplied by PayPal."
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:205
+msgid "Sandbox API User Name"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:208
+msgid "This is the Sandbox API User Name supplied by PayPal."
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:213
+msgid "Sandbox API Password"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:216
+msgid "This is the Sandbox API Password supplied by PayPal."
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:221
+msgid "Sandbox API Signature"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:224
+msgid "This is the Sandbox API Signature supplied by PayPal."
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:229
+msgid "Display Options"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:234
+msgid "Checkout button style"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:237
+msgid "PayPal \"Check out with PayPal\" image"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:238
+msgid "WooCommerce-style button"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:244
+msgid "Standard checkout button"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:246
+msgid "Hide standard checkout button on cart page"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:251
+msgid "Standard checkout"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:253
+msgid "Show express checkout button on checkout page"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:258
+msgid "Advanced Options"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:263
+msgid "Invoice Prefix"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:265
+msgid ""
+"Please enter a prefix for your invoice numbers. If you use your PayPal "
+"account for multiple stores ensure this prefix is unique as PayPal will not "
+"allow orders with the same invoice number."
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:270
+msgid "PayPal Account Optional"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:272
+msgid ""
+"Allow customers to checkout without a PayPal account using their credit "
+"card. \"PayPal Account Optional\" must be turned on in your PayPal account. "
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:277
+msgid "Enable Bill Me Later"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:279
+msgid ""
+"Show the \"Bill Me Later\" button next to the PayPal Express Checkout "
+"button."
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:284
+msgid "Landing Page"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:286
+msgid ""
+"Type of PayPal page to display as default. \"PayPal Account Optional\" must "
+"be checked for this option to be used."
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:295
+msgid "Brand name"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:297
+msgid ""
+"This overrides the business name in the PayPal account displayed on the "
+"PayPal hosted checkout pages."
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:302
+msgid "Custom Payment Page"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:304
+msgid "This is the name of the custom payment page to use, if you have created one."
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:331
+#: includes/class-wc-gateway-paypal-express.php:344
+msgid "Check out with PayPal"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:336
+msgid "Check out with PayPal &rarr;"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:494
+#: includes/class-wc-gateway-paypal-express.php:534
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:1219
+msgid "An error occurred, please try again or try an alternate form of payment."
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:689
+msgid "Edit"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:746
+msgid "Cancel"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:822
+msgid "%s %s %s %s Approved"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:824
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-hosted.php:633
+msgid "Test"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:826
+msgid "Authorization"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:826
+msgid "Payment"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:831
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-hosted.php:577
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-hosted.php:612
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-hosted.php:638
+msgid "(Transaction ID %s)"
+msgstr ""
+
+#: includes/class-wc-gateway-paypal-express.php:1240
+msgid ""
+"Pay via PayPal; you can pay with your credit card if you don't have a "
+"PayPal account"
+msgstr ""
+
+#: lib/skyverge/woocommerce/class-sv-wc-admin-notice-handler.php:192
+msgid "Dismiss"
+msgstr ""
+
+#: lib/skyverge/woocommerce/class-sv-wc-plugin.php:297
+msgid ""
+"%s requires the %s PHP extension to function.  Contact your host or server "
+"administrator to configure and install the missing extension."
+msgid_plural ""
+"%s requires the following PHP extensions to function: %s.  Contact your "
+"host or server administrator to configure and install the missing "
+"extensions."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/skyverge/woocommerce/class-sv-wc-plugin.php:317
+msgid ""
+"%s requires the %s PHP function to exist.  Contact your host or server "
+"administrator to configure and install the missing function."
+msgid_plural ""
+"%s requires the following PHP functions to exist: %s.  Contact your host or "
+"server administrator to configure and install the missing functions."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/skyverge/woocommerce/class-sv-wc-plugin.php:352
+msgid "Docs"
+msgstr ""
+
+#: lib/skyverge/woocommerce/class-sv-wc-plugin.php:356
+msgid "Support"
+msgstr ""
+
+#: lib/skyverge/woocommerce/class-sv-wc-plugin.php:360
+msgid "Write a Review"
+msgstr ""
+
+#: lib/skyverge/woocommerce/class-sv-wc-plugin.php:610
+msgid "Configure"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/admin/class-sv-wc-payment-gateway-admin-user-edit-handler.php:308
+msgid "%s Payment Tokens"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/admin/class-sv-wc-payment-gateway-admin-user-edit-handler.php:308
+msgid "Payment Tokens"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/admin/class-sv-wc-payment-gateway-admin-user-edit-handler.php:312
+msgid "This customer has no saved payment tokens"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/admin/class-sv-wc-payment-gateway-admin-user-edit-handler.php:321
+msgid "Default card"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/admin/class-sv-wc-payment-gateway-admin-user-edit-handler.php:322
+msgid "Delete"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/admin/class-sv-wc-payment-gateway-admin-user-edit-handler.php:333
+msgid "Add a Payment Token"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/admin/class-sv-wc-payment-gateway-admin-user-edit-handler.php:335
+msgid "Token"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/admin/class-sv-wc-payment-gateway-admin-user-edit-handler.php:338
+msgid "Card Type"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/admin/class-sv-wc-payment-gateway-admin-user-edit-handler.php:349
+msgid "Last Four"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/admin/class-sv-wc-payment-gateway-admin-user-edit-handler.php:350
+msgid "Expiry Date (01/%s)"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/admin/class-sv-wc-payment-gateway-admin-user-edit-handler.php:378
+msgid ""
+"Are you sure you wish to do this?  Change will not be finalized until you "
+"click \"Update\""
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/api/class-sv-wc-payment-gateway-api-response-message-helper.php:108
+msgid "An error occurred, please try again or try an alternate form of payment"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/api/class-sv-wc-payment-gateway-api-response-message-helper.php:109
+msgid ""
+"We cannot process your order with the payment information that you "
+"provided. Please use a different payment account or an alternate payment "
+"method."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/api/class-sv-wc-payment-gateway-api-response-message-helper.php:110
+msgid ""
+"This order is being placed on hold for review.  You may contact the store "
+"to complete the transaction."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/api/class-sv-wc-payment-gateway-api-response-message-helper.php:113
+msgid ""
+"This order is being placed on hold for review due to an incorrect card "
+"verification number.  You may contact the store to complete the transaction."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/api/class-sv-wc-payment-gateway-api-response-message-helper.php:114
+msgid "The card verification number is invalid, please try again."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/api/class-sv-wc-payment-gateway-api-response-message-helper.php:115
+msgid "Please enter your card verification number and try again."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/api/class-sv-wc-payment-gateway-api-response-message-helper.php:117
+msgid ""
+"That card type is not accepted, please use an alternate card or other form "
+"of payment."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/api/class-sv-wc-payment-gateway-api-response-message-helper.php:118
+#: lib/skyverge/woocommerce/payment-gateway/api/class-sv-wc-payment-gateway-api-response-message-helper.php:121
+msgid ""
+"The card type is invalid or does not correlate with the credit card number. "
+" Please try again or use an alternate card or other form of payment."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/api/class-sv-wc-payment-gateway-api-response-message-helper.php:119
+msgid "Please select the card type and try again."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/api/class-sv-wc-payment-gateway-api-response-message-helper.php:122
+msgid "The card number is invalid, please re-enter and try again."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/api/class-sv-wc-payment-gateway-api-response-message-helper.php:123
+msgid "Please enter your card number and try again."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/api/class-sv-wc-payment-gateway-api-response-message-helper.php:125
+msgid "The card expiration date is invalid, please re-enter and try again."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/api/class-sv-wc-payment-gateway-api-response-message-helper.php:126
+msgid "The card expiration month is invalid, please re-enter and try again."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/api/class-sv-wc-payment-gateway-api-response-message-helper.php:127
+msgid "The card expiration year is invalid, please re-enter and try again."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/api/class-sv-wc-payment-gateway-api-response-message-helper.php:128
+msgid "Please enter your card expiration date and try again."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/api/class-sv-wc-payment-gateway-api-response-message-helper.php:131
+msgid ""
+"The provided card is expired, please use an alternate card or other form of "
+"payment."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/api/class-sv-wc-payment-gateway-api-response-message-helper.php:132
+msgid ""
+"The provided card was declined, please use an alternate card or other form "
+"of payment."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/api/class-sv-wc-payment-gateway-api-response-message-helper.php:133
+msgid ""
+"Insufficient funds in account, please use an alternate card or other form "
+"of payment."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/api/class-sv-wc-payment-gateway-api-response-message-helper.php:134
+msgid ""
+"The card is inactivate or not authorized for card-not-present transactions, "
+"please use an alternate card or other form of payment."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/api/class-sv-wc-payment-gateway-api-response-message-helper.php:135
+msgid ""
+"The credit limit for the card has been reached, please use an alternate "
+"card or other form of payment."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:695
+msgid "Tokenization Request Failed: %s"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:705
+msgid "%s Tokenization Request Failed: %s"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-hosted.php:234
+msgid "Thank you for your order. We are now redirecting you to complete payment."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-hosted.php:259
+msgid "Thank you for your order, please click the button below to pay."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-hosted.php:262
+msgid "Pay Now"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-hosted.php:263
+msgid "Cancel Order"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-hosted.php:334
+msgid "IPN processing error: %s duplicate transaction received"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-hosted.php:402
+msgid "%s duplicate transaction received"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-hosted.php:566
+msgid "%s %s %s Approved: %s ending in %s (expires %s)"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-hosted.php:598
+msgid "%s %s Transaction Approved: %s ending in %s"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-hosted.php:607
+msgid "(expires %s)"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-hosted.php:631
+msgid "%s %sTransaction Approved"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-plugin.php:389
+msgid ""
+"%s accepts payment in %s only.  <a href=\"%s\">Configure</a> WooCommerce to "
+"accept %s to enable this gateway for checkout."
+msgid_plural ""
+"%s accepts payment in one of %s only.  <a href=\"%s\">Configure</a> "
+"WooCommerce to accept one of %s to enable this gateway for checkout."
+msgstr[0] ""
+msgstr[1] ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:522
+msgid "Thank you for your order."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:574
+msgid "Enable / Disable"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:575
+msgid "Enable this gateway"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:581
+msgid "Title"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:583
+msgid "Payment method title that the customer will see during checkout."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:588
+msgid "Description"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:590
+msgid "Payment method description that the customer will see during checkout."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:633
+msgid "Detailed Decline Messages"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:635
+msgid ""
+"Check to enable detailed decline messages to the customer during checkout "
+"when possible, rather than a generic decline message."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:642
+msgid "Debug Mode"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:644
+msgid ""
+"Show Detailed Error Messages and API requests/responses on the checkout "
+"page and/or save them to the debug log: %s"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:648
+msgid "Show on Checkout Page"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:649
+msgid "Save to Log"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:684
+msgid "Environment"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:687
+msgid "Select the gateway environment to use for transactions."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:741
+msgid "Disabled because the other gateway is using these settings"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:1105
+msgid "Transaction id %s"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:1169
+msgid "%s Transaction Held for Review (%s)"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:1186
+msgid ""
+"Your order has been received and is being reviewed.  Thank you for your "
+"business."
+msgstr ""
+
+#. Plugin Name of the plugin/theme
+msgid "WooCommerce PayPal Express Gateway"
+msgstr ""
+
+#: woocommerce-gateway-paypal-express.php:230
+msgid "You have cancelled express checkout. Please try to process your order again."
+msgstr ""
+
+#. Plugin URI of the plugin/theme
+msgid "http://www.woothemes.com/products/paypal-express/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Accept PayPal and Credit Card payments in your WooCommerce store via PayPal "
+"Express"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "SkyVerge"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.skyverge.com"
+msgstr ""
+
+#: includes/api/class-wc-paypal-express-api-request.php:363
+msgctxt "hash before the order number"
+msgid "#"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/admin/class-sv-wc-payment-gateway-admin-user-edit-handler.php:126
+msgctxt "Supports customer details"
+msgid "%s Customer Details"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/admin/class-sv-wc-payment-gateway-admin-user-edit-handler.php:237
+msgctxt "Supports customer details"
+msgid "Customer ID (%s)"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/admin/class-sv-wc-payment-gateway-admin-user-edit-handler.php:237
+msgctxt "Supports customer details"
+msgid "Customer ID"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/admin/class-sv-wc-payment-gateway-admin-user-edit-handler.php:240
+msgctxt "Supports customer details"
+msgid ""
+"The gateway customer ID for the user in the %s environment. Only edit this "
+"if necessary."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/admin/class-sv-wc-payment-gateway-admin-user-edit-handler.php:240
+msgctxt "Supports customer details"
+msgid "The gateway customer ID for the user. Only edit this if necessary."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:114
+msgctxt "Supports tokenization"
+msgid ""
+"Payment error, please try another payment method or contact us to complete "
+"your transaction."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:1632
+msgctxt "Supports tokenization"
+msgid "Tokenization"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:1633
+msgctxt "Supports tokenization"
+msgid "Allow customers to securely save their payment details for future checkout."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:187
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:488
+msgctxt "Supports direct credit card"
+msgid "Card expiration date is invalid"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:211
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:481
+msgctxt "Supports direct credit card"
+msgid "Card number is missing"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:217
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:484
+msgctxt "Supports direct credit card"
+msgid "Card number is invalid (wrong length)"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:222
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:483
+msgctxt "Supports direct credit card"
+msgid "Card number is invalid (only digits allowed)"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:227
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:482
+msgctxt "Supports direct credit card"
+msgid "Card number is invalid"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:252
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:485
+msgctxt "Supports direct credit card"
+msgid "Card security code is missing"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:259
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:486
+msgctxt "Supports direct credit card"
+msgid "Card security code is invalid (only digits are allowed)"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:265
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:487
+msgctxt "Supports direct credit card"
+msgid "Card security code is invalid (must be 3 or 4 digits)"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:637
+msgctxt "Supports direct credit card"
+msgid "%s %s %s Approved: %s ending in %s (expires %s)"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:639
+msgctxt "Supports direct credit card"
+msgid "Test"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:648
+msgctxt "Supports direct credit card"
+msgid "(Transaction ID %s)"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:758
+msgctxt "Supports direct credit card"
+msgid "Card Verification (CSC)"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:759
+msgctxt "Supports direct credit card"
+msgid "Display the Card Security Code (CV2) field on checkout"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:294
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:497
+msgctxt "Supports direct cheque"
+msgid "Routing Number is missing"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:301
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:498
+msgctxt "Supports direct cheque"
+msgid "Routing Number is invalid (only digits are allowed)"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:307
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:499
+msgctxt "Supports direct cheque"
+msgid "Routing number is invalid (must be 9 digits)"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:316
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:494
+msgctxt "Supports direct cheque"
+msgid "Account Number is missing"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:323
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:495
+msgctxt "Supports direct cheque"
+msgid "Account Number is invalid (only digits are allowed)"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:329
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:496
+msgctxt "Supports direct cheque"
+msgid "Account number is invalid (must be between 5 and 17 digits)"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:336
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:493
+msgctxt "Supports direct cheque"
+msgid "Drivers license number is invalid"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:342
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:489
+msgctxt "Supports direct cheque"
+msgid "Check Number is invalid (only digits are allowed)"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:592
+msgctxt "Supports direct cheque"
+msgid "%s Check Transaction Approved: %s account ending in %s"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:596
+msgctxt "Supports direct cheque"
+msgid "Check number %s"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:601
+msgctxt "Supports direct cheque"
+msgid "(Transaction ID %s)"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:490
+msgctxt "Supports direct cheque"
+msgid "Check Number is missing"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:491
+msgctxt "Supports direct cheque"
+msgid "Drivers license state is missing"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:492
+msgctxt "Supports direct cheque"
+msgid "Drivers license number is missing"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:567
+msgctxt "Capture order description"
+msgid "%s - Capture for Order %s"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:725
+msgctxt "Supports credit card authorization"
+msgid "Authorization only transaction"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:815
+msgctxt "Supports capture charge"
+msgid "%s Capture of %s Approved"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:822
+msgctxt "Supports capture charge"
+msgid "(Transaction ID %s)"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:842
+msgctxt "Supports capture charge"
+msgid "%s Capture Failed: %s - %s"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:857
+msgctxt "Supports capture charge"
+msgid "%s Capture Failed: %s"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-plugin.php:576
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-plugin.php:642
+msgctxt "Supports capture charge"
+msgid "Capture Charge"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:1129
+msgctxt "Supports direct credit card subscriptions"
+msgid "%s0 Subscription Renewal Approved"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:1167
+msgctxt "Supports direct credit card subscriptions"
+msgid "%s %s Subscription Renewal Payment Approved: %s ending in %s (expires %s)"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:1177
+msgctxt "Supports direct cheque subscriptions"
+msgid "%s Check Subscription Renewal Payment Approved: %s account ending in %s"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:1307
+msgctxt "Supports direct payment method subscriptions"
+msgid "Via %s ending in %s"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:1509
+msgctxt "Supports direct payment method pre-orders"
+msgid "Pre-Order Tokenization attempt failed (%s)"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:1533
+msgctxt "Supports direct payment method pre-orders"
+msgid "%s - Pre-Order Release Payment for Order %s"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:1537
+msgctxt "Supports direct payment method pre-orders"
+msgid "Payment token missing/invalid."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:1562
+msgctxt "Supports direct payment method pre-orders"
+msgid "%s %s Pre-Order Release Payment Approved: %s ending in %s (expires %s)"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:1573
+msgctxt "Supports direct payment method pre-orders"
+msgid "%s eCheck Pre-Order Release Payment Approved: %s account ending in %s"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:1579
+msgctxt "Supports direct payment method pre-orders"
+msgid "(Transaction ID %s)"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:1596
+msgctxt "Supports direct payment method pre-orders"
+msgid "Authorization only transaction"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:1614
+msgctxt "Supports direct payment method pre-orders"
+msgid "Pre-Order Release Payment Failed: %s"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:1699
+msgctxt "Supports direct credit card tokenization"
+msgid "%s Payment Method Saved: %s ending in %s (expires %s)"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:1707
+msgctxt "Supports direct cheque tokenization"
+msgid "%s eCheck Payment Method Saved: %s account ending in %s"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:2165
+msgctxt "Supports direct payment method tokenization"
+msgid "There was an error with your request, please try again."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:2180
+msgctxt "Supports direct payment method tokenization"
+msgid "Error removing payment method"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-direct.php:2183
+msgctxt "Supports direct payment method tokenization"
+msgid "Payment method deleted."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway-plugin.php:336
+msgctxt "Requires SSL"
+msgid ""
+"%s: WooCommerce is not being forced over SSL; your customer's payment data "
+"may be at risk."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:537
+msgctxt "Supports credit card"
+msgid "Credit Card"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:555
+msgctxt "Supports credit card"
+msgid "Pay securely using your credit card."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:539
+msgctxt "Supports cheque"
+msgid "eCheck"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:557
+msgctxt "Supports cheque"
+msgid "Pay securely using your checking account."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:647
+msgctxt "Debug mode off"
+msgid "Off"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:650
+msgctxt "Debug mode both show on checkout and log"
+msgid "Both"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:736
+msgctxt "Supports sibling gateways"
+msgid "Share connection settings"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:1046
+msgctxt "Order description"
+msgid "%s - Order %s"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:1076
+msgctxt "hash before order number"
+msgid "#"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:1202
+msgctxt "Order Note: (Payment method) Payment failed (error)"
+msgid "%s Payment Failed (%s)"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:1235
+msgctxt "Cancelled order note"
+msgid "%s Transaction Cancelled (%s)"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:1385
+msgctxt "Supports transaction link"
+msgid "View this transaction in your merchant account"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:1385
+msgctxt "Supports transaction link"
+msgid "View in %s"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:1460
+msgctxt "Supports credit card authorization/charge"
+msgid "Transaction Type"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:1462
+msgctxt "Supports credit card authorization/charge"
+msgid ""
+"Select how transactions should be processed. Charge submits all "
+"transactions for settlement, Authorization simply authorizes the order "
+"total for capture later."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:1465
+msgctxt "Supports credit card authorization/charge"
+msgid "Charge"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:1466
+msgctxt "Supports credit card authorization/charge"
+msgid "Authorization"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:1550
+msgctxt "Supports card types"
+msgid "Accepted Card Types"
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:1552
+msgctxt "Supports card types"
+msgid "Select which card types you accept."
+msgstr ""
+
+#: lib/skyverge/woocommerce/payment-gateway/class-sv-wc-payment-gateway.php:2028
+msgctxt "Supports environments"
+msgid "Production"
+msgstr ""

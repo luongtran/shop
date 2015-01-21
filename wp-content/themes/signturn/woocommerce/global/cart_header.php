@@ -63,7 +63,7 @@
         if($free_sampe):
         ?>
         <tr>
-            <td class="alignleft" >FREE SAME DISCOUNT</td>
+            <td class="alignleft" >FREE SAMPLE DISCOUNT</td>
             <td class="aligncenter"></td>
             <td class="alignright">
                 <span class="amount">

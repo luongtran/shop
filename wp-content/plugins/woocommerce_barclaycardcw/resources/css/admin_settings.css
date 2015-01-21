@@ -1,0 +1,96 @@
+.barclaycardcw-renewal {
+	margin-top: 5px;
+	margin-botton: 5px;
+}
+
+.barclaycardcw-transaction-table .barclaycardcw-details-row {
+	display: none;
+}
+
+.barclaycardcw-transaction-table .barclaycardcw-main-row .barclaycardcw-more-details-button {
+	cursor: pointer;
+}
+
+.barclaycardcw-transaction-table .barclaycardcw-main-row.active .barclaycardcw-more-details-button {
+	display: none;
+}
+
+.barclaycardcw-transaction-table .barclaycardcw-main-row.active td {
+	border-bottom-color: #f0f0f0;
+}
+
+.barclaycardcw-transaction-table .barclaycardcw-details-row.active {
+	display: table-row;
+}
+
+.barclaycardcw-transaction-table label {
+	float: none;
+	font-weight: normal;
+}
+
+.barclaycardcw-transaction-table .barclaycardcw-less-details-button {
+	display: none;
+	cursor: pointer;
+}
+
+.barclaycardcw-transaction-table .barclaycardcw-main-row.active .barclaycardcw-less-details-button {
+	display: inline-block;
+}
+
+.barclaycardcw-transaction-table .label-box {
+	float: left;
+	width: 380px;
+	margin-right: 75px;
+	padding: 3px;
+}
+
+.barclaycardcw-transaction-table .label-box .label-title {
+	width: 50%;
+	font-weight: bold;
+	float: left;
+}
+
+.barclaycardcw-transaction-table .label-box .label-value {
+	width: 50%;
+	float: right;
+}
+
+.barclaycardcw-box-labels {
+	overflow: auto;
+	width: 100%;
+	margin-bottom: 2em;
+}
+
+.barclaycardcw-transaction-table .box {
+	border-top: solid 1px #FFF;
+	margin-top: 1.5em;
+	margin-bottom: 1.5em;
+	padding: 0.1em 0.8em 0.8em 0.8em;
+}
+
+.barclaycardcw-transaction-table .box h4 {
+	margin: 0.6em 0;
+}
+
+.multi-control > .controls {
+	display: inline;
+}
+
+
+table th {
+	text-align: left;
+}
+
+table .left-align {
+	text-align: left;
+}
+
+table .right-align {
+	text-align: right;
+}
+
+.closable-box {
+	text-align: right;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}

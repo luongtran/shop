@@ -562,7 +562,7 @@ class WC_Form_Handler {
 			} elseif ( $user_can_cancel && ! $order_can_cancel ) {
 				wc_add_notice( __( 'Your order can no longer be cancelled. Please contact us if you need assistance.', 'woocommerce' ), 'error' );
 			} else {
-				wc_add_notice( __( 'Invalid order.', 'woocommerce' ), 'error' );
+				wc_add_notice( __( 'Order Cancelled.', 'woocommerce' ), 'error' );
 			}
 
 			if ( $redirect ) {
