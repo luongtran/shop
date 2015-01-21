@@ -53,6 +53,22 @@ class MyProduct extends WC_Product {
     public static function addToCart($productId){
        
     }
+    public static function realTotalBeforeFreeSampe(){
+//        $amount = floatval( preg_replace( '#[^\d.]#', '', WC()->cart->get_cart_total() ) );
+//        $totalCoupon = 0;
+//        $coupons =  WC()->cart->applied_coupons;
+//        foreach ($coupons as $coupon) {
+//            if(preg_match('/free samples products/', strtolower($coupon))){
+//                $totalCoupon += floatval(MyProduct::getCouponAmount($coupon));
+//            }
+//        }
+//        return number_format($amount + $totalCoupon,2);
+        $amount = strip_tags( WC()->cart->get_cart_subtotal());
+        $amount = str_replace(get_woocommerce_currency_symbol(),'', $amount);
+        //var_dump('trong');die();
+        return number_format(floatval($amount));
+    }
+
     public static function appliedCoupon(){
         if ( ! empty( WC()->cart->applied_coupons ) ) {
             return true;
@@ -186,9 +202,6 @@ class MyProduct extends WC_Product {
         $sale_price_dates_to 	= get_post_meta( $varitionId, '_sale_price_dates_to', true ) ;//( $date = get_post_meta( $varitionId, '_sale_price_dates_to', true ) ) ? date_i18n( 'Y-m-d', $date ) : '';
         
         $current = time();
-//        var_dump($current);
-//        var_dump($sale_price_dates_from);
-//        var_dump($sale_price_dates_to);
         if(!$sale_price_dates_from && !$sale_price_dates_to){
             return false;
         }elseif($sale_price_dates_from && !$sale_price_dates_to && $current >=$sale_price_dates_from){
@@ -250,5 +263,38 @@ class MyProduct extends WC_Product {
            WC()->cart->add_discount($coupon_code);
            $_SESSION[self::FREE_SAMPLE_COUPON] = $coupon_code;
         }
+    }
+    public static function getTotalFreeSample(){
+        $items = WC()->cart->get_cart();
+        $samples = array();
+        foreach ($items as $key => $item) {
+            if(MyProduct::isSampleProduct($item)){
+                $quantity = $item['quantity'];
+                for($i=1;$i<=$quantity;$i++){
+                    $k = $key.'-'.$i;
+                    $samples[] = $k;
+                }
+            }
+        }
+        $coupon_amount = 0;
+        for($i=0;$i<count($samples);$i+=3){
+            if(isset($samples[$i]) && isset($samples[$i+1]) && isset($samples[$i+2])){
+                $arr = explode('-', $samples[$i+2]);
+                $cartKey = $arr[0];
+                $coupon_amount += $items[$cartKey]['data']->get_price();
+            }
+        }
+        return $coupon_amount;
+    }
+    public  static function getCouponAmount($code) {
+        $output = OBJECT;
+        global $wpdb;
+            $post = $wpdb->get_var( $wpdb->prepare( "SELECT ID FROM $wpdb->posts WHERE post_title = %s AND post_type='shop_coupon'", $code ));
+            if ( $post ){
+                $postCoupon = get_post($post, $output);
+                $amount = get_post_meta($postCoupon->ID,'coupon_amount');
+                return $amount;
+            }
+        return 0;
     }
 }

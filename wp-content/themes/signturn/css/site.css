@@ -607,7 +607,7 @@ form label.error {
     font-size: 13px;
     line-height: 150%;
 }
-#td-cart-sub-total {
+tr.cart-price td,#td-cart-sub-total {
     border-top: 2px solid #555;
     border-bottom: 2px solid #555;
     line-height: 15px;
@@ -638,7 +638,7 @@ form label.error {
     margin-right: 15px;
     display: inline-block
 }
-#lb-cart-sub-total,#cart-sub-total {
+tr.cart-price td span,#lb-cart-sub-total,#cart-sub-total {
     font-family: "TrajanPro-Regular";
     font-size: 15px;
 }

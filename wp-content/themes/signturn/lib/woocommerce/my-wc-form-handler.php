@@ -136,10 +136,15 @@ function test_cart(){
 //             $query = "SELECT post_id,meta_key,meta_value FROM $post_meta_table WHERE meta_key IN ('_regular_price','_sale_price','_price') AND post_id IN ($inData)";
 //            $prices = $wpdb->get_results($query,ARRAY_A);
 //          var_dump($prices);
-         $states = WC()->countries->get_states();
-        $methods =    WC()->shipping->load_shipping_methods();
-         print_r($methods);
-       die();
+//        $states = WC()->countries->get_states();
+//        $methods =    WC()->shipping->load_shipping_methods();
+//        print_r($methods);
+        $coupons =  WC()->cart->applied_coupons;
+        foreach ($coupons as $coupon) {
+         //   print_r(MyProduct::getCouponAmount($coupon));
+        }
+       // print_r(MyProduct::realTotalBeforeFreeSampe());
+       (MyProduct::realTotalBeforeFreeSampe());
      }
 }
 function check_remove_gift(){
@@ -217,7 +222,10 @@ function show_highest_html_price($html_price){
         return $html_price;
     }
 }
-
+function retry_shipping_method(){
+    
+}
+add_action('woocommerce_after_checkout_validation','retry_shipping_method');
 
 add_action('woocommerce_before_cart_header','update_real_cart');
 add_action('woocommerce_checkout_process','update_real_cart');

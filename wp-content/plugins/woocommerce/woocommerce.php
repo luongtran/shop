@@ -602,8 +602,7 @@ final  class WooCommerce {
 	public function shipping() {
 		return WC_Shipping::instance();
 	}
-
-	/**
+        /**
 	 * Email Class.
 	 *
 	 * @return WC_Emails

@@ -97,12 +97,41 @@ do_action( 'woocommerce_before_cart' ); ?>
 
 		do_action( 'woocommerce_cart_contents' );
 		?>
+                <?php $free_sampe = MyProduct::getTotalFreeSample();
+                    if($free_sampe):
+                ?>
+                 <tr class="cart-price">
+                    <td colspan="4" >
+                        <span>Total:</span>
+                        <span><?php wc_cart_totals_subtotal_html(); ?></span>
+                    </td>
+                 </tr>
+                 <tr  class="cart-price">
+                    <td colspan="4" >
+                        <span>Free sample discount:</span>
+                        <span><?php echo get_woocommerce_currency_symbol().  number_format($free_sampe,2); ?></span>
+                    </td>
+                 </tr>
+                 <tr  class="cart-price">
+                    <td colspan="4" >
+                        <span>Sub total:</span>
+                        <span>
+                            <?php 
+                                $amount = MyProduct::realTotalBeforeFreeSampe();
+                                $total = number_format($amount - $free_sampe,2);
+                                echo get_woocommerce_currency_symbol().$total;
+                            ?>
+                        </span>
+                    </td>
+                 </tr>
+               <?php else: ?>
                 <tr>
                     <td colspan="4" id="td-cart-sub-total">
                         <span id="lb-cart-sub-total">Sub Total:</span>
                         <span id="cart-sub-total"><?php wc_cart_totals_subtotal_html(); ?></span>
                     </td>
                 </tr>
+                <?php endif;?>
 		<tr>
                     <td colspan="4" class="actions " style="padding-right: 0">
                         <a style="margin-right:10px;" class="site-btn btn small" href="<?php echo get_permalink( woocommerce_get_page_id( 'shop' ) ) ?>">Continue Shopping</a>

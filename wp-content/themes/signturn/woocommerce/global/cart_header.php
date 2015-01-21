@@ -59,11 +59,38 @@
             <td class="aligncenter"></td>
             <td class="alignright"><?php wc_cart_totals_subtotal_html(); ?></td>
         </tr>
+        <?php $free_sampe = MyProduct::getTotalFreeSample();
+        if($free_sampe):
+        ?>
+        <tr>
+            <td class="alignleft" >FREE SAME DISCOUNT</td>
+            <td class="aligncenter"></td>
+            <td class="alignright">
+                <span class="amount">
+                    <?php echo get_woocommerce_currency_symbol().  number_format($free_sampe,2); ?>
+                </span>
+            </td>
+        </tr>
+        <tr>
+            <td class="alignleft" >TOTAL</td>
+            <td class="aligncenter"></td>
+            <?php 
+                $amount = MyProduct::realTotalBeforeFreeSampe();
+                $total = number_format($amount - $free_sampe,2);
+            ?>
+            <td class="alignright">
+                <span class="amount">
+                    <?php echo get_woocommerce_currency_symbol().$total; ?>
+                </span>
+            </td>
+        </tr>
+        <?php endif; ?>
         <tr>
             <td colspan="3">
                 <a  class="btn site-btn" href="<?php echo get_permalink( get_page_by_path( 'gift' )) ?>">Checkout</a>
             </td>
         </tr>
+        
     </table>
     <?php else: ?>
     <h4 class="aligncenter">YOUR BAG IS EMPTY</h4>

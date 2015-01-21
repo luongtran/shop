@@ -3,14 +3,16 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group name="Sites">
-            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/functions.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/checkout/form-checkout.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/checkout/review-order.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/page-gift.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/templates/checkout/form-billing.php</file>
-            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/page-checkout-delivery.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/includes/class-wc-cart.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/includes/class-wc-checkout.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/cart/cart-totals.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/cart/cart.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/cart/cart-empty.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/includes/class-wc-form-handler.php</file>
             <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/lib/woocommerce/my-wc-form-handler.php</file>
             <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/lib/woocommerce/class-my-product.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/plugins/woocommerce/includes/wc-cart-functions.php</file>
+            <file>file:/D:/projects/signaturn/source/wp-content/themes/signturn/woocommerce/global/cart_header.php</file>
         </group>
     </open-files>
 </project-private>
