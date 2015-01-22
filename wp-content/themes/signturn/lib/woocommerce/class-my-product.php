@@ -66,7 +66,7 @@ class MyProduct extends WC_Product {
         $amount = strip_tags( WC()->cart->get_cart_subtotal());
         $amount = str_replace(get_woocommerce_currency_symbol(),'', $amount);
         //var_dump('trong');die();
-        return number_format(floatval($amount));
+        return number_format(floatval($amount),2);
     }
 
     public static function appliedCoupon(){
