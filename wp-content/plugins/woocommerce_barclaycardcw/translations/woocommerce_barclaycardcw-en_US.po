@@ -1,0 +1,1369 @@
+msgid ""
+msgstr ""
+"Content-Type: text/plain; charset=utf-8\n"
+
+msgid "Card issuer country does not match with the billing country."
+msgstr "Card issuer country does not match with the billing country."
+
+msgid "PostFinance FIS"
+msgstr "PostFinance FIS"
+
+msgid "Capturing"
+msgstr "Capturing"
+
+msgid "Order prefix"
+msgstr "Order prefix"
+
+msgid "Test Account SHA-OUT Passphrase"
+msgstr "Test Account SHA-OUT Passphrase"
+
+msgid "IBAN number"
+msgstr "IBAN number"
+
+msgid "Live PSPID"
+msgstr "Live PSPID"
+
+msgid "Enter the date on which your card expires."
+msgstr "Enter the date on which your card expires."
+
+msgid "Your card number is invalid."
+msgstr "Your card number is invalid"
+
+msgid "Please enter here a salutation."
+msgstr "Please enter a salutation here."
+
+msgid "Set here the minimal order total for which this payment method is available. If it is set to zero, it is always available."
+msgstr "Set the minimal order total for which this payment method is available. If it is set to zero, it is always available."
+
+msgid "Diners Club"
+msgstr "Diners Club"
+
+msgid "Day"
+msgstr "Day"
+
+msgid "The given card number has an invalid length."
+msgstr "The given card number has an invalid length."
+
+msgid "The PSPID as given by the Barclaycard."
+msgstr "The PSPID from Barclaycard."
+
+msgid "You have to enter bank code of your bank."
+msgstr "Enter your bank's bank code."
+
+msgid "SEPA Mandate ID"
+msgstr "SEPA Mandate ID"
+
+msgid "Order Description"
+msgstr "Order Description"
+
+msgid "Minimal Order Total"
+msgstr "Minimal order total"
+
+msgid "Select Brand"
+msgstr "Select Brand"
+
+msgid "Finland (FI)"
+msgstr "Finland (FI)"
+
+msgid "Please enter here the CVC code from your card. You find the code on the back of the card."
+msgstr "Please enter the CVC code from your card. You can find the code on the back of the card."
+
+msgid "Billpay"
+msgstr "Billpay"
+
+msgid "Pending"
+msgstr "Pending"
+
+msgid "Austria (AT)"
+msgstr "Austria (AT)"
+
+msgid "A typical pattern of a fraud transaction is a series of refused transaction before one of them is accepted. This setting defines the threshold after any following transaction is marked as uncertain. E.g. a threshold of three will mark any successful transaction after three refused transaction as uncertain."
+msgstr "A typical pattern of a fraud transaction is a series of refused transaction before one of them is accepted. This setting defines the threshold after any following transaction is marked as uncertain. E.g. a threshold of three will mark any successful transaction after three refused transaction as uncertain."
+
+msgid "Year"
+msgstr "Year"
+
+msgid "Account Holder Name"
+msgstr "Account Holder Name"
+
+msgid "This status is set, when the payment was successfull and it is authorized."
+msgstr "This status is set, when the payment was successful and it is authorized."
+
+msgid "You have to enter the month of the card expiry."
+msgstr "You have to enter the month of the card expiry"
+
+msgid "In case hidden authorization is used, the brand of the credit card is detected by the card number and the card number is validated accordingly. This setting enables the restriction of the allowed brands."
+msgstr "In case hidden authorization is used the brand of the credit card is detected by the card number and the card number is validated accordingly. This setting enables the restriction of the allowed brands."
+
+msgid "The transaction could not be cancelled. Details: @details"
+msgstr "The transaction could not be cancelled. Details: @details"
+
+msgid "Solo Card"
+msgstr "Solo Card"
+
+msgid "You have to enter your social security number."
+msgstr "You have to enter your social security number."
+
+msgid "Test Mode"
+msgstr "Test mode"
+
+msgid "You must enter the company registration number."
+msgstr "You must enter the company registration number."
+
+msgid "Redirection"
+msgstr "Redirection"
+
+msgid "Discover Card"
+msgstr "Discover Card"
+
+msgid "Status after HTTP Update Payment Received Status"
+msgstr "Status after HTTP Update Payment Received Status"
+
+msgid "Here you can insert an order prefix. The prefix allows you to change the order number that is transmitted to Barclaycard. The prefix must contain the tag {id}. It will then be replaced by the order number (e.g. name_{id})."
+msgstr "Here you can insert an order prefix. The prefix allows you to change the order number which is transmitted to Barclaycard. The prefix must contain the tag {id}. It will then be replaced by the order number (e.g. name_{id})."
+
+msgid "Country Check"
+msgstr "Country Check"
+
+msgid "Could not find a brand for the given card number."
+msgstr "Could not find a brand for the given card number."
+
+msgid "Please enter here the account number of your bank account."
+msgstr "Please enter your bank account number."
+
+msgid "Please enter here the Bank Identifier Code (BIC)."
+msgstr "Please enter here the Bank Identifier Code (BIC)."
+
+msgid "Please select the month of your birth."
+msgstr "Please select the month of your birth."
+
+msgid "The payment is refused."
+msgstr "Payment was refused."
+
+msgid "Template URL"
+msgstr "Template URL"
+
+msgid "Please check the entered credit card number."
+msgstr "Please check the entered credit card number."
+
+msgid "Your browser does not allow the execution of JavaScript. Please activate JavaScript in your browser and reload this page."
+msgstr "Your browser does not allow the execution of JavaScript. Please activate JavaScript in your browser and reload this page."
+
+msgid "Enter the test SHA-OUT passphrase. This value must be identical to the one in the back-end of Barclaycard."
+msgstr "Enter the test SHA-OUT passphrase. This value must be identical to the one in the back-end of Barclaycard."
+
+msgid "Please select the expiry month on your card."
+msgstr "Please select the expiry month on your card."
+
+msgid "No authorization method found for payment method !method."
+msgstr "No authorization method found for payment method !method."
+
+msgid "No day set in the date of birth field."
+msgstr "No day set in the date of birth field."
+
+msgid "This parameter is sometimes transmitted to the acquirer (depending on the acquirer), in order to be shown on the account statements of the merchant or the customer. The prefix can contain the tag {id}. It will then be replaced by the order number (e.g. name {id}). (Payment Page only)"
+msgstr "This parameter is sometimes transmitted to the acquirer (depending on the acquirer), in order to be shown on the account statements of the merchant or the customer. The prefix can contain the tag {id}. It will then be replaced by the order number (e.g. name {id}). (Payment Page only)"
+
+msgid "You have to enter the account holder name on the card."
+msgstr "You have to enter the account holder name on the card."
+
+msgid "Company Commercial Number"
+msgstr "Company Commercial Number"
+
+msgid "Direct Link"
+msgstr "Direct Link"
+
+msgid "A captured transaction cannot be marked as failed."
+msgstr "A captured transaction cannot be marked as failed."
+
+msgid "Notification URL"
+msgstr "Notification URL"
+
+msgid "Failed"
+msgstr "Failed"
+
+msgid "Great Britain (GB)"
+msgstr "Great Britain (GB)"
+
+msgid "Non 3D Secure Behavior"
+msgstr "Non 3D Secure Behavior"
+
+msgid "Maximal Refundable Amount"
+msgstr "Maximal refundable amount"
+
+msgid "3D Secure failed"
+msgstr "3D Secure failed"
+
+msgid "Refunded Amount"
+msgstr "Refunded amount"
+
+msgid "HTTP Status for Successful Payments"
+msgstr "HTTP Status for Successful Payments"
+
+msgid "Social Security Number"
+msgstr "Social Security Number"
+
+msgid "Test PSPID"
+msgstr "Test PSPID"
+
+msgid "The CVC contains invalid chars."
+msgstr "CVC contains invalid chars"
+
+msgid "Transaction Paid"
+msgstr "Transaction paid"
+
+msgid "Transaction Cancelled"
+msgstr "Transaction cancelled"
+
+msgid "You can specify the order status after the payment is received. In order to use this feature the http-request for Status Changes has to be set up as described in the manual."
+msgstr "You can specify the order status after the payment is received. In order to use this feature the http-request for Status Changes has to be set up as described in the manual."
+
+msgid "You have to enter either the CVC code or the issue number of your card."
+msgstr "You have to enter either the CVC code or the issue number of your card."
+
+msgid "Please enter here your social security number."
+msgstr "Please enter here your social security number."
+
+msgid "Successful"
+msgstr "Successful"
+
+msgid "Please select the Bank Identifier Code (BIC) of your bank."
+msgstr "Please select the Bank Identifier Code (BIC) of your bank."
+
+msgid "SHA-512"
+msgstr "SHA-512"
+
+msgid "Subscriptions: Add Manual Renewal"
+msgstr "Subscriptions: Add manual Renewal"
+
+msgid "This URL has to be placed in the backend of Barclaycard under Configuration > Technical Information > Transaction Feedback and their in the field for 'HTTP request for status changes'."
+msgstr "This URL has to be placed in the backend of Barclaycard under Configuration > Technical Information > Transaction Feedback in the field for 'HTTP request for status changes'."
+
+msgid "Carte Bleue"
+msgstr "Carte Bleue"
+
+msgid "Non 3D Secure Behavior Country List"
+msgstr "Non 3D Secure Behavior Country List"
+
+msgid "You must enter the sales tax number."
+msgstr "You must enter the sales tax number."
+
+msgid "Cancel status"
+msgstr "Cancel status"
+
+msgid "Brand and card number do not match."
+msgstr "Brand and card number do not match."
+
+msgid "IP country and billing country code must match."
+msgstr "IP country and billing country code must match."
+
+msgid "Paid Status"
+msgstr "Paid status"
+
+msgid "Maestro"
+msgstr "Maestro"
+
+msgid "A cancelled transaction cannot be captured."
+msgstr "A cancelled transaction cannot be captured"
+
+msgid "You have to enter sales tax number of you company."
+msgstr "You have to enter sales tax number of you company."
+
+msgid "SHA-IN Passphrase"
+msgstr "SHA-IN Passphrase"
+
+msgid "Card Holder Name"
+msgstr "Card holder name"
+
+msgid "A transaction may be uncertain, when the payment is not guaranteed. For example in case the credit card does not participate in the 3D procedure."
+msgstr "A transaction may be uncertain, when the payment is not guaranteed. For example in the case that the credit card does not participate in the 3D Secure procedure."
+
+msgid "Payment Information"
+msgstr "Payment information"
+
+msgid "No"
+msgstr "No"
+
+msgid "You have to enter the account holder name."
+msgstr "You have to enter the account holder name."
+
+msgid "A manual renewal debits the customer directly for this subscription. This by pass any time restriction of the automatic subscription plugin."
+msgstr "A manual renewal charges the customer directly for this subscription. This by pass any time restriction of the automatic subscription plugin."
+
+msgid "Mail Order / Telephone Order (MoTo)"
+msgstr "Mail Order/Telephone Order (MoTo)"
+
+msgid "Issue Number"
+msgstr "Issue Number"
+
+msgid "Authorization Method"
+msgstr "Authorisation Method"
+
+msgid "Please enter here the account holder name."
+msgstr "Please enter here the account holder name."
+
+msgid "Transaction Uncertain"
+msgstr "Transaction uncertain"
+
+msgid "You have to enter the a card number."
+msgstr "You have to enter the a card number."
+
+msgid "The countries listed in this field are used to mark transaction as uncertain. The behavior depends on the setting above 'Non 3D Secure Behavior'. The country code is taken from the card. You need to make sure you return the parameter 'CCCTY'. As indicated by Barclaycard this value is only for 94% of the transaction correct. The list below must be a comma separated list of country codes. The codes must be in ISO 3166-2 format (e.g. DE,IT,FR)."
+msgstr "The countries listed in this field are used to mark transaction as uncertain. The behavior depends on the setting above 'Non 3D Secure Behavior'. The country code is taken from the card. You need to make sure you return the parameter 'CCCTY'. As indicated by Barclaycard this value is only for 94% of the transaction correct. The list below must be a comma separated list of country codes. The codes must be in ISO 3166-2 format (e.g. DE,IT,FR)."
+
+msgid "The capturing is in uncertain."
+msgstr "The capturing is uncertain"
+
+msgid "The acquiring system is not available. Hence the authorization is not completed."
+msgstr "The acquiring system is not available. The authorisation has therefore not yet been completed."
+
+msgid "Could not find template file at default location '!location'."
+msgstr "Could not find template file at default location '!location'."
+
+msgid "Authorization Failed"
+msgstr "Authorisation failed"
+
+msgid "CVC Code"
+msgstr "CVC Code"
+
+msgid "You can specify the order status for new orders that have an uncertain authorisation status."
+msgstr "You can specify the order status for new orders that have an uncertain authorisation status."
+
+msgid "The module can perform a check of the country code provided by the issuer of the card, the IP address country and the billing address country. In case they do not match, the transaction is marked as uncertain. This setting does not override any other rule for marking transaction as uncertain."
+msgstr "The module can perform a check of the country code provided by the issuer of the card, the IP address country and the billing address country. In case they do not match, the transaction is marked as uncertain. This setting does not override any other rule for marking transaction as uncertain."
+
+msgid "Capture status"
+msgstr "Capture status"
+
+msgid "Directly after order"
+msgstr "Directly after order"
+
+msgid "When the store is not available (network outage, server failure or any other outage), when the feedback of Barclaycard is sent, then the transaction state is not updated. Hence no order confirmation e-mail is sent and the order is not in the paid state. By activating the transaction update, such transactions can be authorized later over direct link. To use this feature the update service must be activated and the API username and the API password must be set."
+msgstr "When the store is not available (network outage, server failure or any other outage), when the feedback of Barclaycard is sent, then the transaction state is not updated. Hence no order confirmation e-mail is sent and the order is not in the paid state. By activating the transaction update, such transactions can be authorized later over direct link. To use this feature the update service must be activated and the API username and the API password must be set."
+
+msgid "Bank code number"
+msgstr "Bank code number"
+
+msgid "No year set in the date of birth field."
+msgstr "No year set in the date of birth field."
+
+msgid "You have to enter your IBAN Number."
+msgstr "You have to enter your IBAN Number."
+
+msgid "A cancelled transaction cannot be refunded."
+msgstr "A cancelled transaction cannot be refunded"
+
+msgid "France (FR)"
+msgstr "France (FR)"
+
+msgid "Some cards are not enrolled for the 3D secure process and you may exclude some cards from performing a 3D secure authorization. This setting controls, what should happend with these transactions. This setting requires that the parameter 'CCCTY' is returned."
+msgstr "Some cards are not enrolled for the 3D secure process and you may exclude some cards from performing a 3D secure authorization. This setting controls, what should happen with these transactions. This setting requires that the parameter 'CCCTY' is returned."
+
+msgid "Should the amount be captured automatically after the order (direct) or should the amount only be reserved (deferred)?"
+msgstr "Should the amount be captured automatically after the order (direct) or should the amount only be reserved (deferred)?"
+
+msgid "The 'account_number' field cannot be longer than 10 digits."
+msgstr "The 'account_number' box cannot be longer than 10 digits."
+
+msgid "Here you can define a Shop ID. This is only necessary if you wish to operate several shops with one PSPID. In order to use this module, an additional module is required."
+msgstr "Here you can define a Shop ID. This is only necessary if you wish to operate several shops with one PSPID. In order to use this module, an additional module is required."
+
+msgid "SAH IN signature is wrong."
+msgstr "SHA IN signature is wrong."
+
+msgid "Not Germany"
+msgstr "Not Germany"
+
+msgid "This parameter is sometimes transmitted to the acquirer (depending on the acquirer), in order to be shown on the account statements of the merchant or the customer. The prefix can contain the tag {id}. It will then be replaced by the order number (e.g. name_{id}). (Payment Page only)"
+msgstr "This parameter is sometimes transmitted to the acquirer (depending on the acquirer), in order to be shown on the account statements of the merchant or the customer. The prefix can contain the tag {id}. It will then be replaced by the order number (e.g. name_{id}). This only works when using the Payment Page."
+
+msgid "Alias Token"
+msgstr "Alias Token"
+
+msgid "A failed authorization cannot be authorized."
+msgstr "A failed authorisation cannot be authorised."
+
+msgid "You can create an API username in the back-end of Barclaycard. The API user is necessary for the direct communication between the shop and the service of Barclaycard."
+msgstr "You can create an API username in the back-end of Barclaycard. The API user is necessary for the direct communication between the shop and the service of Barclaycard."
+
+msgid "Password for the API user."
+msgstr "Password for the API user"
+
+msgid "Which status should be set when a transaction is labelled as paid? For payments by invoice a payment the labelling might occur with a delay; in this case this status helps keep apart paid from unpaid invoices."
+msgstr "Which status should be set when a transaction is labelled as paid? For payments by invoice the labelling might occur with a delay; in this case this status helps differentiate between paid and unpaid invoices."
+
+msgid "Horizontally grouped logos with no group names"
+msgstr "Horizontally grouped logos with no group names"
+
+msgid "Only authorized transaction can be captured."
+msgstr "Only authorised transactions can be captured."
+
+msgid "Operation Mode"
+msgstr "Operation mode"
+
+msgid "Please enter your salution."
+msgstr "Please enter your salutation."
+
+msgid "The given card number has an invalid check sum."
+msgstr "The given card number has an invalid check sum."
+
+msgid "JCB"
+msgstr "JCB"
+
+msgid "The given CVC code has the wrong length."
+msgstr "The given CVC code has the wrong length."
+
+msgid "Capture Transaction"
+msgstr "Capture transaction"
+
+msgid "Enter the PSPID of Barclaycard."
+msgstr "Enter the PSPID of Barclaycard."
+
+msgid "Netherlands (NL)"
+msgstr "Netherlands (NL)"
+
+msgid "Payment Method"
+msgstr "Payment method"
+
+msgid "Card Number"
+msgstr "Card number"
+
+msgid "Card issue country was on the black list and hence the transaction is marked as uncertain."
+msgstr "Card issue country was on the black list and hence the transaction is marked as uncertain."
+
+msgid "Authorization Amount"
+msgstr "Authorisation amount"
+
+msgid "You have to enter the location of your bank."
+msgstr "You have to enter the location of your bank."
+
+msgid "Transaction Authorized"
+msgstr "Transaction authorised"
+
+msgid "Current File:"
+msgstr "Current File"
+
+msgid "If the Alias Manager is used, the intended purpose is shown to the customer on the payment page. Through this the customer knows why his data is saved."
+msgstr "If the Alias Manager is active, the feature's purpose is explained to the customer on the payment page. The customer is thereby informed about the reason for saving his data."
+
+msgid "Select the hash calculation method to use. This value must correspond with the selected value in the back-end of Barclaycard."
+msgstr "Select the hash calculation method to use. This value must correspond to the selected value in the back-end of Barclaycard."
+
+msgid "Discount"
+msgstr "Discount"
+
+msgid "MasterCard"
+msgstr "MasterCard"
+
+msgid "Direct Debits"
+msgstr "Direct Debits (ELV)"
+
+msgid "A refund was added over !amount."
+msgstr "A refund was added over !amount."
+
+msgid "The whole transaction is cancelled."
+msgstr "The entire transaction has been cancelled."
+
+msgid "No month set in the date of birth field."
+msgstr "No month set in the date of birth field."
+
+msgid "Select the date of your birth."
+msgstr "Select the date of your birth."
+
+msgid "Hash calculation method"
+msgstr "Hash calculation method"
+
+msgid "The layout does not contain the tag '!layout_tag'."
+msgstr "The layout does not contain the tag '!layout_tag'."
+
+msgid "Please enter here the bank code of your bank."
+msgstr "Please enter here the bank code of your bank"
+
+msgid "Reset"
+msgstr "Reset"
+
+msgid "Subscription Payment Failed with error:"
+msgstr "Subscription payment failed with error:"
+
+msgid "Waiting for client payment"
+msgstr "Waiting for customer payment"
+
+msgid "Denmark (DK)"
+msgstr "Denmark (DK)"
+
+msgid "The cardholder name is too long."
+msgstr "Cardholder name is too long"
+
+msgid "Mark all transactions as uncertain, except those from countries listed below."
+msgstr "Mark all transactions as uncertain, except those from countries listed below."
+
+msgid "Close transaction for further refunds."
+msgstr "Close transaction for further refunds"
+
+msgid "The URL indicated here is rendered as Template. For this you must select option 'Use own template'. The URL must point to an HTML page that contains the string '$$$PAYMENT ZONE$$$'. This part of the HTML file is replaced with the form for the credit card input."
+msgstr "The URL indicated here is rendered as a template. For this option you must select 'Use own template'. The URL must point to an HTML page that contains the string '$$$PAYMENT ZONE$$$'. This part of the HTML file is then replaced by the form for the credit card data."
+
+msgid "The alias manager allows the customer to select from a credit card previously stored. The credit card data is stored by Barclaycard."
+msgstr "The alias manager allows the customer to pay with a previously stored credit card. The credit card data is stored with Barclaycard."
+
+msgid "The notification failed because the SHA signature seems not to be valid."
+msgstr "The notification failed because the SHA signature is not valid."
+
+msgid "SHA-OUT Passphrase"
+msgstr "SHA-OUT Passphrase"
+
+msgid "Continue"
+msgstr "Continue"
+
+msgid "Select the processor for open invoice."
+msgstr "Select the processor for open invoice."
+
+msgid "Please check the entered CVC number."
+msgstr "Please check the entered CVC number."
+
+msgid "Operation is not supported. For this transaction id, an alias already exists."
+msgstr "Operation is not supported. For this transaction ID there is already an existing alias."
+
+msgid "AfterPay"
+msgstr "AfterPay"
+
+msgid "The card number contains invalid chars."
+msgstr "The card number contains invalid chars."
+
+msgid "Gender"
+msgstr "Gender"
+
+msgid "Please select your gender."
+msgstr "Please select your gender."
+
+msgid "Please enter here the number on your card."
+msgstr "Please enter your card number."
+
+msgid "Horizontally grouped logos with the name on the left side"
+msgstr "Horizontally grouped logos with the name on the left side"
+
+msgid "If the status is 'Pending' it is unclear whether the transaction will be captured successfully."
+msgstr "If the status is 'Pending' it is unclear whether the transaction will be captured successfully."
+
+msgid "Please select the expiry year on your card."
+msgstr "Please select your card's year of expiry."
+
+msgid "The transaction is cancelled."
+msgstr "Transaction was cancelled"
+
+msgid "A captured transaction cannot be cancelled."
+msgstr "A captured transaction cannot be cancelled."
+
+msgid "Make sure that the request method is set to POST."
+msgstr "Make sure that the request method is set to POST."
+
+msgid "Payment Method Listing"
+msgstr "Payment Method Listing"
+
+msgid "Enter the live SHA-OUT passphrase. This value must be identical to the one in the back-end of Barclaycard."
+msgstr "Enter the live SHA-OUT passphrase. This value must be identical to the one in the back-end of Barclaycard."
+
+msgid "The transaction failed due to a unkown reason."
+msgstr "The transaction failed due to an unkown reason."
+
+msgid "Please enter here the card holder name on the card."
+msgstr "Please enter the card holder's name."
+
+msgid "No IBAN provided."
+msgstr "No IBAN provided."
+
+msgid "Only authorized transaction can be refunded."
+msgstr "Only authorised transaction can be refunded."
+
+msgid "Redirection Parameters generated."
+msgstr "Redirection Parameters generated."
+
+msgid "Enter the test SHA-IN passphrase. This value must be identical to the one in the back-end of Barclaycard."
+msgstr "Enter the test SHA-IN passphrase. This value must be identical to the one in the back-end of Barclaycard."
+
+msgid "You have to enter the card holder."
+msgstr "You have to enter the card holder."
+
+msgid "In case the payment page is used with this payment method the different credit card brands are listed on the payment page of Barclaycard. This setting controlls the display of them."
+msgstr "In case the payment page is used with this payment method the different credit card brands are listed on the payment page of Barclaycard. This setting controls which are displayed."
+
+msgid "Active"
+msgstr "Active"
+
+msgid "You have to enter your bank account number."
+msgstr "Enter your bank account number"
+
+msgid "Wrong 'BRAND' was specified."
+msgstr "Wrong 'BRAND' was specified"
+
+msgid "The authorization declined by the aquirer."
+msgstr "Authorisation was declined by the acquirer"
+
+msgid "Refund status"
+msgstr "Refund status"
+
+msgid "Please enter the location of your bank."
+msgstr "Please enter the location of your bank."
+
+msgid "Select the date on which your card expires."
+msgstr "Select the expiry date of your card."
+
+msgid "During the authorization"
+msgstr "During the authorisation"
+
+msgid "Enter the PSPID for the test and live (if available) mode."
+msgstr "Enter the PSP ID for the test and live (if available) mode."
+
+msgid "Germany (DE)"
+msgstr "Germany (DE)"
+
+msgid "No API username was provided."
+msgstr "No API username was provided."
+
+msgid "Do never mark the transaction as uncertain, except those from countries listed below."
+msgstr "Never mark the transaction as uncertain, except those from countries listed below."
+
+msgid "You have to enter the name of the account owner."
+msgstr "Enter the name of the account owner."
+
+msgid "Card Expiration"
+msgstr "Card expiration date"
+
+msgid "Invalid expiry month."
+msgstr "Invalid expiry month"
+
+msgid "Intended purpose of alias"
+msgstr "Intended purpose of alias"
+
+msgid "You have to enter the card holder name on the card."
+msgstr "You have to enter the card holder name."
+
+msgid "Some input was invalid."
+msgstr "Invalid input"
+
+msgid "Please select the day of your birth."
+msgstr "Please select the day of your birth."
+
+msgid "Refunds"
+msgstr "Refunds"
+
+msgid "More failed transaction as the configured threshold of failed transactions."
+msgstr "More failed transaction than the configured threshold of failed transactions."
+
+msgid "Bank Location"
+msgstr "Bank Location"
+
+msgid "Month"
+msgstr "Month"
+
+msgid "Operation is not allowed."
+msgstr "Operation is not allowed."
+
+msgid "URLs"
+msgstr "URLs"
+
+msgid "Merchant Reference"
+msgstr "Merchant reference"
+
+msgid "Test Account SHA-IN Passphrase"
+msgstr "Test account SHA-IN passphrase"
+
+msgid "UATP"
+msgstr "UATP"
+
+msgid "API Username"
+msgstr "API Username"
+
+msgid "The credit card is expired."
+msgstr "Credit card has expired"
+
+msgid "Message"
+msgstr "Message"
+
+msgid "Maximal Capturable Amount"
+msgstr "Maximal capturable amount"
+
+msgid "Which status should be set if a problem with the authorisation has occurred? In these cases you must manually verify if the customer has been charged with the amount."
+msgstr "Which status should be set if a problem with the authorisation has occurred? In these cases you must verify manually if the customer has been charged with the amount."
+
+msgid "Capture"
+msgstr "Capture"
+
+msgid "Germany (no code)"
+msgstr "Germany (no code)"
+
+msgid "Currency"
+msgstr "Currency"
+
+msgid "With the Dynamic Template you can design the layout of the payment page yourself. For the option 'Own template' the URL to the template file must be entered into the following box."
+msgstr "With the Dynamic Template you can design the layout of the payment page yourself. For the option 'Own template' the URL to the template file must be entered into the following box."
+
+msgid "The test PSPID as given by the Barclaycard."
+msgstr "The test PSPID from Barclaycard"
+
+msgid "Authorized Status"
+msgstr "Authorized Status"
+
+msgid "Amount"
+msgstr "Amount"
+
+msgid "3D Secure sucess"
+msgstr "3D Secure successfull"
+
+msgid "Credit Card Brands"
+msgstr "Credit Card Brands"
+
+msgid "Switzerland (CH)"
+msgstr "Switzerland (CH)"
+
+msgid "Don't change the layout of the payment page"
+msgstr "Don't change the layout of the payment page"
+
+msgid "The card number is too long."
+msgstr "Card number is too long"
+
+msgid "You have to enter a card number."
+msgstr "You have to enter a card number."
+
+msgid "Refund amount"
+msgstr "Refund amount"
+
+msgid "Dynamic Template"
+msgstr "Dynamic Template"
+
+msgid "The authorization is refused."
+msgstr "Authorisation was refused"
+
+msgid "Unknown reason"
+msgstr "Unknown reason"
+
+msgid "You have to enter the CVC code from the back of your credti card."
+msgstr "You have to enter the CVC code from the back of your credit card"
+
+msgid "Short Installation Instructions:"
+msgstr "Short Installation Instructions:"
+
+msgid "Yes"
+msgstr "Yes"
+
+msgid "Card issue country was on the white list and hence the transaction is marked as uncertain."
+msgstr "Card issue country was on the white list and hence the transaction is marked as uncertain."
+
+msgid "You have to enter the BIC."
+msgstr "You have to enter the BIC."
+
+msgid "The server response was not valid. Response: @response"
+msgstr "The server response was not valid. Response: @response"
+
+msgid "Transaction Updates"
+msgstr "Transaction Updates"
+
+msgid "Please enter here the commercial number of your company."
+msgstr "Please enter here the commercial number of your company."
+
+msgid "Capture ID"
+msgstr "Capture ID"
+
+msgid "If it is not applicable leave the field empty."
+msgstr "If it is not applicable leave the field empty."
+
+msgid "Failure during cancellation of the transaction. (Cancellation reason: Customer did not pay"
+msgstr "Failure during cancellation of the transaction. Cancellation reason: Customer did not pay"
+
+msgid "The refund is in uncertain."
+msgstr "Refund is uncertain"
+
+msgid "Enter the live SHA-IN passphrase. This value must be identical to the one in the back-end of Barclaycard."
+msgstr "Enter the live SHA-IN passphrase. This value must be identical to the one in the back-end of Barclaycard."
+
+msgid "Invalid CVC format."
+msgstr "Invalid CVC format"
+
+msgid "For a maintenance request a payment id must be set on the transaction."
+msgstr "For a maintenance request a payment ID must be defined for the transaction."
+
+msgid "Capture amount"
+msgstr "Capture amount"
+
+msgid "Refused Transaction Threshold"
+msgstr "Refused Transaction Threshold"
+
+msgid "The validation of the payment can be carried out at various points during the order process. The validation can be controlled with this option."
+msgstr "The validation of the payment can be carried out at various points during the order process. The validation can be controlled with this option."
+
+msgid "Wrong bank account format."
+msgstr "Wrong bank account format"
+
+msgid "You must enter your salutation."
+msgstr "You must enter your salutation."
+
+msgid "Which status should be set if the payment has been successfully authorised?"
+msgstr "Which status should be set if the payment has been successfully authorised?"
+
+msgid "Enter the test PSPID of Barclaycard."
+msgstr "Enter the test PSPID of Barclaycard."
+
+msgid "The refund is in progress."
+msgstr "Refund is in process"
+
+msgid "Date of Birth"
+msgstr "Date of Birth"
+
+msgid "A cancelled transaction cannot be authorized."
+msgstr "A cancelled transaction cannot be authorised."
+
+msgid "A authorized transaction cannot be marked as failed."
+msgstr "An authorised transaction cannot be marked as failed."
+
+msgid "This transaction is already closed for further refunds."
+msgstr "This transaction has been closed for further refunds."
+
+msgid "Received update notification with unexcpected status: !status"
+msgstr "Received update notification with unexcpected status: !status"
+
+msgid "You can specify the order status when an order is cancelled."
+msgstr "You can specify the order status when an order is cancelled."
+
+msgid "Please enter here the sales tax number of your company."
+msgstr "Please enter here the sales tax number of your company."
+
+msgid "Select the country code defined in the backend of Barclaycard for this payment method."
+msgstr "Select the country code defined in the backend of Barclaycard for this payment method."
+
+msgid "Select your gender"
+msgstr "Select your gender"
+
+msgid "Amount to refund"
+msgstr "Amount to refund"
+
+msgid "Cancel ID"
+msgstr "Cancel ID"
+
+msgid "VISA"
+msgstr "VISA"
+
+msgid "Could not find the payment method !paymentMethodName."
+msgstr "Could not find the payment method !paymentMethodName."
+
+msgid "Please enter the name of your bank."
+msgstr "Please enter the name of your bank."
+
+msgid "The capture will automatically close the transaction for further captures."
+msgstr "The capture will automatically close the transaction for further captures"
+
+msgid "Are you a German merchant?"
+msgstr "Are you a German merchant?"
+
+msgid "The result of the authorization is not known."
+msgstr "Result of the authorisation is unknown"
+
+msgid "The 'bank code' field cannot be empty and it must be 8 digits long."
+msgstr "The 'bank code' box cannot be empty and it must be 8 digits long"
+
+msgid "Create the SHA signatures (SHA-IN and SHA-OUT) with the !linkStart SHA signatures generator !linkEnd."
+msgstr "Create the SHA signatures (SHA-IN and SHA-OUT) with the !linkStart SHA signatures generator !linkEnd."
+
+msgid "No API password was provided."
+msgstr "No API password was provided"
+
+msgid "You have to enter a CVC code."
+msgstr "You have to enter a CVC code"
+
+msgid "You can specify the order status for orders that are refused after being in a uncertain state. In order to use this feature you will have to set up the http request for status changes as outlined in the manual."
+msgstr "You can specify the order status for orders that are refused after being in a uncertain state. In order to use this feature you will have to set up the http request for status changes as outlined in the manual."
+
+msgid "Card issuer country does not match with the IP address country."
+msgstr "Card issuer country does not match with the IP address country."
+
+msgid "Acceptance"
+msgstr "Acceptance"
+
+msgid "A captured transaction cannot be authorized."
+msgstr "A captured transaction cannot be authorised."
+
+msgid "Bank account number"
+msgstr "Bank account number"
+
+msgid "BIC"
+msgstr "BIC"
+
+msgid "Set here the maximal order total for which this payment method is available. If it is set to zero, it is always available."
+msgstr "Set the maximal order total for which this payment method is available. If it is set to zero, it is always available."
+
+msgid "Please enter your issue number, if there is no CVC code on your card."
+msgstr "Please enter your issue number, if there is no CVC code on your card."
+
+msgid "The 'bank code' field cannot be empty and it must be 5 digits long."
+msgstr "The 'bank code' box cannot be empty and must be 5 digits long"
+
+msgid "An expiry month must be selected."
+msgstr "An expiry month must be selected."
+
+msgid "The SHA signatures do not match."
+msgstr "SHA signatures do not match"
+
+msgid "Error Message:"
+msgstr "Error message:"
+
+msgid "American Express"
+msgstr "American Express"
+
+msgid "The cardholder name is missing."
+msgstr "Cardholder name is missing."
+
+msgid "Please enter your IBAN number."
+msgstr "Please enter your IBAN number."
+
+msgid "This URL is used by default for handling the dynamic template of Barclaycard. To use this feature \" . \"you may need activate the feature in your account and you need to add the domain to the Trusted website hostnames. To work properly in all browser you need HTTPS on your server and domain."
+msgstr "This URL is used by default for handling the dynamic template of Barclaycard. To use this feature you may need activate the feature in your account and you need to add the domain to the Trusted website hostnames. To work properly in all browser you need HTTPS on your server and domain."
+
+msgid "If the status is 'Pending' it is unclear whether the transaction will be cancelled successfully."
+msgstr "If the status is 'Pending' it is unclear whether the transaction will be cancelled successfully."
+
+msgid "A cancelled transaction cannot be cancelled again."
+msgstr "A cancelled transaction cannot be cancelled again."
+
+msgid "The transaction could not be captured. Details: @details"
+msgstr "The transaction could not be captured. Details: @details"
+
+msgid "A cancelled transaction cannot be marked as failed."
+msgstr "A cancelled transaction cannot be marked as failed."
+
+msgid "Italy (IT)"
+msgstr "Italy (IT)"
+
+msgid "Cancel Transaction"
+msgstr "Cancel transaction"
+
+msgid "The cancellation is processed offline."
+msgstr "Cancellation is processed offline."
+
+msgid "Sweden (SE)"
+msgstr "Sweden (SE)"
+
+msgid "Expiry date must be in the future."
+msgstr "Expiry date must be set in the future"
+
+msgid "Maximal Order Total"
+msgstr "Maximal order total"
+
+msgid "More Details"
+msgstr "More details"
+
+msgid "Shop ID"
+msgstr "Shop ID"
+
+msgid "Operation is not supported."
+msgstr "Operation is not supported."
+
+msgid "Could not load layout from URL !url. Reason: !reason"
+msgstr "Could not load layout from URL !url. Reason: !reason"
+
+msgid "Germany"
+msgstr "Germany"
+
+msgid "This transaction is already closed for further captures."
+msgstr "This transaction is already closed for further captures"
+
+msgid "You have to enter the CVC code from your card."
+msgstr "Enter the CVC code from your card"
+
+msgid "Select the authorization method to use for processing this payment method."
+msgstr "Select the authorisation method to use in order to process this payment method."
+
+msgid "Maestro UK"
+msgstr "Maestro UK"
+
+msgid "You accept that your credit card informations are stored securly for future orders."
+msgstr "You accept that your credit card informations are  securely  stored for future orders."
+
+msgid "The brand with external name '!key' was not present in the map."
+msgstr "The brand with external name '!key' was not present in the map."
+
+msgid "The brand with key '!key' was not found in the card information map."
+msgstr "The brand with key '!key' was not found in the card information map."
+
+msgid "Validation"
+msgstr "Validation"
+
+msgid "Amount to capture"
+msgstr "Amount to capture"
+
+msgid "Female"
+msgstr "Female"
+
+msgid "Your card number is invalid. May be you choose the wrong credit card type."
+msgstr "Your card number is invalid. You may have chosen the wrong credit card type"
+
+msgid "If the status is 'Pending' it is unclear whether the transaction will be refunded successfully."
+msgstr "If the status is 'Pending' it is unclear whether the transaction will be refunded successfully."
+
+msgid "Card Expiry Date"
+msgstr "Card expiry date"
+
+msgid "Action"
+msgstr "Action"
+
+msgid "Salutation"
+msgstr "Salutation"
+
+msgid "The SHA signature of the 3D Secure callback was not valid."
+msgstr "The SHA signature of the 3D Secure callback was not valid"
+
+msgid "Payment Notification"
+msgstr "Payment Notification"
+
+msgid "IP country code and issuer country code must match."
+msgstr "IP country code and issuer country code must match."
+
+msgid "Template URL for own template"
+msgstr "Template URL for own template"
+
+msgid "Direct E-Banking"
+msgstr "Direct E-Banking"
+
+msgid "Barclaycard Settings"
+msgstr "Barclaycard settings"
+
+msgid "The expiry date is invalid."
+msgstr "The expiry date is invalid"
+
+msgid "Payment ID"
+msgstr "Payment ID"
+
+msgid "The capturing is in progress."
+msgstr "Capturing is in process."
+
+msgid "Captured Amount"
+msgstr "Captured amount"
+
+msgid "The payment is not finished. Hence it must be manually checked."
+msgstr "The payment is incomplete and must therefore be checked manuall."
+
+msgid "You have to enter the IBAN."
+msgstr "You have to enter the IBAN."
+
+msgid "The 'account number' field cannot be empty."
+msgstr "The 'account number' box cannot be empty."
+
+msgid "You must define your gender."
+msgstr "You must define your gender."
+
+msgid "Refund"
+msgstr "Refund"
+
+msgid "Issuer country code and billing country code."
+msgstr "Issuer country code and billing country code."
+
+msgid "A authorized transaction cannot be authorized again."
+msgstr "An authorised transaction cannot be authorised again."
+
+msgid "Expiry date is in wrong format."
+msgstr "Expiry date is in wrong format"
+
+msgid "If the test mode is selected the test PSPID is used and the test SHA passphrases."
+msgstr "In the test mode the test PSPID and test pass phrases are used automatically."
+
+msgid "Inactive"
+msgstr "Inactive"
+
+msgid "Barclaycard Transactions"
+msgstr "Barclaycard transactions"
+
+msgid "The payment method !paymentMethodName does not support the currency '!currency'."
+msgstr "The payment method !paymentMethodName does not support the currency '!currency'."
+
+msgid "Telego (Direct Debits DE)"
+msgstr "Telego (Direct Debits DE)"
+
+msgid "Captured Status"
+msgstr "Captured Status"
+
+msgid "Belgium (BE)"
+msgstr "Belgium (BE)"
+
+msgid "Add manual renewal"
+msgstr "Add manual renewal"
+
+msgid "Only captured transaction can be refunded."
+msgstr "Only captured transaction can be refunded."
+
+msgid "The authorization could not be completed, due to a delayed external validation of the payment."
+msgstr "Authorisation could not be completed, due to a delay with the external validation of the payment."
+
+msgid "The amount of !amount is captured."
+msgstr "The amount of !amount is captured."
+
+msgid "Please enter here the account holder name on the card."
+msgstr "Please enter here the account holder name on the card."
+
+msgid "Use shop template"
+msgstr "Use shop template"
+
+msgid "SHA-1"
+msgstr "SHA-1"
+
+msgid "The authorization method '!method' is not supported."
+msgstr "The authorization method '!method' is not supported."
+
+msgid "You have to enter the year of the card expiry."
+msgstr "You have to enter the year of the card expiration"
+
+msgid "Use own template"
+msgstr "Use own template"
+
+msgid "The card number is too short."
+msgstr "The card number is too short."
+
+msgid "Account owner name."
+msgstr "Account owner name"
+
+msgid "The 'account owner' field cannot be empty."
+msgstr "The 'account owner' field cannot be empty"
+
+msgid "Is Authorized"
+msgstr "Is authorised"
+
+msgid "3D Secure"
+msgstr "3D Secure"
+
+msgid "The CVC code is too long."
+msgstr "CVC is too long"
+
+msgid "After selection of payment method"
+msgstr "After selection of payment method"
+
+msgid "Copy the SHA-OUT signature in the module and in the back-end of Barclaycard under and Technical Information > Transaction Feedback."
+msgstr "Copy the SHA-OUT signature in the module and in the back-end of Barclaycard under Technical Information > Transaction Feedback."
+
+msgid "You can specify the order status for orders that are captured either directly after the order or manually in the backend."
+msgstr "You can specify the order status for orders that are captured either directly after the order or manually in the backend."
+
+msgid "The capture amount (!captureAmount) cannot be greater than the authorized amount (!authorizedAmount)."
+msgstr "The capture amount (!captureAmount) cannot be greater than the authorized amount (!authorizedAmount)."
+
+msgid "Alias"
+msgstr "Alias"
+
+msgid "The payment could not be authorized, because it is not certain."
+msgstr "Payment could not be authorised as it is uncertain."
+
+msgid "You must enter your phone number."
+msgstr "You must enter your phone number."
+
+msgid "HTTP Status for Refused Payments"
+msgstr "HTTP Status for Refused Payments"
+
+msgid "The total refund amount (!totalRefundedAmount) cannot be greater than the captured amount (!capturedAmount)."
+msgstr "The total refund amount (!totalRefundedAmount) cannot be greater than the captured amount (!capturedAmount)."
+
+msgid "You have to enter commercial number of you company."
+msgstr "You have to enter commercial number of you company."
+
+msgid "RatePay"
+msgstr "RatePay"
+
+msgid "All country codes must match."
+msgstr "All country codes must match."
+
+msgid "SHA-256"
+msgstr "SHA-256"
+
+msgid "Male"
+msgstr "Male"
+
+msgid "<span class=\"card-expiry-format-note\">The expected format is '!format' where the 'MM' means the month number and 'YY' the year number.</span>"
+msgstr "<span class=\"card-expiry-format-note\">The expected format is '!format' where the 'MM' means the month number and 'YY' the year number.</span>"
+
+msgid "You can specify the order status for orders that are successful after being in a uncertain state. In order to use this setting, you will need to activate the http-request for status changes as outlined in the manual."
+msgstr "You can specify the order status for orders that are successful after being in a uncertain state. In order to use this setting, you will need to activate the http-request for status changes as outlined in the manual."
+
+msgid "Bank Name"
+msgstr "Bank Name"
+
+msgid "Figure !number:"
+msgstr "Figure !number:"
+
+msgid "Transaction Captured"
+msgstr "Transaction captured"
+
+msgid "Date"
+msgstr "Date"
+
+msgid "This is a brief instruction of the main and most important installation steps, which need to be performed when installing the Barclaycard module. For detailed instructions regarding additional and optional settings, please refer to the enclosed instructions in the zip."
+msgstr "This is a brief instruction of the most important installation steps, which need to be performed when installing the Barclaycard module. For detailed instructions regarding additional and optional settings, please refer to the enclosed instructions in the zip."
+
+msgid "Select the processor for direct debit transactions."
+msgstr "Select the processor for direct debit transactions."
+
+msgid "I confirm my payment"
+msgstr "I confirm my payment"
+
+msgid "The 'account_number' field must be 11 digits long."
+msgstr "The 'account_number' box must be 11 digits long."
+
+msgid "This URL has to be placed in the backend of Barclaycard under Configuration > Technical Information > Transaction Feedback and their in the two fields for 'Direct HTTP server-to-server request'."
+msgstr "This URL has to be placed in the backend of Barclaycard under Configuration > Technical Information > Transaction Feedback in the two fields for 'Direct HTTP server-to-server request'."
+
+msgid "The given currency (!currency) is not 3 chars long. It must be in the ISO 4217 format."
+msgstr "The given currency (!currency) is not 3 chars long. It must be in the ISO 4217 format."
+
+msgid "Cancelled Status"
+msgstr "Cancelled Status"
+
+msgid "Merchant Origin"
+msgstr "Merchant origin"
+
+msgid "Klarna"
+msgstr "Klarna"
+
+msgid "Card IP address country does not match with the billing country."
+msgstr "Card IP address country does not match with the billing country."
+
+msgid "Live Mode"
+msgstr "Live mode"
+
+msgid "The amount of !amount is authorized."
+msgstr "The amount of !amount is authorized."
+
+msgid "You have to enter the name of your bank."
+msgstr "You have to enter the name of your bank."
+
+msgid "Brand Country"
+msgstr "Brand Country"
+
+msgid "Alias Gateway"
+msgstr "Alias Gateway"
+
+msgid "Could not convert object of type '!type' to string."
+msgstr "Could not convert object of type '!type' to string."
+
+msgid "Refund ID"
+msgstr "Refund ID"
+
+msgid "Please enter here the International Bank Account Number (IBAN)."
+msgstr "Please enter here the International Bank Account Number (IBAN)."
+
+msgid "Enter the URLs in the PSP Technical Information > Transaction Feedback. Make sure that the feedback is set to &quot;Online but switch to a deferred request when the online requests fail&quot;."
+msgstr "Enter the URLs in the PSP Technical Information > Transaction Feedback. Make sure that the feedback is set to &quot;Online but switch to a deferred request when the online requests fail&quot;"
+
+msgid "Copy the SHA-IN signature in the module and in the back-end of Barclaycard under the menu Technical Information > Origin Verification."
+msgstr "Copy the SHA-IN signature in the module and in the back-end of Barclaycard under Technical Information > Origin Verification."
+
+msgid "The customer is now in the payment process of Barclaycard."
+msgstr "The customer is now in the payment process of Barclaycard."
+
+msgid "Refund Transaction"
+msgstr "Refund transaction"
+
+msgid "Only authorized transaction can be cancelled."
+msgstr "Only authorised transaction can be cancelled."
+
+msgid "Equens (Direct Debits NL)"
+msgstr "Equens (Direct Debits NL)"
+
+msgid "Success"
+msgstr "Success"
+
+msgid "Vertical list of logos with the name on the left side"
+msgstr "Vertical list of logos with the name on the left side"
+
+msgid "Close transaction for further captures."
+msgstr "Close transaction for further captures"
+
+msgid "Enable %s"
+msgstr "Enable %s"
+
+msgid "Uncertain Status"
+msgstr "Uncertain Status"
+
+msgid "Please enter here the name of the account owner."
+msgstr "Please enter the name of the account owner"
+
+msgid "IBAN"
+msgstr "IBAN"
+
+msgid "Alias Manager"
+msgstr "Alias Manager"
+
+msgid "Please select"
+msgstr "Please select"
+
+msgid "Sales Tax Number"
+msgstr "Sales Tax Number"
+
+msgid "You must enter your social security number."
+msgstr "You must enter your social security number."
+
+msgid "Less Details"
+msgstr "Less details"
+
+msgid "HTTP Status Changes URL"
+msgstr "HTTP Status Changes URL"
+
+msgid "Order is stored, but not finally authorized or captured."
+msgstr "Order has been stored, but final authorisation or capturing is missing"
+
+msgid "Norway (NO)"
+msgstr "Norway (NO)"
+
+msgid "Expiry date contains non-numeric data."
+msgstr "Expiry date contains non-numeric data"
+
+msgid "The transaction could not be refunded. Details: @details"
+msgstr "The transaction could not be refunded. Details: @details"
+
+msgid "Please select the the year of your birth."
+msgstr "Please select the the year of your birth."
+
+msgid "Captures"
+msgstr "Captures"
+
+msgid "Processor"
+msgstr "Processor"
+
+msgid "You can choose a previous used card:"
+msgstr "You can select a previously used card:"
+
+msgid "The SEPA mandate schema does not contain the tag '!tag'. This tag is required."
+msgstr "The SEPA mandate schema does not contain the tag '!tag'. This tag is required."
+
+msgid "Don't change order status"
+msgstr "Don't change order status"
+
+msgid "Setup"
+msgstr "Setup"
+
+msgid "The request does not contain a 'SHASIGN' parameter. The cause is that the callback in the background is not executed."
+msgstr "The request does not contain a 'SHASIGN' parameter. The cause is that the callback in the background is not executed."
+
+msgid "An expiry year must be selected."
+msgstr "An expiry year must be selected"
+
+msgid "Don't use template (standard Barclaycard)"
+msgstr "Don't use template (standard Barclaycard)"
+
+msgid "The payment method !paymentMethodName is not available in your country ('!country')."
+msgstr "The payment method !paymentMethodName is not available in your country ('!country')."
+
+msgid "To generate a SEPA mandate ID this schema can be used to customize it. However the tags '{year}', '{month}', '{day}' and '{random}' must be present in the schema. The {random} tag is filled with a random string of 20 chars."
+msgstr "This schema can be used to customize the generation of a SEPA mandate ID. However the tags '{year}', '{month}', '{day}' and '{random}' must be present in the schema. The {random} tag is filled with a random string of 20 chars."
+
+msgid "Enable the desired payment methods."
+msgstr "Enable the desired payment methods."
+
+msgid "The transaction id is incorrect."
+msgstr "Transaction ID is incorrect"
+
+msgid "Deferred"
+msgstr "Deferred"
+
+msgid "The configuration values for Barclaycard can be set under:"
+msgstr "The configuration values for Barclaycard can be set under:"
+
+msgid "API Password"
+msgstr "API Password"
+
+msgid "Other Discount"
+msgstr "Other discount"
+
