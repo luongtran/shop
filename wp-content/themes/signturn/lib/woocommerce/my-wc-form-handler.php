@@ -194,8 +194,8 @@ function remove_cart_ajax(){
         <?php return ob_get_clean(); }
 function get_cart_table_footer(){
     $free_sampe = MyProduct::getTotalFreeSample();
+    ob_start();
     if($free_sampe): 
-     ob_start();
     ?>
             <tbody>
                  <tr class="cart-price">
