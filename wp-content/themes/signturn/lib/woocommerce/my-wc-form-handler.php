@@ -69,14 +69,18 @@ function update_cart_quality_ajax(){
                 'success'=>true,
                 'type'=>'remove',
                 'pricing'=> WC()->cart->get_cart_total(),
-                'total'=>WC()->cart->cart_contents_count
+                'total'=>WC()->cart->cart_contents_count,
+                'cart_header'=>get_cart_header_html(),
+                'cart_footer'=>  get_cart_table_footer()
             );
         }else{
             $arr = array(
                 'success'=>true,
                 'type'=>'update',
                 'pricing'=> WC()->cart->get_cart_total(),
-                'total'=>WC()->cart->cart_contents_count
+                'total'=>WC()->cart->cart_contents_count,
+                'cart_header'=>get_cart_header_html(),
+                'cart_footer'=>  get_cart_table_footer()
             );
         }
         echo json_encode($arr);
@@ -94,6 +98,115 @@ function remove_cart_ajax(){
         exit;
     }
 }
+    function get_cart_header_html(){ 
+            $cart  = WC()->cart->get_cart();
+            global $woocommerce;
+            ob_start();
+        ?>
+            <h3>Your Bag</h3>
+            <?php 
+                if(count($cart)):
+            ?>
+            <table class="table">
+                <?php foreach ($cart as $cart_item_key => $cart_item): 
+                    $_product     = apply_filters( 'woocommerce_cart_item_product', $cart_item['data'], $cart_item, $cart_item_key );
+                    $product_id   = apply_filters( 'woocommerce_cart_item_product_id', $cart_item['product_id'], $cart_item, $cart_item_key );
+                    $term_list = wp_get_post_terms($product_id,'product_cat',array('fields'=>'ids'));
+                    $cat_id = (int)$term_list[0];
+                    $cat_link = get_term_link ($cat_id, 'product_cat');
+                ?>
+                <tr>
+                    <td class="alignleft">
+                        <?php
+                            $thumbnail = apply_filters( 'woocommerce_cart_item_thumbnail', $_product->get_image(), $cart_item, $cart_item_key );
+                        ?>
+                        <?php        
+                            if ( ! $_product->is_visible() ){
+                                echo $thumbnail;
+                            }else {
+                                printf( '<a href="%s">%s</a>', $_product->get_permalink(), $thumbnail );
+                            }
+                        ?>
+                    </td>
+                    <td class="cart-text v-mid alignleft">
+                        <h4><?php  printf( '<a href="%s">%s</a>', $_product->get_permalink(), $_product->get_title() ) ?></h4>
+                        <p>Collection : <a href="<?php echo $cat_link ?>"><?php echo get_product_category_by_id($cat_id) ?></a></p>
+                    </td>
+                    <td class="v-mid"><?php echo $cart_item['quantity'];?></td>
+                    <td  class="alignleft v-mid">
+                        <?php
+                            echo apply_filters( 'woocommerce_cart_item_price', WC()->cart->get_product_price( $_product ), $cart_item, $cart_item_key );
+                        ?>
+                         <?php
+                            echo apply_filters( 'woocommerce_cart_item_remove_link', sprintf( '<a href="%s" class="remove" title="%s">Remove</a>', esc_url( WC()->cart->get_remove_url( $cart_item_key ) ), __( 'Remove this item', 'woocommerce' ) ), $cart_item_key );
+                        ?>
+                    </td>
+                </tr>
+                <?php endforeach;?>
+            </table>
+            <table class="table" style="margin-bottom: 0">
+                <tr>
+                    <td class="alignleft" style="width: 33%">IN YOUR BAG</td>
+                    <td class="aligncenter" style="width: 33%"><?php echo sprintf(_n('%d Item', '%d Items', WC()->cart->cart_contents_count, 'esell'), WC()->cart->cart_contents_count);?></td>
+                    <td class="alignright" style="width: 33%"><a href="<?php echo $woocommerce->cart->get_cart_url(); ?>">VIEW BAG</a></td>
+                </tr>
+                <tr>
+                    <td class="alignleft" >SUBTOTAL</td>
+                    <td class="aligncenter"></td>
+                    <td class="alignright"><?php wc_cart_totals_subtotal_html(); ?></td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <a  class="btn site-btn" href="<?php echo get_permalink( get_page_by_path( 'gift' )) ?>">Checkout</a>
+                    </td>
+                </tr>
+            </table>
+            <?php else: ?>
+            <h4 class="aligncenter">YOUR BAG IS EMPTY</h4>
+            <?php endif;?>
+        <?php return ob_get_clean(); }
+function get_cart_table_footer(){
+    $free_sampe = MyProduct::getTotalFreeSample();
+    if($free_sampe): 
+     ob_start();
+    ?>
+            <tbody>
+                 <tr class="cart-price">
+                    <td colspan="4" >
+                        <span>Total:</span>
+                        <span><?php wc_cart_totals_subtotal_html(); ?></span>
+                    </td>
+                 </tr>
+                 <tr  class="cart-price">
+                    <td colspan="4" >
+                        <span>Free sample discount:</span>
+                        <span><?php echo get_woocommerce_currency_symbol().  number_format($free_sampe,2); ?></span>
+                    </td>
+                 </tr>
+                 <tr  class="cart-price">
+                    <td colspan="4" >
+                        <span>Sub total:</span>
+                        <span>
+                            <?php 
+                                $amount = MyProduct::realTotalBeforeFreeSampe();
+                                $total = number_format($amount - $free_sampe,2);
+                                echo get_woocommerce_currency_symbol().$total;
+                            ?>
+                        </span>
+                    </td>
+                 </tr>
+            </tbody>
+               <?php else: ?>
+            <tbody>
+                <tr>
+                    <td colspan="4" id="td-cart-sub-total">
+                        <span id="lb-cart-sub-total">Sub Total:</span>
+                        <span id="cart-sub-total"><?php wc_cart_totals_subtotal_html(); ?></span>
+                    </td>
+                </tr>
+            </tbody>
+                <?php endif;?>
+ <?php return ob_get_clean(); }
 function check_coupon_applied(){
     if(!empty($_GET['action']) && trim($_GET['action']==='check_coupon')){
         $res = array('applied'=>false);
@@ -140,11 +253,15 @@ function test_cart(){
 //        $methods =    WC()->shipping->load_shipping_methods();
 //        print_r($methods);
         $coupons =  WC()->cart->applied_coupons;
-        foreach ($coupons as $coupon) {
-         //   print_r(MyProduct::getCouponAmount($coupon));
-        }
+//        foreach ($coupons as $coupon) {
+//         //   print_r(MyProduct::getCouponAmount($coupon));
+//        }
        // print_r(MyProduct::realTotalBeforeFreeSampe());
-       (MyProduct::realTotalBeforeFreeSampe());
+       //die(MyProduct::realTotalBeforeFreeSampe());
+        
+        global $woocommerce, $post;
+        $order = WC()->session->get( 'chosen_shipping_methods' );
+        print_r($order);die();
      }
 }
 function check_remove_gift(){
@@ -223,7 +340,6 @@ function show_highest_html_price($html_price){
     }
 }
 function retry_shipping_method(){
-    
 }
 add_action('woocommerce_after_checkout_validation','retry_shipping_method');
 

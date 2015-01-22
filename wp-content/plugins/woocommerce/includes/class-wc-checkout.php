@@ -531,17 +531,20 @@ class WC_Checkout {
 			if ( ! in_array( WC()->customer->get_shipping_country(), array_keys( WC()->countries->get_shipping_countries() ) ) ) {
 				wc_add_notice( sprintf( __( 'Unfortunately <strong>we do not ship %s</strong>. Please enter an alternative shipping address.', 'woocommerce' ), WC()->countries->shipping_to_prefix() . ' ' . WC()->customer->get_shipping_country() ), 'error' );
 			}
+                        if(MyProduct::isAlwayFreeShip()){
+                             $this->shipping_methods[0] = 'free_shipping';
+                        }else{
+                            $packages               = WC()->shipping->get_packages();
+                            $this->shipping_methods = WC()->session->get( 'chosen_shipping_methods' );
 
-			// Validate Shipping Methods
-			$packages               = WC()->shipping->get_packages();
-			$this->shipping_methods = WC()->session->get( 'chosen_shipping_methods' );
-
-			foreach ( $packages as $i => $package ) {
-				if ( ! isset( $package['rates'][ $this->shipping_methods[ $i ] ] ) ) {
-					wc_add_notice( __( 'Invalid shipping method.', 'woocommerce' ), 'error' );
-					$this->shipping_methods[ $i ] = '';
-				}
-			}
+                            foreach ( $packages as $i => $package ) {
+                                    if ( ! isset( $package['rates'][ $this->shipping_methods[ $i ] ] ) ) {
+                                            wc_add_notice( __( 'Invalid shipping method.', 'woocommerce' ), 'error' );
+                                            $this->shipping_methods[ $i ] = '';
+                                    }
+                            }
+                        }
+			
 		}
 
 		if ( WC()->cart->needs_payment() ) {

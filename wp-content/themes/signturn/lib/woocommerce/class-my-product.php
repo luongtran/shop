@@ -84,8 +84,9 @@ class MyProduct extends WC_Product {
         if(is_array($product)){
             if( isset($product['variation']) && is_array($product['variation']) ){
                 foreach ($product['variation'] as $variation) {
-                    if(strpos(strtoupper($variation), strtoupper(MyProduct::SAMPLE_PRODUCT))
-                            ||  strtoupper($variation)===  strtoupper(MyProduct::SAMPLE_PRODUCT)){
+                    $sample_pattern = '/'.  strtolower(MyProduct::SAMPLE_PRODUCT).'/';
+                    $variation = strtolower($variation);
+                    if(preg_match($sample_pattern, $variation)){
                         return true;
                     }
                 }
