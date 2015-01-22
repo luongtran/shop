@@ -82,7 +82,7 @@ class WC_AJAX {
             global $woocommerce;
             ob_start();
         ?>
-            <h3>Your Bag</h3>
+           <h3>Your Bag</h3>
             <?php 
                 if(count($cart)):
             ?>
@@ -124,22 +124,49 @@ class WC_AJAX {
                 <?php endforeach;?>
             </table>
             <table class="table" style="margin-bottom: 0">
-                <tr>
-                    <td class="alignleft" style="width: 33%">IN YOUR BAG</td>
-                    <td class="aligncenter" style="width: 33%"><?php echo sprintf(_n('%d Item', '%d Items', WC()->cart->cart_contents_count, 'esell'), WC()->cart->cart_contents_count);?></td>
-                    <td class="alignright" style="width: 33%"><a href="<?php echo $woocommerce->cart->get_cart_url(); ?>">VIEW BAG</a></td>
-                </tr>
-                <tr>
-                    <td class="alignleft" >SUBTOTAL</td>
-                    <td class="aligncenter"></td>
-                    <td class="alignright"><?php wc_cart_totals_subtotal_html(); ?></td>
-                </tr>
-                <tr>
-                    <td colspan="3">
-                        <a  class="btn site-btn" href="<?php echo get_permalink( get_page_by_path( 'gift' )) ?>">Checkout</a>
-                    </td>
-                </tr>
-            </table>
+                    <tr>
+                        <td class="alignleft" style="width: 33%">IN YOUR BAG</td>
+                        <td class="aligncenter" style="width: 33%"><?php echo sprintf(_n('%d Item', '%d Items', WC()->cart->cart_contents_count, 'esell'), WC()->cart->cart_contents_count);?></td>
+                        <td class="alignright" style="width: 33%"><a href="<?php echo $woocommerce->cart->get_cart_url(); ?>">VIEW BAG</a></td>
+                    </tr>
+                    <tr>
+                        <td class="alignleft" >SUBTOTAL</td>
+                        <td class="aligncenter"></td>
+                        <td class="alignright"><?php wc_cart_totals_subtotal_html(); ?></td>
+                    </tr>
+                    <?php $free_sampe = MyProduct::getTotalFreeSample();
+                    if($free_sampe):
+                    ?>
+                    <tr>
+                        <td class="alignleft" >FREE SAMPLE DISCOUNT</td>
+                        <td class="aligncenter"></td>
+                        <td class="alignright">
+                            <span class="amount">
+                                <?php echo get_woocommerce_currency_symbol().  number_format($free_sampe,2); ?>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="alignleft" >TOTAL</td>
+                        <td class="aligncenter"></td>
+                        <?php 
+                            $amount = MyProduct::realTotalBeforeFreeSampe();
+                            $total = number_format($amount - $free_sampe,2);
+                        ?>
+                        <td class="alignright">
+                            <span class="amount">
+                                <?php echo get_woocommerce_currency_symbol().$total; ?>
+                            </span>
+                        </td>
+                    </tr>
+                    <?php endif; ?>
+                    <tr>
+                        <td colspan="3">
+                            <a  class="btn site-btn" href="<?php echo get_permalink( get_page_by_path( 'gift' )) ?>">Checkout</a>
+                        </td>
+                    </tr>
+
+                </table>
             <?php else: ?>
             <h4 class="aligncenter">YOUR BAG IS EMPTY</h4>
             <?php endif;?>
