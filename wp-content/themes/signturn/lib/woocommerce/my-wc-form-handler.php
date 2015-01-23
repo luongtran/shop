@@ -200,7 +200,7 @@ function get_cart_table_footer(){
             <tbody>
                  <tr class="cart-price">
                     <td colspan="4" >
-                        <span>Total:</span>
+                        <span>Sub total:</span>
                         <span><?php wc_cart_totals_subtotal_html(); ?></span>
                     </td>
                  </tr>
@@ -212,7 +212,7 @@ function get_cart_table_footer(){
                  </tr>
                  <tr  class="cart-price">
                     <td colspan="4" >
-                        <span>Sub total:</span>
+                        <span>Total:</span>
                         <span>
                             <?php 
                                 $amount = MyProduct::realTotalBeforeFreeSampe();

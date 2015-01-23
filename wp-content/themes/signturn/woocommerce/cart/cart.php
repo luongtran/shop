@@ -105,7 +105,7 @@ do_action( 'woocommerce_before_cart' ); ?>
                             ?>
                              <tr class="cart-price">
                                 <td>
-                                    <span>Total:</span>
+                                    <span>Sub total:</span>
                                     <span><?php wc_cart_totals_subtotal_html(); ?></span>
                                 </td>
                              </tr>
@@ -117,7 +117,7 @@ do_action( 'woocommerce_before_cart' ); ?>
                              </tr>
                              <tr  class="cart-price">
                                 <td >
-                                    <span>Sub total:</span>
+                                    <span>Total:</span>
                                     <span>
                                         <?php 
                                             $amount = MyProduct::realTotalBeforeFreeSampe();
