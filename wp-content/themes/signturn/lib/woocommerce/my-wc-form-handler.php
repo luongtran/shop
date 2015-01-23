@@ -279,16 +279,22 @@ function test_cart(){
 //        $states = WC()->countries->get_states();
 //        $methods =    WC()->shipping->load_shipping_methods();
 //        print_r($methods);
-        $coupons =  WC()->cart->applied_coupons;
+//        $coupons =  WC()->cart->applied_coupons;
 //        foreach ($coupons as $coupon) {
 //         //   print_r(MyProduct::getCouponAmount($coupon));
 //        }
        // print_r(MyProduct::realTotalBeforeFreeSampe());
        //die(MyProduct::realTotalBeforeFreeSampe());
         
-        global $woocommerce, $post;
-        $order = WC()->session->get( 'chosen_shipping_methods' );
-        print_r($order);die();
+//        global $woocommerce, $post;
+//        $order = WC()->session->get( 'chosen_shipping_methods' );
+//        print_r($order);die();
+//        $shipping = WC()->cart->shipping_total;
+//        die($shipping);
+//         $coupon = WC()->cart->applied_coupons;
+//         print_r($coupon);die();
+         print_r(WC()->cart->shipping_total);
+         print_r(WC()->cart->coupon_discount_amounts);die();
      }
 }
 function check_remove_gift(){
@@ -306,8 +312,32 @@ function check_free_sample_product(){
     MyProduct::addSampleCoupon();
 
 }
-function update_real_cart(){
-    //WC()->cart->calculate_totals();
+function check_to_add_free_shipping(){
+    MyProduct::removeFreeSamlpeShippingCoupon();
+    if(MyProduct::isAlwayFreeShip()){
+        $shipping = WC()->cart->shipping_total;
+        $coupon_code = "Free sample shipping ".md5(microtime().uniqid());
+        $discount_type = 'fixed_cart'; // Type: fixed_cart, percent, fixed_product, percent_product
+        $coupon = array(
+            'post_title' => $coupon_code,
+            'post_content' => '',
+            'post_status' => 'publish',
+            'post_author' => 1,
+            'post_type' => 'shop_coupon'
+        );
+        $new_coupon_id = wp_insert_post( $coupon );
+        // Add meta
+        update_post_meta( $new_coupon_id, 'discount_type', $discount_type );
+        update_post_meta( $new_coupon_id, 'coupon_amount', $shipping );
+        update_post_meta( $new_coupon_id, 'individual_use', 'no' );
+        update_post_meta( $new_coupon_id, 'product_ids', '' );
+        update_post_meta( $new_coupon_id, 'exclude_product_ids', '' );
+        update_post_meta( $new_coupon_id, 'usage_limit', '' );
+        update_post_meta( $new_coupon_id, 'expiry_date', '' );
+        update_post_meta( $new_coupon_id, 'apply_before_tax', 'yes' );
+        update_post_meta( $new_coupon_id, 'free_shipping', 'yes' ); 
+        WC()->cart->add_discount($coupon_code);
+    }
 }
 function show_highest_html_price($html_price){
 //    try {
@@ -370,10 +400,7 @@ function retry_shipping_method(){
 }
 add_action('woocommerce_after_checkout_validation','retry_shipping_method');
 
-add_action('woocommerce_before_cart_header','update_real_cart');
-add_action('woocommerce_checkout_process','update_real_cart');
-add_action('woocommerce_before_cart_table','update_real_cart');
-add_action('woocommerce_before_checkout_form','update_real_cart');
+//add_action('woocommerce_checkout_process','check_to_add_free_shipping');
 add_action('woocommerce_before_checkout_form','check_free_sample_product');
 
 

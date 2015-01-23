@@ -215,27 +215,52 @@ class MyProduct extends WC_Product {
             return true;
         }
     }
-    
-    public static function removeSampleCoupon(){
-        $coupon = isset($_SESSION[self::FREE_SAMPLE_COUPON]) ? $_SESSION[self::FREE_SAMPLE_COUPON] : NULL;
-        if($coupon){
-            WC()->cart->remove_coupon($coupon);
-            global $wpdb;
-            $query = $wpdb->prepare("SELECT id FROM {$wpdb->posts} WHERE post_type like 'shop_coupon' AND post_title like %s",$coupon);
-            $results = $wpdb->get_results($query, OBJECT );
-            if(count($results)){
-                $id = $results[0]->id;
-                wp_delete_post($id,true);
-                $wpdb->query( 
-                    $wpdb->prepare( 
-                            "
-                             DELETE FROM $wpdb->postmeta
-                             WHERE post_id = %d
-                            ",$id
-                    )
-                );
+    public static function removeFreeSamlpeShippingCoupon(){
+        $coupons =  WC()->cart->applied_coupons;
+        foreach ($coupons as $coupon) {
+            if(preg_match('/free sample shipping/', strtolower($coupon))){
+                WC()->cart->remove_coupon($coupon);
+                global $wpdb;
+                $query = $wpdb->prepare("SELECT id FROM {$wpdb->posts} WHERE post_type like 'shop_coupon' AND post_title like %s",$coupon);
+                $results = $wpdb->get_results($query, OBJECT );
+                if(count($results)){
+                    $id = $results[0]->id;
+                    wp_delete_post($id,true);
+                    $wpdb->query( 
+                        $wpdb->prepare( 
+                                "
+                                 DELETE FROM $wpdb->postmeta
+                                 WHERE post_id = %d
+                                ",$id
+                        )
+                    );
+                }
             }
-            
+        }
+    }
+
+    public static function removeSampleCoupon(){
+        //$coupon = isset($_SESSION[self::FREE_SAMPLE_COUPON]) ? $_SESSION[self::FREE_SAMPLE_COUPON] : NULL;
+        $coupons = WC()->cart->applied_coupons;
+        foreach ($coupons as $coupon) {
+            if(preg_match('/free samples products/', strtolower($coupon))){
+                WC()->cart->remove_coupon($coupon);
+                global $wpdb;
+                $query = $wpdb->prepare("SELECT id FROM {$wpdb->posts} WHERE post_type like 'shop_coupon' AND post_title like %s",$coupon);
+                $results = $wpdb->get_results($query, OBJECT );
+                if(count($results)){
+                    $id = $results[0]->id;
+                    wp_delete_post($id,true);
+                    $wpdb->query( 
+                        $wpdb->prepare( 
+                                "
+                                 DELETE FROM $wpdb->postmeta
+                                 WHERE post_id = %d
+                                ",$id
+                        )
+                    );
+                }
+            }
         }
     }
     public static function addSampleCoupon(){
@@ -262,7 +287,7 @@ class MyProduct extends WC_Product {
            $coupon_code = "Free samples products - ID:".md5(microtime().uniqid());
            MyProduct::createCoupon($coupon_code, $coupon_amount);
            WC()->cart->add_discount($coupon_code);
-           $_SESSION[self::FREE_SAMPLE_COUPON] = $coupon_code;
+           //$_SESSION[self::FREE_SAMPLE_COUPON] = $coupon_code;
         }
     }
     public static function getTotalFreeSample(){

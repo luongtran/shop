@@ -74,15 +74,14 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
                              <?php if(MyProduct::isAlwayFreeShip()) : ?>
 				<ul id="shipping_method">
                                     <li>
-                                        <input name="shipping_method[0]" data-index="0" id="shipping_method_0_free_shipping" value="free_shipping" checked="checked" class="shipping_method" type="radio">
-                                        <label for="shipping_method_0_free_shipping">Free Shipping</label>
+                                        <label>Free Shipping</label>
                                    </li>                                                               
                                 </ul>  
-                                 <?php else:?>
-				<?php do_action( 'woocommerce_review_order_before_shipping' ); ?>
-				<?php wc_cart_totals_shipping_html(); ?>
-				<?php do_action( 'woocommerce_review_order_after_shipping' ); ?>
-                                <?php endif;?>
+                                <?php else:?>
+                                    <?php do_action( 'woocommerce_review_order_before_shipping' ); ?>
+                                    <?php wc_cart_totals_shipping_html(); ?>
+                                    <?php do_action( 'woocommerce_review_order_after_shipping' ); ?>
+                                <?php endif; ?>  
 			<?php endif; ?>
                     </div>
                 </div>

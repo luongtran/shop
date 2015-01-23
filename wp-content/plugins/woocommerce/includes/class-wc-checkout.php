@@ -345,7 +345,7 @@ class WC_Checkout {
 		}
 
 		do_action( 'woocommerce_checkout_process' );
-
+                //die('checkout process');
 		// Checkout fields (not defined in checkout_fields)
 		$this->posted['terms']                     = isset( $_POST['terms'] ) ? 1 : 0;
 		$this->posted['createaccount']             = isset( $_POST['createaccount'] ) && ! empty( $_POST['createaccount'] ) ? 1 : 0;
@@ -369,7 +369,7 @@ class WC_Checkout {
 
 		if ( isset( $this->posted['shipping_method'] ) && is_array( $this->posted['shipping_method'] ) ) {
 			foreach ( $this->posted['shipping_method'] as $i => $value ) {
-				$chosen_shipping_methods[ $i ] = wc_clean( $value );
+                            $chosen_shipping_methods[ $i ] = wc_clean( $value );
 			}
 		}
 
